@@ -1,0 +1,764 @@
+gpasm-1.4.2 #1169 (Feb 10 2017) Carnalito.asm   3-16-2018  11:34:21         PAGE  1
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+                      00001 ;--------------------------------------------------------
+                      00002 ; File Created by SDCC : free open source ANSI-C Compiler
+                      00003 ; Version 3.6.0 #9615 (Linux)
+                      00004 ;--------------------------------------------------------
+                      00005 ; PIC port for the 14-bit core
+                      00006 ;--------------------------------------------------------
+                      00007         .file   "Carnalito.c"
+                      00008         list    p=16f88
+                      00009         radix dec
+                      00010         include "p16f88.inc"
+                      00001         LIST
+                      00002 
+                      00003 ;==========================================================================
+                      00004 ; Build date : Oct 21 2015
+                      00005 ;  MPASM PIC16F88 processor include
+                      00006 ; 
+                      00007 ;  (c) Copyright 1999-2015 Microchip Technology, All rights reserved
+                      00008 ;==========================================================================
+                      00009 
+                      00550         LIST
+                      00011 ;--------------------------------------------------------
+                      00012 ; config word(s)
+                      00013 ;--------------------------------------------------------
+2007   0000           00014         __config _CONFIG1, 0x3f61
+2008   0000           00015         __config _CONFIG2, 0x3fff
+                      00016 ;--------------------------------------------------------
+                      00017 ; external declarations
+                      00018 ;--------------------------------------------------------
+  0000                00019         extern  _lcd_cmd
+  0000                00020         extern  _lcd_cmd_hf
+  0000                00021         extern  _lcd_dwr
+  0000                00022         extern  _lcd_msg
+  0000                00023         extern  _lcd_init
+  0000                00024         extern  _lcd_lat
+  0000                00025         extern  _delay
+  0000                00026         extern  _STATUSbits
+  0000                00027         extern  _PORTAbits
+  0000                00028         extern  _PORTBbits
+  0000                00029         extern  _INTCONbits
+  0000                00030         extern  _PIR1bits
+  0000                00031         extern  _PIR2bits
+  0000                00032         extern  _T1CONbits
+  0000                00033         extern  _T2CONbits
+  0000                00034         extern  _SSPCONbits
+  0000                00035         extern  _CCP1CONbits
+  0000                00036         extern  _RCSTAbits
+  0000                00037         extern  _ADCON0bits
+  0000                00038         extern  _OPTION_REGbits
+  0000                00039         extern  _TRISAbits
+  0000                00040         extern  _TRISBbits
+  0000                00041         extern  _PIE1bits
+  0000                00042         extern  _PIE2bits
+  0000                00043         extern  _PCONbits
+gpasm-1.4.2 #1169 (Feb 10 2017) Carnalito.asm   3-16-2018  11:34:21         PAGE  2
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+  0000                00044         extern  _OSCCONbits
+  0000                00045         extern  _OSCTUNEbits
+  0000                00046         extern  _SSPSTATbits
+  0000                00047         extern  _TXSTAbits
+  0000                00048         extern  _ANSELbits
+  0000                00049         extern  _CMCONbits
+  0000                00050         extern  _CVRCONbits
+  0000                00051         extern  _ADCON1bits
+  0000                00052         extern  _WDTCONbits
+  0000                00053         extern  _EECON1bits
+  0000                00054         extern  _INDF
+  0000                00055         extern  _TMR0
+  0000                00056         extern  _PCL
+  0000                00057         extern  _STATUS
+  0000                00058         extern  _FSR
+  0000                00059         extern  _PORTA
+  0000                00060         extern  _PORTB
+  0000                00061         extern  _PCLATH
+  0000                00062         extern  _INTCON
+  0000                00063         extern  _PIR1
+  0000                00064         extern  _PIR2
+  0000                00065         extern  _TMR1
+  0000                00066         extern  _TMR1L
+  0000                00067         extern  _TMR1H
+  0000                00068         extern  _T1CON
+  0000                00069         extern  _TMR2
+  0000                00070         extern  _T2CON
+  0000                00071         extern  _SSPBUF
+  0000                00072         extern  _SSPCON
+  0000                00073         extern  _CCPR1
+  0000                00074         extern  _CCPR1L
+  0000                00075         extern  _CCPR1H
+  0000                00076         extern  _CCP1CON
+  0000                00077         extern  _RCSTA
+  0000                00078         extern  _TXREG
+  0000                00079         extern  _RCREG
+  0000                00080         extern  _ADRESH
+  0000                00081         extern  _ADCON0
+  0000                00082         extern  _OPTION_REG
+  0000                00083         extern  _TRISA
+  0000                00084         extern  _TRISB
+  0000                00085         extern  _PIE1
+  0000                00086         extern  _PIE2
+  0000                00087         extern  _PCON
+  0000                00088         extern  _OSCCON
+  0000                00089         extern  _OSCTUNE
+  0000                00090         extern  _PR2
+  0000                00091         extern  _SSPADD
+  0000                00092         extern  _SSPSTAT
+  0000                00093         extern  _TXSTA
+  0000                00094         extern  _SPBRG
+  0000                00095         extern  _ANSEL
+  0000                00096         extern  _CMCON
+gpasm-1.4.2 #1169 (Feb 10 2017) Carnalito.asm   3-16-2018  11:34:21         PAGE  3
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+  0000                00097         extern  _CVRCON
+  0000                00098         extern  _ADRESL
+  0000                00099         extern  _ADCON1
+  0000                00100         extern  _WDTCON
+  0000                00101         extern  _EEDATA
+  0000                00102         extern  _EEADR
+  0000                00103         extern  _EEDATH
+  0000                00104         extern  _EEADRH
+  0000                00105         extern  _EECON1
+  0000                00106         extern  _EECON2
+  0000                00107         extern  __sdcc_gsinit_startup
+                      00108 ;--------------------------------------------------------
+                      00109 ; global declarations
+                      00110 ;--------------------------------------------------------
+  0000                00111         global  _main
+                      00112 
+  0000                00113         global PSAVE
+  0000                00114         global SSAVE
+  0000                00115         global WSAVE
+  0000                00116         global STK12
+  0000                00117         global STK11
+  0000                00118         global STK10
+  0000                00119         global STK09
+  0000                00120         global STK08
+  0000                00121         global STK07
+  0000                00122         global STK06
+  0000                00123         global STK05
+  0000                00124         global STK04
+  0000                00125         global STK03
+  0000                00126         global STK02
+  0000                00127         global STK01
+  0000                00128         global STK00
+                      00129 
+                      00130 sharebank udata_ovr 0x0070
+0070                  00131 PSAVE   res 1
+0071                  00132 SSAVE   res 1
+0072                  00133 WSAVE   res 1
+0073                  00134 STK12   res 1
+0074                  00135 STK11   res 1
+0075                  00136 STK10   res 1
+0076                  00137 STK09   res 1
+0077                  00138 STK08   res 1
+0078                  00139 STK07   res 1
+0079                  00140 STK06   res 1
+007A                  00141 STK05   res 1
+007B                  00142 STK04   res 1
+007C                  00143 STK03   res 1
+007D                  00144 STK02   res 1
+007E                  00145 STK01   res 1
+007F                  00146 STK00   res 1
+                      00147 
+                      00148 ;--------------------------------------------------------
+                      00149 ; global definitions
+gpasm-1.4.2 #1169 (Feb 10 2017) Carnalito.asm   3-16-2018  11:34:21         PAGE  4
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+                      00150 ;--------------------------------------------------------
+                      00151 ;--------------------------------------------------------
+                      00152 ; absolute symbol definitions
+                      00153 ;--------------------------------------------------------
+                      00154 ;--------------------------------------------------------
+                      00155 ; compiler-defined variables
+                      00156 ;--------------------------------------------------------
+                      00157 ;--------------------------------------------------------
+                      00158 ; initialized data
+                      00159 ;--------------------------------------------------------
+                      00160 ;--------------------------------------------------------
+                      00161 ; overlayable items in internal ram 
+                      00162 ;--------------------------------------------------------
+                      00163 ;       udata_ovr
+                      00164 ;--------------------------------------------------------
+                      00165 ; reset vector 
+                      00166 ;--------------------------------------------------------
+                      00167 STARTUP code 0x0000
+0000   0000           00168         nop
+0001   ????           00169         pagesel __sdcc_gsinit_startup
+0002   2???           00170         goto    __sdcc_gsinit_startup
+                      00171 ;--------------------------------------------------------
+                      00172 ; code
+                      00173 ;--------------------------------------------------------
+                      00174 code_Carnalito  code
+                      00175 ;***
+                      00176 ;  pBlock Stats: dbName = M
+                      00177 ;***
+                      00178 ;has an exit
+                      00179 ;; Starting pCode block
+                      00180 ;;; /home/sdcc-builder/build/sdcc-build/orig/sdcc/src/pic14/gen.c:2308:resultRemat *{*
+                      00181 ;;; /home/sdcc-builder/build/sdcc-build/orig/sdcc/src/pic14/gen.c:2752:genLabel *{*
+                      00182 ;; ***  genLabel  2755
+                      00183 ;;; /home/sdcc-builder/build/sdcc-build/orig/sdcc/src/pic14/gen.c:2308:resultRemat *{*
+                      00184 ;;; /home/sdcc-builder/build/sdcc-build/orig/sdcc/src/pic14/gen.c:2332:genFunction *{*
+                      00185 ;; ***  genFunction  2334 curr label offset=0previous max_key=0 
+                      00186 S_Carnalito__main       code
+0000                  00187 _main:
+                      00188 ; 2 exit points
+                      00189 ;;; /home/sdcc-builder/build/sdcc-build/orig/sdcc/src/pic14/gen.c:2308:resultRemat *{*
+                      00190 ;;; /home/sdcc-builder/build/sdcc-build/orig/sdcc/src/pic14/gen.c:2752:genLabel *{*
+                      00191 ;; ***  genLabel  2755
+                      00192 ;;; /home/sdcc-builder/build/sdcc-build/orig/sdcc/src/pic14/gen.c:2308:resultRemat *{*
+                      00193 ;;; /home/sdcc-builder/build/sdcc-build/orig/sdcc/src/pic14/gen.c:2770:genGoto *{*
+                      00194 ;; >>> /home/sdcc-builder/build/sdcc-build/orig/sdcc/src/pic14/gen.c:2772:genGoto
+                      00195 ;; ***  popGetLabel  key=2, label offset 4
+0000                  00196 _00106_DS_:
+                      00197         .line   17; "Carnalito.c"       while(1)
+0000   2???           00198         GOTO    _00106_DS_
+                      00199 ;;; /home/sdcc-builder/build/sdcc-build/orig/sdcc/src/pic14/gen.c:2308:resultRemat *{*
+                      00200 ;;; /home/sdcc-builder/build/sdcc-build/orig/sdcc/src/pic14/gen.c:2752:genLabel *{*
+                      00201 ;; ***  genLabel  2755
+                      00202 ;;; /home/sdcc-builder/build/sdcc-build/orig/sdcc/src/pic14/gen.c:2308:resultRemat *{*
+gpasm-1.4.2 #1169 (Feb 10 2017) Carnalito.asm   3-16-2018  11:34:21         PAGE  5
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+                      00203 ;;; /home/sdcc-builder/build/sdcc-build/orig/sdcc/src/pic14/gen.c:2520:genEndFunction *{*
+                      00204 ;; ***  genEndFunction  2522
+0001   0008           00205         RETURN  
+                      00206 ; exit point of _main
+                      00207 
+                      00208 
+                      00209 ;       code size estimation:
+                      00210 ;           2+    0 =     2 instructions (    4 byte)
+                      00211 
+                      00212         end
+gpasm-1.4.2 #1169 (Feb 10 2017) Carnalito.asm   3-16-2018  11:34:21         PAGE  6
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+ADCON0                            0000001F
+ADCON1                            0000009F
+ADCS0                             00000006
+ADCS1                             00000007
+ADCS2                             00000006
+ADDEN                             00000003
+ADFM                              00000007
+ADIE                              00000006
+ADIF                              00000006
+ADON                              00000000
+ADRESH                            0000001E
+ADRESL                            0000009E
+ANS0                              00000000
+ANS1                              00000001
+ANS2                              00000002
+ANS3                              00000003
+ANS4                              00000004
+ANS5                              00000005
+ANS6                              00000006
+ANSEL                             0000009B
+BF                                00000000
+BRGH                              00000002
+C                                 00000000
+C1INV                             00000004
+C1OUT                             00000006
+C2INV                             00000005
+C2OUT                             00000007
+CCP1CON                           00000017
+CCP1IE                            00000002
+CCP1IF                            00000002
+CCP1M0                            00000000
+CCP1M1                            00000001
+CCP1M2                            00000002
+CCP1M3                            00000003
+CCP1X                             00000005
+CCP1Y                             00000004
+CCPR1                             00000015
+CCPR1H                            00000016
+CCPR1L                            00000015
+CHS0                              00000003
+CHS1                              00000004
+CHS2                              00000005
+CIS                               00000003
+CKE                               00000006
+CKP                               00000004
+CM0                               00000000
+CM1                               00000001
+CM2                               00000002
+CMCON                             0000009C
+CMIE                              00000006
+CMIF                              00000006
+CREN                              00000004
+CSRC                              00000007
+gpasm-1.4.2 #1169 (Feb 10 2017) Carnalito.asm   3-16-2018  11:34:21         PAGE  7
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+CVR0                              00000000
+CVR1                              00000001
+CVR2                              00000002
+CVR3                              00000003
+CVRCON                            0000009D
+CVREN                             00000007
+CVROE                             00000006
+CVRR                              00000005
+D                                 00000005
+DATA_ADDRESS                      00000005
+DC                                00000001
+D_A                               00000005
+D_NOT_A                           00000005
+EEADR                             0000010D
+EEADRH                            0000010F
+EECON1                            0000018C
+EECON2                            0000018D
+EEDATA                            0000010C
+EEDATH                            0000010E
+EEIE                              00000004
+EEIF                              00000004
+EEPGD                             00000007
+F                                 00000001
+FERR                              00000002
+FREE                              00000004
+FSR                               00000004
+GIE                               00000007
+GO                                00000002
+GO_DONE                           00000002
+GO_NOT_DONE                       00000002
+I2C_DATA                          00000005
+I2C_READ                          00000002
+I2C_START                         00000003
+I2C_STOP                          00000004
+INDF                              00000000
+INT0IE                            00000004
+INT0IF                            00000001
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IOFS                              00000002
+IRCF0                             00000004
+IRCF1                             00000005
+IRCF2                             00000006
+IRP                               00000007
+NOT_A                             00000005
+NOT_ADDRESS                       00000005
+NOT_BO                            00000000
+NOT_BOR                           00000000
+NOT_DONE                          00000002
+NOT_PD                            00000003
+NOT_POR                           00000001
+gpasm-1.4.2 #1169 (Feb 10 2017) Carnalito.asm   3-16-2018  11:34:21         PAGE  8
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+NOT_RBPU                          00000007
+NOT_RC8                           00000006
+NOT_T1SYNC                        00000002
+NOT_TO                            00000004
+NOT_TX8                           00000006
+NOT_W                             00000002
+NOT_WRITE                         00000002
+OERR                              00000001
+OPTION_REG                        00000081
+OSCCON                            0000008F
+OSCTUNE                           00000090
+OSFIE                             00000007
+OSFIF                             00000007
+OSTS                              00000003
+P                                 00000004
+PCL                               00000002
+PCLATH                            0000000A
+PCON                              0000008E
+PEIE                              00000006
+PIE1                              0000008C
+PIE2                              0000008D
+PIR1                              0000000C
+PIR2                              0000000D
+PORTA                             00000005
+PORTB                             00000006
+PR2                               00000092
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+PSAVE                             00000070
+R                                 00000002
+RA0                               00000000
+RA1                               00000001
+RA2                               00000002
+RA3                               00000003
+RA4                               00000004
+RA5                               00000005
+RA6                               00000006
+RA7                               00000007
+RB0                               00000000
+RB1                               00000001
+RB2                               00000002
+RB3                               00000003
+RB4                               00000004
+RB5                               00000005
+RB6                               00000006
+RB7                               00000007
+RBIE                              00000003
+RBIF                              00000000
+RC8_9                             00000006
+RC9                               00000006
+RCD8                              00000000
+gpasm-1.4.2 #1169 (Feb 10 2017) Carnalito.asm   3-16-2018  11:34:21         PAGE  9
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+RCIE                              00000005
+RCIF                              00000005
+RCREG                             0000001A
+RCSTA                             00000018
+RD                                00000000
+READ_WRITE                        00000002
+RP0                               00000005
+RP1                               00000006
+RX9                               00000006
+RX9D                              00000000
+R_NOT_W                           00000002
+R_W                               00000002
+S                                 00000003
+SCS0                              00000000
+SCS1                              00000001
+SMP                               00000007
+SPBRG                             00000099
+SPEN                              00000007
+SREN                              00000005
+SSAVE                             00000071
+SSPADD                            00000093
+SSPBUF                            00000013
+SSPCON                            00000014
+SSPEN                             00000005
+SSPIE                             00000003
+SSPIF                             00000003
+SSPM0                             00000000
+SSPM1                             00000001
+SSPM2                             00000002
+SSPM3                             00000003
+SSPOV                             00000006
+SSPSTAT                           00000094
+STATUS                            00000003
+STK00                             0000007F
+STK01                             0000007E
+STK02                             0000007D
+STK03                             0000007C
+STK04                             0000007B
+STK05                             0000007A
+STK06                             00000079
+STK07                             00000078
+STK08                             00000077
+STK09                             00000076
+STK10                             00000075
+STK11                             00000074
+STK12                             00000073
+SWDTE                             00000000
+SWDTEN                            00000000
+SYNC                              00000004
+T0CS                              00000005
+T0SE                              00000004
+T1CKPS0                           00000004
+T1CKPS1                           00000005
+gpasm-1.4.2 #1169 (Feb 10 2017) Carnalito.asm   3-16-2018  11:34:21         PAGE 10
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+T1CON                             00000010
+T1INSYNC                          00000002
+T1OSCEN                           00000003
+T1RUN                             00000006
+T2CKPS0                           00000000
+T2CKPS1                           00000001
+T2CON                             00000012
+TMR0                              00000001
+TMR0IE                            00000005
+TMR0IF                            00000002
+TMR1                              0000000E
+TMR1CS                            00000001
+TMR1H                             0000000F
+TMR1IE                            00000000
+TMR1IF                            00000000
+TMR1L                             0000000E
+TMR1ON                            00000000
+TMR2                              00000011
+TMR2IE                            00000001
+TMR2IF                            00000001
+TMR2ON                            00000002
+TOUTPS0                           00000003
+TOUTPS1                           00000004
+TOUTPS2                           00000005
+TOUTPS3                           00000006
+TRISA                             00000085
+TRISA0                            00000000
+TRISA1                            00000001
+TRISA2                            00000002
+TRISA3                            00000003
+TRISA4                            00000004
+TRISA5                            00000005
+TRISA6                            00000006
+TRISA7                            00000007
+TRISB                             00000086
+TRISB0                            00000000
+TRISB1                            00000001
+TRISB2                            00000002
+TRISB3                            00000003
+TRISB4                            00000004
+TRISB5                            00000005
+TRISB6                            00000006
+TRISB7                            00000007
+TRMT                              00000001
+TUN0                              00000000
+TUN1                              00000001
+TUN2                              00000002
+TUN3                              00000003
+TUN4                              00000004
+TUN5                              00000005
+TX8_9                             00000006
+TX9                               00000006
+TX9D                              00000000
+gpasm-1.4.2 #1169 (Feb 10 2017) Carnalito.asm   3-16-2018  11:34:21         PAGE 11
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TXD8                              00000000
+TXEN                              00000005
+TXIE                              00000004
+TXIF                              00000004
+TXREG                             00000019
+TXSTA                             00000098
+UA                                00000001
+VCFG0                             00000004
+VCFG1                             00000005
+W                                 00000000
+WCOL                              00000007
+WDTCON                            00000105
+WDTPS0                            00000001
+WDTPS1                            00000002
+WDTPS2                            00000003
+WDTPS3                            00000004
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+WSAVE                             00000072
+Z                                 00000002
+_00106_DS_                        00000000
+_ADCON0                           00000000
+_ADCON0bits                       00000000
+_ADCON1                           00000000
+_ADCON1bits                       00000000
+_ADRESH                           00000000
+_ADRESL                           00000000
+_ANSEL                            00000000
+_ANSELbits                        00000000
+_BODEN_OFF                        00003FBF
+_BODEN_ON                         00003FFF
+_BOREN_OFF                        00003FBF
+_BOREN_ON                         00003FFF
+_CCP1CON                          00000000
+_CCP1CONbits                      00000000
+_CCP1_RB0                         00003FFF
+_CCP1_RB3                         00002FFF
+_CCPMX_RB0                        00003FFF
+_CCPMX_RB3                        00002FFF
+_CCPR1                            00000000
+_CCPR1H                           00000000
+_CCPR1L                           00000000
+_CMCON                            00000000
+_CMCONbits                        00000000
+_CONFIG1                          00002007
+_CONFIG2                          00002008
+_CPD_OFF                          00003FFF
+_CPD_ON                           00003EFF
+_CP_ALL                           00001FFF
+_CP_OFF                           00003FFF
+_CP_ON                            00001FFF
+_CVRCON                           00000000
+gpasm-1.4.2 #1169 (Feb 10 2017) Carnalito.asm   3-16-2018  11:34:21         PAGE 12
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_CVRCONbits                       00000000
+_DEBUG_OFF                        00003FFF
+_DEBUG_ON                         000037FF
+_DEVID1                           00002006
+_EEADR                            00000000
+_EEADRH                           00000000
+_EECON1                           00000000
+_EECON1bits                       00000000
+_EECON2                           00000000
+_EEDATA                           00000000
+_EEDATH                           00000000
+_EXTCLK                           00003FEF
+_EXTRC_CLKOUT                     00003FFF
+_EXTRC_IO                         00003FFE
+_FCMEN_OFF                        00003FFE
+_FCMEN_ON                         00003FFF
+_FOSC_EC                          00003FEF
+_FOSC_EXTRCCLK                    00003FFF
+_FOSC_EXTRCIO                     00003FFE
+_FOSC_HS                          00003FEE
+_FOSC_INTOSCCLK                   00003FFD
+_FOSC_INTOSCIO                    00003FFC
+_FOSC_LP                          00003FEC
+_FOSC_XT                          00003FED
+_FSR                              00000000
+_HS_OSC                           00003FEE
+_IDLOC0                           00002000
+_IDLOC1                           00002001
+_IDLOC2                           00002002
+_IDLOC3                           00002003
+_IESO_OFF                         00003FFD
+_IESO_ON                          00003FFF
+_INDF                             00000000
+_INTCON                           00000000
+_INTCONbits                       00000000
+_INTRC_CLKOUT                     00003FFD
+_INTRC_IO                         00003FFC
+_LP_OSC                           00003FEC
+_LVP_OFF                          00003F7F
+_LVP_ON                           00003FFF
+_MCLRE_OFF                        00003FDF
+_MCLRE_ON                         00003FFF
+_MCLR_OFF                         00003FDF
+_MCLR_ON                          00003FFF
+_OPTION_REG                       00000000
+_OPTION_REGbits                   00000000
+_OSCCON                           00000000
+_OSCCONbits                       00000000
+_OSCTUNE                          00000000
+_OSCTUNEbits                      00000000
+_PCL                              00000000
+_PCLATH                           00000000
+_PCON                             00000000
+gpasm-1.4.2 #1169 (Feb 10 2017) Carnalito.asm   3-16-2018  11:34:21         PAGE 13
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_PCONbits                         00000000
+_PIE1                             00000000
+_PIE1bits                         00000000
+_PIE2                             00000000
+_PIE2bits                         00000000
+_PIR1                             00000000
+_PIR1bits                         00000000
+_PIR2                             00000000
+_PIR2bits                         00000000
+_PORTA                            00000000
+_PORTAbits                        00000000
+_PORTB                            00000000
+_PORTBbits                        00000000
+_PR2                              00000000
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RCREG                            00000000
+_RCSTA                            00000000
+_RCSTAbits                        00000000
+_SPBRG                            00000000
+_SSPADD                           00000000
+_SSPBUF                           00000000
+_SSPCON                           00000000
+_SSPCONbits                       00000000
+_SSPSTAT                          00000000
+_SSPSTATbits                      00000000
+_STATUS                           00000000
+_STATUSbits                       00000000
+_T1CON                            00000000
+_T1CONbits                        00000000
+_T2CON                            00000000
+_T2CONbits                        00000000
+_TMR0                             00000000
+_TMR1                             00000000
+_TMR1H                            00000000
+_TMR1L                            00000000
+_TMR2                             00000000
+_TRISA                            00000000
+_TRISAbits                        00000000
+_TRISB                            00000000
+_TRISBbits                        00000000
+_TXREG                            00000000
+_TXSTA                            00000000
+_TXSTAbits                        00000000
+_WDTCON                           00000000
+_WDTCONbits                       00000000
+_WDTE_OFF                         00003FFB
+_WDTE_ON                          00003FFF
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_WRT_2048                         00003BFF
+_WRT_256                          00003DFF
+_WRT_ALL                          000039FF
+gpasm-1.4.2 #1169 (Feb 10 2017) Carnalito.asm   3-16-2018  11:34:21         PAGE 14
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_WRT_OFF                          00003FFF
+_WRT_PROTECT_2048                 00003BFF
+_WRT_PROTECT_256                  00003DFF
+_WRT_PROTECT_ALL                  000039FF
+_WRT_PROTECT_OFF                  00003FFF
+_XT_OSC                           00003FED
+__16F88                           00000001
+__CODE_END                        00000FFF
+__CODE_START                      00000000
+__COMMON_RAM_END                  0000007F
+__COMMON_RAM_START                00000070
+__CONFIG_END                      00002008
+__CONFIG_START                    00002007
+__EEPROM_END                      000021FF
+__EEPROM_START                    00002100
+__IDLOCS_END                      00002003
+__IDLOCS_START                    00002000
+__VECTOR_INT                      00000004
+__VECTOR_RESET                    00000000
+__sdcc_gsinit_startup             00000000
+_delay                            00000000
+_lcd_cmd                          00000000
+_lcd_cmd_hf                       00000000
+_lcd_dwr                          00000000
+_lcd_init                         00000000
+_lcd_lat                          00000000
+_lcd_msg                          00000000
+_main                             00000000
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

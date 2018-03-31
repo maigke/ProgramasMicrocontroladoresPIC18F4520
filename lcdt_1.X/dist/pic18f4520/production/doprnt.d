@@ -1,0 +1,1 @@
+ dist/pic18f4520/production/doprnt.d  dist/pic18f4520/production/doprnt.p1:  /opt/microchip/xc8/v1.44/sources/common/doprnt.c

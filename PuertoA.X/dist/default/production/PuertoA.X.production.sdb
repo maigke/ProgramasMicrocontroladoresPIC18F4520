@@ -1,0 +1,42 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4550 ]
+[d frameptr 4065 ]
+"62 /opt/microchip/xc8/v1.44/sources/common/float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 /opt/microchip/xc8/v1.44/sources/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 /opt/microchip/xc8/v1.44/sources/common/ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 /opt/microchip/xc8/v1.44/sources/common/ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"20 /opt/microchip/xc8/v1.44/sources/common/ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"10 /opt/microchip/xc8/v1.44/sources/common/sprcadd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"11 /opt/microchip/xc8/v1.44/sources/common/sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"8 /opt/microchip/xc8/v1.44/sources/common/sprcmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"15 /opt/microchip/xc8/v1.44/sources/common/Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"11 /home/miguel/MPLABXProjects/PuertoA.X/puertoA.c
+[v _main main `(v  1 e 1 0 ]
+"2312 /opt/microchip/xc8/v1.44/include/pic18f4550.h
+[v _PORTA PORTA `VEuc  1 e 1 @3968 ]
+"2971
+[v _LATA LATA `VEuc  1 e 1 @3977 ]
+"3425
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"5585
+[v _CMCON CMCON `VEuc  1 e 1 @4020 ]
+"6579
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+"11 /home/miguel/MPLABXProjects/PuertoA.X/puertoA.c
+[v _main main `(v  1 e 1 0 ]
+{
+"24
+} 0

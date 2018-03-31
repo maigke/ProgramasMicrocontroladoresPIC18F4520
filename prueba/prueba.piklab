@@ -1,0 +1,14 @@
+<!DOCTYPE piklab>
+<piklab>
+  <general>
+    <device>16F84A</device>
+    <tool>gputils</tool>
+    <programmer>custom</programmer>
+    <opened_files>
+      <item>prueba.asm</item>
+    </opened_files>
+    <files>
+      <item>prueba.asm</item>
+    </files>
+  </general>
+</piklab>

@@ -1,0 +1,37 @@
+MPLINK 5.08, LINKER
+Linker Map File - Created Sat Feb  3 00:36:41 2018
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                 RES_VECT       code   0x000000    program   0x000002
+                   .cinit    romdata   0x000001    program   0x000004
+                MAIN_PROG       code   0x000003    program   0x000010
+.config_2007_BUILD/DEFAULT/DEBUG/PRUEBA.O       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x00000a      
+                            0x002007    0x002007      
+            12 out of 1094 program addresses used, program memory utilization is 1%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                PRINCIPAL   0x000008    program     static /home/miguel/MPLABXProjects/asm1.X/prueba.asm
+                    START   0x000003    program     static /home/miguel/MPLABXProjects/asm1.X/prueba.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    START   0x000003    program     static /home/miguel/MPLABXProjects/asm1.X/prueba.asm
+                PRINCIPAL   0x000008    program     static /home/miguel/MPLABXProjects/asm1.X/prueba.asm
+
+

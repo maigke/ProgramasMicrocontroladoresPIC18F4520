@@ -1,0 +1,2047 @@
+
+
+Microchip Technology PIC18 LITE Macro Assembler V1.44 build -154322312 
+                                                                                               Mon Feb 19 15:12:51 2018
+
+Microchip Technology Omniscient Code Generator v1.44 (Free mode) build 201709140600
+     1                           	processor	18F45K50
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	lm
+     5                           	psect	smallconst,global,reloc=2,class=SMALLCONST,delta=1,noexec
+     6                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     7                           	psect	bssCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     8                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     9                           	psect	text0,global,reloc=2,class=CODE,delta=1
+    10                           	psect	text1,global,reloc=2,class=CODE,delta=1
+    11                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    13                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    14                           	psect	text5,global,reloc=2,class=CODE,delta=1,group=1
+    15                           	psect	text6,global,reloc=2,class=CODE,delta=1
+    16                           	psect	text7,global,reloc=2,class=CODE,delta=1
+    17                           	psect	text8,global,reloc=2,class=CODE,delta=1
+    18                           	psect	text9,global,reloc=2,class=CODE,delta=1
+    19                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    20                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    21  0000                     
+    22                           ; Version 1.44
+    23                           ; Generated 14/09/2017 GMT
+    24                           ; 
+    25                           ; Copyright © 2017, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    26                           ; All rights reserved.
+    27                           ; 
+    28                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    29                           ; 
+    30                           ; Redistribution and use in source and binary forms, with or without modification, are
+    31                           ; permitted provided that the following conditions are met:
+    32                           ; 
+    33                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    34                           ;        conditions and the following disclaimer.
+    35                           ; 
+    36                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    37                           ;        of conditions and the following disclaimer in the documentation and/or other
+    38                           ;        materials provided with the distribution.
+    39                           ; 
+    40                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    41                           ;        software without specific prior written permission.
+    42                           ; 
+    43                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    44                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    45                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    46                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    47                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    48                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    49                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    50                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    51                           ; 
+    52                           ; 
+    53                           ; Code-generator required, PIC18F45K50 Definitions
+    54                           ; 
+    55                           ; SFR Addresses
+    56  0000                     
+    57                           	psect	smallconst
+    58  000800                     __psmallconst:
+    59                           	opt stack 0
+    60  000800  00                 	db	0
+    61  000801                     _KEYS:
+    62                           	opt stack 0
+    63  000801  31                 	db	49
+    64  000802  32                 	db	50
+    65  000803  33                 	db	51
+    66  000804  41                 	db	65
+    67  000805  34                 	db	52
+    68  000806  35                 	db	53
+    69  000807  36                 	db	54
+    70  000808  42                 	db	66
+    71  000809  37                 	db	55
+    72  00080A  38                 	db	56
+    73  00080B  39                 	db	57
+    74  00080C  43                 	db	67
+    75  00080D  2A                 	db	42
+    76  00080E  30                 	db	48
+    77  00080F  23                 	db	35
+    78  000810  44                 	db	68
+    79  000811                     __end_of_KEYS:
+    80                           	opt stack 0
+    81  0000                     _ANSELA	set	3931
+    82  0000                     _PORTB	set	3969
+    83  0000                     _LATCbits	set	3979
+    84  0000                     _LATDbits	set	3980
+    85  0000                     _INTCON2bits	set	4081
+    86  0000                     _TRISCbits	set	3988
+    87  0000                     _TRISDbits	set	3989
+    88  0000                     _PORTA	set	3968
+    89                           
+    90                           ; #config settings
+    91  000811  00                 	db	0	; dummy byte at the end
+    92  0000                     
+    93                           	psect	cinit
+    94  000CD0                     __pcinit:
+    95                           	opt stack 0
+    96  000CD0                     start_initialization:
+    97                           	opt stack 0
+    98  000CD0                     __initialization:
+    99                           	opt stack 0
+   100                           
+   101                           ; Clear objects allocated to COMRAM (4 bytes)
+   102  000CD0  6A2E               	clrf	(__pbssCOMRAM+3)& (0+255),c
+   103  000CD2  6A2D               	clrf	(__pbssCOMRAM+2)& (0+255),c
+   104  000CD4  6A2C               	clrf	(__pbssCOMRAM+1)& (0+255),c
+   105  000CD6  6A2B               	clrf	__pbssCOMRAM& (0+255),c
+   106  000CD8                     end_of_initialization:
+   107                           	opt stack 0
+   108  000CD8                     __end_of__initialization:
+   109                           	opt stack 0
+   110  000CD8  0E00               	movlw	low (__Lmediumconst shr (0+16))
+   111  000CDA  6EF8               	movwf	tblptru,c
+   112  000CDC  0100               	movlb	0
+   113  000CDE  EF09  F004         	goto	_main	;jump to C main() function
+   114                           tblptru	equ	0xFF8
+   115                           
+   116                           	psect	bssCOMRAM
+   117  00002B                     __pbssCOMRAM:
+   118                           	opt stack 0
+   119  00002B                     main@F5753:
+   120                           	opt stack 0
+   121  00002B                     	ds	4
+   122                           tblptru	equ	0xFF8
+   123                           
+   124                           	psect	cstackCOMRAM
+   125  000001                     __pcstackCOMRAM:
+   126                           	opt stack 0
+   127  000001                     ?___wmul:
+   128                           	opt stack 0
+   129  000001                     display@valor:
+   130                           	opt stack 0
+   131  000001                     rota@display:
+   132                           	opt stack 0
+   133  000001                     ui8_TestKeyPad@k:
+   134                           	opt stack 0
+   135  000001                     bin2dec@val:
+   136                           	opt stack 0
+   137  000001                     ___wmul@multiplier:
+   138                           	opt stack 0
+   139                           
+   140                           ; 2 bytes @ 0x0
+   141  000001                     	ds	1
+   142  000002                     kbd_getc@kchar:
+   143                           	opt stack 0
+   144                           
+   145                           ; 1 bytes @ 0x1
+   146  000002                     	ds	1
+   147  000003                     kbd_getc@temp:
+   148                           	opt stack 0
+   149  000003                     bin2dec@pu:
+   150                           	opt stack 0
+   151  000003                     ___wmul@multiplicand:
+   152                           	opt stack 0
+   153                           
+   154                           ; 2 bytes @ 0x2
+   155  000003                     	ds	2
+   156  000005                     bin2dec@pd:
+   157                           	opt stack 0
+   158  000005                     ___wmul@product:
+   159                           	opt stack 0
+   160                           
+   161                           ; 2 bytes @ 0x4
+   162  000005                     	ds	2
+   163  000007                     ?_potencia:
+   164                           	opt stack 0
+   165  000007                     bin2dec@pc:
+   166                           	opt stack 0
+   167  000007                     potencia@a:
+   168                           	opt stack 0
+   169                           
+   170                           ; 2 bytes @ 0x6
+   171  000007                     	ds	2
+   172  000009                     bin2dec@pum:
+   173                           	opt stack 0
+   174  000009                     potencia@b:
+   175                           	opt stack 0
+   176                           
+   177                           ; 2 bytes @ 0x8
+   178  000009                     	ds	2
+   179  00000B                     ??_potencia:
+   180  00000B                     bin2dec@temp:
+   181                           	opt stack 0
+   182                           
+   183                           ; 2 bytes @ 0xA
+   184  00000B                     	ds	1
+   185  00000C                     potencia@i:
+   186                           	opt stack 0
+   187                           
+   188                           ; 2 bytes @ 0xB
+   189  00000C                     	ds	2
+   190  00000E                     potencia@sol:
+   191                           	opt stack 0
+   192                           
+   193                           ; 2 bytes @ 0xD
+   194  00000E                     	ds	2
+   195  000010                     ?_leeValor:
+   196                           	opt stack 0
+   197  000010                     leeValor@d:
+   198                           	opt stack 0
+   199                           
+   200                           ; 2 bytes @ 0xF
+   201  000010                     	ds	2
+   202  000012                     ??_leeValor:
+   203                           
+   204                           ; 1 bytes @ 0x11
+   205  000012                     	ds	2
+   206  000014                     leeValor@j:
+   207                           	opt stack 0
+   208                           
+   209                           ; 2 bytes @ 0x13
+   210  000014                     	ds	2
+   211  000016                     leeValor@x:
+   212                           	opt stack 0
+   213                           
+   214                           ; 2 bytes @ 0x15
+   215  000016                     	ds	2
+   216  000018                     leeValor@k:
+   217                           	opt stack 0
+   218                           
+   219                           ; 2 bytes @ 0x17
+   220  000018                     	ds	2
+   221  00001A                     leeValor@c:
+   222                           	opt stack 0
+   223                           
+   224                           ; 1 bytes @ 0x19
+   225  00001A                     	ds	1
+   226  00001B                     ??_main:
+   227                           
+   228                           ; 1 bytes @ 0x1A
+   229  00001B                     	ds	1
+   230  00001C                     main@valorA:
+   231                           	opt stack 0
+   232                           
+   233                           ; 2 bytes @ 0x1B
+   234  00001C                     	ds	2
+   235  00001E                     main@val:
+   236                           	opt stack 0
+   237                           
+   238                           ; 4 bytes @ 0x1D
+   239  00001E                     	ds	4
+   240  000022                     main@valor:
+   241                           	opt stack 0
+   242                           
+   243                           ; 2 bytes @ 0x21
+   244  000022                     	ds	2
+   245  000024                     main@j:
+   246                           	opt stack 0
+   247                           
+   248                           ; 2 bytes @ 0x23
+   249  000024                     	ds	2
+   250  000026                     main@u:
+   251                           	opt stack 0
+   252                           
+   253                           ; 1 bytes @ 0x25
+   254  000026                     	ds	1
+   255  000027                     main@d:
+   256                           	opt stack 0
+   257                           
+   258                           ; 1 bytes @ 0x26
+   259  000027                     	ds	1
+   260  000028                     main@c:
+   261                           	opt stack 0
+   262                           
+   263                           ; 1 bytes @ 0x27
+   264  000028                     	ds	1
+   265  000029                     main@um:
+   266                           	opt stack 0
+   267                           
+   268                           ; 1 bytes @ 0x28
+   269  000029                     	ds	1
+   270  00002A                     main@i:
+   271                           	opt stack 0
+   272                           
+   273                           ; 1 bytes @ 0x29
+   274  00002A                     	ds	1
+   275                           tblptru	equ	0xFF8
+   276                           
+   277 ;;
+   278 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+   279 ;;
+   280 ;; *************** function _main *****************
+   281 ;; Defined at:
+   282 ;;		line 77 in file "Teclado_4.c"
+   283 ;; Parameters:    Size  Location     Type
+   284 ;;		None
+   285 ;; Auto vars:     Size  Location     Type
+   286 ;;  i               1   41[COMRAM] unsigned char 
+   287 ;;  j               2   35[COMRAM] int 
+   288 ;;  val             4   29[COMRAM] unsigned char [4]
+   289 ;;  valor           2   33[COMRAM] int 
+   290 ;;  valorA          2   27[COMRAM] int 
+   291 ;;  um              1   40[COMRAM] unsigned char 
+   292 ;;  c               1   39[COMRAM] unsigned char 
+   293 ;;  d               1   38[COMRAM] unsigned char 
+   294 ;;  u               1   37[COMRAM] unsigned char 
+   295 ;; Return value:  Size  Location     Type
+   296 ;;                  1    wreg      void 
+   297 ;; Registers used:
+   298 ;;		wreg, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
+   299 ;; Tracked objects:
+   300 ;;		On entry : 0/0
+   301 ;;		On exit  : 0/0
+   302 ;;		Unchanged: 0/0
+   303 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   304 ;;      Params:         0       0       0       0       0       0       0       0       0
+   305 ;;      Locals:        15       0       0       0       0       0       0       0       0
+   306 ;;      Temps:          1       0       0       0       0       0       0       0       0
+   307 ;;      Totals:        16       0       0       0       0       0       0       0       0
+   308 ;;Total ram usage:       16 bytes
+   309 ;; Hardware stack levels required when called:    3
+   310 ;; This function calls:
+   311 ;;		_bin2dec
+   312 ;;		_display
+   313 ;;		_leeValor
+   314 ;;		_rota
+   315 ;;		_vInitKeyPad
+   316 ;; This function is called by:
+   317 ;;		Startup code after reset
+   318 ;; This function uses a non-reentrant model
+   319 ;;
+   320                           
+   321                           	psect	text0
+   322  000812                     __ptext0:
+   323                           	opt stack 0
+   324  000812                     _main:
+   325                           	opt stack 28
+   326                           
+   327                           ;Teclado_4.c: 79: unsigned char u = 0, d = 0, c = 0, um = 0;
+   328                           
+   329                           ;incstack = 0
+   330  000812  0E00               	movlw	0
+   331  000814  6E26               	movwf	main@u,c
+   332  000816  0E00               	movlw	0
+   333  000818  6E27               	movwf	main@d,c
+   334  00081A  0E00               	movlw	0
+   335  00081C  6E28               	movwf	main@c,c
+   336  00081E  0E00               	movlw	0
+   337  000820  6E29               	movwf	main@um,c
+   338                           
+   339                           ;Teclado_4.c: 80: unsigned char val[] = {0, 0, 0, 0};
+   340  000822  C02B  F01E         	movff	main@F5753,main@val
+   341  000826  C02C  F01F         	movff	main@F5753+1,main@val+1
+   342  00082A  C02D  F020         	movff	main@F5753+2,main@val+2
+   343  00082E  C02E  F021         	movff	main@F5753+3,main@val+3
+   344                           
+   345                           ;Teclado_4.c: 83: int valor, valorA = 0;
+   346  000832  0E00               	movlw	0
+   347  000834  6E1D               	movwf	main@valorA+1,c
+   348  000836  0E00               	movlw	0
+   349  000838  6E1C               	movwf	main@valorA,c
+   350                           
+   351                           ;Teclado_4.c: 84: ANSELA = 0x00;
+   352  00083A  0E00               	movlw	0
+   353  00083C  010F               	movlb	15	; () banked
+   354  00083E  6F5B               	movwf	91,b	;volatile
+   355                           
+   356                           ; BSR set to: 15
+   357                           ;Teclado_4.c: 87: (*(&(*(&PORTA + 0x12))) &=~ (1<<(2)));
+   358  000840  9492               	bcf	3986,2,c	;volatile
+   359                           
+   360                           ; BSR set to: 15
+   361                           ;Teclado_4.c: 88: (*(&(*(&PORTA + 0x12))) &=~ (1<<(3)));
+   362  000842  9692               	bcf	3986,3,c	;volatile
+   363                           
+   364                           ; BSR set to: 15
+   365                           ;Teclado_4.c: 89: (*(&(*(&PORTA + 0x12))) &=~ (1<<(4)));
+   366  000844  9892               	bcf	3986,4,c	;volatile
+   367                           
+   368                           ; BSR set to: 15
+   369                           ;Teclado_4.c: 90: (*(&(*(&PORTA + 0x12))) &=~ (1<<(5)));
+   370  000846  9A92               	bcf	3986,5,c	;volatile
+   371                           
+   372                           ; BSR set to: 15
+   373                           ;Teclado_4.c: 92: TRISDbits.TRISD1 = 0;
+   374  000848  9295               	bcf	3989,1,c	;volatile
+   375                           
+   376                           ; BSR set to: 15
+   377                           ;Teclado_4.c: 93: TRISCbits.TRISC1 = 0;
+   378  00084A  9294               	bcf	3988,1,c	;volatile
+   379                           
+   380                           ; BSR set to: 15
+   381                           ;Teclado_4.c: 94: TRISCbits.TRISC2 = 0;
+   382  00084C  9494               	bcf	3988,2,c	;volatile
+   383                           
+   384                           ; BSR set to: 15
+   385                           ;Teclado_4.c: 95: TRISDbits.TRISD0 = 0;
+   386  00084E  9095               	bcf	3989,0,c	;volatile
+   387                           
+   388                           ; BSR set to: 15
+   389                           ;Teclado_4.c: 96: TRISDbits.TRISD2 = 0;
+   390  000850  9495               	bcf	3989,2,c	;volatile
+   391                           
+   392                           ; BSR set to: 15
+   393                           ;Teclado_4.c: 97: TRISDbits.TRISD3 = 0;
+   394  000852  9695               	bcf	3989,3,c	;volatile
+   395                           
+   396                           ; BSR set to: 15
+   397                           ;Teclado_4.c: 98: TRISCbits.TRISC6 = 0;
+   398  000854  9C94               	bcf	3988,6,c	;volatile
+   399                           
+   400                           ; BSR set to: 15
+   401                           ;Teclado_4.c: 99: TRISCbits.TRISC7 = 0;
+   402  000856  9E94               	bcf	3988,7,c	;volatile
+   403                           
+   404                           ; BSR set to: 15
+   405                           ;Teclado_4.c: 100: vInitKeyPad();
+   406  000858  EC71  F006         	call	_vInitKeyPad	;wreg free
+   407                           
+   408                           ;Teclado_4.c: 101: INTCON2bits.RBPU = 0;
+   409  00085C  9EF1               	bcf	intcon2,7,c	;volatile
+   410  00085E                     
+   411                           ;Teclado_4.c: 104: valor=0;
+   412  00085E  0E00               	movlw	0
+   413  000860  6E23               	movwf	main@valor+1,c
+   414  000862  0E00               	movlw	0
+   415  000864  6E22               	movwf	main@valor,c
+   416                           
+   417                           ;Teclado_4.c: 105: u= 0;
+   418  000866  0E00               	movlw	0
+   419  000868  6E26               	movwf	main@u,c
+   420                           
+   421                           ;Teclado_4.c: 106: d=0;
+   422  00086A  0E00               	movlw	0
+   423  00086C  6E27               	movwf	main@d,c
+   424                           
+   425                           ;Teclado_4.c: 107: c=0;
+   426  00086E  0E00               	movlw	0
+   427  000870  6E28               	movwf	main@c,c
+   428                           
+   429                           ;Teclado_4.c: 108: um=0;
+   430  000872  0E00               	movlw	0
+   431  000874  6E29               	movwf	main@um,c
+   432                           
+   433                           ;Teclado_4.c: 109: valor = leeValor(4);
+   434  000876  0E00               	movlw	0
+   435  000878  6E11               	movwf	leeValor@d+1,c
+   436  00087A  0E04               	movlw	4
+   437  00087C  6E10               	movwf	leeValor@d,c
+   438  00087E  EC9B  F004         	call	_leeValor	;wreg free
+   439  000882  C010  F022         	movff	?_leeValor,main@valor
+   440  000886  C011  F023         	movff	?_leeValor+1,main@valor+1
+   441                           
+   442                           ;Teclado_4.c: 111: bin2dec(valor, &u, &d, &c, &um);
+   443  00088A  C022  F001         	movff	main@valor,bin2dec@val
+   444  00088E  C023  F002         	movff	main@valor+1,bin2dec@val+1
+   445  000892  0E26               	movlw	low main@u
+   446  000894  6E03               	movwf	bin2dec@pu,c
+   447  000896  0E00               	movlw	high main@u
+   448  000898  6E04               	movwf	bin2dec@pu+1,c
+   449  00089A  0E27               	movlw	low main@d
+   450  00089C  6E05               	movwf	bin2dec@pd,c
+   451  00089E  0E00               	movlw	high main@d
+   452  0008A0  6E06               	movwf	bin2dec@pd+1,c
+   453  0008A2  0E28               	movlw	low main@c
+   454  0008A4  6E07               	movwf	bin2dec@pc,c
+   455  0008A6  0E00               	movlw	high main@c
+   456  0008A8  6E08               	movwf	bin2dec@pc+1,c
+   457  0008AA  0E29               	movlw	low main@um
+   458  0008AC  6E09               	movwf	bin2dec@pum,c
+   459  0008AE  0E00               	movlw	high main@um
+   460  0008B0  6E0A               	movwf	bin2dec@pum+1,c
+   461  0008B2  EC4E  F005         	call	_bin2dec	;wreg free
+   462                           
+   463                           ;Teclado_4.c: 113: val[0] = um;
+   464  0008B6  C029  F01E         	movff	main@um,main@val
+   465                           
+   466                           ;Teclado_4.c: 114: val[1] = c;
+   467  0008BA  C028  F01F         	movff	main@c,main@val+1
+   468                           
+   469                           ;Teclado_4.c: 115: val[2] = d;
+   470  0008BE  C027  F020         	movff	main@d,main@val+2
+   471                           
+   472                           ;Teclado_4.c: 116: val[3] = u;
+   473  0008C2  C026  F021         	movff	main@u,main@val+3
+   474                           
+   475                           ;Teclado_4.c: 117: for(int j = 0; j<100;j++){
+   476  0008C6  0E00               	movlw	0
+   477  0008C8  6E25               	movwf	main@j+1,c
+   478  0008CA  0E00               	movlw	0
+   479  0008CC  6E24               	movwf	main@j,c
+   480  0008CE  BE25               	btfsc	main@j+1,7,c
+   481  0008D0  D003               	goto	l38
+   482  0008D2  5025               	movf	main@j+1,w,c
+   483  0008D4  E12B               	bnz	l39
+   484  0008D6  D026               	goto	L1
+   485  0008D8                     l38:
+   486                           
+   487                           ;Teclado_4.c: 118: for (unsigned char i = 0; i < 4; i++) {
+   488  0008D8  0E00               	movlw	0
+   489  0008DA  6E2A               	movwf	main@i,c
+   490  0008DC                     l1325:
+   491  0008DC  0E03               	movlw	3
+   492  0008DE  642A               	cpfsgt	main@i,c
+   493  0008E0  D001               	goto	l40
+   494  0008E2  D01A               	goto	u730
+   495  0008E4                     l40:
+   496                           
+   497                           ;Teclado_4.c: 119: _delay((unsigned long)((25)*(4000000/4000.0)));
+   498  0008E4  0E21               	movlw	33
+   499  0008E6  6E1B               	movwf	??_main& (0+255),c
+   500  0008E8  0E76               	movlw	118
+   501  0008EA                     u757:
+   502  0008EA  2EE8               	decfsz	wreg,f,c
+   503  0008EC  D7FE               	bra	u757
+   504  0008EE  2E1B               	decfsz	??_main& (0+255),f,c
+   505  0008F0  D7FC               	bra	u757
+   506  0008F2  D000               	nop2	
+   507                           
+   508                           ;Teclado_4.c: 120: display(val[i]);
+   509  0008F4  502A               	movf	main@i,w,c
+   510  0008F6  0D01               	mullw	1
+   511  0008F8  0E1E               	movlw	low main@val
+   512  0008FA  24F3               	addwf	prodl,w,c
+   513  0008FC  6ED9               	movwf	fsr2l,c
+   514  0008FE  0E00               	movlw	high main@val
+   515  000900  20F4               	addwfc	prodh,w,c
+   516  000902  6EDA               	movwf	fsr2h,c
+   517  000904  50DF               	movf	indf2,w,c
+   518  000906  ECDF  F005         	call	_display
+   519                           
+   520                           ;Teclado_4.c: 121: rota(3 - i);
+   521  00090A  502A               	movf	main@i,w,c
+   522  00090C  0800               	sublw	0
+   523  00090E  0F03               	addlw	3
+   524  000910  EC31  F006         	call	_rota
+   525  000914  2A2A               	incf	main@i,f,c
+   526  000916  D7E2               	goto	l1325
+   527  000918                     u730:
+   528  000918  4A24               	infsnz	main@j,f,c
+   529  00091A  2A25               	incf	main@j+1,f,c
+   530  00091C  BE25               	btfsc	main@j+1,7,c
+   531  00091E  D7DC               	goto	l38
+   532  000920  5025               	movf	main@j+1,w,c
+   533  000922  E104               	bnz	u740
+   534  000924                     L1:
+   535  000924  0E64               	movlw	100
+   536  000926  5C24               	subwf	main@j,w,c
+   537  000928  A0D8               	btfss	status,0,c
+   538  00092A  D7D6               	goto	l38
+   539  00092C                     u740:
+   540  00092C                     l39:
+   541                           
+   542                           ;Teclado_4.c: 122: }
+   543                           ;Teclado_4.c: 123: }
+   544                           ;Teclado_4.c: 124: valorA = valor;
+   545  00092C  C022  F01C         	movff	main@valor,main@valorA
+   546  000930  C023  F01D         	movff	main@valor+1,main@valorA+1
+   547  000934  D794               	goto	l37
+   548  000936                     __end_of_main:
+   549                           	opt stack 0
+   550                           tblptru	equ	0xFF8
+   551                           prodh	equ	0xFF4
+   552                           prodl	equ	0xFF3
+   553                           intcon2	equ	0xFF1
+   554                           wreg	equ	0xFE8
+   555                           indf2	equ	0xFDF
+   556                           fsr2h	equ	0xFDA
+   557                           fsr2l	equ	0xFD9
+   558                           status	equ	0xFD8
+   559                           
+   560 ;; *************** function _vInitKeyPad *****************
+   561 ;; Defined at:
+   562 ;;		line 35 in file "../MyLibs/keyb.c"
+   563 ;; Parameters:    Size  Location     Type
+   564 ;;		None
+   565 ;; Auto vars:     Size  Location     Type
+   566 ;;		None
+   567 ;; Return value:  Size  Location     Type
+   568 ;;                  1    wreg      void 
+   569 ;; Registers used:
+   570 ;;		status,2, status,0
+   571 ;; Tracked objects:
+   572 ;;		On entry : 0/0
+   573 ;;		On exit  : 0/0
+   574 ;;		Unchanged: 0/0
+   575 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   576 ;;      Params:         0       0       0       0       0       0       0       0       0
+   577 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   578 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   579 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   580 ;;Total ram usage:        0 bytes
+   581 ;; Hardware stack levels used:    1
+   582 ;; This function calls:
+   583 ;;		Nothing
+   584 ;; This function is called by:
+   585 ;;		_main
+   586 ;; This function uses a non-reentrant model
+   587 ;;
+   588                           
+   589                           	psect	text1
+   590  000CE2                     __ptext1:
+   591                           	opt stack 0
+   592  000CE2                     _vInitKeyPad:
+   593                           	opt stack 30
+   594                           
+   595                           ;keyb.c: 38: (*(&(*(&PORTB + 0x12))) |= (1<<(4)));
+   596                           
+   597                           ;incstack = 0
+   598  000CE2  8893               	bsf	3987,4,c	;volatile
+   599                           
+   600                           ;keyb.c: 39: (*(&(*(&PORTB + 0x12))) |= (1<<(5)));
+   601  000CE4  8A93               	bsf	3987,5,c	;volatile
+   602                           
+   603                           ;keyb.c: 40: (*(&(*(&PORTB + 0x12))) |= (1<<(6)));
+   604  000CE6  8C93               	bsf	3987,6,c	;volatile
+   605                           
+   606                           ;keyb.c: 41: (*(&(*(&PORTB + 0x12))) |= (1<<(7)));
+   607  000CE8  8E93               	bsf	3987,7,c	;volatile
+   608                           
+   609                           ;keyb.c: 43: (*(&(*(&PORTB + 0x12))) &=~ (1<<(0)));
+   610  000CEA  9093               	bcf	3987,0,c	;volatile
+   611                           
+   612                           ;keyb.c: 44: (*(&(*(&PORTB + 0x12))) &=~ (1<<(1)));
+   613  000CEC  9293               	bcf	3987,1,c	;volatile
+   614                           
+   615                           ;keyb.c: 45: (*(&(*(&PORTB + 0x12))) &=~ (1<<(2)));
+   616  000CEE  9493               	bcf	3987,2,c	;volatile
+   617                           
+   618                           ;keyb.c: 46: (*(&(*(&PORTB + 0x12))) &=~ (1<<(3)));
+   619  000CF0  9693               	bcf	3987,3,c	;volatile
+   620  000CF2  0012               	return		;funcret
+   621  000CF4                     __end_of_vInitKeyPad:
+   622                           	opt stack 0
+   623                           tblptru	equ	0xFF8
+   624                           prodh	equ	0xFF4
+   625                           prodl	equ	0xFF3
+   626                           intcon2	equ	0xFF1
+   627                           wreg	equ	0xFE8
+   628                           indf2	equ	0xFDF
+   629                           fsr2h	equ	0xFDA
+   630                           fsr2l	equ	0xFD9
+   631                           status	equ	0xFD8
+   632                           
+   633 ;; *************** function _rota *****************
+   634 ;; Defined at:
+   635 ;;		line 212 in file "Teclado_4.c"
+   636 ;; Parameters:    Size  Location     Type
+   637 ;;  display         1    wreg     unsigned char 
+   638 ;; Auto vars:     Size  Location     Type
+   639 ;;  display         1    0[COMRAM] unsigned char 
+   640 ;; Return value:  Size  Location     Type
+   641 ;;                  1    wreg      void 
+   642 ;; Registers used:
+   643 ;;		wreg, status,2, status,0
+   644 ;; Tracked objects:
+   645 ;;		On entry : 0/0
+   646 ;;		On exit  : 0/0
+   647 ;;		Unchanged: 0/0
+   648 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   649 ;;      Params:         0       0       0       0       0       0       0       0       0
+   650 ;;      Locals:         1       0       0       0       0       0       0       0       0
+   651 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   652 ;;      Totals:         1       0       0       0       0       0       0       0       0
+   653 ;;Total ram usage:        1 bytes
+   654 ;; Hardware stack levels used:    1
+   655 ;; This function calls:
+   656 ;;		Nothing
+   657 ;; This function is called by:
+   658 ;;		_main
+   659 ;; This function uses a non-reentrant model
+   660 ;;
+   661                           
+   662                           	psect	text2
+   663  000C62                     __ptext2:
+   664                           	opt stack 0
+   665  000C62                     _rota:
+   666                           	opt stack 30
+   667                           
+   668                           ;incstack = 0
+   669                           ;rota@display stored from wreg
+   670  000C62  6E01               	movwf	rota@display,c
+   671                           
+   672                           ;Teclado_4.c: 214: switch (display) {
+   673  000C64  D014               	goto	l90
+   674  000C66                     
+   675                           ;Teclado_4.c: 216: (*(&(*(&PORTA + 0x09))) |= (1<<(2)));
+   676  000C66  8489               	bsf	3977,2,c	;volatile
+   677                           
+   678                           ;Teclado_4.c: 217: (*(&(*(&PORTA + 0x09))) &=~ (1<<(3)));
+   679  000C68  9689               	bcf	3977,3,c	;volatile
+   680                           
+   681                           ;Teclado_4.c: 218: (*(&(*(&PORTA + 0x09))) &=~ (1<<(4)));
+   682  000C6A  9889               	bcf	3977,4,c	;volatile
+   683                           
+   684                           ;Teclado_4.c: 219: (*(&(*(&PORTA + 0x09))) &=~ (1<<(5)));
+   685  000C6C  9A89               	bcf	3977,5,c	;volatile
+   686                           
+   687                           ;Teclado_4.c: 220: break;
+   688  000C6E  0012               	return	
+   689  000C70                     
+   690                           ;Teclado_4.c: 222: (*(&(*(&PORTA + 0x09))) &=~ (1<<(2)));
+   691  000C70  9489               	bcf	3977,2,c	;volatile
+   692                           
+   693                           ;Teclado_4.c: 223: (*(&(*(&PORTA + 0x09))) |= (1<<(3)));
+   694  000C72  8689               	bsf	3977,3,c	;volatile
+   695                           
+   696                           ;Teclado_4.c: 224: (*(&(*(&PORTA + 0x09))) &=~ (1<<(4)));
+   697  000C74  9889               	bcf	3977,4,c	;volatile
+   698                           
+   699                           ;Teclado_4.c: 225: (*(&(*(&PORTA + 0x09))) &=~ (1<<(5)));
+   700  000C76  9A89               	bcf	3977,5,c	;volatile
+   701                           
+   702                           ;Teclado_4.c: 226: break;
+   703  000C78  0012               	return	
+   704  000C7A                     
+   705                           ;Teclado_4.c: 228: (*(&(*(&PORTA + 0x09))) &=~ (1<<(2)));
+   706  000C7A  9489               	bcf	3977,2,c	;volatile
+   707                           
+   708                           ;Teclado_4.c: 229: (*(&(*(&PORTA + 0x09))) &=~ (1<<(3)));
+   709  000C7C  9689               	bcf	3977,3,c	;volatile
+   710                           
+   711                           ;Teclado_4.c: 230: (*(&(*(&PORTA + 0x09))) |= (1<<(4)));
+   712  000C7E  8889               	bsf	3977,4,c	;volatile
+   713                           
+   714                           ;Teclado_4.c: 231: (*(&(*(&PORTA + 0x09))) &=~ (1<<(5)));
+   715  000C80  9A89               	bcf	3977,5,c	;volatile
+   716                           
+   717                           ;Teclado_4.c: 232: break;
+   718  000C82  0012               	return	
+   719  000C84                     
+   720                           ;Teclado_4.c: 234: (*(&(*(&PORTA + 0x09))) &=~ (1<<(2)));
+   721  000C84  9489               	bcf	3977,2,c	;volatile
+   722                           
+   723                           ;Teclado_4.c: 235: (*(&(*(&PORTA + 0x09))) &=~ (1<<(3)));
+   724  000C86  9689               	bcf	3977,3,c	;volatile
+   725                           
+   726                           ;Teclado_4.c: 236: (*(&(*(&PORTA + 0x09))) &=~ (1<<(4)));
+   727  000C88  9889               	bcf	3977,4,c	;volatile
+   728                           
+   729                           ;Teclado_4.c: 237: (*(&(*(&PORTA + 0x09))) |= (1<<(5)));
+   730  000C8A  8A89               	bsf	3977,5,c	;volatile
+   731                           
+   732                           ;Teclado_4.c: 239: }
+   733                           
+   734                           ;Teclado_4.c: 238: break;
+   735  000C8C  0012               	return	
+   736  000C8E                     l90:
+   737  000C8E  5001               	movf	rota@display,w,c
+   738                           
+   739                           ; Switch size 1, requested type "space"
+   740                           ; Number of cases is 4, Range of values is 0 to 3
+   741                           ; switch strategies available:
+   742                           ; Name         Instructions Cycles
+   743                           ; simple_byte           13     7 (average)
+   744                           ;	Chosen strategy is simple_byte
+   745  000C90  0A00               	xorlw	0	; case 0
+   746  000C92  B4D8               	btfsc	status,2,c
+   747  000C94  D7E8               	goto	l91
+   748  000C96  0A01               	xorlw	1	; case 1
+   749  000C98  B4D8               	btfsc	status,2,c
+   750  000C9A  D7EA               	goto	l93
+   751  000C9C  0A03               	xorlw	3	; case 2
+   752  000C9E  B4D8               	btfsc	status,2,c
+   753  000CA0  D7EC               	goto	l94
+   754  000CA2  0A01               	xorlw	1	; case 3
+   755  000CA4  A4D8               	btfss	status,2,c
+   756  000CA6  0012               	return	
+   757  000CA8  D7ED               	goto	l95
+   758  000CAA                     __end_of_rota:
+   759                           	opt stack 0
+   760                           tblptru	equ	0xFF8
+   761                           prodh	equ	0xFF4
+   762                           prodl	equ	0xFF3
+   763                           intcon2	equ	0xFF1
+   764                           wreg	equ	0xFE8
+   765                           indf2	equ	0xFDF
+   766                           fsr2h	equ	0xFDA
+   767                           fsr2l	equ	0xFD9
+   768                           status	equ	0xFD8
+   769                           
+   770 ;; *************** function _leeValor *****************
+   771 ;; Defined at:
+   772 ;;		line 129 in file "Teclado_4.c"
+   773 ;; Parameters:    Size  Location     Type
+   774 ;;  d               2   15[COMRAM] int 
+   775 ;; Auto vars:     Size  Location     Type
+   776 ;;  k               2   23[COMRAM] int 
+   777 ;;  x               2   21[COMRAM] int 
+   778 ;;  j               2   19[COMRAM] int 
+   779 ;;  i               2    0        int 
+   780 ;;  c               1   25[COMRAM] unsigned char 
+   781 ;; Return value:  Size  Location     Type
+   782 ;;                  2   15[COMRAM] int 
+   783 ;; Registers used:
+   784 ;;		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
+   785 ;; Tracked objects:
+   786 ;;		On entry : 0/0
+   787 ;;		On exit  : 0/0
+   788 ;;		Unchanged: 0/0
+   789 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   790 ;;      Params:         2       0       0       0       0       0       0       0       0
+   791 ;;      Locals:         7       0       0       0       0       0       0       0       0
+   792 ;;      Temps:          2       0       0       0       0       0       0       0       0
+   793 ;;      Totals:        11       0       0       0       0       0       0       0       0
+   794 ;;Total ram usage:       11 bytes
+   795 ;; Hardware stack levels used:    1
+   796 ;; Hardware stack levels required when called:    2
+   797 ;; This function calls:
+   798 ;;		___wmul
+   799 ;;		_kbd_getc
+   800 ;;		_potencia
+   801 ;; This function is called by:
+   802 ;;		_main
+   803 ;; This function uses a non-reentrant model
+   804 ;;
+   805                           
+   806                           	psect	text3
+   807  000936                     __ptext3:
+   808                           	opt stack 0
+   809  000936                     _leeValor:
+   810                           	opt stack 28
+   811                           
+   812                           ;Teclado_4.c: 130: int i, j;
+   813                           ;Teclado_4.c: 131: int x = 0;
+   814                           
+   815                           ;incstack = 0
+   816  000936  0E00               	movlw	0
+   817  000938  6E17               	movwf	leeValor@x+1,c
+   818  00093A  0E00               	movlw	0
+   819  00093C  6E16               	movwf	leeValor@x,c
+   820                           
+   821                           ;Teclado_4.c: 132: int k;
+   822                           ;Teclado_4.c: 133: unsigned char c;
+   823                           ;Teclado_4.c: 141: for (j = 0, k = potencia(10, d - 1); k >= 1; j++, k = potencia(10, d 
+      +                          - 1 - j)) {
+   824  00093E  0E00               	movlw	0
+   825  000940  6E15               	movwf	leeValor@j+1,c
+   826  000942  0E00               	movlw	0
+   827  000944  6E14               	movwf	leeValor@j,c
+   828  000946  0E00               	movlw	0
+   829  000948  6E08               	movwf	potencia@a+1,c
+   830  00094A  0E0A               	movlw	10
+   831  00094C  6E07               	movwf	potencia@a,c
+   832  00094E  0EFF               	movlw	255
+   833  000950  2410               	addwf	leeValor@d,w,c
+   834  000952  6E09               	movwf	potencia@b,c
+   835  000954  0EFF               	movlw	255
+   836  000956  2011               	addwfc	leeValor@d+1,w,c
+   837  000958  6E0A               	movwf	potencia@b+1,c
+   838  00095A  EC09  F006         	call	_potencia	;wreg free
+   839  00095E  D03C               	goto	L2
+   840  000960                     l1171:
+   841                           
+   842                           ;Teclado_4.c: 143: c = kbd_getc();
+   843  000960  EC99  F005         	call	_kbd_getc	;wreg free
+   844  000964  6E1A               	movwf	leeValor@c,c
+   845                           
+   846                           ;Teclado_4.c: 144: } while (c == '\0');
+   847  000966  501A               	movf	leeValor@c,w,c
+   848  000968  B4D8               	btfsc	status,2,c
+   849  00096A  D7FA               	goto	l47
+   850                           
+   851                           ;Teclado_4.c: 146: if(c!='*' && c!='#')
+   852  00096C  0E2A               	movlw	42
+   853  00096E  181A               	xorwf	leeValor@c,w,c
+   854  000970  B4D8               	btfsc	status,2,c
+   855  000972  D016               	goto	l51
+   856  000974  0E23               	movlw	35
+   857  000976  181A               	xorwf	leeValor@c,w,c
+   858  000978  B4D8               	btfsc	status,2,c
+   859  00097A  D012               	goto	l51
+   860                           
+   861                           ;Teclado_4.c: 147: {
+   862                           ;Teclado_4.c: 148: x = (c - '0' )*k + x;
+   863  00097C  0ED0               	movlw	208
+   864  00097E  241A               	addwf	leeValor@c,w,c
+   865  000980  6E01               	movwf	___wmul@multiplier,c
+   866  000982  6A02               	clrf	___wmul@multiplier+1,c
+   867  000984  0EFF               	movlw	255
+   868  000986  2202               	addwfc	___wmul@multiplier+1,f,c
+   869  000988  C018  F003         	movff	leeValor@k,___wmul@multiplicand
+   870  00098C  C019  F004         	movff	leeValor@k+1,___wmul@multiplicand+1
+   871  000990  EC55  F006         	call	___wmul	;wreg free
+   872  000994  5016               	movf	leeValor@x,w,c
+   873  000996  2401               	addwf	?___wmul,w,c
+   874  000998  6E16               	movwf	leeValor@x,c
+   875  00099A  5017               	movf	leeValor@x+1,w,c
+   876  00099C  2002               	addwfc	?___wmul+1,w,c
+   877  00099E  6E17               	movwf	leeValor@x+1,c
+   878  0009A0                     l51:
+   879                           
+   880                           ;Teclado_4.c: 149: }
+   881                           ;Teclado_4.c: 154: if (k == 1)
+   882  0009A0  0418               	decf	leeValor@k,w,c
+   883  0009A2  1019               	iorwf	leeValor@k+1,w,c
+   884  0009A4  B4D8               	btfsc	status,2,c
+   885  0009A6  D023               	goto	u580
+   886                           
+   887                           ;Teclado_4.c: 155: break;
+   888  0009A8  4A14               	infsnz	leeValor@j,f,c
+   889  0009AA  2A15               	incf	leeValor@j+1,f,c
+   890  0009AC  0E00               	movlw	0
+   891  0009AE  6E08               	movwf	potencia@a+1,c
+   892  0009B0  0E0A               	movlw	10
+   893  0009B2  6E07               	movwf	potencia@a,c
+   894  0009B4  0E01               	movlw	1
+   895  0009B6  2414               	addwf	leeValor@j,w,c
+   896  0009B8  6E12               	movwf	??_leeValor& (0+255),c
+   897  0009BA  0E00               	movlw	0
+   898  0009BC  2015               	addwfc	leeValor@j+1,w,c
+   899  0009BE  6E13               	movwf	(??_leeValor+1)& (0+255),c
+   900  0009C0  1E12               	comf	??_leeValor,f,c
+   901  0009C2  1E13               	comf	??_leeValor+1,f,c
+   902  0009C4  4A12               	infsnz	??_leeValor,f,c
+   903  0009C6  2A13               	incf	??_leeValor+1,f,c
+   904  0009C8  5010               	movf	leeValor@d,w,c
+   905  0009CA  2412               	addwf	??_leeValor,w,c
+   906  0009CC  6E09               	movwf	potencia@b,c
+   907  0009CE  5011               	movf	leeValor@d+1,w,c
+   908  0009D0  2013               	addwfc	??_leeValor+1,w,c
+   909  0009D2  6E0A               	movwf	potencia@b+1,c
+   910  0009D4  EC09  F006         	call	_potencia	;wreg free
+   911  0009D8                     L2:
+   912  0009D8  C007  F018         	movff	?_potencia,leeValor@k
+   913  0009DC  C008  F019         	movff	?_potencia+1,leeValor@k+1
+   914  0009E0  BE19               	btfsc	leeValor@k+1,7,c
+   915  0009E2  D005               	goto	u580
+   916  0009E4  5019               	movf	leeValor@k+1,w,c
+   917  0009E6  E1BC               	bnz	l1171
+   918  0009E8  0418               	decf	leeValor@k,w,c
+   919  0009EA  B0D8               	btfsc	status,0,c
+   920  0009EC  D7B9               	goto	l47
+   921  0009EE                     u580:
+   922                           
+   923                           ;Teclado_4.c: 156: }
+   924                           ;Teclado_4.c: 157: return x;
+   925  0009EE  C016  F010         	movff	leeValor@x,?_leeValor
+   926  0009F2  C017  F011         	movff	leeValor@x+1,?_leeValor+1
+   927  0009F6  0012               	return		;funcret
+   928  0009F8                     __end_of_leeValor:
+   929                           	opt stack 0
+   930                           tblptru	equ	0xFF8
+   931                           prodh	equ	0xFF4
+   932                           prodl	equ	0xFF3
+   933                           intcon2	equ	0xFF1
+   934                           wreg	equ	0xFE8
+   935                           indf2	equ	0xFDF
+   936                           fsr2h	equ	0xFDA
+   937                           fsr2l	equ	0xFD9
+   938                           status	equ	0xFD8
+   939                           
+   940 ;; *************** function _potencia *****************
+   941 ;; Defined at:
+   942 ;;		line 243 in file "Teclado_4.c"
+   943 ;; Parameters:    Size  Location     Type
+   944 ;;  a               2    6[COMRAM] int 
+   945 ;;  b               2    8[COMRAM] int 
+   946 ;; Auto vars:     Size  Location     Type
+   947 ;;  sol             2   13[COMRAM] int 
+   948 ;;  i               2   11[COMRAM] int 
+   949 ;; Return value:  Size  Location     Type
+   950 ;;                  2    6[COMRAM] int 
+   951 ;; Registers used:
+   952 ;;		wreg, status,2, status,0, prodl, prodh, cstack
+   953 ;; Tracked objects:
+   954 ;;		On entry : 0/0
+   955 ;;		On exit  : 0/0
+   956 ;;		Unchanged: 0/0
+   957 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   958 ;;      Params:         4       0       0       0       0       0       0       0       0
+   959 ;;      Locals:         4       0       0       0       0       0       0       0       0
+   960 ;;      Temps:          1       0       0       0       0       0       0       0       0
+   961 ;;      Totals:         9       0       0       0       0       0       0       0       0
+   962 ;;Total ram usage:        9 bytes
+   963 ;; Hardware stack levels used:    1
+   964 ;; Hardware stack levels required when called:    1
+   965 ;; This function calls:
+   966 ;;		___wmul
+   967 ;; This function is called by:
+   968 ;;		_leeValor
+   969 ;; This function uses a non-reentrant model
+   970 ;;
+   971                           
+   972                           	psect	text4
+   973  000C12                     __ptext4:
+   974                           	opt stack 0
+   975  000C12                     _potencia:
+   976                           	opt stack 28
+   977                           
+   978                           ;Teclado_4.c: 244: int sol = 1, i;
+   979                           
+   980                           ;incstack = 0
+   981  000C12  0E00               	movlw	0
+   982  000C14  6E0F               	movwf	potencia@sol+1,c
+   983  000C16  0E01               	movlw	1
+   984  000C18  6E0E               	movwf	potencia@sol,c
+   985                           
+   986                           ;Teclado_4.c: 245: for (i = 0; i < b; i++)
+   987  000C1A  0E00               	movlw	0
+   988  000C1C  6E0D               	movwf	potencia@i+1,c
+   989  000C1E  0E00               	movlw	0
+   990  000C20  6E0C               	movwf	potencia@i,c
+   991  000C22  D010               	goto	l99
+   992  000C24                     
+   993                           ;Teclado_4.c: 246: sol = sol * a;
+   994  000C24  C00E  F001         	movff	potencia@sol,___wmul@multiplier
+   995  000C28  C00F  F002         	movff	potencia@sol+1,___wmul@multiplier+1
+   996  000C2C  C007  F003         	movff	potencia@a,___wmul@multiplicand
+   997  000C30  C008  F004         	movff	potencia@a+1,___wmul@multiplicand+1
+   998  000C34  EC55  F006         	call	___wmul	;wreg free
+   999  000C38  C001  F00E         	movff	?___wmul,potencia@sol
+  1000  000C3C  C002  F00F         	movff	?___wmul+1,potencia@sol+1
+  1001  000C40  4A0C               	infsnz	potencia@i,f,c
+  1002  000C42  2A0D               	incf	potencia@i+1,f,c
+  1003  000C44                     l99:
+  1004  000C44  5009               	movf	potencia@b,w,c
+  1005  000C46  5C0C               	subwf	potencia@i,w,c
+  1006  000C48  500D               	movf	potencia@i+1,w,c
+  1007  000C4A  0A80               	xorlw	128
+  1008  000C4C  6E0B               	movwf	??_potencia& (0+255),c
+  1009  000C4E  500A               	movf	potencia@b+1,w,c
+  1010  000C50  0A80               	xorlw	128
+  1011  000C52  580B               	subwfb	??_potencia& (0+255),w,c
+  1012  000C54  A0D8               	btfss	status,0,c
+  1013  000C56  D7E6               	goto	l100
+  1014                           
+  1015                           ;Teclado_4.c: 247: return sol;
+  1016  000C58  C00E  F007         	movff	potencia@sol,?_potencia
+  1017  000C5C  C00F  F008         	movff	potencia@sol+1,?_potencia+1
+  1018  000C60  0012               	return		;funcret
+  1019  000C62                     __end_of_potencia:
+  1020                           	opt stack 0
+  1021                           tblptru	equ	0xFF8
+  1022                           prodh	equ	0xFF4
+  1023                           prodl	equ	0xFF3
+  1024                           intcon2	equ	0xFF1
+  1025                           wreg	equ	0xFE8
+  1026                           indf2	equ	0xFDF
+  1027                           fsr2h	equ	0xFDA
+  1028                           fsr2l	equ	0xFD9
+  1029                           status	equ	0xFD8
+  1030                           
+  1031 ;; *************** function ___wmul *****************
+  1032 ;; Defined at:
+  1033 ;;		line 15 in file "/opt/microchip/xc8/v1.44/sources/common/Umul16.c"
+  1034 ;; Parameters:    Size  Location     Type
+  1035 ;;  multiplier      2    0[COMRAM] unsigned int 
+  1036 ;;  multiplicand    2    2[COMRAM] unsigned int 
+  1037 ;; Auto vars:     Size  Location     Type
+  1038 ;;  product         2    4[COMRAM] unsigned int 
+  1039 ;; Return value:  Size  Location     Type
+  1040 ;;                  2    0[COMRAM] unsigned int 
+  1041 ;; Registers used:
+  1042 ;;		wreg, status,2, status,0, prodl, prodh
+  1043 ;; Tracked objects:
+  1044 ;;		On entry : 0/0
+  1045 ;;		On exit  : 0/0
+  1046 ;;		Unchanged: 0/0
+  1047 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1048 ;;      Params:         4       0       0       0       0       0       0       0       0
+  1049 ;;      Locals:         2       0       0       0       0       0       0       0       0
+  1050 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1051 ;;      Totals:         6       0       0       0       0       0       0       0       0
+  1052 ;;Total ram usage:        6 bytes
+  1053 ;; Hardware stack levels used:    1
+  1054 ;; This function calls:
+  1055 ;;		Nothing
+  1056 ;; This function is called by:
+  1057 ;;		_leeValor
+  1058 ;;		_potencia
+  1059 ;; This function uses a non-reentrant model
+  1060 ;;
+  1061                           
+  1062                           	psect	text5
+  1063  000CAA                     __ptext5:
+  1064                           	opt stack 0
+  1065  000CAA                     ___wmul:
+  1066                           	opt stack 28
+  1067                           
+  1068                           ;incstack = 0
+  1069  000CAA  5001               	movf	___wmul@multiplier,w,c
+  1070  000CAC  0203               	mulwf	___wmul@multiplicand,c
+  1071  000CAE  CFF3 F005          	movff	prodl,___wmul@product
+  1072  000CB2  CFF4 F006          	movff	prodh,___wmul@product+1
+  1073  000CB6  5001               	movf	___wmul@multiplier,w,c
+  1074  000CB8  0204               	mulwf	___wmul@multiplicand+1,c
+  1075  000CBA  50F3               	movf	prodl,w,c
+  1076  000CBC  2606               	addwf	___wmul@product+1,f,c
+  1077  000CBE  5002               	movf	___wmul@multiplier+1,w,c
+  1078  000CC0  0203               	mulwf	___wmul@multiplicand,c
+  1079  000CC2  50F3               	movf	prodl,w,c
+  1080  000CC4  2606               	addwf	___wmul@product+1,f,c
+  1081  000CC6  C005  F001         	movff	___wmul@product,?___wmul
+  1082  000CCA  C006  F002         	movff	___wmul@product+1,?___wmul+1
+  1083  000CCE  0012               	return	
+  1084  000CD0                     __end_of___wmul:
+  1085                           	opt stack 0
+  1086                           tblptru	equ	0xFF8
+  1087                           prodh	equ	0xFF4
+  1088                           prodl	equ	0xFF3
+  1089                           intcon2	equ	0xFF1
+  1090                           wreg	equ	0xFE8
+  1091                           indf2	equ	0xFDF
+  1092                           fsr2h	equ	0xFDA
+  1093                           fsr2l	equ	0xFD9
+  1094                           status	equ	0xFD8
+  1095                           
+  1096 ;; *************** function _kbd_getc *****************
+  1097 ;; Defined at:
+  1098 ;;		line 83 in file "../MyLibs/keyb.c"
+  1099 ;; Parameters:    Size  Location     Type
+  1100 ;;		None
+  1101 ;; Auto vars:     Size  Location     Type
+  1102 ;;  temp            1    2[COMRAM] unsigned char 
+  1103 ;;  kchar           1    1[COMRAM] unsigned char 
+  1104 ;; Return value:  Size  Location     Type
+  1105 ;;                  1    wreg      unsigned char 
+  1106 ;; Registers used:
+  1107 ;;		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
+  1108 ;; Tracked objects:
+  1109 ;;		On entry : 0/0
+  1110 ;;		On exit  : 0/0
+  1111 ;;		Unchanged: 0/0
+  1112 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1113 ;;      Params:         0       0       0       0       0       0       0       0       0
+  1114 ;;      Locals:         2       0       0       0       0       0       0       0       0
+  1115 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1116 ;;      Totals:         2       0       0       0       0       0       0       0       0
+  1117 ;;Total ram usage:        2 bytes
+  1118 ;; Hardware stack levels used:    1
+  1119 ;; Hardware stack levels required when called:    1
+  1120 ;; This function calls:
+  1121 ;;		_ui8_TestKeyPad
+  1122 ;; This function is called by:
+  1123 ;;		_leeValor
+  1124 ;; This function uses a non-reentrant model
+  1125 ;;
+  1126                           
+  1127                           	psect	text6
+  1128  000B32                     __ptext6:
+  1129                           	opt stack 0
+  1130  000B32                     _kbd_getc:
+  1131                           	opt stack 28
+  1132                           
+  1133                           ;keyb.c: 85: unsigned char kchar,temp;
+  1134                           ;keyb.c: 87: temp = ui8_TestKeyPad();
+  1135                           
+  1136                           ;incstack = 0
+  1137  000B32  ECFC  F004         	call	_ui8_TestKeyPad	;wreg free
+  1138  000B36  6E03               	movwf	kbd_getc@temp,c
+  1139                           
+  1140                           ;keyb.c: 88: if (temp <=3)
+  1141  000B38  0E04               	movlw	4
+  1142  000B3A  6003               	cpfslt	kbd_getc@temp,c
+  1143  000B3C  D00B               	goto	l114
+  1144                           
+  1145                           ;keyb.c: 89: kchar = KEYS[0][temp];
+  1146  000B3E  5003               	movf	kbd_getc@temp,w,c
+  1147  000B40  0D01               	mullw	1
+  1148  000B42  0E01               	movlw	low _KEYS
+  1149  000B44  24F3               	addwf	prodl,w,c
+  1150  000B46  6EF6               	movwf	tblptrl,c
+  1151  000B48  0E08               	movlw	high _KEYS
+  1152  000B4A  20F4               	addwfc	prodh,w,c
+  1153  000B4C  6EF7               	movwf	tblptrh,c
+  1154  000B4E                     	if	0	;There are less than 3 active tblptr bytes
+  1155  000B4E                     	endif
+  1156  000B4E  0008               	tblrd		*
+  1157  000B50  CFF5 F002          	movff	tablat,kbd_getc@kchar
+  1158  000B54                     l114:
+  1159                           
+  1160                           ;keyb.c: 90: if (temp >=4 || temp <=7)
+  1161  000B54  0E04               	movlw	4
+  1162  000B56  6003               	cpfslt	kbd_getc@temp,c
+  1163  000B58  D003               	goto	u470
+  1164  000B5A  0E08               	movlw	8
+  1165  000B5C  6003               	cpfslt	kbd_getc@temp,c
+  1166  000B5E  D009               	goto	l115
+  1167  000B60                     u470:
+  1168                           
+  1169                           ;keyb.c: 91: kchar = KEYS[1][temp-4];
+  1170  000B60  0E01               	movlw	low _KEYS
+  1171  000B62  2403               	addwf	kbd_getc@temp,w,c
+  1172  000B64  6EF6               	movwf	tblptrl,c
+  1173  000B66  6AF7               	clrf	tblptrh,c
+  1174  000B68  0E08               	movlw	high _KEYS
+  1175  000B6A  22F7               	addwfc	tblptrh,f,c
+  1176  000B6C                     	if	0	;There are less than 3 active tblptr bytes
+  1177  000B6C                     	endif
+  1178  000B6C  0008               	tblrd		*
+  1179  000B6E  CFF5 F002          	movff	tablat,kbd_getc@kchar
+  1180  000B72                     l115:
+  1181                           
+  1182                           ;keyb.c: 92: if (temp >=8 || temp <=11)
+  1183  000B72  0E08               	movlw	8
+  1184  000B74  6003               	cpfslt	kbd_getc@temp,c
+  1185  000B76  D003               	goto	u490
+  1186  000B78  0E0C               	movlw	12
+  1187  000B7A  6003               	cpfslt	kbd_getc@temp,c
+  1188  000B7C  D009               	goto	l118
+  1189  000B7E                     u490:
+  1190                           
+  1191                           ;keyb.c: 93: kchar = KEYS[2][temp-8];
+  1192  000B7E  0E01               	movlw	low _KEYS
+  1193  000B80  2403               	addwf	kbd_getc@temp,w,c
+  1194  000B82  6EF6               	movwf	tblptrl,c
+  1195  000B84  6AF7               	clrf	tblptrh,c
+  1196  000B86  0E08               	movlw	high _KEYS
+  1197  000B88  22F7               	addwfc	tblptrh,f,c
+  1198  000B8A                     	if	0	;There are less than 3 active tblptr bytes
+  1199  000B8A                     	endif
+  1200  000B8A  0008               	tblrd		*
+  1201  000B8C  CFF5 F002          	movff	tablat,kbd_getc@kchar
+  1202  000B90                     l118:
+  1203                           
+  1204                           ;keyb.c: 94: if (temp >=12 || temp <=15)
+  1205  000B90  0E0C               	movlw	12
+  1206  000B92  6003               	cpfslt	kbd_getc@temp,c
+  1207  000B94  D003               	goto	u510
+  1208  000B96  0E10               	movlw	16
+  1209  000B98  6003               	cpfslt	kbd_getc@temp,c
+  1210  000B9A  D009               	goto	l121
+  1211  000B9C                     u510:
+  1212                           
+  1213                           ;keyb.c: 95: kchar = KEYS[3][temp-12];
+  1214  000B9C  0E01               	movlw	low _KEYS
+  1215  000B9E  2403               	addwf	kbd_getc@temp,w,c
+  1216  000BA0  6EF6               	movwf	tblptrl,c
+  1217  000BA2  6AF7               	clrf	tblptrh,c
+  1218  000BA4  0E08               	movlw	high _KEYS
+  1219  000BA6  22F7               	addwfc	tblptrh,f,c
+  1220  000BA8                     	if	0	;There are less than 3 active tblptr bytes
+  1221  000BA8                     	endif
+  1222  000BA8  0008               	tblrd		*
+  1223  000BAA  CFF5 F002          	movff	tablat,kbd_getc@kchar
+  1224  000BAE                     l121:
+  1225                           
+  1226                           ;keyb.c: 96: if(temp == 16)
+  1227  000BAE  0E10               	movlw	16
+  1228  000BB0  1803               	xorwf	kbd_getc@temp,w,c
+  1229  000BB2  A4D8               	btfss	status,2,c
+  1230  000BB4  D002               	goto	l124
+  1231                           
+  1232                           ;keyb.c: 97: kchar = '\0';
+  1233  000BB6  0E00               	movlw	0
+  1234  000BB8  6E02               	movwf	kbd_getc@kchar,c
+  1235  000BBA                     l124:
+  1236                           
+  1237                           ;keyb.c: 98: return kchar;
+  1238  000BBA  5002               	movf	kbd_getc@kchar,w,c
+  1239  000BBC  0012               	return	
+  1240  000BBE                     __end_of_kbd_getc:
+  1241                           	opt stack 0
+  1242                           tblptru	equ	0xFF8
+  1243                           tblptrh	equ	0xFF7
+  1244                           tblptrl	equ	0xFF6
+  1245                           tablat	equ	0xFF5
+  1246                           prodh	equ	0xFF4
+  1247                           prodl	equ	0xFF3
+  1248                           intcon2	equ	0xFF1
+  1249                           wreg	equ	0xFE8
+  1250                           indf2	equ	0xFDF
+  1251                           fsr2h	equ	0xFDA
+  1252                           fsr2l	equ	0xFD9
+  1253                           status	equ	0xFD8
+  1254                           
+  1255 ;; *************** function _ui8_TestKeyPad *****************
+  1256 ;; Defined at:
+  1257 ;;		line 101 in file "../MyLibs/keyb.c"
+  1258 ;; Parameters:    Size  Location     Type
+  1259 ;;		None
+  1260 ;; Auto vars:     Size  Location     Type
+  1261 ;;  k               1    0[COMRAM] unsigned char 
+  1262 ;; Return value:  Size  Location     Type
+  1263 ;;                  1    wreg      unsigned char 
+  1264 ;; Registers used:
+  1265 ;;		wreg, status,2, status,0
+  1266 ;; Tracked objects:
+  1267 ;;		On entry : 0/0
+  1268 ;;		On exit  : 0/0
+  1269 ;;		Unchanged: 0/0
+  1270 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1271 ;;      Params:         0       0       0       0       0       0       0       0       0
+  1272 ;;      Locals:         1       0       0       0       0       0       0       0       0
+  1273 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1274 ;;      Totals:         1       0       0       0       0       0       0       0       0
+  1275 ;;Total ram usage:        1 bytes
+  1276 ;; Hardware stack levels used:    1
+  1277 ;; This function calls:
+  1278 ;;		Nothing
+  1279 ;; This function is called by:
+  1280 ;;		_kbd_getc
+  1281 ;; This function uses a non-reentrant model
+  1282 ;;
+  1283                           
+  1284                           	psect	text7
+  1285  0009F8                     __ptext7:
+  1286                           	opt stack 0
+  1287  0009F8                     _ui8_TestKeyPad:
+  1288                           	opt stack 28
+  1289                           
+  1290                           ;keyb.c: 103: unsigned char k;
+  1291                           ;keyb.c: 104: for(k=0;k<16;k++)
+  1292                           
+  1293                           ;incstack = 0
+  1294  0009F8  0E00               	movlw	0
+  1295  0009FA  6E01               	movwf	ui8_TestKeyPad@k,c
+  1296  0009FC                     l1055:
+  1297  0009FC  0E0F               	movlw	15
+  1298  0009FE  6401               	cpfsgt	ui8_TestKeyPad@k,c
+  1299  000A00  D014               	goto	l130
+  1300  000A02  D046               	goto	u430
+  1301  000A04  908A               	bcf	3978,0,c	;volatile
+  1302  000A06  D00D               	goto	L7
+  1303  000A08  808A               	bsf	3978,0,c	;volatile
+  1304  000A0A  928A               	bcf	3978,1,c	;volatile
+  1305  000A0C  D00B               	goto	L6
+  1306  000A0E  808A               	bsf	3978,0,c	;volatile
+  1307  000A10  828A               	bsf	3978,1,c	;volatile
+  1308  000A12  948A               	bcf	3978,2,c	;volatile
+  1309  000A14  D008               	goto	L5
+  1310  000A16  808A               	bsf	3978,0,c	;volatile
+  1311  000A18  828A               	bsf	3978,1,c	;volatile
+  1312  000A1A  848A               	bsf	3978,2,c	;volatile
+  1313  000A1C  968A               	bcf	3978,3,c	;volatile
+  1314                           
+  1315                           ;keyb.c: 119: break;
+  1316  000A1E  D013               	goto	l132
+  1317  000A20  808A               	bsf	3978,0,c	;volatile
+  1318  000A22                     L7:
+  1319  000A22  828A               	bsf	3978,1,c	;volatile
+  1320  000A24                     L6:
+  1321  000A24  848A               	bsf	3978,2,c	;volatile
+  1322  000A26                     L5:
+  1323  000A26  868A               	bsf	3978,3,c	;volatile
+  1324                           
+  1325                           ;keyb.c: 121: }
+  1326  000A28  D00E               	goto	l132
+  1327  000A2A                     l130:
+  1328  000A2A  5001               	movf	ui8_TestKeyPad@k,w,c
+  1329                           
+  1330                           ; Switch size 1, requested type "space"
+  1331                           ; Number of cases is 4, Range of values is 0 to 12
+  1332                           ; switch strategies available:
+  1333                           ; Name         Instructions Cycles
+  1334                           ; simple_byte           13     7 (average)
+  1335                           ;	Chosen strategy is simple_byte
+  1336  000A2C  0A00               	xorlw	0	; case 0
+  1337  000A2E  B4D8               	btfsc	status,2,c
+  1338  000A30  D7E9               	goto	l131
+  1339  000A32  0A04               	xorlw	4	; case 4
+  1340  000A34  B4D8               	btfsc	status,2,c
+  1341  000A36  D7E8               	goto	l133
+  1342  000A38  0A0C               	xorlw	12	; case 8
+  1343  000A3A  B4D8               	btfsc	status,2,c
+  1344  000A3C  D7E8               	goto	l134
+  1345  000A3E  0A04               	xorlw	4	; case 12
+  1346  000A40  B4D8               	btfsc	status,2,c
+  1347  000A42  D7E9               	goto	l135
+  1348  000A44  D7ED               	goto	l136
+  1349  000A46                     l132:
+  1350                           
+  1351                           ;keyb.c: 124: if (!((PORTB) & (1 << 4)))
+  1352  000A46  B881               	btfsc	3969,4,c	;volatile
+  1353  000A48  D006               	goto	l137
+  1354                           
+  1355                           ;keyb.c: 125: {
+  1356                           ;keyb.c: 128: {{(*(&(*(&PORTB + 0x09))) |= (1<<(0))); (*(&(*(&PORTB + 0x09))) |= (1<<(1)
+      +                          )); (*(&(*(&PORTB + 0x09))) |= (1<<(2))); (*(&(*(&PORTB + 0x09))) |= (1<<(3)));};
+  1357  000A4A  808A               	bsf	3978,0,c	;volatile
+  1358  000A4C  828A               	bsf	3978,1,c	;volatile
+  1359  000A4E  848A               	bsf	3978,2,c	;volatile
+  1360  000A50  868A               	bsf	3978,3,c	;volatile
+  1361                           
+  1362                           ;keyb.c: 129: return k;
+  1363  000A52  5001               	movf	ui8_TestKeyPad@k,w,c
+  1364  000A54  0012               	return	
+  1365  000A56                     l137:
+  1366                           
+  1367                           ;keyb.c: 130: }
+  1368                           ;keyb.c: 131: } k++;
+  1369  000A56  2A01               	incf	ui8_TestKeyPad@k,f,c
+  1370                           
+  1371                           ;keyb.c: 133: if (!((PORTB) & (1 << 5)))
+  1372  000A58  BA81               	btfsc	3969,5,c	;volatile
+  1373  000A5A  D006               	goto	l139
+  1374                           
+  1375                           ;keyb.c: 134: {
+  1376                           ;keyb.c: 137: {{(*(&(*(&PORTB + 0x09))) |= (1<<(0))); (*(&(*(&PORTB + 0x09))) |= (1<<(1)
+      +                          )); (*(&(*(&PORTB + 0x09))) |= (1<<(2))); (*(&(*(&PORTB + 0x09))) |= (1<<(3)));};
+  1377  000A5C  808A               	bsf	3978,0,c	;volatile
+  1378  000A5E  828A               	bsf	3978,1,c	;volatile
+  1379  000A60  848A               	bsf	3978,2,c	;volatile
+  1380  000A62  868A               	bsf	3978,3,c	;volatile
+  1381                           
+  1382                           ;keyb.c: 138: return k;
+  1383  000A64  5001               	movf	ui8_TestKeyPad@k,w,c
+  1384  000A66  0012               	return	
+  1385  000A68                     l139:
+  1386                           
+  1387                           ;keyb.c: 139: }
+  1388                           ;keyb.c: 140: }k++;
+  1389  000A68  2A01               	incf	ui8_TestKeyPad@k,f,c
+  1390                           
+  1391                           ;keyb.c: 142: if (!((PORTB) & (1 << 6)))
+  1392  000A6A  BC81               	btfsc	3969,6,c	;volatile
+  1393  000A6C  D006               	goto	l140
+  1394                           
+  1395                           ;keyb.c: 143: {
+  1396                           ;keyb.c: 146: {{(*(&(*(&PORTB + 0x09))) |= (1<<(0))); (*(&(*(&PORTB + 0x09))) |= (1<<(1)
+      +                          )); (*(&(*(&PORTB + 0x09))) |= (1<<(2))); (*(&(*(&PORTB + 0x09))) |= (1<<(3)));};
+  1397  000A6E  808A               	bsf	3978,0,c	;volatile
+  1398  000A70  828A               	bsf	3978,1,c	;volatile
+  1399  000A72  848A               	bsf	3978,2,c	;volatile
+  1400  000A74  868A               	bsf	3978,3,c	;volatile
+  1401                           
+  1402                           ;keyb.c: 147: return k;
+  1403  000A76  5001               	movf	ui8_TestKeyPad@k,w,c
+  1404  000A78  0012               	return	
+  1405  000A7A                     l140:
+  1406                           
+  1407                           ;keyb.c: 148: }
+  1408                           ;keyb.c: 149: }k++;
+  1409  000A7A  2A01               	incf	ui8_TestKeyPad@k,f,c
+  1410                           
+  1411                           ;keyb.c: 151: if (!((PORTB) & (1 << 7)))
+  1412  000A7C  BE81               	btfsc	3969,7,c	;volatile
+  1413  000A7E  D006               	goto	l141
+  1414                           
+  1415                           ;keyb.c: 152: {
+  1416                           ;keyb.c: 155: {{(*(&(*(&PORTB + 0x09))) |= (1<<(0))); (*(&(*(&PORTB + 0x09))) |= (1<<(1)
+      +                          )); (*(&(*(&PORTB + 0x09))) |= (1<<(2))); (*(&(*(&PORTB + 0x09))) |= (1<<(3)));};
+  1417  000A80  808A               	bsf	3978,0,c	;volatile
+  1418  000A82  828A               	bsf	3978,1,c	;volatile
+  1419  000A84  848A               	bsf	3978,2,c	;volatile
+  1420  000A86  868A               	bsf	3978,3,c	;volatile
+  1421                           
+  1422                           ;keyb.c: 156: return k;
+  1423  000A88  5001               	movf	ui8_TestKeyPad@k,w,c
+  1424  000A8A  0012               	return	
+  1425  000A8C                     l141:
+  1426  000A8C  2A01               	incf	ui8_TestKeyPad@k,f,c
+  1427  000A8E  D7B6               	goto	l1055
+  1428  000A90                     u430:
+  1429                           
+  1430                           ;keyb.c: 157: }
+  1431                           ;keyb.c: 158: }
+  1432                           ;keyb.c: 159: }
+  1433                           ;keyb.c: 160: {(*(&(*(&PORTB + 0x09))) |= (1<<(0))); (*(&(*(&PORTB + 0x09))) |= (1<<(1))
+      +                          ); (*(&(*(&PORTB + 0x09))) |= (1<<(2))); (*(&(*(&PORTB + 0x09))) |= (1<<(3)));};
+  1434  000A90  808A               	bsf	3978,0,c	;volatile
+  1435  000A92  828A               	bsf	3978,1,c	;volatile
+  1436  000A94  848A               	bsf	3978,2,c	;volatile
+  1437  000A96  868A               	bsf	3978,3,c	;volatile
+  1438                           
+  1439                           ;keyb.c: 161: return (16);
+  1440  000A98  0E10               	movlw	16
+  1441  000A9A  0012               	return	
+  1442  000A9C                     __end_of_ui8_TestKeyPad:
+  1443                           	opt stack 0
+  1444                           tblptru	equ	0xFF8
+  1445                           tblptrh	equ	0xFF7
+  1446                           tblptrl	equ	0xFF6
+  1447                           tablat	equ	0xFF5
+  1448                           prodh	equ	0xFF4
+  1449                           prodl	equ	0xFF3
+  1450                           intcon2	equ	0xFF1
+  1451                           wreg	equ	0xFE8
+  1452                           indf2	equ	0xFDF
+  1453                           fsr2h	equ	0xFDA
+  1454                           fsr2l	equ	0xFD9
+  1455                           status	equ	0xFD8
+  1456                           
+  1457 ;; *************** function _display *****************
+  1458 ;; Defined at:
+  1459 ;;		line 185 in file "Teclado_4.c"
+  1460 ;; Parameters:    Size  Location     Type
+  1461 ;;  valor           1    wreg     unsigned char 
+  1462 ;; Auto vars:     Size  Location     Type
+  1463 ;;  valor           1    0[COMRAM] unsigned char 
+  1464 ;; Return value:  Size  Location     Type
+  1465 ;;                  1    wreg      void 
+  1466 ;; Registers used:
+  1467 ;;		wreg
+  1468 ;; Tracked objects:
+  1469 ;;		On entry : 0/0
+  1470 ;;		On exit  : 0/0
+  1471 ;;		Unchanged: 0/0
+  1472 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1473 ;;      Params:         0       0       0       0       0       0       0       0       0
+  1474 ;;      Locals:         1       0       0       0       0       0       0       0       0
+  1475 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1476 ;;      Totals:         1       0       0       0       0       0       0       0       0
+  1477 ;;Total ram usage:        1 bytes
+  1478 ;; Hardware stack levels used:    1
+  1479 ;; This function calls:
+  1480 ;;		Nothing
+  1481 ;; This function is called by:
+  1482 ;;		_main
+  1483 ;; This function uses a non-reentrant model
+  1484 ;;
+  1485                           
+  1486                           	psect	text8
+  1487  000BBE                     __ptext8:
+  1488                           	opt stack 0
+  1489  000BBE                     _display:
+  1490                           	opt stack 30
+  1491                           
+  1492                           ;incstack = 0
+  1493                           ;display@valor stored from wreg
+  1494  000BBE  6E01               	movwf	display@valor,c
+  1495                           
+  1496                           ;Teclado_4.c: 187: if (valor & (1 << 0)) LATDbits.LATD1 = 1;
+  1497  000BC0  A001               	btfss	display@valor,0,c
+  1498  000BC2  D002               	goto	l71
+  1499  000BC4  828C               	bsf	3980,1,c	;volatile
+  1500  000BC6  D001               	goto	l72
+  1501  000BC8                     l71:
+  1502                           
+  1503                           ;Teclado_4.c: 188: else LATDbits.LATD1 = 0;
+  1504  000BC8  928C               	bcf	3980,1,c	;volatile
+  1505  000BCA                     l72:
+  1506                           
+  1507                           ;Teclado_4.c: 190: if (valor & (1 << 1)) LATCbits.LATC1 = 1;
+  1508  000BCA  A201               	btfss	display@valor,1,c
+  1509  000BCC  D002               	goto	l73
+  1510  000BCE  828B               	bsf	3979,1,c	;volatile
+  1511  000BD0  D001               	goto	l74
+  1512  000BD2                     l73:
+  1513                           
+  1514                           ;Teclado_4.c: 191: else LATCbits.LATC1 = 0;
+  1515  000BD2  928B               	bcf	3979,1,c	;volatile
+  1516  000BD4                     l74:
+  1517                           
+  1518                           ;Teclado_4.c: 193: if (valor & (1 << 2)) LATCbits.LATC2 = 1;
+  1519  000BD4  A401               	btfss	display@valor,2,c
+  1520  000BD6  D002               	goto	l75
+  1521  000BD8  848B               	bsf	3979,2,c	;volatile
+  1522  000BDA  D001               	goto	l76
+  1523  000BDC                     l75:
+  1524                           
+  1525                           ;Teclado_4.c: 194: else LATCbits.LATC2 = 0;
+  1526  000BDC  948B               	bcf	3979,2,c	;volatile
+  1527  000BDE                     l76:
+  1528                           
+  1529                           ;Teclado_4.c: 196: if (valor & (1 << 3)) LATDbits.LATD0 = 1;
+  1530  000BDE  A601               	btfss	display@valor,3,c
+  1531  000BE0  D002               	goto	l77
+  1532  000BE2  808C               	bsf	3980,0,c	;volatile
+  1533  000BE4  D001               	goto	l78
+  1534  000BE6                     l77:
+  1535                           
+  1536                           ;Teclado_4.c: 197: else LATDbits.LATD0 = 0;
+  1537  000BE6  908C               	bcf	3980,0,c	;volatile
+  1538  000BE8                     l78:
+  1539                           
+  1540                           ;Teclado_4.c: 199: if (valor & (1 << 4)) LATDbits.LATD2 = 1;
+  1541  000BE8  A801               	btfss	display@valor,4,c
+  1542  000BEA  D002               	goto	l79
+  1543  000BEC  848C               	bsf	3980,2,c	;volatile
+  1544  000BEE  D001               	goto	l80
+  1545  000BF0                     l79:
+  1546                           
+  1547                           ;Teclado_4.c: 200: else LATDbits.LATD2 = 0;
+  1548  000BF0  948C               	bcf	3980,2,c	;volatile
+  1549  000BF2                     l80:
+  1550                           
+  1551                           ;Teclado_4.c: 202: if (valor & (1 << 5)) LATDbits.LATD3 = 1;
+  1552  000BF2  AA01               	btfss	display@valor,5,c
+  1553  000BF4  D002               	goto	l81
+  1554  000BF6  868C               	bsf	3980,3,c	;volatile
+  1555  000BF8  D001               	goto	l82
+  1556  000BFA                     l81:
+  1557                           
+  1558                           ;Teclado_4.c: 203: else LATDbits.LATD3 = 0;
+  1559  000BFA  968C               	bcf	3980,3,c	;volatile
+  1560  000BFC                     l82:
+  1561                           
+  1562                           ;Teclado_4.c: 205: if (valor & (1 << 6)) LATCbits.LATC6 = 1;
+  1563  000BFC  AC01               	btfss	display@valor,6,c
+  1564  000BFE  D002               	goto	l83
+  1565  000C00  8C8B               	bsf	3979,6,c	;volatile
+  1566  000C02  D001               	goto	l84
+  1567  000C04                     l83:
+  1568                           
+  1569                           ;Teclado_4.c: 206: else LATCbits.LATC6 = 0;
+  1570  000C04  9C8B               	bcf	3979,6,c	;volatile
+  1571  000C06                     l84:
+  1572                           
+  1573                           ;Teclado_4.c: 208: if (valor & (1 << 7)) LATCbits.LATC7 = 1;
+  1574  000C06  AE01               	btfss	display@valor,7,c
+  1575  000C08  D002               	goto	l85
+  1576  000C0A  8E8B               	bsf	3979,7,c	;volatile
+  1577  000C0C  0012               	return	
+  1578  000C0E                     l85:
+  1579                           
+  1580                           ;Teclado_4.c: 209: else LATCbits.LATC7 = 0;
+  1581  000C0E  9E8B               	bcf	3979,7,c	;volatile
+  1582  000C10  0012               	return	
+  1583  000C12                     __end_of_display:
+  1584                           	opt stack 0
+  1585                           tblptru	equ	0xFF8
+  1586                           tblptrh	equ	0xFF7
+  1587                           tblptrl	equ	0xFF6
+  1588                           tablat	equ	0xFF5
+  1589                           prodh	equ	0xFF4
+  1590                           prodl	equ	0xFF3
+  1591                           intcon2	equ	0xFF1
+  1592                           wreg	equ	0xFE8
+  1593                           indf2	equ	0xFDF
+  1594                           fsr2h	equ	0xFDA
+  1595                           fsr2l	equ	0xFD9
+  1596                           status	equ	0xFD8
+  1597                           
+  1598 ;; *************** function _bin2dec *****************
+  1599 ;; Defined at:
+  1600 ;;		line 160 in file "Teclado_4.c"
+  1601 ;; Parameters:    Size  Location     Type
+  1602 ;;  val             2    0[COMRAM] int 
+  1603 ;;  pu              2    2[COMRAM] PTR unsigned char 
+  1604 ;;		 -> main@u(1), 
+  1605 ;;  pd              2    4[COMRAM] PTR unsigned char 
+  1606 ;;		 -> main@d(1), 
+  1607 ;;  pc              2    6[COMRAM] PTR unsigned char 
+  1608 ;;		 -> main@c(1), 
+  1609 ;;  pum             2    8[COMRAM] PTR unsigned char 
+  1610 ;;		 -> main@um(1), 
+  1611 ;; Auto vars:     Size  Location     Type
+  1612 ;;  temp            2   10[COMRAM] int 
+  1613 ;; Return value:  Size  Location     Type
+  1614 ;;                  1    wreg      void 
+  1615 ;; Registers used:
+  1616 ;;		wreg, fsr2l, fsr2h, status,2, status,0
+  1617 ;; Tracked objects:
+  1618 ;;		On entry : 0/0
+  1619 ;;		On exit  : 0/0
+  1620 ;;		Unchanged: 0/0
+  1621 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1622 ;;      Params:        10       0       0       0       0       0       0       0       0
+  1623 ;;      Locals:         2       0       0       0       0       0       0       0       0
+  1624 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1625 ;;      Totals:        12       0       0       0       0       0       0       0       0
+  1626 ;;Total ram usage:       12 bytes
+  1627 ;; Hardware stack levels used:    1
+  1628 ;; This function calls:
+  1629 ;;		Nothing
+  1630 ;; This function is called by:
+  1631 ;;		_main
+  1632 ;; This function uses a non-reentrant model
+  1633 ;;
+  1634                           
+  1635                           	psect	text9
+  1636  000A9C                     __ptext9:
+  1637                           	opt stack 0
+  1638  000A9C                     _bin2dec:
+  1639                           	opt stack 30
+  1640                           
+  1641                           ;Teclado_4.c: 165: int temp = val;
+  1642                           
+  1643                           ;incstack = 0
+  1644  000A9C  C001  F00B         	movff	bin2dec@val,bin2dec@temp
+  1645  000AA0  C002  F00C         	movff	bin2dec@val+1,bin2dec@temp+1
+  1646                           
+  1647                           ;Teclado_4.c: 166: while (temp >= 1000) {
+  1648  000AA4  D009               	goto	l56
+  1649  000AA6                     
+  1650                           ;Teclado_4.c: 167: (*pum)++;
+  1651  000AA6  C009  FFD9         	movff	bin2dec@pum,fsr2l
+  1652  000AAA  C00A  FFDA         	movff	bin2dec@pum+1,fsr2h
+  1653  000AAE  2ADF               	incf	indf2,f,c
+  1654                           
+  1655                           ;Teclado_4.c: 168: temp -= 1000;
+  1656  000AB0  0E18               	movlw	24
+  1657  000AB2  260B               	addwf	bin2dec@temp,f,c
+  1658  000AB4  0EFC               	movlw	252
+  1659  000AB6  220C               	addwfc	bin2dec@temp+1,f,c
+  1660  000AB8                     l56:
+  1661  000AB8  BE0C               	btfsc	bin2dec@temp+1,7,c
+  1662  000ABA  D010               	goto	l59
+  1663  000ABC  0EE8               	movlw	232
+  1664  000ABE  5C0B               	subwf	bin2dec@temp,w,c
+  1665  000AC0  0E03               	movlw	3
+  1666  000AC2  580C               	subwfb	bin2dec@temp+1,w,c
+  1667  000AC4  A0D8               	btfss	status,0,c
+  1668  000AC6  D00A               	goto	l59
+  1669  000AC8  D7EE               	goto	l57
+  1670  000ACA                     l1199:
+  1671                           
+  1672                           ;Teclado_4.c: 172: (*pc)++;
+  1673  000ACA  C007  FFD9         	movff	bin2dec@pc,fsr2l
+  1674  000ACE  C008  FFDA         	movff	bin2dec@pc+1,fsr2h
+  1675  000AD2  2ADF               	incf	indf2,f,c
+  1676                           
+  1677                           ;Teclado_4.c: 173: temp -= 100;
+  1678  000AD4  0E9C               	movlw	156
+  1679  000AD6  260B               	addwf	bin2dec@temp,f,c
+  1680  000AD8  0EFF               	movlw	255
+  1681  000ADA  220C               	addwfc	bin2dec@temp+1,f,c
+  1682  000ADC                     l59:
+  1683  000ADC  BE0C               	btfsc	bin2dec@temp+1,7,c
+  1684  000ADE  D010               	goto	l62
+  1685  000AE0  500C               	movf	bin2dec@temp+1,w,c
+  1686  000AE2  E1F3               	bnz	l1199
+  1687  000AE4  0E64               	movlw	100
+  1688  000AE6  5C0B               	subwf	bin2dec@temp,w,c
+  1689  000AE8  A0D8               	btfss	status,0,c
+  1690  000AEA  D00A               	goto	l62
+  1691  000AEC  D7EE               	goto	l60
+  1692  000AEE                     l1205:
+  1693                           
+  1694                           ;Teclado_4.c: 176: (*pd)++;
+  1695  000AEE  C005  FFD9         	movff	bin2dec@pd,fsr2l
+  1696  000AF2  C006  FFDA         	movff	bin2dec@pd+1,fsr2h
+  1697  000AF6  2ADF               	incf	indf2,f,c
+  1698                           
+  1699                           ;Teclado_4.c: 177: temp -= 10;
+  1700  000AF8  0EF6               	movlw	246
+  1701  000AFA  260B               	addwf	bin2dec@temp,f,c
+  1702  000AFC  0EFF               	movlw	255
+  1703  000AFE  220C               	addwfc	bin2dec@temp+1,f,c
+  1704  000B00                     l62:
+  1705  000B00  BE0C               	btfsc	bin2dec@temp+1,7,c
+  1706  000B02  D00F               	goto	l65
+  1707  000B04  500C               	movf	bin2dec@temp+1,w,c
+  1708  000B06  E1F3               	bnz	l1205
+  1709  000B08  0E0A               	movlw	10
+  1710  000B0A  5C0B               	subwf	bin2dec@temp,w,c
+  1711  000B0C  A0D8               	btfss	status,0,c
+  1712  000B0E  D009               	goto	l65
+  1713  000B10  D7EE               	goto	l63
+  1714  000B12                     l1211:
+  1715                           
+  1716                           ;Teclado_4.c: 180: (*pu)++;
+  1717  000B12  C003  FFD9         	movff	bin2dec@pu,fsr2l
+  1718  000B16  C004  FFDA         	movff	bin2dec@pu+1,fsr2h
+  1719  000B1A  2ADF               	incf	indf2,f,c
+  1720                           
+  1721                           ;Teclado_4.c: 181: temp--;
+  1722  000B1C  060B               	decf	bin2dec@temp,f,c
+  1723  000B1E  A0D8               	btfss	status,0,c
+  1724  000B20  060C               	decf	bin2dec@temp+1,f,c
+  1725  000B22                     l65:
+  1726  000B22  BE0C               	btfsc	bin2dec@temp+1,7,c
+  1727  000B24  0012               	return	
+  1728  000B26  500C               	movf	bin2dec@temp+1,w,c
+  1729  000B28  E1F4               	bnz	l1211
+  1730  000B2A  040B               	decf	bin2dec@temp,w,c
+  1731  000B2C  A0D8               	btfss	status,0,c
+  1732  000B2E  0012               	return	
+  1733  000B30  D7F0               	goto	l66
+  1734  000B32                     __end_of_bin2dec:
+  1735                           	opt stack 0
+  1736                           tblptru	equ	0xFF8
+  1737                           tblptrh	equ	0xFF7
+  1738                           tblptrl	equ	0xFF6
+  1739                           tablat	equ	0xFF5
+  1740                           prodh	equ	0xFF4
+  1741                           prodl	equ	0xFF3
+  1742                           intcon2	equ	0xFF1
+  1743                           wreg	equ	0xFE8
+  1744                           indf2	equ	0xFDF
+  1745                           fsr2h	equ	0xFDA
+  1746                           fsr2l	equ	0xFD9
+  1747                           status	equ	0xFD8
+  1748                           tblptru	equ	0xFF8
+  1749                           tblptrh	equ	0xFF7
+  1750                           tblptrl	equ	0xFF6
+  1751                           tablat	equ	0xFF5
+  1752                           prodh	equ	0xFF4
+  1753                           prodl	equ	0xFF3
+  1754                           intcon2	equ	0xFF1
+  1755                           wreg	equ	0xFE8
+  1756                           indf2	equ	0xFDF
+  1757                           fsr2h	equ	0xFDA
+  1758                           fsr2l	equ	0xFD9
+  1759                           status	equ	0xFD8
+  1760                           
+  1761                           	psect	rparam
+  1762  0000                     tblptru	equ	0xFF8
+  1763                           tblptrh	equ	0xFF7
+  1764                           tblptrl	equ	0xFF6
+  1765                           tablat	equ	0xFF5
+  1766                           prodh	equ	0xFF4
+  1767                           prodl	equ	0xFF3
+  1768                           intcon2	equ	0xFF1
+  1769                           wreg	equ	0xFE8
+  1770                           indf2	equ	0xFDF
+  1771                           fsr2h	equ	0xFDA
+  1772                           fsr2l	equ	0xFD9
+  1773                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    16
+    Data        0
+    BSS         4
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95     42      46
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+    BANK6           256      0       0
+    BANK7           256      0       0
+
+Pointer List with Targets:
+
+    bin2dec@pu	PTR unsigned char  size(2) Largest target is 1
+		 -> main@u(COMRAM[1]), 
+
+    bin2dec@pd	PTR unsigned char  size(2) Largest target is 1
+		 -> main@d(COMRAM[1]), 
+
+    bin2dec@pc	PTR unsigned char  size(2) Largest target is 1
+		 -> main@c(COMRAM[1]), 
+
+    bin2dec@pum	PTR unsigned char  size(2) Largest target is 1
+		 -> main@um(COMRAM[1]), 
+
+
+Critical Paths under _main in COMRAM
+
+    _main->_leeValor
+    _leeValor->_potencia
+    _potencia->___wmul
+    _kbd_getc->_ui8_TestKeyPad
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Critical Paths under _main in BANK7
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                16    16      0    3418
+                                             26 COMRAM    16    16      0
+                            _bin2dec
+                            _display
+                           _leeValor
+                               _rota
+                        _vInitKeyPad
+ ---------------------------------------------------------------------------------
+ (1) _vInitKeyPad                                          0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _rota                                                 1     1      0      22
+                                              0 COMRAM     1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _leeValor                                            13    11      2    2164
+                                             15 COMRAM    11     9      2
+                             ___wmul
+                           _kbd_getc
+                           _potencia
+ ---------------------------------------------------------------------------------
+ (2) _potencia                                             9     5      4     881
+                                              6 COMRAM     9     5      4
+                             ___wmul
+ ---------------------------------------------------------------------------------
+ (3) ___wmul                                               6     2      4     463
+                                              0 COMRAM     6     2      4
+ ---------------------------------------------------------------------------------
+ (2) _kbd_getc                                             2     2      0     451
+                                              1 COMRAM     2     2      0
+                     _ui8_TestKeyPad
+ ---------------------------------------------------------------------------------
+ (3) _ui8_TestKeyPad                                       1     1      0     159
+                                              0 COMRAM     1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _display                                              1     1      0     176
+                                              0 COMRAM     1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _bin2dec                                             12     2     10     583
+                                              0 COMRAM    12     2     10
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 3
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _bin2dec
+   _display
+   _leeValor
+     ___wmul
+     _kbd_getc
+       _ui8_TestKeyPad
+     _potencia
+       ___wmul
+   _rota
+   _vInitKeyPad
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             7FF      0       0      21        0.0%
+EEDATA             100      0       0       0        0.0%
+BITBANK7           100      0       0      19        0.0%
+BANK7              100      0       0      20        0.0%
+BITBANK6           100      0       0      17        0.0%
+BANK6              100      0       0      18        0.0%
+BITBANK5           100      0       0      15        0.0%
+BANK5              100      0       0      16        0.0%
+BITBANK4           100      0       0      13        0.0%
+BANK4              100      0       0      14        0.0%
+BITBANK3           100      0       0      11        0.0%
+BANK3              100      0       0      12        0.0%
+BITBANK2           100      0       0       9        0.0%
+BANK2              100      0       0      10        0.0%
+BITBANK1           100      0       0       7        0.0%
+BANK1              100      0       0       8        0.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0       0       5        0.0%
+BITCOMRAM           5F      0       0       0        0.0%
+COMRAM              5F     2A      2E       1       48.4%
+BITSFR_1             0      0       0     200        0.0%
+SFR_1                0      0       0     200        0.0%
+BITSFR               0      0       0     200        0.0%
+SFR                  0      0       0     200        0.0%
+STACK                0      0       0       2        0.0%
+NULL                 0      0       0       0        0.0%
+ABS                  0      0      2E       6        0.0%
+DATA                 0      0      2E       3        0.0%
+CODE                 0      0       0       0        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V1.44 build -154322312 
+Symbol Table                                                                                   Mon Feb 19 15:12:51 2018
+
+           ?_vInitKeyPad 0001                       l40 08E4                       l51 09A0  
+                     l60 0ACA                       l37 085E                       l62 0B00  
+                     l38 08D8                       l63 0AEE                       l71 0BC8  
+                     l47 0960                       l39 092C                       l56 0AB8  
+                     l80 0BF2                       l72 0BCA                       l65 0B22  
+                     l57 0AA6                       l81 0BFA                       l73 0BD2  
+                     l66 0B12                       l82 0BFC                       l74 0BD4  
+                     l90 0C8E                       l59 0ADC                       l83 0C04  
+                     l75 0BDC                       l91 0C66                       l84 0C06  
+                     l76 0BDE                       l85 0C0E                       l77 0BE6  
+                     l93 0C70                       l78 0BE8                       l94 0C7A  
+                     l79 0BF0                       l95 0C84                       l99 0C44  
+    ___wmul@multiplicand 0003             __CFG_CP0$OFF 000000             __CFG_CP1$OFF 000000  
+           __CFG_CP2$OFF 000000             __CFG_CP3$OFF 000000              __CFG_LVP$ON 000000  
+                    l100 0C24                      l121 0BAE                      l130 0A2A  
+                    l114 0B54                      l131 0A04                      l115 0B72  
+                    l140 0A7A                      l132 0A46                      l124 0BBA  
+                    l141 0A8C                      l133 0A08                      l134 0A0E  
+                    l118 0B90                      l135 0A16                      l136 0A20  
+                    l137 0A56                      l139 0A68             __CFG_CPB$OFF 000000  
+                    u430 0A90                      u510 0B9C             __CFG_CPD$OFF 000000  
+                    u470 0B60                      u490 0B7E                      u730 0918  
+                    u580 09EE                      u740 092C                      u757 08EA  
+                    prod 000FF3                      wreg 000FE8             __CFG_FOSC$XT 000000  
+                   l1211 0B12                     l1205 0AEE                     l1055 09FC  
+                   l1171 0960                     l1325 08DC                     l1199 0ACA  
+                   _KEYS 0801                     _main 0812                     _rota 0C62  
+                   fsr2h 000FDA                     indf2 000FDF                     fsr2l 000FD9  
+          __CFG_BORV$190 000000                     prodh 000FF4                     prodl 000FF3  
+                   start 0000            __CFG_IESO$OFF 000000            __CFG_MCLRE$ON 000000  
+           ___param_bank 000000                    ?_main 0001                    ?_rota 0001  
+        __end_of_bin2dec 0B32                    _PORTA 000F80                    _PORTB 000F81  
+          __CFG_WRT0$OFF 000000            __CFG_WRT1$OFF 000000            __CFG_WRT2$OFF 000000  
+          __CFG_WRT3$OFF 000000           __CFG_EBTR0$OFF 000000           __CFG_FCMEN$OFF 000000  
+         __CFG_EBTR1$OFF 000000           __CFG_EBTR2$OFF 000000           __CFG_EBTR3$OFF 000000  
+          __CFG_WRTB$OFF 000000          __end_of_display 0C12            __CFG_WRTC$OFF 000000  
+          __CFG_WRTD$OFF 000000             display@valor 0001           __CFG_EBTRB$OFF 000000  
+                  main@c 0028                    main@d 0027                    main@i 002A  
+                  main@j 0024                    main@u 0026           __CFG_BOREN$OFF 000000  
+                  tablat 000FF5                    status 000FD8           __CFG_T3CMX$RC0 000000  
+         __CFG_ICPRT$OFF 000000             __end_of_KEYS 0811          __initialization 0CD0  
+           __end_of_main 0936             __end_of_rota 0CAA           __CFG_PCLKEN$ON 000000  
+                 ??_main 001B                   ??_rota 0001            __activetblptr 000002  
+       ??_ui8_TestKeyPad 0001           __CFG_SDOMX$RB3 000000          __CFG_CCP2MX$RC1 000000  
+                 _ANSELA 000F5B           __CFG_WDTEN$OFF 000000         __end_of_kbd_getc 0BBE  
+         __CFG_XINST$OFF 000000         __end_of_leeValor 09F8                   ___wmul 0CAA  
+         __CFG_STVREN$ON 000000                ??_bin2dec 000B     __size_of_vInitKeyPad 0012  
+                 main@um 0029                ??_display 0001          ui8_TestKeyPad@k 0001  
+           __mediumconst 0000         __end_of_potencia 0C62                   tblptrh 000FF7  
+                 tblptrl 000FF6                   tblptru 000FF8     __CFG_LS48MHZ$SYS24X4 000000  
+             __accesstop 0060  __end_of__initialization 0CD8          __CFG_PBADEN$OFF 000000  
+          ___rparam_used 000001           __pcstackCOMRAM 0001               bin2dec@val 0001  
+             bin2dec@pum 0009        __CFG_PLLSEL$PLL4X 000000                  ?___wmul 0001  
+              ?_kbd_getc 0001                ?_leeValor 0010                  __Hparam 0000  
+                __Lparam 0000                ?_potencia 0007          __size_of___wmul 0026  
+                _bin2dec 0A9C             __psmallconst 0800                  __pcinit 0CD0  
+                __ramtop 0800                  __ptext0 0812                  __ptext1 0CE2  
+                __ptext2 0C62                  __ptext3 0936                  __ptext4 0C12  
+                __ptext5 0CAA                  __ptext6 0B32                  __ptext7 09F8  
+                __ptext8 0BBE                  __ptext9 0A9C                  _display 0BBE  
+             ??_kbd_getc 0002               ??_leeValor 0012                  main@val 001E  
+   end_of_initialization 0CD8            __Lmediumconst 0000               ??_potencia 000B  
+            rota@display 0001                _TRISCbits 000F94                _TRISDbits 000F95  
+            potencia@sol 000E               main@valorA 001C            ??_vInitKeyPad 0001  
+         __end_of___wmul 0CD0      start_initialization 0CD0          __CFG_nLPBOR$OFF 000000  
+__size_of_ui8_TestKeyPad 00A4                 ??___wmul 0005      __end_of_vInitKeyPad 0CF4  
+            __pbssCOMRAM 002B          __CFG_nPWRTEN$ON 000000        __size_of_kbd_getc 008C  
+      __size_of_leeValor 00C2              bin2dec@temp 000B                bin2dec@pc 0007  
+              bin2dec@pd 0005                bin2dec@pu 0003                 ?_bin2dec 0001  
+      __size_of_potencia 0050                 ?_display 0001              __smallconst 0800  
+         ___wmul@product 0005                 _LATCbits 000F8B                 _LATDbits 000F8C  
+            _vInitKeyPad 0CE2         __CFG_WDTPS$32768 000000                main@F5753 002B  
+              leeValor@c 001A                leeValor@d 0010                leeValor@j 0014  
+              leeValor@k 0018        ___wmul@multiplier 0001                leeValor@x 0016  
+              main@valor 0022        __CFG_CFGPLLEN$OFF 000000              _INTCON2bits 000FF1  
+         _ui8_TestKeyPad 09F8                 __Hrparam 0000                 __Lrparam 0000  
+       __size_of_bin2dec 0096         __size_of_display 0054                 _kbd_getc 0B32  
+               _leeValor 0936   __end_of_ui8_TestKeyPad 0A9C            __size_of_main 0124  
+          __size_of_rota 0048            kbd_getc@kchar 0002                 _potencia 0C12  
+              potencia@a 0007                potencia@b 0009                potencia@i 000C  
+        ?_ui8_TestKeyPad 0001             kbd_getc@temp 0003     __CFG_CPUDIV$NOCLKDIV 000000  

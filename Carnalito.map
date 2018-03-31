@@ -1,0 +1,646 @@
+gplink-1.4.2 #1169 (Feb 10 2017)
+Map File - Created 3-16-2018  11:18:08
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .cinit    romdata   0x0002c6    program   0x000034
+         ID_Carnalito_0_i    romdata   0x000352    program   0x000002
+         ID_Carnalito_1_i    romdata   0x000353    program   0x000002
+         ID_Carnalito_2_i    romdata   0x000354    program   0x000002
+             ID_idata_0_i    romdata   0x000355    program   0x000002
+                  STARTUP       code   0x000000    program   0x000006
+S_idata___sdcc_gsinit_startup       code   0x000003    program   0x000138
+     S_Carnalito__write_n       code   0x00009f    program   0x0000e2
+    S_Carnalito__lcd_read       code   0x000110    program   0x0000c2
+       S__mulint___mulint       code   0x000171    program   0x000092
+    S_Carnalito__lcd_init       code   0x0001ba    program   0x000076
+                    .code       code   0x0001f5    program   0x000068
+   S_Carnalito__espera_ms       code   0x000229    program   0x00005a
+     S_Carnalito__lcd_car       code   0x000256    program   0x000058
+    S_Carnalito__lcd_dato       code   0x000282    program   0x00004c
+    S_Carnalito__lcd_busy       code   0x0002a8    program   0x00003c
+     S_Carnalito__lcd_num       code   0x0002e0    program   0x00002c
+        S_Carnalito__main       code   0x0002f6    program   0x00002a
+     S_Carnalito__lcd_hex       code   0x00030b    program   0x00002a
+        S_Carnalito__lcdh       code   0x000320    program   0x00002a
+  S_Carnalito__lcd_comand       code   0x000335    program   0x00001a
+   S_Carnalito__lcd_clear       code   0x000342    program   0x000012
+       S_Carnalito__pausa       code   0x00034b    program   0x00000a
+           ID_Carnalito_3       code   0x000350    program   0x000004
+ .config_2007_CARNALITO.O       code   0x002007    program   0x000002
+ .config_2008_CARNALITO.O       code   0x002008    program   0x000002
+           ID_Carnalito_0      idata   0x000051       data   0x000001
+           ID_Carnalito_1      idata   0x000052       data   0x000001
+           ID_Carnalito_2      idata   0x000053       data   0x000001
+               ID_idata_0      idata   0x000054       data   0x000001
+        UD_abs_pic16f88_0      udata   0x000000       data   0x000001
+        UD_abs_pic16f88_1      udata   0x000001       data   0x000001
+        UD_abs_pic16f88_2      udata   0x000002       data   0x000001
+        UD_abs_pic16f88_3      udata   0x000003       data   0x000001
+        UD_abs_pic16f88_4      udata   0x000004       data   0x000001
+        UD_abs_pic16f88_5      udata   0x000005       data   0x000001
+        UD_abs_pic16f88_6      udata   0x000006       data   0x000001
+        UD_abs_pic16f88_a      udata   0x00000a       data   0x000001
+        UD_abs_pic16f88_b      udata   0x00000b       data   0x000001
+        UD_abs_pic16f88_c      udata   0x00000c       data   0x000001
+        UD_abs_pic16f88_d      udata   0x00000d       data   0x000001
+        UD_abs_pic16f88_e      udata   0x00000e       data   0x000001
+        UD_abs_pic16f88_f      udata   0x00000f       data   0x000001
+       UD_abs_pic16f88_10      udata   0x000010       data   0x000001
+       UD_abs_pic16f88_11      udata   0x000011       data   0x000001
+       UD_abs_pic16f88_12      udata   0x000012       data   0x000001
+       UD_abs_pic16f88_13      udata   0x000013       data   0x000001
+       UD_abs_pic16f88_14      udata   0x000014       data   0x000001
+       UD_abs_pic16f88_15      udata   0x000015       data   0x000001
+       UD_abs_pic16f88_16      udata   0x000016       data   0x000001
+       UD_abs_pic16f88_17      udata   0x000017       data   0x000001
+       UD_abs_pic16f88_18      udata   0x000018       data   0x000001
+       UD_abs_pic16f88_19      udata   0x000019       data   0x000001
+       UD_abs_pic16f88_1a      udata   0x00001a       data   0x000001
+       UD_abs_pic16f88_1e      udata   0x00001e       data   0x000001
+       UD_abs_pic16f88_1f      udata   0x00001f       data   0x000001
+          UDL_Carnalito_0      udata   0x000020       data   0x000018
+              UDL_idata_0      udata   0x000038       data   0x00000c
+            UDL__mulint_0      udata   0x000044       data   0x00000b
+           UD_Carnalito_0      udata   0x00004f       data   0x000001
+           UD_Carnalito_1      udata   0x000050       data   0x000001
+                sharebank      udata   0x000070       data   0x000010
+       UD_abs_pic16f88_81      udata   0x000081       data   0x000001
+       UD_abs_pic16f88_85      udata   0x000085       data   0x000001
+       UD_abs_pic16f88_86      udata   0x000086       data   0x000001
+       UD_abs_pic16f88_8c      udata   0x00008c       data   0x000001
+       UD_abs_pic16f88_8d      udata   0x00008d       data   0x000001
+       UD_abs_pic16f88_8e      udata   0x00008e       data   0x000001
+       UD_abs_pic16f88_8f      udata   0x00008f       data   0x000001
+       UD_abs_pic16f88_90      udata   0x000090       data   0x000001
+       UD_abs_pic16f88_92      udata   0x000092       data   0x000001
+       UD_abs_pic16f88_93      udata   0x000093       data   0x000001
+       UD_abs_pic16f88_94      udata   0x000094       data   0x000001
+       UD_abs_pic16f88_98      udata   0x000098       data   0x000001
+       UD_abs_pic16f88_99      udata   0x000099       data   0x000001
+       UD_abs_pic16f88_9b      udata   0x00009b       data   0x000001
+       UD_abs_pic16f88_9c      udata   0x00009c       data   0x000001
+       UD_abs_pic16f88_9d      udata   0x00009d       data   0x000001
+       UD_abs_pic16f88_9e      udata   0x00009e       data   0x000001
+       UD_abs_pic16f88_9f      udata   0x00009f       data   0x000001
+      UD_abs_pic16f88_105      udata   0x000105       data   0x000001
+      UD_abs_pic16f88_10c      udata   0x00010c       data   0x000001
+      UD_abs_pic16f88_10d      udata   0x00010d       data   0x000001
+      UD_abs_pic16f88_10e      udata   0x00010e       data   0x000001
+      UD_abs_pic16f88_10f      udata   0x00010f       data   0x000001
+      UD_abs_pic16f88_18c      udata   0x00018c       data   0x000001
+      UD_abs_pic16f88_18d      udata   0x00018d       data   0x000001
+
+
+
+                              Program Memory Usage
+                               Start         End
+                           ---------   ---------
+                            0x000352    0x000352
+                            0x000353    0x000353
+                            0x000354    0x000354
+                            0x000350    0x000351
+                            0x000000    0x000002
+                            0x0002f6    0x00030a
+                            0x000256    0x000281
+                            0x0002e0    0x0002f5
+                            0x00030b    0x00031f
+                            0x000320    0x000334
+                            0x0001ba    0x0001f4
+                            0x000342    0x00034a
+                            0x000335    0x000341
+                            0x000282    0x0002a7
+                            0x00009f    0x00010f
+                            0x0002a8    0x0002c5
+                            0x000110    0x000170
+                            0x000229    0x000255
+                            0x00034b    0x00034f
+                            0x002007    0x002007
+                            0x002008    0x002008
+                            0x0001f5    0x000228
+                            0x000171    0x0001b9
+                            0x000355    0x000355
+                            0x000003    0x00009e
+                            0x0002c6    0x0002df
+                            856 program addresses used
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File
+                ---------  ---------  ---------  --------- ---------
+                    PSAVE   0x000070       data     extern Carnalito.c
+                    SSAVE   0x000071       data     extern Carnalito.c
+                    STK00   0x00007f       data     extern Carnalito.c
+                    STK01   0x00007e       data     extern Carnalito.c
+                    STK02   0x00007d       data     extern Carnalito.c
+                    STK03   0x00007c       data     extern Carnalito.c
+                    STK04   0x00007b       data     extern Carnalito.c
+                    STK05   0x00007a       data     extern Carnalito.c
+                    STK06   0x000079       data     extern Carnalito.c
+                    STK07   0x000078       data     extern Carnalito.c
+                    STK08   0x000077       data     extern Carnalito.c
+                    STK09   0x000076       data     extern Carnalito.c
+                    STK10   0x000075       data     extern Carnalito.c
+                    STK11   0x000074       data     extern Carnalito.c
+                    STK12   0x000073       data     extern Carnalito.c
+                    WSAVE   0x000072       data     extern Carnalito.c
+               _00105_DS_   0x000063    program     static ../libsdcc_a-idata.asm
+               _00107_DS_   0x000094    program     static ../libsdcc_a-idata.asm
+               _00108_DS_   0x000016    program     static ../libsdcc_a-idata.asm
+               _00109_DS_   0x000244    program     static Carnalito.c
+               _00109_DS_   0x000188    program     static ../libsdcc_a-_mulint.asm
+               _00110_DS_   0x00009b    program     static ../libsdcc_a-idata.asm
+               _00112_DS_   0x000255    program     static Carnalito.c
+               _00114_DS_   0x0001a2    program     static ../libsdcc_a-_mulint.asm
+               _00119_DS_   0x00017e    program     static ../libsdcc_a-_mulint.asm
+               _00122_DS_   0x0002c4    program     static Carnalito.c
+               _00124_DS_   0x0002c5    program     static Carnalito.c
+               _00133_DS_   0x00028b    program     static Carnalito.c
+               _00135_DS_   0x000298    program     static Carnalito.c
+               _00153_DS_   0x00032a    program     static Carnalito.c
+               _00154_DS_   0x00032e    program     static Carnalito.c
+               _00167_DS_   0x00025e    program     static Carnalito.c
+               _00170_DS_   0x000281    program     static Carnalito.c
+               _00176_DS_   0x000309    program     static Carnalito.c
+                  _ADCON0   0x00001f       data     extern pic16f88.asm
+              _ADCON0bits   0x00001f       data     extern pic16f88.asm
+                  _ADCON1   0x00009f       data     extern pic16f88.asm
+              _ADCON1bits   0x00009f       data     extern pic16f88.asm
+                  _ADRESH   0x00001e       data     extern pic16f88.asm
+                  _ADRESL   0x00009e       data     extern pic16f88.asm
+                   _ANSEL   0x00009b       data     extern pic16f88.asm
+               _ANSELbits   0x00009b       data     extern pic16f88.asm
+                 _CCP1CON   0x000017       data     extern pic16f88.asm
+             _CCP1CONbits   0x000017       data     extern pic16f88.asm
+                   _CCPR1   0x000015       data     extern pic16f88.asm
+                  _CCPR1H   0x000016       data     extern pic16f88.asm
+                  _CCPR1L   0x000015       data     extern pic16f88.asm
+                   _CMCON   0x00009c       data     extern pic16f88.asm
+               _CMCONbits   0x00009c       data     extern pic16f88.asm
+                  _CVRCON   0x00009d       data     extern pic16f88.asm
+              _CVRCONbits   0x00009d       data     extern pic16f88.asm
+                   _EEADR   0x00010d       data     extern pic16f88.asm
+                  _EEADRH   0x00010f       data     extern pic16f88.asm
+                  _EECON1   0x00018c       data     extern pic16f88.asm
+              _EECON1bits   0x00018c       data     extern pic16f88.asm
+                  _EECON2   0x00018d       data     extern pic16f88.asm
+                  _EEDATA   0x00010c       data     extern pic16f88.asm
+                  _EEDATH   0x00010e       data     extern pic16f88.asm
+                     _FSR   0x000004       data     extern pic16f88.asm
+                    _INDF   0x000000       data     extern pic16f88.asm
+                  _INTCON   0x00000b       data     extern pic16f88.asm
+              _INTCONbits   0x00000b       data     extern pic16f88.asm
+              _OPTION_REG   0x000081       data     extern pic16f88.asm
+          _OPTION_REGbits   0x000081       data     extern pic16f88.asm
+                  _OSCCON   0x00008f       data     extern pic16f88.asm
+              _OSCCONbits   0x00008f       data     extern pic16f88.asm
+                 _OSCTUNE   0x000090       data     extern pic16f88.asm
+             _OSCTUNEbits   0x000090       data     extern pic16f88.asm
+                     _PCL   0x000002       data     extern pic16f88.asm
+                  _PCLATH   0x00000a       data     extern pic16f88.asm
+                    _PCON   0x00008e       data     extern pic16f88.asm
+                _PCONbits   0x00008e       data     extern pic16f88.asm
+                    _PIE1   0x00008c       data     extern pic16f88.asm
+                _PIE1bits   0x00008c       data     extern pic16f88.asm
+                    _PIE2   0x00008d       data     extern pic16f88.asm
+                _PIE2bits   0x00008d       data     extern pic16f88.asm
+                    _PIR1   0x00000c       data     extern pic16f88.asm
+                _PIR1bits   0x00000c       data     extern pic16f88.asm
+                    _PIR2   0x00000d       data     extern pic16f88.asm
+                _PIR2bits   0x00000d       data     extern pic16f88.asm
+                   _PORTA   0x000005       data     extern pic16f88.asm
+               _PORTAbits   0x000005       data     extern pic16f88.asm
+                   _PORTB   0x000006       data     extern pic16f88.asm
+               _PORTBbits   0x000006       data     extern pic16f88.asm
+                     _PR2   0x000092       data     extern pic16f88.asm
+                   _RCREG   0x00001a       data     extern pic16f88.asm
+                   _RCSTA   0x000018       data     extern pic16f88.asm
+               _RCSTAbits   0x000018       data     extern pic16f88.asm
+                   _SPBRG   0x000099       data     extern pic16f88.asm
+                  _SSPADD   0x000093       data     extern pic16f88.asm
+                  _SSPBUF   0x000013       data     extern pic16f88.asm
+                  _SSPCON   0x000014       data     extern pic16f88.asm
+              _SSPCONbits   0x000014       data     extern pic16f88.asm
+                 _SSPSTAT   0x000094       data     extern pic16f88.asm
+             _SSPSTATbits   0x000094       data     extern pic16f88.asm
+                  _STATUS   0x000003       data     extern pic16f88.asm
+              _STATUSbits   0x000003       data     extern pic16f88.asm
+_S_Carnalito__espera_ms_0015   0x00023e    program     static Carnalito.c
+_S_Carnalito__espera_ms_0024   0x00024d    program     static Carnalito.c
+_S_Carnalito__lcd_busy_0008   0x0002b0    program     static Carnalito.c
+_S_Carnalito__lcd_busy_000E   0x0002b6    program     static Carnalito.c
+_S_Carnalito__lcd_busy_0011   0x0002b9    program     static Carnalito.c
+_S_Carnalito__lcd_car_001C   0x000272    program     static Carnalito.c
+_S_Carnalito__lcd_car_0026   0x00027c    program     static Carnalito.c
+_S_Carnalito__lcd_clear_0003   0x000345    program     static Carnalito.c
+_S_Carnalito__lcd_clear_0007   0x000349    program     static Carnalito.c
+_S_Carnalito__lcd_comand_000B   0x000340    program     static Carnalito.c
+_S_Carnalito__lcd_dato_0008   0x00028a    program     static Carnalito.c
+_S_Carnalito__lcd_dato_000B   0x00028d    program     static Carnalito.c
+_S_Carnalito__lcd_dato_0014   0x000296    program     static Carnalito.c
+_S_Carnalito__lcd_dato_001E   0x0002a0    program     static Carnalito.c
+_S_Carnalito__lcd_dato_0024   0x0002a6    program     static Carnalito.c
+_S_Carnalito__lcd_hex_000B   0x000316    program     static Carnalito.c
+_S_Carnalito__lcd_hex_0013   0x00031e    program     static Carnalito.c
+_S_Carnalito__lcd_init_000B   0x0001c5    program     static Carnalito.c
+_S_Carnalito__lcd_init_000F   0x0001c9    program     static Carnalito.c
+_S_Carnalito__lcd_init_0015   0x0001cf    program     static Carnalito.c
+_S_Carnalito__lcd_init_0019   0x0001d3    program     static Carnalito.c
+_S_Carnalito__lcd_init_001F   0x0001d9    program     static Carnalito.c
+_S_Carnalito__lcd_init_0023   0x0001dd    program     static Carnalito.c
+_S_Carnalito__lcd_init_0029   0x0001e3    program     static Carnalito.c
+_S_Carnalito__lcd_init_002D   0x0001e7    program     static Carnalito.c
+_S_Carnalito__lcd_init_0031   0x0001eb    program     static Carnalito.c
+_S_Carnalito__lcd_init_0035   0x0001ef    program     static Carnalito.c
+_S_Carnalito__lcd_init_0039   0x0001f3    program     static Carnalito.c
+_S_Carnalito__lcd_num_000C   0x0002ec    program     static Carnalito.c
+_S_Carnalito__lcd_num_0014   0x0002f4    program     static Carnalito.c
+_S_Carnalito__lcd_read_0009   0x000119    program     static Carnalito.c
+_S_Carnalito__lcd_read_0012   0x000122    program     static Carnalito.c
+_S_Carnalito__lcd_read_001B   0x00012b    program     static Carnalito.c
+_S_Carnalito__lcd_read_0021   0x000131    program     static Carnalito.c
+_S_Carnalito__lcd_read_002E   0x00013e    program     static Carnalito.c
+_S_Carnalito__lcd_read_0037   0x000147    program     static Carnalito.c
+_S_Carnalito__lcd_read_0040   0x000150    program     static Carnalito.c
+_S_Carnalito__lcd_read_0046   0x000156    program     static Carnalito.c
+_S_Carnalito__lcd_read_0053   0x000163    program     static Carnalito.c
+_S_Carnalito__lcd_read_005C   0x00016c    program     static Carnalito.c
+  _S_Carnalito__lcdh_0013   0x000333    program     static Carnalito.c
+  _S_Carnalito__main_0002   0x0002f8    program     static Carnalito.c
+  _S_Carnalito__main_0012   0x000308    program     static Carnalito.c
+_S_Carnalito__write_n_000B   0x0000aa    program     static Carnalito.c
+_S_Carnalito__write_n_0015   0x0000b4    program     static Carnalito.c
+_S_Carnalito__write_n_0027   0x0000c6    program     static Carnalito.c
+_S_Carnalito__write_n_002D   0x0000cc    program     static Carnalito.c
+_S_Carnalito__write_n_0036   0x0000d5    program     static Carnalito.c
+_S_Carnalito__write_n_003C   0x0000db    program     static Carnalito.c
+_S_Carnalito__write_n_0054   0x0000f3    program     static Carnalito.c
+_S_Carnalito__write_n_005A   0x0000f9    program     static Carnalito.c
+_S_Carnalito__write_n_0063   0x000102    program     static Carnalito.c
+_S_Carnalito__write_n_0069   0x000108    program     static Carnalito.c
+_S_Carnalito__write_n_006F   0x00010e    program     static Carnalito.c
+_S_idata___sdcc_gsinit_startup_0008   0x00000b    program     static ../libsdcc_a-idata.asm
+_S_idata___sdcc_gsinit_startup_0030   0x000033    program     static ../libsdcc_a-idata.asm
+_S_idata___sdcc_gsinit_startup_003F   0x000042    program     static ../libsdcc_a-idata.asm
+_S_idata___sdcc_gsinit_startup_0057   0x00005a    program     static ../libsdcc_a-idata.asm
+_S_idata___sdcc_gsinit_startup_0076   0x000079    program     static ../libsdcc_a-idata.asm
+                   _T1CON   0x000010       data     extern pic16f88.asm
+               _T1CONbits   0x000010       data     extern pic16f88.asm
+                   _T2CON   0x000012       data     extern pic16f88.asm
+               _T2CONbits   0x000012       data     extern pic16f88.asm
+                    _TMR0   0x000001       data     extern pic16f88.asm
+                    _TMR1   0x00000e       data     extern pic16f88.asm
+                   _TMR1H   0x00000f       data     extern pic16f88.asm
+                   _TMR1L   0x00000e       data     extern pic16f88.asm
+                    _TMR2   0x000011       data     extern pic16f88.asm
+                   _TRISA   0x000085       data     extern pic16f88.asm
+               _TRISAbits   0x000085       data     extern pic16f88.asm
+                   _TRISB   0x000086       data     extern pic16f88.asm
+               _TRISBbits   0x000086       data     extern pic16f88.asm
+                   _TXREG   0x000019       data     extern pic16f88.asm
+                   _TXSTA   0x000098       data     extern pic16f88.asm
+               _TXSTAbits   0x000098       data     extern pic16f88.asm
+                  _WDTCON   0x000105       data     extern pic16f88.asm
+              _WDTCONbits   0x000105       data     extern pic16f88.asm
+                 ___str_0   0x000350    program     static Carnalito.c
+            __codeptrget1   0x000203    program     extern _gptrget1.S
+            __codeptrget2   0x00021a    program     static _gptrget2.S
+            __dataptrget1   0x0001fc    program     static _gptrget1.S
+            __dataptrget2   0x000210    program     static _gptrget2.S
+                __gptrget   0x0001f5    program     extern _gptrget1.S
+               __gptrget1   0x0001f5    program     extern _gptrget1.S
+               __gptrget2   0x000208    program     extern _gptrget2.S
+                 __mulint   0x000171    program     extern ../libsdcc_a-_mulint.asm
+    __sdcc_gsinit_startup   0x000003    program     extern ../libsdcc_a-idata.asm
+                   _cinit   0x0002c6    program     extern Carnalito.c
+                    _coms   0x000051       data     extern Carnalito.c
+                       _d   0x00004f       data     extern Carnalito.c
+               _espera_ms   0x000229    program     extern Carnalito.c
+             _force_cinit   0x000054       data     static ../libsdcc_a-idata.asm
+                _lcd_busy   0x0002a8    program     extern Carnalito.c
+                 _lcd_car   0x000256    program     extern Carnalito.c
+               _lcd_clear   0x000342    program     extern Carnalito.c
+              _lcd_comand   0x000335    program     extern Carnalito.c
+                _lcd_dato   0x000282    program     extern Carnalito.c
+                 _lcd_hex   0x00030b    program     extern Carnalito.c
+                _lcd_init   0x0001ba    program     extern Carnalito.c
+                 _lcd_num   0x0002e0    program     extern Carnalito.c
+                _lcd_read   0x000110    program     extern Carnalito.c
+                    _lcdh   0x000320    program     extern Carnalito.c
+                    _main   0x0002f6    program     extern Carnalito.c
+                       _n   0x000050       data     extern Carnalito.c
+                      _pa   0x000053       data     extern Carnalito.c
+                   _pausa   0x00034b    program     extern Carnalito.c
+                      _u9   0x000052       data     extern Carnalito.c
+                 _write_n   0x00009f    program     extern Carnalito.c
+                    bucle   0x00034c    program     static Carnalito.c
+                  r0x1000   0x000045       data     static ../libsdcc_a-_mulint.asm
+                  r0x1000   0x000039       data     static ../libsdcc_a-idata.asm
+                  r0x1001   0x000044       data     static ../libsdcc_a-_mulint.asm
+                  r0x1001   0x000038       data     static ../libsdcc_a-idata.asm
+                  r0x1002   0x000047       data     static ../libsdcc_a-_mulint.asm
+                  r0x1002   0x00003a       data     static ../libsdcc_a-idata.asm
+                  r0x1003   0x000046       data     static ../libsdcc_a-_mulint.asm
+                  r0x1003   0x00003b       data     static ../libsdcc_a-idata.asm
+                  r0x1004   0x000021       data     static Carnalito.c
+                  r0x1004   0x000048       data     static ../libsdcc_a-_mulint.asm
+                  r0x1004   0x00003c       data     static ../libsdcc_a-idata.asm
+                  r0x1005   0x000020       data     static Carnalito.c
+                  r0x1005   0x000049       data     static ../libsdcc_a-_mulint.asm
+                  r0x1005   0x00003d       data     static ../libsdcc_a-idata.asm
+                  r0x1006   0x000022       data     static Carnalito.c
+                  r0x1006   0x00004a       data     static ../libsdcc_a-_mulint.asm
+                  r0x1006   0x00003f       data     static ../libsdcc_a-idata.asm
+                  r0x1007   0x000023       data     static Carnalito.c
+                  r0x1007   0x00004b       data     static ../libsdcc_a-_mulint.asm
+                  r0x1007   0x00003e       data     static ../libsdcc_a-idata.asm
+                  r0x1008   0x000024       data     static Carnalito.c
+                  r0x1008   0x00004c       data     static ../libsdcc_a-_mulint.asm
+                  r0x1008   0x000041       data     static ../libsdcc_a-idata.asm
+                  r0x1009   0x00004e       data     static ../libsdcc_a-_mulint.asm
+                  r0x1009   0x000040       data     static ../libsdcc_a-idata.asm
+                  r0x100A   0x000025       data     static Carnalito.c
+                  r0x100A   0x00004d       data     static ../libsdcc_a-_mulint.asm
+                  r0x100A   0x000043       data     static ../libsdcc_a-idata.asm
+                  r0x100B   0x000042       data     static ../libsdcc_a-idata.asm
+                  r0x100C   0x00002f       data     static Carnalito.c
+                  r0x100D   0x00002e       data     static Carnalito.c
+                  r0x100E   0x00002d       data     static Carnalito.c
+                  r0x100F   0x000030       data     static Carnalito.c
+                  r0x1010   0x000031       data     static Carnalito.c
+                  r0x1011   0x000032       data     static Carnalito.c
+                  r0x1012   0x000033       data     static Carnalito.c
+                  r0x1013   0x000034       data     static Carnalito.c
+                  r0x1014   0x000036       data     static Carnalito.c
+                  r0x1015   0x000035       data     static Carnalito.c
+                  r0x1016   0x000037       data     static Carnalito.c
+                  r0x1017   0x000026       data     static Carnalito.c
+                  r0x1018   0x000027       data     static Carnalito.c
+                  r0x1019   0x000028       data     static Carnalito.c
+                  r0x101A   0x00002a       data     static Carnalito.c
+                  r0x101B   0x000029       data     static Carnalito.c
+                  r0x101C   0x00002b       data     static Carnalito.c
+                  r0x101D   0x00002c       data     static Carnalito.c
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File
+                ---------  ---------  ---------  --------- ---------
+                    _INDF   0x000000       data     extern pic16f88.asm
+                    _TMR0   0x000001       data     extern pic16f88.asm
+                     _PCL   0x000002       data     extern pic16f88.asm
+                  _STATUS   0x000003       data     extern pic16f88.asm
+              _STATUSbits   0x000003       data     extern pic16f88.asm
+    __sdcc_gsinit_startup   0x000003    program     extern ../libsdcc_a-idata.asm
+                     _FSR   0x000004       data     extern pic16f88.asm
+                   _PORTA   0x000005       data     extern pic16f88.asm
+               _PORTAbits   0x000005       data     extern pic16f88.asm
+                   _PORTB   0x000006       data     extern pic16f88.asm
+               _PORTBbits   0x000006       data     extern pic16f88.asm
+                  _PCLATH   0x00000a       data     extern pic16f88.asm
+                  _INTCON   0x00000b       data     extern pic16f88.asm
+              _INTCONbits   0x00000b       data     extern pic16f88.asm
+_S_idata___sdcc_gsinit_startup_0008   0x00000b    program     static ../libsdcc_a-idata.asm
+                    _PIR1   0x00000c       data     extern pic16f88.asm
+                _PIR1bits   0x00000c       data     extern pic16f88.asm
+                    _PIR2   0x00000d       data     extern pic16f88.asm
+                _PIR2bits   0x00000d       data     extern pic16f88.asm
+                    _TMR1   0x00000e       data     extern pic16f88.asm
+                   _TMR1L   0x00000e       data     extern pic16f88.asm
+                   _TMR1H   0x00000f       data     extern pic16f88.asm
+                   _T1CON   0x000010       data     extern pic16f88.asm
+               _T1CONbits   0x000010       data     extern pic16f88.asm
+                    _TMR2   0x000011       data     extern pic16f88.asm
+                   _T2CON   0x000012       data     extern pic16f88.asm
+               _T2CONbits   0x000012       data     extern pic16f88.asm
+                  _SSPBUF   0x000013       data     extern pic16f88.asm
+                  _SSPCON   0x000014       data     extern pic16f88.asm
+              _SSPCONbits   0x000014       data     extern pic16f88.asm
+                   _CCPR1   0x000015       data     extern pic16f88.asm
+                  _CCPR1L   0x000015       data     extern pic16f88.asm
+               _00108_DS_   0x000016    program     static ../libsdcc_a-idata.asm
+                  _CCPR1H   0x000016       data     extern pic16f88.asm
+                 _CCP1CON   0x000017       data     extern pic16f88.asm
+             _CCP1CONbits   0x000017       data     extern pic16f88.asm
+                   _RCSTA   0x000018       data     extern pic16f88.asm
+               _RCSTAbits   0x000018       data     extern pic16f88.asm
+                   _TXREG   0x000019       data     extern pic16f88.asm
+                   _RCREG   0x00001a       data     extern pic16f88.asm
+                  _ADRESH   0x00001e       data     extern pic16f88.asm
+                  _ADCON0   0x00001f       data     extern pic16f88.asm
+              _ADCON0bits   0x00001f       data     extern pic16f88.asm
+                  r0x1005   0x000020       data     static Carnalito.c
+                  r0x1004   0x000021       data     static Carnalito.c
+                  r0x1006   0x000022       data     static Carnalito.c
+                  r0x1007   0x000023       data     static Carnalito.c
+                  r0x1008   0x000024       data     static Carnalito.c
+                  r0x100A   0x000025       data     static Carnalito.c
+                  r0x1017   0x000026       data     static Carnalito.c
+                  r0x1018   0x000027       data     static Carnalito.c
+                  r0x1019   0x000028       data     static Carnalito.c
+                  r0x101B   0x000029       data     static Carnalito.c
+                  r0x101A   0x00002a       data     static Carnalito.c
+                  r0x101C   0x00002b       data     static Carnalito.c
+                  r0x101D   0x00002c       data     static Carnalito.c
+                  r0x100E   0x00002d       data     static Carnalito.c
+                  r0x100D   0x00002e       data     static Carnalito.c
+                  r0x100C   0x00002f       data     static Carnalito.c
+                  r0x100F   0x000030       data     static Carnalito.c
+                  r0x1010   0x000031       data     static Carnalito.c
+                  r0x1011   0x000032       data     static Carnalito.c
+_S_idata___sdcc_gsinit_startup_0030   0x000033    program     static ../libsdcc_a-idata.asm
+                  r0x1012   0x000033       data     static Carnalito.c
+                  r0x1013   0x000034       data     static Carnalito.c
+                  r0x1015   0x000035       data     static Carnalito.c
+                  r0x1014   0x000036       data     static Carnalito.c
+                  r0x1016   0x000037       data     static Carnalito.c
+                  r0x1001   0x000038       data     static ../libsdcc_a-idata.asm
+                  r0x1000   0x000039       data     static ../libsdcc_a-idata.asm
+                  r0x1002   0x00003a       data     static ../libsdcc_a-idata.asm
+                  r0x1003   0x00003b       data     static ../libsdcc_a-idata.asm
+                  r0x1004   0x00003c       data     static ../libsdcc_a-idata.asm
+                  r0x1005   0x00003d       data     static ../libsdcc_a-idata.asm
+                  r0x1007   0x00003e       data     static ../libsdcc_a-idata.asm
+                  r0x1006   0x00003f       data     static ../libsdcc_a-idata.asm
+                  r0x1009   0x000040       data     static ../libsdcc_a-idata.asm
+                  r0x1008   0x000041       data     static ../libsdcc_a-idata.asm
+_S_idata___sdcc_gsinit_startup_003F   0x000042    program     static ../libsdcc_a-idata.asm
+                  r0x100B   0x000042       data     static ../libsdcc_a-idata.asm
+                  r0x100A   0x000043       data     static ../libsdcc_a-idata.asm
+                  r0x1001   0x000044       data     static ../libsdcc_a-_mulint.asm
+                  r0x1000   0x000045       data     static ../libsdcc_a-_mulint.asm
+                  r0x1003   0x000046       data     static ../libsdcc_a-_mulint.asm
+                  r0x1002   0x000047       data     static ../libsdcc_a-_mulint.asm
+                  r0x1004   0x000048       data     static ../libsdcc_a-_mulint.asm
+                  r0x1005   0x000049       data     static ../libsdcc_a-_mulint.asm
+                  r0x1006   0x00004a       data     static ../libsdcc_a-_mulint.asm
+                  r0x1007   0x00004b       data     static ../libsdcc_a-_mulint.asm
+                  r0x1008   0x00004c       data     static ../libsdcc_a-_mulint.asm
+                  r0x100A   0x00004d       data     static ../libsdcc_a-_mulint.asm
+                  r0x1009   0x00004e       data     static ../libsdcc_a-_mulint.asm
+                       _d   0x00004f       data     extern Carnalito.c
+                       _n   0x000050       data     extern Carnalito.c
+                    _coms   0x000051       data     extern Carnalito.c
+                      _u9   0x000052       data     extern Carnalito.c
+                      _pa   0x000053       data     extern Carnalito.c
+             _force_cinit   0x000054       data     static ../libsdcc_a-idata.asm
+_S_idata___sdcc_gsinit_startup_0057   0x00005a    program     static ../libsdcc_a-idata.asm
+               _00105_DS_   0x000063    program     static ../libsdcc_a-idata.asm
+                    PSAVE   0x000070       data     extern Carnalito.c
+                    SSAVE   0x000071       data     extern Carnalito.c
+                    WSAVE   0x000072       data     extern Carnalito.c
+                    STK12   0x000073       data     extern Carnalito.c
+                    STK11   0x000074       data     extern Carnalito.c
+                    STK10   0x000075       data     extern Carnalito.c
+                    STK09   0x000076       data     extern Carnalito.c
+                    STK08   0x000077       data     extern Carnalito.c
+                    STK07   0x000078       data     extern Carnalito.c
+                    STK06   0x000079       data     extern Carnalito.c
+_S_idata___sdcc_gsinit_startup_0076   0x000079    program     static ../libsdcc_a-idata.asm
+                    STK05   0x00007a       data     extern Carnalito.c
+                    STK04   0x00007b       data     extern Carnalito.c
+                    STK03   0x00007c       data     extern Carnalito.c
+                    STK02   0x00007d       data     extern Carnalito.c
+                    STK01   0x00007e       data     extern Carnalito.c
+                    STK00   0x00007f       data     extern Carnalito.c
+              _OPTION_REG   0x000081       data     extern pic16f88.asm
+          _OPTION_REGbits   0x000081       data     extern pic16f88.asm
+                   _TRISA   0x000085       data     extern pic16f88.asm
+               _TRISAbits   0x000085       data     extern pic16f88.asm
+                   _TRISB   0x000086       data     extern pic16f88.asm
+               _TRISBbits   0x000086       data     extern pic16f88.asm
+                    _PIE1   0x00008c       data     extern pic16f88.asm
+                _PIE1bits   0x00008c       data     extern pic16f88.asm
+                    _PIE2   0x00008d       data     extern pic16f88.asm
+                _PIE2bits   0x00008d       data     extern pic16f88.asm
+                    _PCON   0x00008e       data     extern pic16f88.asm
+                _PCONbits   0x00008e       data     extern pic16f88.asm
+                  _OSCCON   0x00008f       data     extern pic16f88.asm
+              _OSCCONbits   0x00008f       data     extern pic16f88.asm
+                 _OSCTUNE   0x000090       data     extern pic16f88.asm
+             _OSCTUNEbits   0x000090       data     extern pic16f88.asm
+                     _PR2   0x000092       data     extern pic16f88.asm
+                  _SSPADD   0x000093       data     extern pic16f88.asm
+               _00107_DS_   0x000094    program     static ../libsdcc_a-idata.asm
+                 _SSPSTAT   0x000094       data     extern pic16f88.asm
+             _SSPSTATbits   0x000094       data     extern pic16f88.asm
+                   _TXSTA   0x000098       data     extern pic16f88.asm
+               _TXSTAbits   0x000098       data     extern pic16f88.asm
+                   _SPBRG   0x000099       data     extern pic16f88.asm
+               _00110_DS_   0x00009b    program     static ../libsdcc_a-idata.asm
+                   _ANSEL   0x00009b       data     extern pic16f88.asm
+               _ANSELbits   0x00009b       data     extern pic16f88.asm
+                   _CMCON   0x00009c       data     extern pic16f88.asm
+               _CMCONbits   0x00009c       data     extern pic16f88.asm
+                  _CVRCON   0x00009d       data     extern pic16f88.asm
+              _CVRCONbits   0x00009d       data     extern pic16f88.asm
+                  _ADRESL   0x00009e       data     extern pic16f88.asm
+                  _ADCON1   0x00009f       data     extern pic16f88.asm
+              _ADCON1bits   0x00009f       data     extern pic16f88.asm
+                 _write_n   0x00009f    program     extern Carnalito.c
+_S_Carnalito__write_n_000B   0x0000aa    program     static Carnalito.c
+_S_Carnalito__write_n_0015   0x0000b4    program     static Carnalito.c
+_S_Carnalito__write_n_0027   0x0000c6    program     static Carnalito.c
+_S_Carnalito__write_n_002D   0x0000cc    program     static Carnalito.c
+_S_Carnalito__write_n_0036   0x0000d5    program     static Carnalito.c
+_S_Carnalito__write_n_003C   0x0000db    program     static Carnalito.c
+_S_Carnalito__write_n_0054   0x0000f3    program     static Carnalito.c
+_S_Carnalito__write_n_005A   0x0000f9    program     static Carnalito.c
+_S_Carnalito__write_n_0063   0x000102    program     static Carnalito.c
+                  _WDTCON   0x000105       data     extern pic16f88.asm
+              _WDTCONbits   0x000105       data     extern pic16f88.asm
+_S_Carnalito__write_n_0069   0x000108    program     static Carnalito.c
+                  _EEDATA   0x00010c       data     extern pic16f88.asm
+                   _EEADR   0x00010d       data     extern pic16f88.asm
+                  _EEDATH   0x00010e       data     extern pic16f88.asm
+_S_Carnalito__write_n_006F   0x00010e    program     static Carnalito.c
+                  _EEADRH   0x00010f       data     extern pic16f88.asm
+                _lcd_read   0x000110    program     extern Carnalito.c
+_S_Carnalito__lcd_read_0009   0x000119    program     static Carnalito.c
+_S_Carnalito__lcd_read_0012   0x000122    program     static Carnalito.c
+_S_Carnalito__lcd_read_001B   0x00012b    program     static Carnalito.c
+_S_Carnalito__lcd_read_0021   0x000131    program     static Carnalito.c
+_S_Carnalito__lcd_read_002E   0x00013e    program     static Carnalito.c
+_S_Carnalito__lcd_read_0037   0x000147    program     static Carnalito.c
+_S_Carnalito__lcd_read_0040   0x000150    program     static Carnalito.c
+_S_Carnalito__lcd_read_0046   0x000156    program     static Carnalito.c
+_S_Carnalito__lcd_read_0053   0x000163    program     static Carnalito.c
+_S_Carnalito__lcd_read_005C   0x00016c    program     static Carnalito.c
+                 __mulint   0x000171    program     extern ../libsdcc_a-_mulint.asm
+               _00119_DS_   0x00017e    program     static ../libsdcc_a-_mulint.asm
+               _00109_DS_   0x000188    program     static ../libsdcc_a-_mulint.asm
+                  _EECON1   0x00018c       data     extern pic16f88.asm
+              _EECON1bits   0x00018c       data     extern pic16f88.asm
+                  _EECON2   0x00018d       data     extern pic16f88.asm
+               _00114_DS_   0x0001a2    program     static ../libsdcc_a-_mulint.asm
+                _lcd_init   0x0001ba    program     extern Carnalito.c
+_S_Carnalito__lcd_init_000B   0x0001c5    program     static Carnalito.c
+_S_Carnalito__lcd_init_000F   0x0001c9    program     static Carnalito.c
+_S_Carnalito__lcd_init_0015   0x0001cf    program     static Carnalito.c
+_S_Carnalito__lcd_init_0019   0x0001d3    program     static Carnalito.c
+_S_Carnalito__lcd_init_001F   0x0001d9    program     static Carnalito.c
+_S_Carnalito__lcd_init_0023   0x0001dd    program     static Carnalito.c
+_S_Carnalito__lcd_init_0029   0x0001e3    program     static Carnalito.c
+_S_Carnalito__lcd_init_002D   0x0001e7    program     static Carnalito.c
+_S_Carnalito__lcd_init_0031   0x0001eb    program     static Carnalito.c
+_S_Carnalito__lcd_init_0035   0x0001ef    program     static Carnalito.c
+_S_Carnalito__lcd_init_0039   0x0001f3    program     static Carnalito.c
+                __gptrget   0x0001f5    program     extern _gptrget1.S
+               __gptrget1   0x0001f5    program     extern _gptrget1.S
+            __dataptrget1   0x0001fc    program     static _gptrget1.S
+            __codeptrget1   0x000203    program     extern _gptrget1.S
+               __gptrget2   0x000208    program     extern _gptrget2.S
+            __dataptrget2   0x000210    program     static _gptrget2.S
+            __codeptrget2   0x00021a    program     static _gptrget2.S
+               _espera_ms   0x000229    program     extern Carnalito.c
+_S_Carnalito__espera_ms_0015   0x00023e    program     static Carnalito.c
+               _00109_DS_   0x000244    program     static Carnalito.c
+_S_Carnalito__espera_ms_0024   0x00024d    program     static Carnalito.c
+               _00112_DS_   0x000255    program     static Carnalito.c
+                 _lcd_car   0x000256    program     extern Carnalito.c
+               _00167_DS_   0x00025e    program     static Carnalito.c
+_S_Carnalito__lcd_car_001C   0x000272    program     static Carnalito.c
+_S_Carnalito__lcd_car_0026   0x00027c    program     static Carnalito.c
+               _00170_DS_   0x000281    program     static Carnalito.c
+                _lcd_dato   0x000282    program     extern Carnalito.c
+_S_Carnalito__lcd_dato_0008   0x00028a    program     static Carnalito.c
+               _00133_DS_   0x00028b    program     static Carnalito.c
+_S_Carnalito__lcd_dato_000B   0x00028d    program     static Carnalito.c
+_S_Carnalito__lcd_dato_0014   0x000296    program     static Carnalito.c
+               _00135_DS_   0x000298    program     static Carnalito.c
+_S_Carnalito__lcd_dato_001E   0x0002a0    program     static Carnalito.c
+_S_Carnalito__lcd_dato_0024   0x0002a6    program     static Carnalito.c
+                _lcd_busy   0x0002a8    program     extern Carnalito.c
+_S_Carnalito__lcd_busy_0008   0x0002b0    program     static Carnalito.c
+_S_Carnalito__lcd_busy_000E   0x0002b6    program     static Carnalito.c
+_S_Carnalito__lcd_busy_0011   0x0002b9    program     static Carnalito.c
+               _00122_DS_   0x0002c4    program     static Carnalito.c
+               _00124_DS_   0x0002c5    program     static Carnalito.c
+                   _cinit   0x0002c6    program     extern Carnalito.c
+                 _lcd_num   0x0002e0    program     extern Carnalito.c
+_S_Carnalito__lcd_num_000C   0x0002ec    program     static Carnalito.c
+_S_Carnalito__lcd_num_0014   0x0002f4    program     static Carnalito.c
+                    _main   0x0002f6    program     extern Carnalito.c
+  _S_Carnalito__main_0002   0x0002f8    program     static Carnalito.c
+  _S_Carnalito__main_0012   0x000308    program     static Carnalito.c
+               _00176_DS_   0x000309    program     static Carnalito.c
+                 _lcd_hex   0x00030b    program     extern Carnalito.c
+_S_Carnalito__lcd_hex_000B   0x000316    program     static Carnalito.c
+_S_Carnalito__lcd_hex_0013   0x00031e    program     static Carnalito.c
+                    _lcdh   0x000320    program     extern Carnalito.c
+               _00153_DS_   0x00032a    program     static Carnalito.c
+               _00154_DS_   0x00032e    program     static Carnalito.c
+  _S_Carnalito__lcdh_0013   0x000333    program     static Carnalito.c
+              _lcd_comand   0x000335    program     extern Carnalito.c
+_S_Carnalito__lcd_comand_000B   0x000340    program     static Carnalito.c
+               _lcd_clear   0x000342    program     extern Carnalito.c
+_S_Carnalito__lcd_clear_0003   0x000345    program     static Carnalito.c
+_S_Carnalito__lcd_clear_0007   0x000349    program     static Carnalito.c
+                   _pausa   0x00034b    program     extern Carnalito.c
+                    bucle   0x00034c    program     static Carnalito.c
+                 ___str_0   0x000350    program     static Carnalito.c
+
+

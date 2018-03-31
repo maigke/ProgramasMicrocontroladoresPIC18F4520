@@ -1,0 +1,48 @@
+gplink-1.4.2 #1169 (Jun 26 2016)
+Map File - Created 12-3-2017  01:56:15
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                  STARTUP       code   0x000000    program   0x000008
+               INT_VECTOR       code   0x000004    program   0x000002
+                     PROG       code   0x000005    program   0x000012
+    .config_2007_PRUEBA.O       code   0x002007    program   0x000002
+                  INT_VAR      udata   0x00000c       data   0x000003
+
+
+
+                              Program Memory Usage
+                               Start         End
+                           ---------   ---------
+                            0x000000    0x000003
+                            0x000004    0x000004
+                            0x000005    0x00000d
+                            0x002007    0x002007
+                            15 program addresses used
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File
+                ---------  ---------  ---------  --------- ---------
+               _PROG_0008   0x00000d    program     static prueba.asm
+                interrupt   0x000005    program     static prueba.asm
+                    start   0x00000d    program     static prueba.asm
+             status_saved   0x00000d       data     static prueba.asm
+                     var1   0x00000e       data     static prueba.asm
+                  w_saved   0x00000c       data     static prueba.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File
+                ---------  ---------  ---------  --------- ---------
+                interrupt   0x000005    program     static prueba.asm
+                  w_saved   0x00000c       data     static prueba.asm
+               _PROG_0008   0x00000d    program     static prueba.asm
+                    start   0x00000d    program     static prueba.asm
+             status_saved   0x00000d       data     static prueba.asm
+                     var1   0x00000e       data     static prueba.asm
+
+

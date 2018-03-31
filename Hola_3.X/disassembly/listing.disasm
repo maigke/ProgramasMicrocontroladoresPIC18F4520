@@ -1,0 +1,113 @@
+Disassembly Listing for Hola_3
+Generated From:
+/home/miguel/MPLABXProjects/Hola_3.X/dist/default/debug/Hola_3.X.debug.elf
+8/01/2018 07:02:04 PM
+
+---  /home/miguel/MPLABXProjects/Hola_3.X/Hola_3.c  -----------------------------------------------------
+1:             /*
+2:              * File:   Hola_3.c
+3:              * Author: miguel
+4:              *
+5:              * Created on 8 de enero de 2018, 06:44 PM
+6:              * Este programa hace lo mismo que el anterior
+7:              * Hola_2, solo que se utiliza la configuración
+8:              * de un solo bit por registro
+9:              */
+10:            
+11:            
+12:            #include <config.h>
+13:            #include <xc.h>
+14:            #include <pic18f4550.h>
+15:            #define _XTAL_FREQ 20000000
+16:            
+17:            void main(void) {
+18:                
+19:                TRISD &= ~(1 << 7);
+7F7E  9E95     BCF TRISD, 7, ACCESS
+20:                TRISB &= ~(1 << 0);
+7F80  9093     BCF TRISB, 0, ACCESS
+21:                        //habilita las resistencias de pull up PORT D
+22:                PORTEbits.RDPU = 1;
+7F82  8E84     BSF PORTE, 7, ACCESS
+23:                //habilita las resistencias de pull up PORTB
+24:                INTCON2bits.RBPU = 0;
+7F84  9EF1     BCF INTCON2, 7, ACCESS
+25:                LATB = 0x00;
+7F86  0E00     MOVLW 0x0
+7F88  6E8A     MOVWF LATB, ACCESS
+26:                LATD = 0x00;
+7F8A  0E00     MOVLW 0x0
+7F8C  6E8C     MOVWF LATD, ACCESS
+27:                while (1)
+28:                {
+29:                    LATB |= (1 << 0);
+7F8E  808A     BSF LATB, 0, ACCESS
+30:                    LATD &= ~(1 << 7);
+7F90  9E8C     BCF LATD, 7, ACCESS
+31:                    __delay_ms(500);
+7F92  0E0D     MOVLW 0xD
+7F94  6E02     MOVWF 0x2, ACCESS
+7F96  0EAF     MOVLW 0xAF
+7F98  6E01     MOVWF __pcstackCOMRAM, ACCESS
+7F9A  0EB6     MOVLW 0xB6
+7F9C  2EE8     DECFSZ WREG, F, ACCESS
+7F9E  D7FE     BRA 0x7F9C
+7FA0  2E01     DECFSZ __pcstackCOMRAM, F, ACCESS
+7FA2  D7FC     BRA 0x7F9C
+7FA4  2E02     DECFSZ 0x2, F, ACCESS
+7FA6  D7FA     BRA 0x7F9C
+7FA8  D000     BRA 0x7FAA
+32:                    LATB &= ~(1 << 0);
+7FAA  908A     BCF LATB, 0, ACCESS
+33:                    LATD |= (1 << 7);
+7FAC  8E8C     BSF LATD, 7, ACCESS
+34:                    __delay_ms(500);
+7FAE  0E0D     MOVLW 0xD
+7FB0  6E02     MOVWF 0x2, ACCESS
+7FB2  0EAF     MOVLW 0xAF
+7FB4  6E01     MOVWF __pcstackCOMRAM, ACCESS
+7FB6  0EB6     MOVLW 0xB6
+7FB8  2EE8     DECFSZ WREG, F, ACCESS
+7FBA  D7FE     BRA 0x7FB8
+7FBC  2E01     DECFSZ __pcstackCOMRAM, F, ACCESS
+7FBE  D7FC     BRA 0x7FB8
+7FC0  2E02     DECFSZ 0x2, F, ACCESS
+7FC2  D7FA     BRA 0x7FB8
+7FC4  D000     BRA 0x7FC6
+35:                    LATB |= (1 << 0);
+7FC6  808A     BSF LATB, 0, ACCESS
+36:                    LATD |= (1 << 7);
+7FC8  8E8C     BSF LATD, 7, ACCESS
+37:                    __delay_ms(500);
+7FCA  0E0D     MOVLW 0xD
+7FCC  6E02     MOVWF 0x2, ACCESS
+7FCE  0EAF     MOVLW 0xAF
+7FD0  6E01     MOVWF __pcstackCOMRAM, ACCESS
+7FD2  0EB6     MOVLW 0xB6
+7FD4  2EE8     DECFSZ WREG, F, ACCESS
+7FD6  D7FE     BRA 0x7FD4
+7FD8  2E01     DECFSZ __pcstackCOMRAM, F, ACCESS
+7FDA  D7FC     BRA 0x7FD4
+7FDC  2E02     DECFSZ 0x2, F, ACCESS
+7FDE  D7FA     BRA 0x7FD4
+7FE0  D000     BRA 0x7FE2
+38:                    LATB &= ~(1 << 0);
+7FE2  908A     BCF LATB, 0, ACCESS
+39:                    LATD &= ~(1 << 7);
+7FE4  9E8C     BCF LATD, 7, ACCESS
+40:                    __delay_ms(500);
+7FE6  0E0D     MOVLW 0xD
+7FE8  6E02     MOVWF 0x2, ACCESS
+7FEA  0EAF     MOVLW 0xAF
+7FEC  6E01     MOVWF __pcstackCOMRAM, ACCESS
+7FEE  0EB6     MOVLW 0xB6
+7FF0  2EE8     DECFSZ WREG, F, ACCESS
+7FF2  D7FE     BRA 0x7FF0
+7FF4  2E01     DECFSZ __pcstackCOMRAM, F, ACCESS
+7FF6  D7FC     BRA 0x7FF0
+7FF8  2E02     DECFSZ 0x2, F, ACCESS
+7FFA  D7FA     BRA 0x7FF0
+7FFC  D000     BRA 0x7FFE
+41:                }
+42:                return;
+43:            }

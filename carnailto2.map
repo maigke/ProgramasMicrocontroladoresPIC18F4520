@@ -1,0 +1,170 @@
+gplink-1.4.2 #1169 (Feb 10 2017)
+Map File - Created 3-16-2018  17:46:47
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                  STARTUP       code   0x000000    program   0x000008
+               INT_VECTOR       code   0x000004    program   0x000002
+                     PROG       code   0x000005    program   0x000192
+.config_2007_CARNAILTO2.O       code   0x002007    program   0x000002
+                  INT_VAR      udata   0x00000c       data   0x000003
+
+
+
+                              Program Memory Usage
+                               Start         End
+                           ---------   ---------
+                            0x000000    0x000003
+                            0x000004    0x000004
+                            0x000005    0x0000cd
+                            0x002007    0x002007
+                            207 program addresses used
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File
+                ---------  ---------  ---------  --------- ---------
+      LCD_2Lineas4Bits5x7   0x000054    program     static lcd4bit.inc
+                LCD_Borra   0x000052    program     static lcd4bit.inc
+                 LCD_Byte   0x000071    program     static lcd4bit.inc
+         LCD_ByteCompleto   0x000078    program     static lcd4bit.inc
+             LCD_Caracter   0x000057    program     static lcd4bit.inc
+          LCD_CodigoCGROM   0x000061    program     static lcd4bit.inc
+           LCD_CursorIncr   0x000042    program     static lcd4bit.inc
+            LCD_CursorOFF   0x000050    program     static lcd4bit.inc
+             LCD_CursorON   0x00004e    program     static lcd4bit.inc
+   LCD_DosEspaciosBlancos   0x000068    program     static lcd4bit.inc
+                LCD_Envia   0x000059    program     static lcd4bit.inc
+         LCD_EnviaBlancos   0x00006b    program     static lcd4bit.inc
+       LCD_EnviaByteLetra   0x000084    program     static lcd4bit.inc
+         LCD_EnviaComando   0x000055    program     static lcd4bit.inc
+      LCD_EnviaOtroBlanco   0x00006c    program     static lcd4bit.inc
+           LCD_EscribeLCD   0x00002e    program     static lcd4bit.inc
+             LCD_FinCGROM   0x000062    program     static lcd4bit.inc
+   LCD_FinVisualizaDigito   0x000086    program     static lcd4bit.inc
+           LCD_Inicializa   0x000014    program     static lcd4bit.inc
+               LCD_Linea1   0x000044    program     static lcd4bit.inc
+               LCD_Linea2   0x000046    program     static lcd4bit.inc
+        LCD_LineaEnBlanco   0x000064    program     static lcd4bit.inc
+               LCD_Nibble   0x00007c    program     static lcd4bit.inc
+                  LCD_OFF   0x00004c    program     static lcd4bit.inc
+       LCD_PosicionLinea1   0x000048    program     static lcd4bit.inc
+       LCD_PosicionLinea2   0x00004a    program     static lcd4bit.inc
+  LCD_TresEspaciosBlancos   0x00006a    program     static lcd4bit.inc
+      LCD_UnEspacioBlanco   0x000066    program     static lcd4bit.inc
+        LCD_VisualizaAlto   0x000079    program     static lcd4bit.inc
+        LCD_VisualizaBajo   0x00007b    program     static lcd4bit.inc
+    R1Decima_BucleExterno   0x0000c4    program     static retardos.inc
+   R1Decima_BucleExterno2   0x0000c2    program     static retardos.inc
+    R1Decima_BucleInterno   0x0000c6    program     static retardos.inc
+        R1ms_BucleExterno   0x0000ae    program     static retardos.inc
+        R1ms_BucleInterno   0x0000b0    program     static retardos.inc
+            RetardoMicros   0x00009a    program     static retardos.inc
+        Retardo_100micros   0x000094    program     static retardos.inc
+            Retardo_100ms   0x0000a0    program     static retardos.inc
+         Retardo_10micros   0x000087    program     static retardos.inc
+             Retardo_10ms   0x0000a6    program     static retardos.inc
+              Retardo_10s   0x0000b8    program     static retardos.inc
+          Retardo_1Decima   0x0000c1    program     static retardos.inc
+              Retardo_1ms   0x0000ac    program     static retardos.inc
+               Retardo_1s   0x0000be    program     static retardos.inc
+        Retardo_200micros   0x000091    program     static retardos.inc
+            Retardo_200ms   0x00009e    program     static retardos.inc
+         Retardo_20micros   0x000099    program     static retardos.inc
+             Retardo_20ms   0x0000a4    program     static retardos.inc
+              Retardo_20s   0x0000b6    program     static retardos.inc
+              Retardo_2ms   0x0000aa    program     static retardos.inc
+               Retardo_2s   0x0000bc    program     static retardos.inc
+          Retardo_4micros   0x00008d    program     static retardos.inc
+        Retardo_500micros   0x00008e    program     static retardos.inc
+            Retardo_500ms   0x0000c0    program     static retardos.inc
+         Retardo_50micros   0x000096    program     static retardos.inc
+             Retardo_50ms   0x0000a2    program     static retardos.inc
+          Retardo_5micros   0x00008c    program     static retardos.inc
+              Retardo_5ms   0x0000a8    program     static retardos.inc
+               Retardo_5s   0x0000ba    program     static retardos.inc
+              Retardos_ms   0x0000ad    program     static retardos.inc
+            Rmicros_Bucle   0x00009b    program     static retardos.inc
+               _PROG_000E   0x000013    program     static carnailto2.asm
+                interrupt   0x000005    program     static carnailto2.asm
+                    start   0x00000d    program     static carnailto2.asm
+             status_saved   0x00000d       data     static carnailto2.asm
+                     var1   0x00000e       data     static carnailto2.asm
+                  w_saved   0x00000c       data     static carnailto2.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File
+                ---------  ---------  ---------  --------- ---------
+                interrupt   0x000005    program     static carnailto2.asm
+                  w_saved   0x00000c       data     static carnailto2.asm
+                    start   0x00000d    program     static carnailto2.asm
+             status_saved   0x00000d       data     static carnailto2.asm
+                     var1   0x00000e       data     static carnailto2.asm
+               _PROG_000E   0x000013    program     static carnailto2.asm
+           LCD_Inicializa   0x000014    program     static lcd4bit.inc
+           LCD_EscribeLCD   0x00002e    program     static lcd4bit.inc
+           LCD_CursorIncr   0x000042    program     static lcd4bit.inc
+               LCD_Linea1   0x000044    program     static lcd4bit.inc
+               LCD_Linea2   0x000046    program     static lcd4bit.inc
+       LCD_PosicionLinea1   0x000048    program     static lcd4bit.inc
+       LCD_PosicionLinea2   0x00004a    program     static lcd4bit.inc
+                  LCD_OFF   0x00004c    program     static lcd4bit.inc
+             LCD_CursorON   0x00004e    program     static lcd4bit.inc
+            LCD_CursorOFF   0x000050    program     static lcd4bit.inc
+                LCD_Borra   0x000052    program     static lcd4bit.inc
+      LCD_2Lineas4Bits5x7   0x000054    program     static lcd4bit.inc
+         LCD_EnviaComando   0x000055    program     static lcd4bit.inc
+             LCD_Caracter   0x000057    program     static lcd4bit.inc
+                LCD_Envia   0x000059    program     static lcd4bit.inc
+          LCD_CodigoCGROM   0x000061    program     static lcd4bit.inc
+             LCD_FinCGROM   0x000062    program     static lcd4bit.inc
+        LCD_LineaEnBlanco   0x000064    program     static lcd4bit.inc
+      LCD_UnEspacioBlanco   0x000066    program     static lcd4bit.inc
+   LCD_DosEspaciosBlancos   0x000068    program     static lcd4bit.inc
+  LCD_TresEspaciosBlancos   0x00006a    program     static lcd4bit.inc
+         LCD_EnviaBlancos   0x00006b    program     static lcd4bit.inc
+      LCD_EnviaOtroBlanco   0x00006c    program     static lcd4bit.inc
+                 LCD_Byte   0x000071    program     static lcd4bit.inc
+         LCD_ByteCompleto   0x000078    program     static lcd4bit.inc
+        LCD_VisualizaAlto   0x000079    program     static lcd4bit.inc
+        LCD_VisualizaBajo   0x00007b    program     static lcd4bit.inc
+               LCD_Nibble   0x00007c    program     static lcd4bit.inc
+       LCD_EnviaByteLetra   0x000084    program     static lcd4bit.inc
+   LCD_FinVisualizaDigito   0x000086    program     static lcd4bit.inc
+         Retardo_10micros   0x000087    program     static retardos.inc
+          Retardo_5micros   0x00008c    program     static retardos.inc
+          Retardo_4micros   0x00008d    program     static retardos.inc
+        Retardo_500micros   0x00008e    program     static retardos.inc
+        Retardo_200micros   0x000091    program     static retardos.inc
+        Retardo_100micros   0x000094    program     static retardos.inc
+         Retardo_50micros   0x000096    program     static retardos.inc
+         Retardo_20micros   0x000099    program     static retardos.inc
+            RetardoMicros   0x00009a    program     static retardos.inc
+            Rmicros_Bucle   0x00009b    program     static retardos.inc
+            Retardo_200ms   0x00009e    program     static retardos.inc
+            Retardo_100ms   0x0000a0    program     static retardos.inc
+             Retardo_50ms   0x0000a2    program     static retardos.inc
+             Retardo_20ms   0x0000a4    program     static retardos.inc
+             Retardo_10ms   0x0000a6    program     static retardos.inc
+              Retardo_5ms   0x0000a8    program     static retardos.inc
+              Retardo_2ms   0x0000aa    program     static retardos.inc
+              Retardo_1ms   0x0000ac    program     static retardos.inc
+              Retardos_ms   0x0000ad    program     static retardos.inc
+        R1ms_BucleExterno   0x0000ae    program     static retardos.inc
+        R1ms_BucleInterno   0x0000b0    program     static retardos.inc
+              Retardo_20s   0x0000b6    program     static retardos.inc
+              Retardo_10s   0x0000b8    program     static retardos.inc
+               Retardo_5s   0x0000ba    program     static retardos.inc
+               Retardo_2s   0x0000bc    program     static retardos.inc
+               Retardo_1s   0x0000be    program     static retardos.inc
+            Retardo_500ms   0x0000c0    program     static retardos.inc
+          Retardo_1Decima   0x0000c1    program     static retardos.inc
+   R1Decima_BucleExterno2   0x0000c2    program     static retardos.inc
+    R1Decima_BucleExterno   0x0000c4    program     static retardos.inc
+    R1Decima_BucleInterno   0x0000c6    program     static retardos.inc
+
+

@@ -1,0 +1,43 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"15 testF.h
+[v _val `i ~T0 @X0 1 e ]
+[i _val
+-> 0 `i
+]
+[; ;testF.h: 15: int val = 0;
+[; ;testF.h: 17: void func1();
+[; ;testF.h: 18: int func2(int valor);
+"3 testF.c
+[v _func1 `(v ~T0 @X0 1 ef ]
+"4
+{
+[; ;testF.c: 3: void func1(void)
+[; ;testF.c: 4: {
+[e :U _func1 ]
+[f ]
+[; ;testF.c: 5: val = 22;
+"5
+[e = _val -> 22 `i ]
+[; ;testF.c: 6: }
+"6
+[e :UE 1 ]
+}
+"8
+[v _func2 `(i ~T0 @X0 1 ef1`i ]
+"9
+{
+[; ;testF.c: 8: int func2(int x)
+[; ;testF.c: 9: {
+[e :U _func2 ]
+"8
+[v _x `i ~T0 @X0 1 r1 ]
+"9
+[f ]
+[; ;testF.c: 10: return x+x;
+"10
+[e ) + _x _x ]
+[e $UE 2  ]
+[; ;testF.c: 11: }
+"11
+[e :UE 2 ]
+}

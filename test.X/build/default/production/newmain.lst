@@ -1,0 +1,476 @@
+gpasm-1.4.2 #1169 (Jun 26 2016) build/default   12-3-2017  22:39:40         PAGE  1
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+                      00001 ;--------------------------------------------------------
+                      00002 ; File Created by SDCC : free open source ANSI-C Compiler
+                      00003 ; Version 3.6.0 #9615 (Linux)
+                      00004 ;--------------------------------------------------------
+                      00005 ; PIC16 port for the Microchip 16-bit core micros
+                      00006 ;--------------------------------------------------------
+                      00007         list    p=18f4220
+                      00008         radix   dec
+                      00009 
+                      00010 
+                      00011 ;--------------------------------------------------------
+                      00012 ; public variables in this module
+                      00013 ;--------------------------------------------------------
+  0000                00014         global  _main
+                      00015 
+                      00016 ;--------------------------------------------------------
+                      00017 ; extern variables in this module
+                      00018 ;--------------------------------------------------------
+  0000                00019         extern  _PORTAbits
+  0000                00020         extern  _PORTBbits
+  0000                00021         extern  _PORTCbits
+  0000                00022         extern  _PORTDbits
+  0000                00023         extern  _PORTEbits
+  0000                00024         extern  _LATAbits
+  0000                00025         extern  _LATBbits
+  0000                00026         extern  _LATCbits
+  0000                00027         extern  _LATDbits
+  0000                00028         extern  _LATEbits
+  0000                00029         extern  _DDRAbits
+  0000                00030         extern  _TRISAbits
+  0000                00031         extern  _DDRBbits
+  0000                00032         extern  _TRISBbits
+  0000                00033         extern  _DDRCbits
+  0000                00034         extern  _TRISCbits
+  0000                00035         extern  _DDRDbits
+  0000                00036         extern  _TRISDbits
+  0000                00037         extern  _DDREbits
+  0000                00038         extern  _TRISEbits
+  0000                00039         extern  _OSCTUN2bits
+  0000                00040         extern  _OSCTUNEbits
+  0000                00041         extern  _PIE1bits
+  0000                00042         extern  _PIR1bits
+  0000                00043         extern  _IPR1bits
+  0000                00044         extern  _PIE2bits
+  0000                00045         extern  _PIR2bits
+  0000                00046         extern  _IPR2bits
+  0000                00047         extern  _EECON1bits
+  0000                00048         extern  _RCSTAbits
+  0000                00049         extern  _TXSTAbits
+  0000                00050         extern  _T3CONbits
+  0000                00051         extern  _CMCONbits
+  0000                00052         extern  _CVRCONbits
+  0000                00053         extern  _ECCPASbits
+gpasm-1.4.2 #1169 (Jun 26 2016) build/default   12-3-2017  22:39:40         PAGE  2
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+  0000                00054         extern  _PWM1CONbits
+  0000                00055         extern  _CCP2CONbits
+  0000                00056         extern  _CCP1CONbits
+  0000                00057         extern  _ADCON2bits
+  0000                00058         extern  _ADCON1bits
+  0000                00059         extern  _ADCON0bits
+  0000                00060         extern  _SSPCON2bits
+  0000                00061         extern  _SSPCON1bits
+  0000                00062         extern  _SSPSTATbits
+  0000                00063         extern  _T2CONbits
+  0000                00064         extern  _T1CONbits
+  0000                00065         extern  _RCONbits
+  0000                00066         extern  _WDTCONbits
+  0000                00067         extern  _LVDCONbits
+  0000                00068         extern  _OSCCONbits
+  0000                00069         extern  _T0CONbits
+  0000                00070         extern  _STATUSbits
+  0000                00071         extern  _INTCON3bits
+  0000                00072         extern  _INTCON2bits
+  0000                00073         extern  _INTCONbits
+  0000                00074         extern  _STKPTRbits
+  0000                00075         extern  _PORTA
+  0000                00076         extern  _PORTB
+  0000                00077         extern  _PORTC
+  0000                00078         extern  _PORTD
+  0000                00079         extern  _PORTE
+  0000                00080         extern  _LATA
+  0000                00081         extern  _LATB
+  0000                00082         extern  _LATC
+  0000                00083         extern  _LATD
+  0000                00084         extern  _LATE
+  0000                00085         extern  _DDRA
+  0000                00086         extern  _TRISA
+  0000                00087         extern  _DDRB
+  0000                00088         extern  _TRISB
+  0000                00089         extern  _DDRC
+  0000                00090         extern  _TRISC
+  0000                00091         extern  _DDRD
+  0000                00092         extern  _TRISD
+  0000                00093         extern  _DDRE
+  0000                00094         extern  _TRISE
+  0000                00095         extern  _OSCTUN2
+  0000                00096         extern  _OSCTUNE
+  0000                00097         extern  _PIE1
+  0000                00098         extern  _PIR1
+  0000                00099         extern  _IPR1
+  0000                00100         extern  _PIE2
+  0000                00101         extern  _PIR2
+  0000                00102         extern  _IPR2
+  0000                00103         extern  _EECON1
+  0000                00104         extern  _EECON2
+  0000                00105         extern  _EEDATA
+  0000                00106         extern  _EEADR
+gpasm-1.4.2 #1169 (Jun 26 2016) build/default   12-3-2017  22:39:40         PAGE  3
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+  0000                00107         extern  _RCSTA
+  0000                00108         extern  _TXSTA
+  0000                00109         extern  _TXREG
+  0000                00110         extern  _RCREG
+  0000                00111         extern  _SPBRG
+  0000                00112         extern  _T3CON
+  0000                00113         extern  _TMR3
+  0000                00114         extern  _TMR3L
+  0000                00115         extern  _TMR3H
+  0000                00116         extern  _CMCON
+  0000                00117         extern  _CVRCON
+  0000                00118         extern  _ECCPAS
+  0000                00119         extern  _PWM1CON
+  0000                00120         extern  _CCP2CON
+  0000                00121         extern  _CCPR2
+  0000                00122         extern  _CCPR2L
+  0000                00123         extern  _CCPR2H
+  0000                00124         extern  _CCP1CON
+  0000                00125         extern  _CCPR1
+  0000                00126         extern  _CCPR1L
+  0000                00127         extern  _CCPR1H
+  0000                00128         extern  _ADCON2
+  0000                00129         extern  _ADCON1
+  0000                00130         extern  _ADCON0
+  0000                00131         extern  _ADRES
+  0000                00132         extern  _ADRESL
+  0000                00133         extern  _ADRESH
+  0000                00134         extern  _SSPCON2
+  0000                00135         extern  _SSPCON1
+  0000                00136         extern  _SSPSTAT
+  0000                00137         extern  _SSPADD
+  0000                00138         extern  _SSPBUF
+  0000                00139         extern  _T2CON
+  0000                00140         extern  _PR2
+  0000                00141         extern  _TMR2
+  0000                00142         extern  _T1CON
+  0000                00143         extern  _TMR1
+  0000                00144         extern  _TMR1L
+  0000                00145         extern  _TMR1H
+  0000                00146         extern  _RCON
+  0000                00147         extern  _WDTCON
+  0000                00148         extern  _LVDCON
+  0000                00149         extern  _OSCCON
+  0000                00150         extern  _T0CON
+  0000                00151         extern  _TMR0
+  0000                00152         extern  _TMR0L
+  0000                00153         extern  _TMR0H
+  0000                00154         extern  _STATUS
+  0000                00155         extern  _FSR2L
+  0000                00156         extern  _FSR2H
+  0000                00157         extern  _PLUSW2
+  0000                00158         extern  _PREINC2
+  0000                00159         extern  _POSTDEC2
+gpasm-1.4.2 #1169 (Jun 26 2016) build/default   12-3-2017  22:39:40         PAGE  4
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+  0000                00160         extern  _POSTINC2
+  0000                00161         extern  _INDF2
+  0000                00162         extern  _BSR
+  0000                00163         extern  _FSR1L
+  0000                00164         extern  _FSR1H
+  0000                00165         extern  _PLUSW1
+  0000                00166         extern  _PREINC1
+  0000                00167         extern  _POSTDEC1
+  0000                00168         extern  _POSTINC1
+  0000                00169         extern  _INDF1
+  0000                00170         extern  _WREG
+  0000                00171         extern  _FSR0L
+  0000                00172         extern  _FSR0H
+  0000                00173         extern  _PLUSW0
+  0000                00174         extern  _PREINC0
+  0000                00175         extern  _POSTDEC0
+  0000                00176         extern  _POSTINC0
+  0000                00177         extern  _INDF0
+  0000                00178         extern  _INTCON3
+  0000                00179         extern  _INTCON2
+  0000                00180         extern  _INTCON
+  0000                00181         extern  _PROD
+  0000                00182         extern  _PRODL
+  0000                00183         extern  _PRODH
+  0000                00184         extern  _TABLAT
+  0000                00185         extern  _TBLPTR
+  0000                00186         extern  _TBLPTRL
+  0000                00187         extern  _TBLPTRH
+  0000                00188         extern  _TBLPTRU
+  0000                00189         extern  _PC
+  0000                00190         extern  _PCL
+  0000                00191         extern  _PCLATH
+  0000                00192         extern  _PCLATU
+  0000                00193         extern  _STKPTR
+  0000                00194         extern  _TOS
+  0000                00195         extern  _TOSL
+  0000                00196         extern  _TOSH
+  0000                00197         extern  _TOSU
+                      00198 
+                      00199 ;--------------------------------------------------------
+                      00200 ; interrupt vector
+                      00201 ;--------------------------------------------------------
+                      00202 
+                      00203 ;--------------------------------------------------------
+                      00204 ; global & static initialisations
+                      00205 ;--------------------------------------------------------
+                      00206 ; I code from now on!
+                      00207 ; ; Starting pCode block
+                      00208 S_newmain__main code
+000000                00209 _main:
+                      00210 ;       .line   19; newmain.c   return;
+000000 0012           00211         RETURN  
+                      00212 
+gpasm-1.4.2 #1169 (Jun 26 2016) build/default   12-3-2017  22:39:40         PAGE  5
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+                      00213 
+                      00214 
+                      00215 ; Statistics:
+                      00216 ; code size:        2 (0x0002) bytes ( 0.00%)
+                      00217 ;                   1 (0x0001) words
+                      00218 ; udata size:       0 (0x0000) bytes ( 0.00%)
+                      00219 ; access size:      0 (0x0000) bytes
+                      00220 
+                      00221 
+                      00222         end
+gpasm-1.4.2 #1169 (Jun 26 2016) build/default   12-3-2017  22:39:40         PAGE  6
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+_ADCON0                           00000000
+_ADCON0bits                       00000000
+_ADCON1                           00000000
+_ADCON1bits                       00000000
+_ADCON2                           00000000
+_ADCON2bits                       00000000
+_ADRES                            00000000
+_ADRESH                           00000000
+_ADRESL                           00000000
+_BSR                              00000000
+_CCP1CON                          00000000
+_CCP1CONbits                      00000000
+_CCP2CON                          00000000
+_CCP2CONbits                      00000000
+_CCPR1                            00000000
+_CCPR1H                           00000000
+_CCPR1L                           00000000
+_CCPR2                            00000000
+_CCPR2H                           00000000
+_CCPR2L                           00000000
+_CMCON                            00000000
+_CMCONbits                        00000000
+_CVRCON                           00000000
+_CVRCONbits                       00000000
+_DDRA                             00000000
+_DDRAbits                         00000000
+_DDRB                             00000000
+_DDRBbits                         00000000
+_DDRC                             00000000
+_DDRCbits                         00000000
+_DDRD                             00000000
+_DDRDbits                         00000000
+_DDRE                             00000000
+_DDREbits                         00000000
+_ECCPAS                           00000000
+_ECCPASbits                       00000000
+_EEADR                            00000000
+_EECON1                           00000000
+_EECON1bits                       00000000
+_EECON2                           00000000
+_EEDATA                           00000000
+_FSR0H                            00000000
+_FSR0L                            00000000
+_FSR1H                            00000000
+_FSR1L                            00000000
+_FSR2H                            00000000
+_FSR2L                            00000000
+_INDF0                            00000000
+_INDF1                            00000000
+_INDF2                            00000000
+_INTCON                           00000000
+_INTCON2                          00000000
+_INTCON2bits                      00000000
+gpasm-1.4.2 #1169 (Jun 26 2016) build/default   12-3-2017  22:39:40         PAGE  7
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_INTCON3                          00000000
+_INTCON3bits                      00000000
+_INTCONbits                       00000000
+_IPR1                             00000000
+_IPR1bits                         00000000
+_IPR2                             00000000
+_IPR2bits                         00000000
+_LATA                             00000000
+_LATAbits                         00000000
+_LATB                             00000000
+_LATBbits                         00000000
+_LATC                             00000000
+_LATCbits                         00000000
+_LATD                             00000000
+_LATDbits                         00000000
+_LATE                             00000000
+_LATEbits                         00000000
+_LVDCON                           00000000
+_LVDCONbits                       00000000
+_OSCCON                           00000000
+_OSCCONbits                       00000000
+_OSCTUN2                          00000000
+_OSCTUN2bits                      00000000
+_OSCTUNE                          00000000
+_OSCTUNEbits                      00000000
+_PC                               00000000
+_PCL                              00000000
+_PCLATH                           00000000
+_PCLATU                           00000000
+_PIE1                             00000000
+_PIE1bits                         00000000
+_PIE2                             00000000
+_PIE2bits                         00000000
+_PIR1                             00000000
+_PIR1bits                         00000000
+_PIR2                             00000000
+_PIR2bits                         00000000
+_PLUSW0                           00000000
+_PLUSW1                           00000000
+_PLUSW2                           00000000
+_PORTA                            00000000
+_PORTAbits                        00000000
+_PORTB                            00000000
+_PORTBbits                        00000000
+_PORTC                            00000000
+_PORTCbits                        00000000
+_PORTD                            00000000
+_PORTDbits                        00000000
+_PORTE                            00000000
+_PORTEbits                        00000000
+_POSTDEC0                         00000000
+_POSTDEC1                         00000000
+_POSTDEC2                         00000000
+gpasm-1.4.2 #1169 (Jun 26 2016) build/default   12-3-2017  22:39:40         PAGE  8
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_POSTINC0                         00000000
+_POSTINC1                         00000000
+_POSTINC2                         00000000
+_PR2                              00000000
+_PREINC0                          00000000
+_PREINC1                          00000000
+_PREINC2                          00000000
+_PROD                             00000000
+_PRODH                            00000000
+_PRODL                            00000000
+_PWM1CON                          00000000
+_PWM1CONbits                      00000000
+_RCON                             00000000
+_RCONbits                         00000000
+_RCREG                            00000000
+_RCSTA                            00000000
+_RCSTAbits                        00000000
+_SPBRG                            00000000
+_SSPADD                           00000000
+_SSPBUF                           00000000
+_SSPCON1                          00000000
+_SSPCON1bits                      00000000
+_SSPCON2                          00000000
+_SSPCON2bits                      00000000
+_SSPSTAT                          00000000
+_SSPSTATbits                      00000000
+_STATUS                           00000000
+_STATUSbits                       00000000
+_STKPTR                           00000000
+_STKPTRbits                       00000000
+_T0CON                            00000000
+_T0CONbits                        00000000
+_T1CON                            00000000
+_T1CONbits                        00000000
+_T2CON                            00000000
+_T2CONbits                        00000000
+_T3CON                            00000000
+_T3CONbits                        00000000
+_TABLAT                           00000000
+_TBLPTR                           00000000
+_TBLPTRH                          00000000
+_TBLPTRL                          00000000
+_TBLPTRU                          00000000
+_TMR0                             00000000
+_TMR0H                            00000000
+_TMR0L                            00000000
+_TMR1                             00000000
+_TMR1H                            00000000
+_TMR1L                            00000000
+_TMR2                             00000000
+_TMR3                             00000000
+_TMR3H                            00000000
+_TMR3L                            00000000
+gpasm-1.4.2 #1169 (Jun 26 2016) build/default   12-3-2017  22:39:40         PAGE  9
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_TOS                              00000000
+_TOSH                             00000000
+_TOSL                             00000000
+_TOSU                             00000000
+_TRISA                            00000000
+_TRISAbits                        00000000
+_TRISB                            00000000
+_TRISBbits                        00000000
+_TRISC                            00000000
+_TRISCbits                        00000000
+_TRISD                            00000000
+_TRISDbits                        00000000
+_TRISE                            00000000
+_TRISEbits                        00000000
+_TXREG                            00000000
+_TXSTA                            00000000
+_TXSTAbits                        00000000
+_WDTCON                           00000000
+_WDTCONbits                       00000000
+_WREG                             00000000
+__18F4220                         00000001
+__ACC_RAM_LOW_END                 0000007F
+__ACC_RAM_LOW_START               00000000
+__CODE_END                        00000FFF
+__CODE_START                      00000000
+__CONFIG_END                      0030000D
+__CONFIG_START                    00300000
+__EEPROM_END                      00F000FF
+__EEPROM_START                    00F00000
+__IDLOCS_END                      00200007
+__IDLOCS_START                    00200000
+__VECTOR_INT_HIGH                 00000008
+__VECTOR_INT_LOW                  00000018
+__VECTOR_RESET                    00000000
+_main                             00000000
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

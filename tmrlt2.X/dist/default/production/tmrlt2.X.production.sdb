@@ -1,0 +1,55 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4520 ]
+[d frameptr 4065 ]
+"62 /opt/microchip/xc8/v1.44/sources/common/float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 /opt/microchip/xc8/v1.44/sources/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 /opt/microchip/xc8/v1.44/sources/common/ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 /opt/microchip/xc8/v1.44/sources/common/ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"20 /opt/microchip/xc8/v1.44/sources/common/ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"10 /opt/microchip/xc8/v1.44/sources/common/sprcadd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"11 /opt/microchip/xc8/v1.44/sources/common/sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"8 /opt/microchip/xc8/v1.44/sources/common/sprcmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"15 /opt/microchip/xc8/v1.44/sources/common/Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"17 /home/miguel/MPLABXProjects/tmrlt2.X/tmrlt2.c
+[v _pausa_10ms pausa_10ms `(v  1 e 1 0 ]
+"24
+[v _main main `(v  1 e 1 0 ]
+"448 /opt/microchip/xc8/v1.44/include/pic18f4520.h
+[v _PORTC PORTC `VEuc  1 e 1 @3970 ]
+"6249
+[v _TMR0 TMR0 `VEus  1 e 2 @4054 ]
+"7677
+[v _PSA PSA `VEb  1 e 0 @32427 ]
+"7937
+[v _T0CS T0CS `VEb  1 e 0 @32429 ]
+"7941
+[v _T0IF T0IF `VEb  1 e 0 @32658 ]
+"7943
+[v _T0PS0 T0PS0 `VEb  1 e 0 @32424 ]
+"7945
+[v _T0PS1 T0PS1 `VEb  1 e 0 @32425 ]
+"7947
+[v _T0PS2 T0PS2 `VEb  1 e 0 @32426 ]
+"24 /home/miguel/MPLABXProjects/tmrlt2.X/tmrlt2.c
+[v _main main `(v  1 e 1 0 ]
+{
+"34
+} 0
+"17
+[v _pausa_10ms pausa_10ms `(v  1 e 1 0 ]
+{
+"22
+} 0
