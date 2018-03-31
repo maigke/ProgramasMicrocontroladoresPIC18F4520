@@ -1,8 +1,19 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"7325 /opt/microchip/xc8/v1.45/include/pic18f4520.h
-[v _INT0IF `Vb ~T0 @X0 0 e@32657 ]
+"2675 /opt/microchip/xc8/v1.45/include/pic18f4520.h
+[s S96 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S96 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
+"2685
+[s S97 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S97 . . TX1IF RC1IF ]
+"2674
+[u S95 `S96 1 `S97 1 ]
+[n S95 . . . ]
+"2691
+[v _PIR1bits `VS95 ~T0 @X0 0 e@3998 ]
 "8009
 [v _TMR1IF `Vb ~T0 @X0 0 e@31984 ]
+"7325
+[v _INT0IF `Vb ~T0 @X0 0 e@32657 ]
 [p mainexit ]
 "1697
 [v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
@@ -14,6 +25,44 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _INT0IE `Vb ~T0 @X0 0 e@32660 ]
 "7355
 [v _INTEDG0 `Vb ~T0 @X0 0 e@32654 ]
+"8011
+[v _TMR1IP `Vb ~T0 @X0 0 e@31992 ]
+"2598
+[s S93 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S93 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE PSPIE ]
+"2608
+[s S94 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S94 . . TX1IE RC1IE ]
+"2597
+[u S92 `S93 1 `S94 1 ]
+[n S92 . . . ]
+"2614
+[v _PIE1bits `VS92 ~T0 @X0 0 e@3997 ]
+"5534
+[s S233 :2 `uc 1 :1 `uc 1 ]
+[n S233 . . NOT_T1SYNC ]
+"5538
+[s S234 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S234 . TMR1ON TMR1CS nT1SYNC T1OSCEN T1CKPS T1RUN RD16 ]
+"5547
+[s S235 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S235 . . T1SYNC . T1CKPS0 T1CKPS1 ]
+"5554
+[s S236 :3 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S236 . . SOSCEN . T1RD16 ]
+"5533
+[u S232 `S233 1 `S234 1 `S235 1 `S236 1 ]
+[n S232 . . . . . ]
+"5561
+[v _T1CONbits `VS232 ~T0 @X0 0 e@4045 ]
+"7959
+[v _T1CKPS1 `Vb ~T0 @X0 0 e@32365 ]
+"7957
+[v _T1CKPS0 `Vb ~T0 @X0 0 e@32364 ]
+"8005
+[v _TMR1CS `Vb ~T0 @X0 0 e@32361 ]
+"8013
+[v _TMR1ON `Vb ~T0 @X0 0 e@32360 ]
 "7365
 [v _IPEN `Vb ~T0 @X0 0 e@32391 ]
 "7277
@@ -2983,129 +3032,166 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;enc1.c: 63: {
 [e :U _low_isr ]
 [f ]
-[; ;enc1.c: 66: }
-"66
+[; ;enc1.c: 64: if(PIR1bits.TMR1IF == 1)
+"64
+[e $ ! == -> . . _PIR1bits 0 0 `i -> 1 `i 282  ]
+[; ;enc1.c: 65: {
+"65
+{
+[; ;enc1.c: 68: TMR1IF = 0;
+"68
+[e = _TMR1IF -> -> 0 `i `b ]
+[; ;enc1.c: 69: return;
+"69
+[e $UE 281  ]
+"70
+}
+[e :U 282 ]
+[; ;enc1.c: 70: }
+[; ;enc1.c: 72: }
+"72
 [e :UE 281 ]
 }
 [v $root$_high_isr `(v ~T0 @X0 0 e ]
 [v F3210 `(v ~T0 @X0 1 tf ]
-"68
+"74
 [v _high_isr `IHF3210 ~T0 @X0 1 e ]
-"69
+"75
 {
-[; ;enc1.c: 68: void interrupt high_priority high_isr()
-[; ;enc1.c: 69: {
+[; ;enc1.c: 74: void interrupt high_priority high_isr()
+[; ;enc1.c: 75: {
 [e :U _high_isr ]
 [f ]
-[; ;enc1.c: 70: if(INT0IF == 1)
-"70
-[e $ ! == -> _INT0IF `i -> 1 `i 283  ]
-[; ;enc1.c: 71: {
-"71
-{
-[; ;enc1.c: 72: cont++;
-"72
-[e ++ _cont -> 1 `i ]
-[; ;enc1.c: 74: INT0IF = 0;
-"74
-[e = _INT0IF -> -> 0 `i `b ]
-[; ;enc1.c: 75: return;
-"75
-[e $UE 282  ]
+[; ;enc1.c: 76: if(INT0IF == 1)
 "76
-}
-[e :U 283 ]
-[; ;enc1.c: 76: }
-[; ;enc1.c: 78: if(TMR1IF == 1)
-"78
-[e $ ! == -> _TMR1IF `i -> 1 `i 284  ]
-[; ;enc1.c: 79: {
-"79
+[e $ ! == -> _INT0IF `i -> 1 `i 284  ]
+[; ;enc1.c: 77: {
+"77
 {
+[; ;enc1.c: 78: cont++;
+"78
+[e ++ _cont -> 1 `i ]
+[; ;enc1.c: 80: INT0IF = 0;
+"80
+[e = _INT0IF -> -> 0 `i `b ]
+[; ;enc1.c: 81: return;
 "81
+[e $UE 283  ]
+"82
 }
 [e :U 284 ]
-[; ;enc1.c: 81: }
 [; ;enc1.c: 82: }
-"82
-[e :UE 282 ]
-}
-[v $root$_main `(v ~T0 @X0 0 e ]
+[; ;enc1.c: 84: if(TMR1IF == 1)
 "84
-[v _main `(v ~T0 @X0 1 ef ]
+[e $ ! == -> _TMR1IF `i -> 1 `i 285  ]
+[; ;enc1.c: 85: {
 "85
 {
-[; ;enc1.c: 84: void main(void)
-[; ;enc1.c: 85: {
+"87
+}
+[e :U 285 ]
+[; ;enc1.c: 87: }
+[; ;enc1.c: 88: }
+"88
+[e :UE 283 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"90
+[v _main `(v ~T0 @X0 1 ef ]
+"91
+{
+[; ;enc1.c: 90: void main(void)
+[; ;enc1.c: 91: {
 [e :U _main ]
 [f ]
-[; ;enc1.c: 86: cont = 0;
-"86
+[; ;enc1.c: 92: cont = 0;
+"92
 [e = _cont -> 0 `i ]
-[; ;enc1.c: 87: TRISB = 0x03;
-"87
+[; ;enc1.c: 93: TRISB = 0x03;
+"93
 [e = _TRISB -> -> 3 `i `uc ]
-[; ;enc1.c: 88: lcd_init();
-"88
-[e ( _lcd_init ..  ]
-[; ;enc1.c: 89: lcd_msg(" Habilita int's");
-"89
-[e ( _lcd_msg (1 -> :s 1C `*uc ]
-[; ;enc1.c: 94: INT0IE = 1;
+[; ;enc1.c: 94: lcd_init();
 "94
-[e = _INT0IE -> -> 1 `i `b ]
-[; ;enc1.c: 95: INTEDG0 = 1;
+[e ( _lcd_init ..  ]
+[; ;enc1.c: 95: lcd_msg(" Habilita int's");
 "95
-[e = _INTEDG0 -> -> 1 `i `b ]
-[; ;enc1.c: 99: IPEN = 1;
-"99
-[e = _IPEN -> -> 1 `i `b ]
-[; ;enc1.c: 100: GIEH = 1;
+[e ( _lcd_msg (1 -> :s 1C `*uc ]
+[; ;enc1.c: 100: INT0IE = 1;
 "100
-[e = _GIEH -> -> 1 `i `b ]
-[; ;enc1.c: 101: GIEL = 1;
+[e = _INT0IE -> -> 1 `i `b ]
+[; ;enc1.c: 101: INTEDG0 = 1;
 "101
-[e = _GIEL -> -> 1 `i `b ]
-[; ;enc1.c: 105: (*(&(*(&PORTB + 0x09))) |= (1<<(4)));
-"105
-[e =| *U &U *U + &U _PORTB * -> -> 9 `i `x -> -> # *U &U _PORTB `i `x -> << -> 1 `i -> 4 `i `uc ]
-[; ;enc1.c: 106: (*(&(*(&PORTB + 0x09))) |= (1<<(2)));
-"106
-[e =| *U &U *U + &U _PORTB * -> -> 9 `i `x -> -> # *U &U _PORTB `i `x -> << -> 1 `i -> 2 `i `uc ]
-[; ;enc1.c: 107: (*(&(*(&PORTB + 0x09))) &=~ (1<<(3)));
-"107
-[e =& *U &U *U + &U _PORTB * -> -> 9 `i `x -> -> # *U &U _PORTB `i `x -> ~ << -> 1 `i -> 3 `i `uc ]
-[; ;enc1.c: 109: while(1)
-"109
-[e :U 287 ]
-[; ;enc1.c: 110: {
-"110
-{
-[; ;enc1.c: 111: _delay((unsigned long)((980)*(4000000/4000.0)));
+[e = _INTEDG0 -> -> 1 `i `b ]
+[; ;enc1.c: 108: TMR1IP = 0;
+"108
+[e = _TMR1IP -> -> 0 `i `b ]
+[; ;enc1.c: 111: PIE1bits.TMR1IE = 1;
 "111
-[e ( __delay (1 -> * -> -> 980 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;enc1.c: 112: sprintf(value,"%4d",cont);
+[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
+[; ;enc1.c: 112: T1CONbits.RD16 = 1;
 "112
-[e ( _sprintf (1 , (. , &U _value :s 2C _cont ]
-[; ;enc1.c: 113: lcd_gotoxy(1,2);
+[e = . . _T1CONbits 1 6 -> -> 1 `i `uc ]
+[; ;enc1.c: 113: T1CKPS1 = 1;
 "113
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-[; ;enc1.c: 114: lcd_msg(value);
+[e = _T1CKPS1 -> -> 1 `i `b ]
+[; ;enc1.c: 114: T1CKPS0 = 1;
 "114
-[e ( _lcd_msg (1 &U _value ]
+[e = _T1CKPS0 -> -> 1 `i `b ]
+[; ;enc1.c: 115: TMR1CS = 0;
 "115
-}
-[e :U 286 ]
-"109
-[e $U 287  ]
-[e :U 288 ]
-[; ;enc1.c: 115: }
-[; ;enc1.c: 116: return;
+[e = _TMR1CS -> -> 0 `i `b ]
+[; ;enc1.c: 116: TMR1ON = 0;
 "116
-[e $UE 285  ]
-[; ;enc1.c: 117: }
-"117
-[e :UE 285 ]
+[e = _TMR1ON -> -> 0 `i `b ]
+[; ;enc1.c: 121: IPEN = 1;
+"121
+[e = _IPEN -> -> 1 `i `b ]
+[; ;enc1.c: 122: GIEH = 1;
+"122
+[e = _GIEH -> -> 1 `i `b ]
+[; ;enc1.c: 123: GIEL = 1;
+"123
+[e = _GIEL -> -> 1 `i `b ]
+[; ;enc1.c: 127: (*(&(*(&PORTB + 0x09))) |= (1<<(4)));
+"127
+[e =| *U &U *U + &U _PORTB * -> -> 9 `i `x -> -> # *U &U _PORTB `i `x -> << -> 1 `i -> 4 `i `uc ]
+[; ;enc1.c: 128: (*(&(*(&PORTB + 0x09))) |= (1<<(2)));
+"128
+[e =| *U &U *U + &U _PORTB * -> -> 9 `i `x -> -> # *U &U _PORTB `i `x -> << -> 1 `i -> 2 `i `uc ]
+[; ;enc1.c: 129: (*(&(*(&PORTB + 0x09))) &=~ (1<<(3)));
+"129
+[e =& *U &U *U + &U _PORTB * -> -> 9 `i `x -> -> # *U &U _PORTB `i `x -> ~ << -> 1 `i -> 3 `i `uc ]
+[; ;enc1.c: 131: while(1)
+"131
+[e :U 288 ]
+[; ;enc1.c: 132: {
+"132
+{
+[; ;enc1.c: 133: _delay((unsigned long)((980)*(4000000/4000.0)));
+"133
+[e ( __delay (1 -> * -> -> 980 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;enc1.c: 134: sprintf(value,"%4d",cont);
+"134
+[e ( _sprintf (1 , (. , &U _value :s 2C _cont ]
+[; ;enc1.c: 135: lcd_gotoxy(1,2);
+"135
+[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+[; ;enc1.c: 136: lcd_msg(value);
+"136
+[e ( _lcd_msg (1 &U _value ]
+"137
+}
+[e :U 287 ]
+"131
+[e $U 288  ]
+[e :U 289 ]
+[; ;enc1.c: 137: }
+[; ;enc1.c: 138: return;
+"138
+[e $UE 286  ]
+[; ;enc1.c: 139: }
+"139
+[e :UE 286 ]
 }
 [p f _sprintf 8421504 ]
 [a 1C 32 72 97 98 105 108 105 116 97 32 105 110 116 39 115 0 ]

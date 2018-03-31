@@ -4030,7 +4030,13 @@ volatile int cont;
 
 void low_priority interrupt low_isr()
 {
+if(PIR1bits.TMR1IF == 1)
+{
 
+
+TMR1IF = 0;
+return;
+}
 
 }
 
@@ -4057,9 +4063,21 @@ TRISB = 0x03;
 lcd_init();
 lcd_msg(" Habilita int's");
 
-# 94
+# 100
 INT0IE = 1;
 INTEDG0 = 1;
+
+# 108
+TMR1IP = 0;
+
+
+PIE1bits.TMR1IE = 1;
+T1CONbits.RD16 = 1;
+T1CKPS1 = 1;
+T1CKPS0 = 1;
+TMR1CS = 0;
+TMR1ON = 0;
+
 
 
 

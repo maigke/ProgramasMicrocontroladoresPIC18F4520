@@ -61,7 +61,13 @@ volatile int cont;
 
 void low_priority interrupt low_isr()
 {
-
+    if(PIR1bits.TMR1IF == 1)
+    {
+//        TMR1 = T1INI;
+//        tglbit(LAT(PledVerde),ledVerde);
+        TMR1IF = 0;
+        return;
+    }
 
 }
 
@@ -93,6 +99,22 @@ void main(void)
      */
     INT0IE = 1;  //habilita las interrupciones 
     INTEDG0 = 1; //Interrupcion en flanco de subida
+    
+    /**
+     * Configurar el Timer 1 para que genere una 
+     * interrupcion de 1 ms y cuente los pulsos
+     * 
+     */
+    TMR1IP = 0; //activo en bajo para baja prioridad
+    
+    //Configuracion del Timer 1
+    PIE1bits.TMR1IE = 1;
+    T1CONbits.RD16 = 1;  //lectura en una operacion de 16 bits
+    T1CKPS1 = 1; //prescaler por 8 
+    T1CKPS0 = 1;
+    TMR1CS = 0;  //depende del Fosc
+    TMR1ON = 0;  //Timer encendido
+    
     
     
     //Configuracion global de las interrupciones
