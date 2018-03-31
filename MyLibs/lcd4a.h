@@ -67,5 +67,5 @@ void lcd_lat();                     //----function to latch lcd data
 void lcd_gotoxy(unsigned char x, unsigned char y);
 void manda(unsigned char dato);     //envia los datos a los pines configurados
 void lcd_setcursor_vb(unsigned char visible, unsigned char blink);
-char lcd_hexa(unsigned char a);
+char lcd_hexa(unsigned char a);     
 #endif
