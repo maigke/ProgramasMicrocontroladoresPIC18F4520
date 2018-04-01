@@ -58,14 +58,21 @@
 
 char value[8];  //guarda espacio para imprimir un numero
 volatile int cont;
+volatile int rpm;
+#define T1INI 53036
 
 void low_priority interrupt low_isr()
 {
+    
     if(PIR1bits.TMR1IF == 1)
     {
-//        TMR1 = T1INI;
-//        tglbit(LAT(PledVerde),ledVerde);
+        TMR1ON = 0;
+        TMR1 = T1INI;
+        rpm = cont*5/48;
+        rpm= rpm*60;
+        cont = 0;
         TMR1IF = 0;
+        TMR1ON = 1;
         return;
     }
 
@@ -81,10 +88,6 @@ void interrupt high_priority high_isr()
         return;
     }
     
-    if(TMR1IF == 1)
-    {
-        
-    }
 }
 
 void main(void)
@@ -113,8 +116,8 @@ void main(void)
     T1CKPS1 = 1; //prescaler por 8 
     T1CKPS0 = 1;
     TMR1CS = 0;  //depende del Fosc
-    TMR1ON = 0;  //Timer encendido
-    
+    TMR1ON = 0;  //Timer apagado
+    TMR1 = T1INI;  //precarga para que desborde cada 10 milisegundo
     
     
     //Configuracion global de las interrupciones
@@ -127,12 +130,13 @@ void main(void)
     setbit(LAT(Pm1en),m1en);
     setbit(LAT(Pm1aa),m1aa);
     clrbit(LAT(Pm1bb),m1bb);
+    TMR1ON = 1;
     /*************PROGRAMA PRINCIPAL++++++++++*/
     while(1)
     {
         __delay_ms(980);
-        sprintf(value,"%4d",cont);
-        lcd_gotoxy(1,2);
+        sprintf(value,"%4d",rpm);
+        lcd_gotoxy(5,2);
         lcd_msg(value);
     }
     return;
