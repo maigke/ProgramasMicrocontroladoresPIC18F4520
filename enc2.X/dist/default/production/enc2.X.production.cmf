@@ -1,0 +1,1502 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$dist/default/production/enc2.X.production.obj
+intcodelo CODE 0 18 18 144 1
+cinit CODE 0 266C 266C 26 1
+intcode_body CODE 0 1DAC 1DAC E4 1
+text0 CODE 0 20AE 20AE AC 1
+text1 CODE 0 68E 68E 8A2 1
+text2 CODE 0 F30 F30 438 1
+text3 CODE 0 26B8 26B8 22 1
+text4 CODE 0 1368 1368 270 1
+text5 CODE 0 2644 2644 28 1
+text6 CODE 0 1ADC 1ADC F6 1
+text7 CODE 0 22F6 22F6 72 1
+text8 CODE 0 21EC 21EC 86 1
+text9 CODE 0 1786 1786 134 1
+text10 CODE 0 18BA 18BA 12A 1
+text11 CODE 0 23D0 23D0 5E 1
+text12 CODE 0 2368 2368 68 1
+text13 CODE 0 2272 2272 84 1
+text14 CODE 0 19E4 19E4 F8 1
+text15 CODE 0 2522 2522 42 1
+text16 CODE 0 15D8 15D8 1AE 1
+text17 CODE 0 1F50 1F50 B0 1
+text18 CODE 0 2692 2692 26 1
+text19 CODE 0 215A 215A 92 1
+text20 CODE 0 242E 242E 54 1
+text21 CODE 0 2564 2564 40 1
+text22 CODE 0 24D4 24D4 4E 1
+text23 CODE 0 1E90 1E90 C0 1
+text24 CODE 0 26DA 26DA 1E 1
+text25 CODE 0 25A4 25A4 38 1
+text26 CODE 0 2482 2482 52 1
+text27 CODE 0 2614 2614 30 1
+text28 CODE 0 26F8 26F8 18 1
+text29 CODE 0 2710 2710 A 1
+text30 CODE 0 271A 271A 8 1
+text31 CODE 0 2722 2722 8 1
+text33 CODE 0 1BD2 1BD2 F4 1
+text34 CODE 0 1CC6 1CC6 E6 1
+text35 CODE 0 25DC 25DC 38 1
+text36 CODE 0 2000 2000 AE 1
+cstackCOMRAM COMRAM 1 1 1 42 1
+cstackBANK0 BANK0 1 80 80 67 1
+temp COMRAM 1 4B 4B 1 1
+bssBANK0 BANK0 1 E7 E7 B 1
+intcode CODE 0 8 8 6 1
+smallconst SMALLCONST 0 600 600 8E 1
+bssCOMRAM COMRAM 1 43 43 8 1
+$/tmp/xcXvGfh7d.obj
+idloc IDLOC 0 200000 200000 8 1
+init CODE 0 15C 15C 4 1
+reset_vec CODE 0 0 0 4 1
+config CONFIG 0 300000 300000 E 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM F2-5FF 1
+SFR F80-FFF 1
+BANK0 F2-FF 1
+BANK1 100-1FF 1
+BANK2 200-2FF 1
+BANK3 300-3FF 1
+BANK4 400-4FF 1
+BANK5 500-5FF 1
+CONST 4-7 1
+CONST E-17 1
+CONST 160-5FF 1
+CONST 272A-7FFF 1
+STACK F2-5FF 1
+SMALLCONST 272A-7FFF 1
+CODE 4-7 1
+CODE E-17 1
+CODE 160-5FF 1
+CODE 272A-7FFF 1
+BIGRAM 4C-7F 1
+BIGRAM F2-5FF 1
+COMRAM 4C-7F 1
+EEDATA F00000-F000FF 1
+MEDIUMCONST 272A-7FFF 1
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production/enc2.X.production.obj
+18 intcodelo CODE >88:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+18 intcodelo CODE >272:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+6E intcodelo CODE >91:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+72 intcodelo CODE >93:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+74 intcodelo CODE >94:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+7C intcodelo CODE >95:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+B0 intcodelo CODE >96:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+D8 intcodelo CODE >97:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+F0 intcodelo CODE >98:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+F8 intcodelo CODE >99:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+100 intcodelo CODE >100:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+102 intcodelo CODE >101:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+104 intcodelo CODE >102:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+104 intcodelo CODE >105:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+8 intcode CODE >86:/opt/microchip/xc8/v1.45/sources/common/float.c
+8 intcode CODE >107:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1DAC intcode_body CODE >107:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1DF6 intcode_body CODE >109:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1DFA intcode_body CODE >115:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1DFE intcode_body CODE >117:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E00 intcode_body CODE >118:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E04 intcode_body CODE >120:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E08 intcode_body CODE >124:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E0A intcode_body CODE >125:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E0A intcode_body CODE >127:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E0C intcode_body CODE >128:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E10 intcode_body CODE >130:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E16 intcode_body CODE >133:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E16 intcode_body CODE >135:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E18 intcode_body CODE >136:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E1A intcode_body CODE >137:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E1A intcode_body CODE >139:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E1E intcode_body CODE >145:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E22 intcode_body CODE >147:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E24 intcode_body CODE >148:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E28 intcode_body CODE >150:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E2C intcode_body CODE >151:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E2E intcode_body CODE >152:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E30 intcode_body CODE >154:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E32 intcode_body CODE >155:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E32 intcode_body CODE >157:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E34 intcode_body CODE >158:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E38 intcode_body CODE >160:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E3E intcode_body CODE >161:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E40 intcode_body CODE >162:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E42 intcode_body CODE >163:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E42 intcode_body CODE >165:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E44 intcode_body CODE >166:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+1E44 intcode_body CODE >168:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+2000 text36 CODE >62:/opt/microchip/xc8/v1.45/sources/common/float.c
+2000 text36 CODE >64:/opt/microchip/xc8/v1.45/sources/common/float.c
+2010 text36 CODE >65:/opt/microchip/xc8/v1.45/sources/common/float.c
+201E text36 CODE >66:/opt/microchip/xc8/v1.45/sources/common/float.c
+201E text36 CODE >67:/opt/microchip/xc8/v1.45/sources/common/float.c
+2020 text36 CODE >68:/opt/microchip/xc8/v1.45/sources/common/float.c
+2028 text36 CODE >66:/opt/microchip/xc8/v1.45/sources/common/float.c
+2028 text36 CODE >69:/opt/microchip/xc8/v1.45/sources/common/float.c
+2046 text36 CODE >70:/opt/microchip/xc8/v1.45/sources/common/float.c
+2046 text36 CODE >71:/opt/microchip/xc8/v1.45/sources/common/float.c
+2048 text36 CODE >72:/opt/microchip/xc8/v1.45/sources/common/float.c
+2054 text36 CODE >73:/opt/microchip/xc8/v1.45/sources/common/float.c
+205C text36 CODE >70:/opt/microchip/xc8/v1.45/sources/common/float.c
+205C text36 CODE >74:/opt/microchip/xc8/v1.45/sources/common/float.c
+207A text36 CODE >75:/opt/microchip/xc8/v1.45/sources/common/float.c
+207A text36 CODE >76:/opt/microchip/xc8/v1.45/sources/common/float.c
+207C text36 CODE >77:/opt/microchip/xc8/v1.45/sources/common/float.c
+2084 text36 CODE >75:/opt/microchip/xc8/v1.45/sources/common/float.c
+2084 text36 CODE >78:/opt/microchip/xc8/v1.45/sources/common/float.c
+208E text36 CODE >79:/opt/microchip/xc8/v1.45/sources/common/float.c
+2090 text36 CODE >80:/opt/microchip/xc8/v1.45/sources/common/float.c
+2092 text36 CODE >81:/opt/microchip/xc8/v1.45/sources/common/float.c
+2096 text36 CODE >82:/opt/microchip/xc8/v1.45/sources/common/float.c
+209A text36 CODE >83:/opt/microchip/xc8/v1.45/sources/common/float.c
+209E text36 CODE >84:/opt/microchip/xc8/v1.45/sources/common/float.c
+20A0 text36 CODE >85:/opt/microchip/xc8/v1.45/sources/common/float.c
+25DC text35 CODE >32:/opt/microchip/xc8/v1.45/sources/common/awtoft.c
+25DC text35 CODE >36:/opt/microchip/xc8/v1.45/sources/common/awtoft.c
+25E0 text35 CODE >37:/opt/microchip/xc8/v1.45/sources/common/awtoft.c
+25E4 text35 CODE >38:/opt/microchip/xc8/v1.45/sources/common/awtoft.c
+25EC text35 CODE >39:/opt/microchip/xc8/v1.45/sources/common/awtoft.c
+25F0 text35 CODE >40:/opt/microchip/xc8/v1.45/sources/common/awtoft.c
+25F0 text35 CODE >41:/opt/microchip/xc8/v1.45/sources/common/awtoft.c
+1CC6 text34 CODE >54:/opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+1CC6 text34 CODE >63:/opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+1CE0 text34 CODE >64:/opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+1CEE text34 CODE >65:/opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+1D08 text34 CODE >66:/opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+1D16 text34 CODE >67:/opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+1D22 text34 CODE >68:/opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+1D28 text34 CODE >69:/opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+1D2C text34 CODE >70:/opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+1D30 text34 CODE >71:/opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+1D34 text34 CODE >72:/opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+1D36 text34 CODE >73:/opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+1D42 text34 CODE >74:/opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+1D44 text34 CODE >75:/opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+1D50 text34 CODE >76:/opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+1D54 text34 CODE >77:/opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+1D54 text34 CODE >78:/opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+1D5C text34 CODE >79:/opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+1D6C text34 CODE >80:/opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+1D78 text34 CODE >81:/opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+1D7A text34 CODE >82:/opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+1D7A text34 CODE >83:/opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+1D82 text34 CODE >84:/opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+1D86 text34 CODE >85:/opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+1BD2 text33 CODE >62:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1BD2 text33 CODE >67:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1BEC text33 CODE >68:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1BFA text33 CODE >69:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1C14 text33 CODE >70:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1C22 text33 CODE >71:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1C28 text33 CODE >72:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1C2C text33 CODE >73:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1C30 text33 CODE >74:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1C34 text33 CODE >75:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1C36 text33 CODE >77:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1C38 text33 CODE >78:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1C44 text33 CODE >79:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1C50 text33 CODE >134:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1C54 text33 CODE >135:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1C54 text33 CODE >136:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1C58 text33 CODE >137:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1C64 text33 CODE >138:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1C6C text33 CODE >139:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1C74 text33 CODE >140:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1C78 text33 CODE >143:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1C7C text33 CODE >144:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1C7C text33 CODE >145:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1C80 text33 CODE >146:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1C8C text33 CODE >147:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1C94 text33 CODE >148:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1C9C text33 CODE >149:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1CA0 text33 CODE >156:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+2722 text31 CODE >267:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+2722 text31 CODE >269:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+2724 text31 CODE >270:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+2726 text31 CODE >271:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+2728 text31 CODE >272:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+271A text30 CODE >239:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+271A text30 CODE >241:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+271C text30 CODE >242:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+271E text30 CODE >243:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+2720 text30 CODE >244:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+2710 text29 CODE >281:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+2710 text29 CODE >283:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+2714 text29 CODE >284:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+2718 text29 CODE >285:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+26F8 text28 CODE >27:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+26F8 text28 CODE >31:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+26FA text28 CODE >33:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+270C text28 CODE >34:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+270E text28 CODE >36:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+2614 text27 CODE >171:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+2618 text27 CODE >173:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+2622 text27 CODE >174:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+2624 text27 CODE >175:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+262C text27 CODE >176:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+262E text27 CODE >177:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+2636 text27 CODE >178:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+2638 text27 CODE >179:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+2640 text27 CODE >180:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+2482 text26 CODE >38:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+2486 text26 CODE >40:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+248A text26 CODE >41:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+248C text26 CODE >42:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+2490 text26 CODE >43:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+2498 text26 CODE >44:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+249E text26 CODE >45:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+24A2 text26 CODE >46:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+24B4 text26 CODE >48:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+24B8 text26 CODE >49:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+24C8 text26 CODE >50:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+24CE text26 CODE >51:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+24D2 text26 CODE >52:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+25A4 text25 CODE >112:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+25A8 text25 CODE >114:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+25AE text25 CODE >116:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+25B0 text25 CODE >121:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+25B0 text25 CODE >122:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+25B4 text25 CODE >124:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+25B4 text25 CODE >125:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+25B8 text25 CODE >128:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+25BA text25 CODE >116:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+25CA text25 CODE >128:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+25CA text25 CODE >129:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+25D4 text25 CODE >130:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+25DA text25 CODE >131:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+26DA text24 CODE >54:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+26DE text24 CODE >56:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+26E0 text24 CODE >57:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+26E4 text24 CODE >58:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+26EC text24 CODE >59:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+26F2 text24 CODE >60:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+26F6 text24 CODE >61:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+1E90 text23 CODE >133:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+1E90 text23 CODE >141:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+1E92 text23 CODE >142:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+1E94 text23 CODE >143:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+1E96 text23 CODE >144:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+1E98 text23 CODE >145:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+1E9A text23 CODE >149:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+1E9C text23 CODE >151:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+1EA2 text23 CODE >152:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+1EB4 text23 CODE >153:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+1EBA text23 CODE >154:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+1EC2 text23 CODE >155:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+1EC8 text23 CODE >156:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+1EDA text23 CODE >157:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+1EE0 text23 CODE >158:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+1EF0 text23 CODE >159:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+1EF6 text23 CODE >160:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+1F06 text23 CODE >161:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+1F0C text23 CODE >162:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+1F1C text23 CODE >163:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+1F22 text23 CODE >164:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+1F32 text23 CODE >165:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+1F38 text23 CODE >166:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+1F48 text23 CODE >167:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+1F4E text23 CODE >168:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+24D4 text22 CODE >84:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+24D8 text22 CODE >86:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+24DA text22 CODE >87:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+24DE text22 CODE >88:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+24E6 text22 CODE >89:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+24EC text22 CODE >90:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+24F0 text22 CODE >91:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+2502 text22 CODE >93:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+2506 text22 CODE >94:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+2516 text22 CODE >95:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+251C text22 CODE >96:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+2520 text22 CODE >97:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+2564 text21 CODE >64:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+2568 text21 CODE >66:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+256A text21 CODE >68:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+256A text21 CODE >69:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+2570 text21 CODE >70:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+2572 text21 CODE >71:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+2572 text21 CODE >72:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+2578 text21 CODE >73:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+257A text21 CODE >74:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+257A text21 CODE >75:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+2580 text21 CODE >76:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+2582 text21 CODE >77:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+2582 text21 CODE >78:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+258A text21 CODE >80:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+258C text21 CODE >66:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+242E text20 CODE >99:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+242E text20 CODE >101:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+2430 text20 CODE >103:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+245A text20 CODE >101:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+245A text20 CODE >104:/home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+215A text19 CODE >4:/opt/microchip/xc8/v1.45/sources/common/ftge.c
+215A text19 CODE >6:/opt/microchip/xc8/v1.45/sources/common/ftge.c
+2160 text19 CODE >7:/opt/microchip/xc8/v1.45/sources/common/ftge.c
+218C text19 CODE >8:/opt/microchip/xc8/v1.45/sources/common/ftge.c
+2190 text19 CODE >9:/opt/microchip/xc8/v1.45/sources/common/ftge.c
+21BC text19 CODE >10:/opt/microchip/xc8/v1.45/sources/common/ftge.c
+21C8 text19 CODE >11:/opt/microchip/xc8/v1.45/sources/common/ftge.c
+21D4 text19 CODE >12:/opt/microchip/xc8/v1.45/sources/common/ftge.c
+2692 text18 CODE >15:/opt/microchip/xc8/v1.45/sources/common/ftneg.c
+2692 text18 CODE >17:/opt/microchip/xc8/v1.45/sources/common/ftneg.c
+269E text18 CODE >18:/opt/microchip/xc8/v1.45/sources/common/ftneg.c
+26AA text18 CODE >19:/opt/microchip/xc8/v1.45/sources/common/ftneg.c
+26B6 text18 CODE >20:/opt/microchip/xc8/v1.45/sources/common/ftneg.c
+1F50 text17 CODE >62:/opt/microchip/xc8/v1.45/sources/common/float.c
+1F50 text17 CODE >64:/opt/microchip/xc8/v1.45/sources/common/float.c
+1F62 text17 CODE >65:/opt/microchip/xc8/v1.45/sources/common/float.c
+1F70 text17 CODE >66:/opt/microchip/xc8/v1.45/sources/common/float.c
+1F70 text17 CODE >67:/opt/microchip/xc8/v1.45/sources/common/float.c
+1F72 text17 CODE >68:/opt/microchip/xc8/v1.45/sources/common/float.c
+1F7A text17 CODE >66:/opt/microchip/xc8/v1.45/sources/common/float.c
+1F7A text17 CODE >69:/opt/microchip/xc8/v1.45/sources/common/float.c
+1F98 text17 CODE >70:/opt/microchip/xc8/v1.45/sources/common/float.c
+1F98 text17 CODE >71:/opt/microchip/xc8/v1.45/sources/common/float.c
+1F9A text17 CODE >72:/opt/microchip/xc8/v1.45/sources/common/float.c
+1FA6 text17 CODE >73:/opt/microchip/xc8/v1.45/sources/common/float.c
+1FAE text17 CODE >70:/opt/microchip/xc8/v1.45/sources/common/float.c
+1FAE text17 CODE >74:/opt/microchip/xc8/v1.45/sources/common/float.c
+1FCC text17 CODE >75:/opt/microchip/xc8/v1.45/sources/common/float.c
+1FCC text17 CODE >76:/opt/microchip/xc8/v1.45/sources/common/float.c
+1FCE text17 CODE >77:/opt/microchip/xc8/v1.45/sources/common/float.c
+1FD6 text17 CODE >75:/opt/microchip/xc8/v1.45/sources/common/float.c
+1FD6 text17 CODE >78:/opt/microchip/xc8/v1.45/sources/common/float.c
+1FE0 text17 CODE >79:/opt/microchip/xc8/v1.45/sources/common/float.c
+1FE2 text17 CODE >80:/opt/microchip/xc8/v1.45/sources/common/float.c
+1FE4 text17 CODE >81:/opt/microchip/xc8/v1.45/sources/common/float.c
+1FE8 text17 CODE >82:/opt/microchip/xc8/v1.45/sources/common/float.c
+1FEC text17 CODE >83:/opt/microchip/xc8/v1.45/sources/common/float.c
+1FF0 text17 CODE >84:/opt/microchip/xc8/v1.45/sources/common/float.c
+1FF2 text17 CODE >85:/opt/microchip/xc8/v1.45/sources/common/float.c
+15D8 text16 CODE >86:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+15D8 text16 CODE >90:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+15EE text16 CODE >91:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+1602 text16 CODE >92:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+161E text16 CODE >93:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+162C text16 CODE >94:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+1648 text16 CODE >95:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+1656 text16 CODE >96:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+165A text16 CODE >97:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+165C text16 CODE >98:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+165E text16 CODE >99:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+1660 text16 CODE >100:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+1662 text16 CODE >101:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+1664 text16 CODE >102:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+1670 text16 CODE >103:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+1672 text16 CODE >104:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+167E text16 CODE >106:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+1686 text16 CODE >110:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+168E text16 CODE >111:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+1690 text16 CODE >112:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+16A8 text16 CODE >113:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+16A8 text16 CODE >114:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+16B0 text16 CODE >115:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+16B2 text16 CODE >113:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+16B2 text16 CODE >116:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+16BC text16 CODE >117:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+16C4 text16 CODE >121:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+16CC text16 CODE >122:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+16CE text16 CODE >123:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+16E6 text16 CODE >124:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+16E6 text16 CODE >125:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+16EE text16 CODE >126:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+16F0 text16 CODE >124:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+16F0 text16 CODE >127:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+16F8 text16 CODE >129:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+16FC text16 CODE >131:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+1708 text16 CODE >132:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+1714 text16 CODE >133:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+1714 text16 CODE >134:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+1718 text16 CODE >136:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+1724 text16 CODE >137:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+1730 text16 CODE >138:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+1730 text16 CODE >139:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+1734 text16 CODE >140:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+1740 text16 CODE >141:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+1744 text16 CODE >142:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+1750 text16 CODE >143:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+175C text16 CODE >144:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+1760 text16 CODE >145:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+1760 text16 CODE >146:/opt/microchip/xc8/v1.45/sources/common/ftadd.c
+2522 text15 CODE >20:/opt/microchip/xc8/v1.45/sources/common/ftsub.c
+2522 text15 CODE >23:/opt/microchip/xc8/v1.45/sources/common/ftsub.c
+252E text15 CODE >24:/opt/microchip/xc8/v1.45/sources/common/ftsub.c
+253A text15 CODE >25:/opt/microchip/xc8/v1.45/sources/common/ftsub.c
+253A text15 CODE >26:/opt/microchip/xc8/v1.45/sources/common/ftsub.c
+19E4 text14 CODE >44:/opt/microchip/xc8/v1.45/sources/common/fttol.c
+19E4 text14 CODE >49:/opt/microchip/xc8/v1.45/sources/common/fttol.c
+1A00 text14 CODE >50:/opt/microchip/xc8/v1.45/sources/common/fttol.c
+1A12 text14 CODE >51:/opt/microchip/xc8/v1.45/sources/common/fttol.c
+1A3A text14 CODE >52:/opt/microchip/xc8/v1.45/sources/common/fttol.c
+1A3C text14 CODE >53:/opt/microchip/xc8/v1.45/sources/common/fttol.c
+1A48 text14 CODE >54:/opt/microchip/xc8/v1.45/sources/common/fttol.c
+1A56 text14 CODE >55:/opt/microchip/xc8/v1.45/sources/common/fttol.c
+1A5A text14 CODE >56:/opt/microchip/xc8/v1.45/sources/common/fttol.c
+1A5E text14 CODE >57:/opt/microchip/xc8/v1.45/sources/common/fttol.c
+1A68 text14 CODE >58:/opt/microchip/xc8/v1.45/sources/common/fttol.c
+1A7A text14 CODE >60:/opt/microchip/xc8/v1.45/sources/common/fttol.c
+1A84 text14 CODE >61:/opt/microchip/xc8/v1.45/sources/common/fttol.c
+1A88 text14 CODE >62:/opt/microchip/xc8/v1.45/sources/common/fttol.c
+1A8A text14 CODE >63:/opt/microchip/xc8/v1.45/sources/common/fttol.c
+1A90 text14 CODE >64:/opt/microchip/xc8/v1.45/sources/common/fttol.c
+1AA2 text14 CODE >65:/opt/microchip/xc8/v1.45/sources/common/fttol.c
+1AA2 text14 CODE >66:/opt/microchip/xc8/v1.45/sources/common/fttol.c
+1AAC text14 CODE >67:/opt/microchip/xc8/v1.45/sources/common/fttol.c
+1AAE text14 CODE >65:/opt/microchip/xc8/v1.45/sources/common/fttol.c
+1AAE text14 CODE >68:/opt/microchip/xc8/v1.45/sources/common/fttol.c
+1AB4 text14 CODE >70:/opt/microchip/xc8/v1.45/sources/common/fttol.c
+1ABA text14 CODE >71:/opt/microchip/xc8/v1.45/sources/common/fttol.c
+1ACA text14 CODE >72:/opt/microchip/xc8/v1.45/sources/common/fttol.c
+2272 text13 CODE >8:/opt/microchip/xc8/v1.45/sources/common/lldiv.c
+2272 text13 CODE >14:/opt/microchip/xc8/v1.45/sources/common/lldiv.c
+2284 text13 CODE >15:/opt/microchip/xc8/v1.45/sources/common/lldiv.c
+2290 text13 CODE >16:/opt/microchip/xc8/v1.45/sources/common/lldiv.c
+2294 text13 CODE >17:/opt/microchip/xc8/v1.45/sources/common/lldiv.c
+2296 text13 CODE >18:/opt/microchip/xc8/v1.45/sources/common/lldiv.c
+22A0 text13 CODE >19:/opt/microchip/xc8/v1.45/sources/common/lldiv.c
+22A2 text13 CODE >17:/opt/microchip/xc8/v1.45/sources/common/lldiv.c
+22A2 text13 CODE >20:/opt/microchip/xc8/v1.45/sources/common/lldiv.c
+22A6 text13 CODE >22:/opt/microchip/xc8/v1.45/sources/common/lldiv.c
+22B0 text13 CODE >23:/opt/microchip/xc8/v1.45/sources/common/lldiv.c
+22C4 text13 CODE >24:/opt/microchip/xc8/v1.45/sources/common/lldiv.c
+22D4 text13 CODE >25:/opt/microchip/xc8/v1.45/sources/common/lldiv.c
+22D6 text13 CODE >26:/opt/microchip/xc8/v1.45/sources/common/lldiv.c
+22D6 text13 CODE >27:/opt/microchip/xc8/v1.45/sources/common/lldiv.c
+22E0 text13 CODE >28:/opt/microchip/xc8/v1.45/sources/common/lldiv.c
+22E4 text13 CODE >30:/opt/microchip/xc8/v1.45/sources/common/lldiv.c
+22F4 text13 CODE >31:/opt/microchip/xc8/v1.45/sources/common/lldiv.c
+2368 text12 CODE >8:/opt/microchip/xc8/v1.45/sources/common/llmod.c
+2368 text12 CODE >13:/opt/microchip/xc8/v1.45/sources/common/llmod.c
+2376 text12 CODE >14:/opt/microchip/xc8/v1.45/sources/common/llmod.c
+237A text12 CODE >15:/opt/microchip/xc8/v1.45/sources/common/llmod.c
+237C text12 CODE >16:/opt/microchip/xc8/v1.45/sources/common/llmod.c
+2386 text12 CODE >17:/opt/microchip/xc8/v1.45/sources/common/llmod.c
+2388 text12 CODE >15:/opt/microchip/xc8/v1.45/sources/common/llmod.c
+2388 text12 CODE >18:/opt/microchip/xc8/v1.45/sources/common/llmod.c
+238C text12 CODE >20:/opt/microchip/xc8/v1.45/sources/common/llmod.c
+23A0 text12 CODE >21:/opt/microchip/xc8/v1.45/sources/common/llmod.c
+23B0 text12 CODE >22:/opt/microchip/xc8/v1.45/sources/common/llmod.c
+23BA text12 CODE >23:/opt/microchip/xc8/v1.45/sources/common/llmod.c
+23BE text12 CODE >25:/opt/microchip/xc8/v1.45/sources/common/llmod.c
+23CE text12 CODE >26:/opt/microchip/xc8/v1.45/sources/common/llmod.c
+23D0 text11 CODE >35:/opt/microchip/xc8/v1.45/sources/common/lltoft.c
+23D0 text11 CODE >38:/opt/microchip/xc8/v1.45/sources/common/lltoft.c
+23D6 text11 CODE >41:/opt/microchip/xc8/v1.45/sources/common/lltoft.c
+23D8 text11 CODE >42:/opt/microchip/xc8/v1.45/sources/common/lltoft.c
+23E2 text11 CODE >43:/opt/microchip/xc8/v1.45/sources/common/lltoft.c
+23E4 text11 CODE >41:/opt/microchip/xc8/v1.45/sources/common/lltoft.c
+23E4 text11 CODE >44:/opt/microchip/xc8/v1.45/sources/common/lltoft.c
+2408 text11 CODE >45:/opt/microchip/xc8/v1.45/sources/common/lltoft.c
+18BA text10 CODE >60:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+18BA text10 CODE >66:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+18C8 text10 CODE >67:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+18DA text10 CODE >68:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+18E6 text10 CODE >69:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+18F8 text10 CODE >70:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+18FA text10 CODE >71:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+190A text10 CODE >72:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+190C text10 CODE >73:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+191C text10 CODE >74:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+192C text10 CODE >75:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+1930 text10 CODE >76:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+1936 text10 CODE >77:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+193A text10 CODE >78:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+193A text10 CODE >79:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+1944 text10 CODE >80:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+1958 text10 CODE >81:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+1968 text10 CODE >82:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+196A text10 CODE >83:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+196A text10 CODE >84:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+1974 text10 CODE >85:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+1978 text10 CODE >86:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+197C text10 CODE >87:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+1986 text10 CODE >88:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+1998 text10 CODE >90:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+19A2 text10 CODE >91:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+19A6 text10 CODE >92:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+19A8 text10 CODE >93:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+19AE text10 CODE >94:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+19C0 text10 CODE >95:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+19C0 text10 CODE >96:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+19CA text10 CODE >97:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+19CC text10 CODE >95:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+19CC text10 CODE >98:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+19D2 text10 CODE >100:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+19E2 text10 CODE >101:/opt/microchip/xc8/v1.45/sources/common/fldivl.c
+1786 text9 CODE >60:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+1786 text9 CODE >66:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+17A2 text9 CODE >67:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+17B4 text9 CODE >68:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+17CE text9 CODE >69:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+17E0 text9 CODE >70:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+17E2 text9 CODE >71:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+17EE text9 CODE >72:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+17F0 text9 CODE >73:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+17FC text9 CODE >74:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+180C text9 CODE >75:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+1810 text9 CODE >76:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+1816 text9 CODE >77:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+181A text9 CODE >78:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+181A text9 CODE >79:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+1824 text9 CODE >80:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+1834 text9 CODE >81:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+1840 text9 CODE >82:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+1842 text9 CODE >83:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+1842 text9 CODE >84:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+184A text9 CODE >85:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+184E text9 CODE >86:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+1852 text9 CODE >87:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+185C text9 CODE >88:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+186E text9 CODE >90:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+1878 text9 CODE >91:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+187C text9 CODE >92:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+187E text9 CODE >93:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+1884 text9 CODE >94:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+1896 text9 CODE >95:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+1896 text9 CODE >96:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+18A0 text9 CODE >97:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+18A2 text9 CODE >95:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+18A2 text9 CODE >98:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+18A8 text9 CODE >100:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+18B8 text9 CODE >101:/opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+21EC text8 CODE >8:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+21EC text8 CODE >14:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+21F2 text8 CODE >15:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+21F6 text8 CODE >16:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+21FE text8 CODE >17:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+2202 text8 CODE >18:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+2202 text8 CODE >19:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+2206 text8 CODE >20:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+220E text8 CODE >21:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+2212 text8 CODE >22:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+2212 text8 CODE >23:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+221A text8 CODE >24:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+2222 text8 CODE >25:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+2226 text8 CODE >26:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+2228 text8 CODE >27:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+222E text8 CODE >28:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+2230 text8 CODE >26:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+2230 text8 CODE >29:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+2234 text8 CODE >31:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+223A text8 CODE >32:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+2246 text8 CODE >33:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+224E text8 CODE >34:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+2250 text8 CODE >35:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+2250 text8 CODE >36:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+2256 text8 CODE >37:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+225A text8 CODE >39:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+2260 text8 CODE >40:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+2268 text8 CODE >41:/opt/microchip/xc8/v1.45/sources/common/awdiv.c
+22F6 text7 CODE >8:/opt/microchip/xc8/v1.45/sources/common/awmod.c
+22F6 text7 CODE >13:/opt/microchip/xc8/v1.45/sources/common/awmod.c
+22FC text7 CODE >14:/opt/microchip/xc8/v1.45/sources/common/awmod.c
+2300 text7 CODE >15:/opt/microchip/xc8/v1.45/sources/common/awmod.c
+2308 text7 CODE >16:/opt/microchip/xc8/v1.45/sources/common/awmod.c
+230C text7 CODE >17:/opt/microchip/xc8/v1.45/sources/common/awmod.c
+230C text7 CODE >18:/opt/microchip/xc8/v1.45/sources/common/awmod.c
+2310 text7 CODE >19:/opt/microchip/xc8/v1.45/sources/common/awmod.c
+2318 text7 CODE >20:/opt/microchip/xc8/v1.45/sources/common/awmod.c
+2320 text7 CODE >21:/opt/microchip/xc8/v1.45/sources/common/awmod.c
+2324 text7 CODE >22:/opt/microchip/xc8/v1.45/sources/common/awmod.c
+2326 text7 CODE >23:/opt/microchip/xc8/v1.45/sources/common/awmod.c
+232C text7 CODE >24:/opt/microchip/xc8/v1.45/sources/common/awmod.c
+232E text7 CODE >22:/opt/microchip/xc8/v1.45/sources/common/awmod.c
+232E text7 CODE >25:/opt/microchip/xc8/v1.45/sources/common/awmod.c
+2332 text7 CODE >27:/opt/microchip/xc8/v1.45/sources/common/awmod.c
+233E text7 CODE >28:/opt/microchip/xc8/v1.45/sources/common/awmod.c
+2346 text7 CODE >29:/opt/microchip/xc8/v1.45/sources/common/awmod.c
+234C text7 CODE >30:/opt/microchip/xc8/v1.45/sources/common/awmod.c
+2350 text7 CODE >32:/opt/microchip/xc8/v1.45/sources/common/awmod.c
+2356 text7 CODE >33:/opt/microchip/xc8/v1.45/sources/common/awmod.c
+235E text7 CODE >34:/opt/microchip/xc8/v1.45/sources/common/awmod.c
+1ADC text6 CODE >62:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1ADC text6 CODE >67:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1AF8 text6 CODE >68:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1B06 text6 CODE >69:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1B20 text6 CODE >70:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1B2E text6 CODE >71:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1B34 text6 CODE >72:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1B38 text6 CODE >73:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1B3C text6 CODE >74:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1B40 text6 CODE >75:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1B42 text6 CODE >77:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1B44 text6 CODE >78:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1B50 text6 CODE >79:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1B5C text6 CODE >134:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1B60 text6 CODE >135:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1B60 text6 CODE >136:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1B64 text6 CODE >137:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1B70 text6 CODE >138:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1B78 text6 CODE >139:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1B80 text6 CODE >140:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1B84 text6 CODE >143:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1B88 text6 CODE >144:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1B88 text6 CODE >145:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1B8C text6 CODE >146:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1B98 text6 CODE >147:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1BA0 text6 CODE >148:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1BA8 text6 CODE >149:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+1BAC text6 CODE >156:/opt/microchip/xc8/v1.45/sources/common/ftmul.c
+2644 text5 CODE >15:/opt/microchip/xc8/v1.45/sources/common/Umul16.c
+2644 text5 CODE >37:/opt/microchip/xc8/v1.45/sources/common/Umul16.c
+2652 text5 CODE >38:/opt/microchip/xc8/v1.45/sources/common/Umul16.c
+265A text5 CODE >39:/opt/microchip/xc8/v1.45/sources/common/Umul16.c
+2662 text5 CODE >52:/opt/microchip/xc8/v1.45/sources/common/Umul16.c
+1368 text4 CODE >409:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+136C text4 CODE >413:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+1374 text4 CODE >414:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+14C0 text4 CODE >415:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+14C8 text4 CODE >416:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+1596 text4 CODE >417:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+26B8 text3 CODE >8:/opt/microchip/xc8/v1.45/sources/common/isdigit.c
+26BC text3 CODE >14:/opt/microchip/xc8/v1.45/sources/common/isdigit.c
+F30 text2 CODE >425:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+F34 text2 CODE >428:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+F3A text2 CODE >429:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+F3C text2 CODE >430:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+F46 text2 CODE >431:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+1074 text2 CODE >432:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+1080 text2 CODE >433:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+112C text2 CODE >434:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+1152 text2 CODE >435:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+1152 text2 CODE >436:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+115C text2 CODE >437:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+128A text2 CODE >438:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+1296 text2 CODE >439:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+1342 text2 CODE >440:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+68E text1 CODE >492:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+68E text1 CODE >533:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+698 text1 CODE >536:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+69C text1 CODE >538:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+6A4 text1 CODE >541:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+6B4 text1 CODE >543:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+6B4 text1 CODE >546:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+6BC text1 CODE >548:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+6C4 text1 CODE >597:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+6D8 text1 CODE >598:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+6E2 text1 CODE >599:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+6E2 text1 CODE >600:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+700 text1 CODE >601:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+72E text1 CODE >602:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+742 text1 CODE >611:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+754 text1 CODE >612:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+758 text1 CODE >613:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+75C text1 CODE >621:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+764 text1 CODE >622:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+766 text1 CODE >623:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+7A0 text1 CODE >622:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+7B6 text1 CODE >625:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+7B6 text1 CODE >626:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+7C0 text1 CODE >628:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+7C2 text1 CODE >635:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+7C4 text1 CODE >662:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+7C4 text1 CODE >663:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+7C6 text1 CODE >664:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+7C8 text1 CODE >635:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+7EC text1 CODE >822:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+7EC text1 CODE >825:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+7F4 text1 CODE >827:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+7F8 text1 CODE >829:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+800 text1 CODE >830:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+81C text1 CODE >831:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+820 text1 CODE >832:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+83C text1 CODE >833:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+842 text1 CODE >834:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+842 text1 CODE >835:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+84A text1 CODE >836:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+854 text1 CODE >837:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+88A text1 CODE >838:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+890 text1 CODE >839:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+8AC text1 CODE >840:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+8CA text1 CODE >841:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+8D0 text1 CODE >842:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+8D6 text1 CODE >846:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+8EA text1 CODE >847:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+912 text1 CODE >848:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+936 text1 CODE >849:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+93E text1 CODE >850:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+960 text1 CODE >851:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+964 text1 CODE >1112:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+974 text1 CODE >1113:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+9A2 text1 CODE >1116:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+9EA text1 CODE >1120:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+A0C text1 CODE >1121:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+A10 text1 CODE >1122:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+A10 text1 CODE >1123:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+A18 text1 CODE >1125:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+A2A text1 CODE >1126:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+A56 text1 CODE >1129:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+A64 text1 CODE >1130:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+A66 text1 CODE >1131:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+A86 text1 CODE >1132:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+AC2 text1 CODE >1133:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+ACC text1 CODE >1134:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+ACC text1 CODE >1136:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+AD8 text1 CODE >1137:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+B04 text1 CODE >1136:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+B08 text1 CODE >1142:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+B2A text1 CODE >1147:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+B32 text1 CODE >1148:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+B38 text1 CODE >1149:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+B4C text1 CODE >1150:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+B4E text1 CODE >1180:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+B4E text1 CODE >1181:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+B5E text1 CODE >1182:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+B64 text1 CODE >1180:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+B64 text1 CODE >1183:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+B72 text1 CODE >1188:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+B86 text1 CODE >1190:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+B92 text1 CODE >1196:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+B92 text1 CODE >1201:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+BDE text1 CODE >1202:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+C14 text1 CODE >1203:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+C28 text1 CODE >1196:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+C28 text1 CODE >1206:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+C32 text1 CODE >1207:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+C32 text1 CODE >1208:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+C42 text1 CODE >1209:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+C48 text1 CODE >1207:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+C48 text1 CODE >1210:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+C56 text1 CODE >1211:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+C66 text1 CODE >1212:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+C6C text1 CODE >1213:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+C6C text1 CODE >1214:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+C70 text1 CODE >1215:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+C7C text1 CODE >1219:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+C82 text1 CODE >1221:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+C92 text1 CODE >1227:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+CE0 text1 CODE >1228:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+CE2 text1 CODE >1229:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+D30 text1 CODE >1230:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+D66 text1 CODE >1231:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+D7A text1 CODE >1232:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+DC6 text1 CODE >1228:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+DC6 text1 CODE >1233:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+DD2 text1 CODE >1235:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+DD2 text1 CODE >1236:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+DE2 text1 CODE >1237:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+DE8 text1 CODE >1235:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+DE8 text1 CODE >1238:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+DF2 text1 CODE >1246:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+DF2 text1 CODE >1290:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+E06 text1 CODE >1291:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+E0A text1 CODE >1339:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+E20 text1 CODE >1340:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+E26 text1 CODE >1341:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+E3C text1 CODE >1342:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+E46 text1 CODE >1345:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+E62 text1 CODE >1346:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+E68 text1 CODE >1348:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+E6C text1 CODE >1349:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+E80 text1 CODE >1350:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+E8A text1 CODE >1351:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+E8A text1 CODE >1352:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+E92 text1 CODE >1381:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+EA8 text1 CODE >1382:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+EB6 text1 CODE >1383:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+EB6 text1 CODE >1384:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+EBE text1 CODE >1428:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+EC6 text1 CODE >1430:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+ED6 text1 CODE >1431:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+EE4 text1 CODE >1438:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+EF8 text1 CODE >1439:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+F08 text1 CODE >536:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+F22 text1 CODE >1538:/opt/microchip/xc8/v1.45/sources/common/doprnt.c
+20AE text0 CODE >172:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20AE text0 CODE >174:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20B6 text0 CODE >175:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20BA text0 CODE >176:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20BC text0 CODE >177:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20BE text0 CODE >178:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20C0 text0 CODE >179:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20C2 text0 CODE >180:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20C4 text0 CODE >181:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20C6 text0 CODE >182:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20CA text0 CODE >183:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20D8 text0 CODE >189:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20DA text0 CODE >190:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20DC text0 CODE >196:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20DE text0 CODE >197:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20E0 text0 CODE >198:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20E2 text0 CODE >205:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20E4 text0 CODE >208:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20E6 text0 CODE >209:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20E8 text0 CODE >210:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20EA text0 CODE >211:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20EC text0 CODE >212:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20EE text0 CODE >213:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20F0 text0 CODE >214:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20F8 text0 CODE >218:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20FA text0 CODE >219:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20FC text0 CODE >220:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+20FE text0 CODE >223:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+2102 text0 CODE >225:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+2104 text0 CODE >227:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+2104 text0 CODE >229:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+211C text0 CODE >230:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+213E text0 CODE >231:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+214A text0 CODE >232:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+2158 text0 CODE >227:/home/miguel/MPLABXProjects/enc2.X/enc2.c
+266C cinit CODE >935:/tmp/xcXLGOxB2
+266C cinit CODE >937:/tmp/xcXLGOxB2
+266C cinit CODE >940:/tmp/xcXLGOxB2
+266C cinit CODE >970:/tmp/xcXLGOxB2
+2670 cinit CODE >971:/tmp/xcXLGOxB2
+2672 cinit CODE >972:/tmp/xcXLGOxB2
+2672 cinit CODE >973:/tmp/xcXLGOxB2
+2674 cinit CODE >974:/tmp/xcXLGOxB2
+2676 cinit CODE >975:/tmp/xcXLGOxB2
+2678 cinit CODE >978:/tmp/xcXLGOxB2
+267C cinit CODE >979:/tmp/xcXLGOxB2
+267E cinit CODE >980:/tmp/xcXLGOxB2
+267E cinit CODE >981:/tmp/xcXLGOxB2
+2680 cinit CODE >982:/tmp/xcXLGOxB2
+2682 cinit CODE >983:/tmp/xcXLGOxB2
+2684 cinit CODE >989:/tmp/xcXLGOxB2
+2684 cinit CODE >991:/tmp/xcXLGOxB2
+2686 cinit CODE >992:/tmp/xcXLGOxB2
+2688 cinit CODE >994:/tmp/xcXLGOxB2
+268A cinit CODE >995:/tmp/xcXLGOxB2
+268C cinit CODE >996:/tmp/xcXLGOxB2
+268E cinit CODE >997:/tmp/xcXLGOxB2
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___awdiv@counter 8A 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production/enc2.X.production.obj
+__Hspace_0 30000E 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__Hspace_1 F2 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__Hspace_2 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__CFG_IESO$OFF 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__size_of_lcd_cmd 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__size_of_lcd_dwr 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__size_of_lcd_lat 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__size_of_lcd_msg 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__end_of__tdiv_to_l_ 18BA 0 CODE 0 text9 dist/default/production/enc2.X.production.obj
+___ftdiv@exp 28 0 COMRAM 1 cstackCOMRAM dist/default/production/enc2.X.production.obj
+__Hibigdata 0 0 CODE 0 ibigdata dist/default/production/enc2.X.production.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/xcXvGfh7d.obj
+___awtoft@sign 1E 0 COMRAM 1 cstackCOMRAM dist/default/production/enc2.X.production.obj
+__Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/enc2.X.production.obj
+i1___ftmul@exp 28 0 COMRAM 1 cstackCOMRAM dist/default/production/enc2.X.production.obj
+__CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+_T1CONbits FCD 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__Lsmallconst 600 0 SMALLCONST 0 smallconst dist/default/production/enc2.X.production.obj
+__size_of_Adelante 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+_GIEH 7F97 0 ABS 0 - dist/default/production/enc2.X.production.obj
+_GIEL 7F96 0 ABS 0 - dist/default/production/enc2.X.production.obj
+_IPEN 7E87 0 ABS 0 - dist/default/production/enc2.X.production.obj
+_TMR1 FCE 0 ABS 0 - dist/default/production/enc2.X.production.obj
+___sp 0 0 STACK 2 stack /tmp/xcXvGfh7d.obj
+_cwM1 271A 0 CODE 0 text30 dist/default/production/enc2.X.production.obj
+_main 20AE 0 CODE 0 text0 dist/default/production/enc2.X.production.obj
+_rpm1 43 0 COMRAM 1 bssCOMRAM dist/default/production/enc2.X.production.obj
+_rpm2 E7 0 BANK0 1 bssBANK0 dist/default/production/enc2.X.production.obj
+btemp 4B 0 COMRAM 1 temp dist/default/production/enc2.X.production.obj
+___ftadd@f1 AD 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+___ftadd@f2 B0 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+start 15C 0 CODE 0 init /tmp/xcXvGfh7d.obj
+__size_of___awdiv 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__size_of___awmod 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__size_of___ftadd 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__size_of___ftdiv 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__size_of___ftmul 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__size_of___ftneg 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__size_of___ftsub 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__size_of___fttol 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__size_of_cwM1 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__size_of_main 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__size_of___lldiv 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__size_of___llmod 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production/enc2.X.production.obj
+__end_of_lcd_cmd_hf 26F8 0 CODE 0 text24 dist/default/production/enc2.X.production.obj
+?___wmul 8E 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+___ftdiv@f1 1B 0 COMRAM 1 cstackCOMRAM dist/default/production/enc2.X.production.obj
+___ftdiv@f2 1E 0 COMRAM 1 cstackCOMRAM dist/default/production/enc2.X.production.obj
+___ftdiv@f3 25 0 COMRAM 1 cstackCOMRAM dist/default/production/enc2.X.production.obj
+__CFG_CCP2MX$PORTBE 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__Hpowerup 15C 0 CODE 0 powerup dist/default/production/enc2.X.production.obj
+___awmod@sign 85 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+___ftge@ff1 80 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+___ftge@ff2 83 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__end_of_lcd_gotoxy 25DC 0 CODE 0 text25 dist/default/production/enc2.X.production.obj
+__end_of__npowers_ 677 0 SMALLCONST 0 smallconst dist/default/production/enc2.X.production.obj
+__size_of_low_isr 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+_sprintf$1062 CC 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__accesstop 80 0 ABS 0 - /tmp/xcXvGfh7d.obj
+intlevel0 0 0 CODE 0 text /tmp/xcXvGfh7d.obj
+intlevel1 0 0 CODE 0 text /tmp/xcXvGfh7d.obj
+intlevel2 0 0 CODE 0 text /tmp/xcXvGfh7d.obj
+intlevel3 0 0 CODE 0 text /tmp/xcXvGfh7d.obj
+__LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production/enc2.X.production.obj
+__size_of__div_to_l_ 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production/enc2.X.production.obj
+wtemp6 4C 0 COMRAM 1 temp dist/default/production/enc2.X.production.obj
+__CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__CFG_EBTR1$OFF 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+___llmod@divisor 84 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__CFG_EBTR2$OFF 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__CFG_EBTR3$OFF 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+?_fround A3 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__CFG_EBTRB$OFF 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__Hifardata 0 0 CODE 0 ifardata dist/default/production/enc2.X.production.obj
+?__div_to_l_ 80 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+___awdiv@sign 8B 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__Hclrtext 0 0 ABS 0 clrtext dist/default/production/enc2.X.production.obj
+__npowers_ 650 0 SMALLCONST 0 smallconst dist/default/production/enc2.X.production.obj
+___ftmul@f1 94 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+___ftmul@f2 97 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+_Adelante 2710 0 CODE 0 text29 dist/default/production/enc2.X.production.obj
+___ftneg@f1 80 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+___wmul@multiplicand 90 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+i1___ftmul@cntr 2C 0 COMRAM 1 cstackCOMRAM dist/default/production/enc2.X.production.obj
+i1___ftmul@sign 2D 0 COMRAM 1 cstackCOMRAM dist/default/production/enc2.X.production.obj
+_scale$1061 A6 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__end_of_lcd_cmd 24D4 0 CODE 0 text26 dist/default/production/enc2.X.production.obj
+__end_of_lcd_dwr 2522 0 CODE 0 text22 dist/default/production/enc2.X.production.obj
+__end_of_lcd_lat 2710 0 CODE 0 text28 dist/default/production/enc2.X.production.obj
+__end_of_lcd_msg 2482 0 CODE 0 text20 dist/default/production/enc2.X.production.obj
+___awdiv@dividend 86 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+___inthi_sp 0 0 STACK 2 stack /tmp/xcXvGfh7d.obj
+___intlo_sp 0 0 STACK 2 stack /tmp/xcXvGfh7d.obj
+__size_of___awtoft 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__end_of_Adelante 271A 0 CODE 0 text29 dist/default/production/enc2.X.production.obj
+__Hintcode_body 0 0 ABS 0 intcode_body dist/default/production/enc2.X.production.obj
+__end_of___ftge 21EC 0 CODE 0 text19 dist/default/production/enc2.X.production.obj
+__end_of___wmul 266C 0 CODE 0 text5 dist/default/production/enc2.X.production.obj
+?__tdiv_to_l_ 80 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production/enc2.X.production.obj
+___ftsub@f1 B9 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+___ftsub@f2 BC 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+i1___ftmul@f3_as_product 29 0 COMRAM 1 cstackCOMRAM dist/default/production/enc2.X.production.obj
+___fttol@f1 AA 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__size_of_sprintf 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__end_ofi1___ftmul 1CC6 0 CODE 0 text33 dist/default/production/enc2.X.production.obj
+__Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production/enc2.X.production.obj
+__Hintcodelo 15C 0 CODE 0 intcodelo dist/default/production/enc2.X.production.obj
+___awdiv@divisor 88 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__size_ofi1___ftmul 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__size_of___ftpack 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__end_of___awdiv 2272 0 CODE 0 text8 dist/default/production/enc2.X.production.obj
+__end_of___awmod 2368 0 CODE 0 text7 dist/default/production/enc2.X.production.obj
+__end_of___ftadd 1786 0 CODE 0 text16 dist/default/production/enc2.X.production.obj
+__end_of___ftdiv 1DAC 0 CODE 0 text34 dist/default/production/enc2.X.production.obj
+__end_of___ftmul 1BD2 0 CODE 0 text6 dist/default/production/enc2.X.production.obj
+__end_of___ftneg 26B8 0 CODE 0 text18 dist/default/production/enc2.X.production.obj
+__end_of___ftsub 2564 0 CODE 0 text15 dist/default/production/enc2.X.production.obj
+__end_of___fttol 1ADC 0 CODE 0 text14 dist/default/production/enc2.X.production.obj
+__end_of___lldiv 22F6 0 CODE 0 text13 dist/default/production/enc2.X.production.obj
+__end_of___llmod 23D0 0 CODE 0 text12 dist/default/production/enc2.X.production.obj
+__size_of_isdigit 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__size_ofi1___ftpack 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+_INT0IE 7F94 0 ABS 0 - dist/default/production/enc2.X.production.obj
+_INT0IF 7F91 0 ABS 0 - dist/default/production/enc2.X.production.obj
+_INT1IE 7F83 0 ABS 0 - dist/default/production/enc2.X.production.obj
+_INT1IF 7F80 0 ABS 0 - dist/default/production/enc2.X.production.obj
+_INT1IP 7F86 0 ABS 0 - dist/default/production/enc2.X.production.obj
+_dpowers 601 0 SMALLCONST 0 smallconst dist/default/production/enc2.X.production.obj
+__size_of__tdiv_to_l_ 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__end_of_fround 15D8 0 CODE 0 text4 dist/default/production/enc2.X.production.obj
+__size_of_ccwM2 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__size_of_manda 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+?i1___ftpack 13 0 COMRAM 1 cstackCOMRAM dist/default/production/enc2.X.production.obj
+__size_of_scale 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+i1___ftmul 1BD2 0 CODE 0 text33 dist/default/production/enc2.X.production.obj
+__size_of___lltoft 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+___lldiv@counter 8C 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__Lintcodelo 18 0 CODE 0 intcodelo dist/default/production/enc2.X.production.obj
+__CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__end_of_low_isr 15C 0 CODE 0 intcodelo dist/default/production/enc2.X.production.obj
+start_initialization 266C 0 CODE 0 cinit dist/default/production/enc2.X.production.obj
+__HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production/enc2.X.production.obj
+___awtoft 25DC 0 CODE 0 text35 dist/default/production/enc2.X.production.obj
+_TRISCbits F94 0 ABS 0 - dist/default/production/enc2.X.production.obj
+___lldiv@dividend 80 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+___rparam_used 1 0 ABS 0 - dist/default/production/enc2.X.production.obj
+fround@prec AC 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__CFG_WDTPS$32768 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__end_of___awtoft 2614 0 CODE 0 text35 dist/default/production/enc2.X.production.obj
+__pcstackBANK0 80 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+___fttol@exp1 B8 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+___fttol@lval B4 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+_TMR1CS 7E69 0 ABS 0 - dist/default/production/enc2.X.production.obj
+_TMR1IF 7CF0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+_TMR1IP 7CF8 0 ABS 0 - dist/default/production/enc2.X.production.obj
+_TMR1ON 7E68 0 ABS 0 - dist/default/production/enc2.X.production.obj
+___lltoft@c 88 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+___ftpack 1F50 0 CODE 0 text17 dist/default/production/enc2.X.production.obj
+__tdiv_to_l_@f1 80 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__tdiv_to_l_@f2 83 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+___ftpack@arg 80 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+___ftpack@exp 83 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+_isdigit$695 81 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__size_of_lcd_cmd_hf 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__end_of___ftpack 2000 0 CODE 0 text17 dist/default/production/enc2.X.production.obj
+__Hbank0 0 0 ABS 0 bank0 dist/default/production/enc2.X.production.obj
+__Hbank1 0 0 ABS 0 bank1 dist/default/production/enc2.X.production.obj
+__Hbank2 0 0 ABS 0 bank2 dist/default/production/enc2.X.production.obj
+__Hbank3 0 0 ABS 0 bank3 dist/default/production/enc2.X.production.obj
+__Hbank4 0 0 ABS 0 bank4 dist/default/production/enc2.X.production.obj
+__Hbank5 0 0 ABS 0 bank5 dist/default/production/enc2.X.production.obj
+__Hcinit 0 0 ABS 0 cinit dist/default/production/enc2.X.production.obj
+__Hconst 0 0 CONST 0 const dist/default/production/enc2.X.production.obj
+__Hidata 0 0 CODE 0 idata dist/default/production/enc2.X.production.obj
+__Hidloc 200008 0 IDLOC 0 idloc dist/default/production/enc2.X.production.obj
+__Hnvbit 0 0 COMRAM 1 nvbit dist/default/production/enc2.X.production.obj
+__Hparam 0 0 COMRAM 1 rparam dist/default/production/enc2.X.production.obj
+__Hrdata 0 0 COMRAM 1 rdata dist/default/production/enc2.X.production.obj
+__Hstack 0 0 STACK 2 stack dist/default/production/enc2.X.production.obj
+__Htext0 0 0 ABS 0 text0 dist/default/production/enc2.X.production.obj
+__Htext1 0 0 ABS 0 text1 dist/default/production/enc2.X.production.obj
+__Htext2 0 0 ABS 0 text2 dist/default/production/enc2.X.production.obj
+__Htext3 0 0 ABS 0 text3 dist/default/production/enc2.X.production.obj
+__Htext4 0 0 ABS 0 text4 dist/default/production/enc2.X.production.obj
+__Htext5 0 0 ABS 0 text5 dist/default/production/enc2.X.production.obj
+__Htext6 0 0 ABS 0 text6 dist/default/production/enc2.X.production.obj
+__Htext7 0 0 ABS 0 text7 dist/default/production/enc2.X.production.obj
+__Htext8 0 0 ABS 0 text8 dist/default/production/enc2.X.production.obj
+__Htext9 0 0 ABS 0 text9 dist/default/production/enc2.X.production.obj
+lcd_cmd@x 82 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+lcd_dwr@x 82 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production/enc2.X.production.obj
+__Hbigram 0 0 ABS 0 bigram dist/default/production/enc2.X.production.obj
+lcd_msg@c 84 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__smallconst 600 0 SMALLCONST 0 smallconst /tmp/xcXvGfh7d.obj
+lcd_gotoxy@ADDRESS 86 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__end_of_sprintf F30 0 CODE 0 text1 dist/default/production/enc2.X.production.obj
+___lltoft 23D0 0 CODE 0 text11 dist/default/production/enc2.X.production.obj
+__size_of_lcd_init 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__size_of_lcd_putc 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__Hcomram 0 0 ABS 0 comram dist/default/production/enc2.X.production.obj
+__Hconfig 30000E 0 CONFIG 0 config dist/default/production/enc2.X.production.obj
+__size_of_lcd_gotoxy 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__CFG_LPT1OSC$OFF 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__Lbank0 0 0 ABS 0 bank0 dist/default/production/enc2.X.production.obj
+__Lbank1 0 0 ABS 0 bank1 dist/default/production/enc2.X.production.obj
+__Lbank2 0 0 ABS 0 bank2 dist/default/production/enc2.X.production.obj
+__Lbank3 0 0 ABS 0 bank3 dist/default/production/enc2.X.production.obj
+__Lbank4 0 0 ABS 0 bank4 dist/default/production/enc2.X.production.obj
+__Lbank5 0 0 ABS 0 bank5 dist/default/production/enc2.X.production.obj
+__end_of_isdigit 26DA 0 CODE 0 text3 dist/default/production/enc2.X.production.obj
+__Lcinit 0 0 ABS 0 cinit dist/default/production/enc2.X.production.obj
+__Lconst 0 0 CONST 0 const dist/default/production/enc2.X.production.obj
+__Lidata 0 0 CODE 0 idata dist/default/production/enc2.X.production.obj
+__Lidloc 200000 0 IDLOC 0 idloc dist/default/production/enc2.X.production.obj
+___ftadd@exp1 B8 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+___ftadd@exp2 B7 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+___ftadd@sign B6 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__Lnvbit 0 0 COMRAM 1 nvbit dist/default/production/enc2.X.production.obj
+__Lparam 0 0 COMRAM 1 rparam dist/default/production/enc2.X.production.obj
+__Lrdata 0 0 COMRAM 1 rdata dist/default/production/enc2.X.production.obj
+__Lstack 0 0 STACK 2 stack dist/default/production/enc2.X.production.obj
+__Ltext0 0 0 ABS 0 text0 dist/default/production/enc2.X.production.obj
+__Ltext1 0 0 ABS 0 text1 dist/default/production/enc2.X.production.obj
+__Ltext2 0 0 ABS 0 text2 dist/default/production/enc2.X.production.obj
+__Ltext3 0 0 ABS 0 text3 dist/default/production/enc2.X.production.obj
+__Ltext4 0 0 ABS 0 text4 dist/default/production/enc2.X.production.obj
+__Ltext5 0 0 ABS 0 text5 dist/default/production/enc2.X.production.obj
+__Ltext6 0 0 ABS 0 text6 dist/default/production/enc2.X.production.obj
+__Ltext7 0 0 ABS 0 text7 dist/default/production/enc2.X.production.obj
+__Ltext8 0 0 ABS 0 text8 dist/default/production/enc2.X.production.obj
+__Ltext9 0 0 ABS 0 text9 dist/default/production/enc2.X.production.obj
+__Hfarbss 0 0 FARRAM 0 farbss dist/default/production/enc2.X.production.obj
+lcd_cmd_hf@x 81 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__end_of___lltoft 242E 0 CODE 0 text11 dist/default/production/enc2.X.production.obj
+__Lintcode_body 0 0 ABS 0 intcode_body dist/default/production/enc2.X.production.obj
+_PORTCbits F82 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__Habs1 0 0 ABS 0 abs1 dist/default/production/enc2.X.production.obj
+__Hdata 0 0 ABS 0 data dist/default/production/enc2.X.production.obj
+__Hinit 160 0 CODE 0 init dist/default/production/enc2.X.production.obj
+__Hrbit 0 0 COMRAM 1 rbit dist/default/production/enc2.X.production.obj
+__Hrbss 0 0 COMRAM 1 rbss dist/default/production/enc2.X.production.obj
+__Htemp 4C 0 COMRAM 1 temp dist/default/production/enc2.X.production.obj
+__Htext 0 0 ABS 0 text dist/default/production/enc2.X.production.obj
+__Labs1 0 0 ABS 0 abs1 dist/default/production/enc2.X.production.obj
+__Ldata 0 0 ABS 0 data dist/default/production/enc2.X.production.obj
+__Linit 15C 0 CODE 0 init dist/default/production/enc2.X.production.obj
+__Lrbit 0 0 COMRAM 1 rbit dist/default/production/enc2.X.production.obj
+__Lrbss 0 0 COMRAM 1 rbss dist/default/production/enc2.X.production.obj
+__Ltemp 4B 0 COMRAM 1 temp dist/default/production/enc2.X.production.obj
+__Ltext 0 0 ABS 0 text dist/default/production/enc2.X.production.obj
+__CFG_XINST$OFF 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+___ftge 215A 0 CODE 0 text19 dist/default/production/enc2.X.production.obj
+___wmul 2644 0 CODE 0 text5 dist/default/production/enc2.X.production.obj
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production/enc2.X.production.obj
+int$flags 4B 0 COMRAM 1 temp dist/default/production/enc2.X.production.obj
+__HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production/enc2.X.production.obj
+__Hintret 0 0 ABS 0 intret dist/default/production/enc2.X.production.obj
+__Hirdata 0 0 CODE 0 irdata dist/default/production/enc2.X.production.obj
+__S0 30000E 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__S1 F2 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__S2 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+_lcd 48 0 COMRAM 1 bssCOMRAM dist/default/production/enc2.X.production.obj
+_contM1 49 0 COMRAM 1 bssCOMRAM dist/default/production/enc2.X.production.obj
+_contM2 46 0 COMRAM 1 bssCOMRAM dist/default/production/enc2.X.production.obj
+__CFG_PBADEN$OFF 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+___awtoft@c 1B 0 COMRAM 1 cstackCOMRAM dist/default/production/enc2.X.production.obj
+__Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production/enc2.X.production.obj
+__Hnvrram 0 0 COMRAM 1 nvrram dist/default/production/enc2.X.production.obj
+sprintf@exp DD 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+sprintf@val D1 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+_fround 1368 0 CODE 0 text4 dist/default/production/enc2.X.production.obj
+int_func 1DAC 0 CODE 0 intcode_body dist/default/production/enc2.X.production.obj
+_lcd_init 1E90 0 CODE 0 text23 dist/default/production/enc2.X.production.obj
+_lcd_putc 2564 0 CODE 0 text21 dist/default/production/enc2.X.production.obj
+__Lintentry 0 0 ABS 0 intentry dist/default/production/enc2.X.production.obj
+___lldiv@divisor 84 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+manda@dato 80 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+_lcd_cmd 2482 0 CODE 0 text26 dist/default/production/enc2.X.production.obj
+_lcd_dwr 24D4 0 CODE 0 text22 dist/default/production/enc2.X.production.obj
+_lcd_lat 26F8 0 CODE 0 text28 dist/default/production/enc2.X.production.obj
+_lcd_msg 242E 0 CODE 0 text20 dist/default/production/enc2.X.production.obj
+__Hramtop 600 0 RAM 0 ramtop dist/default/production/enc2.X.production.obj
+__Hrparam 0 0 COMRAM 1 rparam dist/default/production/enc2.X.production.obj
+__powers_ 629 0 SMALLCONST 0 smallconst dist/default/production/enc2.X.production.obj
+__size_of_high_isr 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__activetblptr 2 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__Hstruct 0 0 COMRAM 1 struct dist/default/production/enc2.X.production.obj
+__size_of___ftge 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__size_of___wmul 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__LbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production/enc2.X.production.obj
+__end_of_lcd_init 1F50 0 CODE 0 text23 dist/default/production/enc2.X.production.obj
+__end_of_lcd_putc 25A4 0 CODE 0 text21 dist/default/production/enc2.X.production.obj
+__Htext10 0 0 ABS 0 text10 dist/default/production/enc2.X.production.obj
+__Htext11 0 0 ABS 0 text11 dist/default/production/enc2.X.production.obj
+__Htext12 0 0 ABS 0 text12 dist/default/production/enc2.X.production.obj
+__Htext13 0 0 ABS 0 text13 dist/default/production/enc2.X.production.obj
+__Htext14 0 0 ABS 0 text14 dist/default/production/enc2.X.production.obj
+__Htext15 0 0 ABS 0 text15 dist/default/production/enc2.X.production.obj
+__Htext16 0 0 ABS 0 text16 dist/default/production/enc2.X.production.obj
+__Htext17 0 0 ABS 0 text17 dist/default/production/enc2.X.production.obj
+__Htext18 0 0 ABS 0 text18 dist/default/production/enc2.X.production.obj
+__Htext19 0 0 ABS 0 text19 dist/default/production/enc2.X.production.obj
+__Htext20 0 0 ABS 0 text20 dist/default/production/enc2.X.production.obj
+__Htext21 0 0 ABS 0 text21 dist/default/production/enc2.X.production.obj
+__Htext22 0 0 ABS 0 text22 dist/default/production/enc2.X.production.obj
+__Htext23 0 0 ABS 0 text23 dist/default/production/enc2.X.production.obj
+__Htext24 0 0 ABS 0 text24 dist/default/production/enc2.X.production.obj
+__Htext25 0 0 ABS 0 text25 dist/default/production/enc2.X.production.obj
+__Htext26 0 0 ABS 0 text26 dist/default/production/enc2.X.production.obj
+__Htext27 0 0 ABS 0 text27 dist/default/production/enc2.X.production.obj
+__Htext28 0 0 ABS 0 text28 dist/default/production/enc2.X.production.obj
+__Htext29 0 0 ABS 0 text29 dist/default/production/enc2.X.production.obj
+__Htext30 0 0 ABS 0 text30 dist/default/production/enc2.X.production.obj
+__Htext31 0 0 ABS 0 text31 dist/default/production/enc2.X.production.obj
+__Htext33 0 0 ABS 0 text33 dist/default/production/enc2.X.production.obj
+__Htext34 0 0 ABS 0 text34 dist/default/production/enc2.X.production.obj
+__Htext35 0 0 ABS 0 text35 dist/default/production/enc2.X.production.obj
+__Htext36 0 0 ABS 0 text36 dist/default/production/enc2.X.production.obj
+?___awtoft 1B 0 COMRAM 1 cstackCOMRAM dist/default/production/enc2.X.production.obj
+___awmod@counter 84 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+_PIE1bits F9D 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__end_of__powers_ 650 0 SMALLCONST 0 smallconst dist/default/production/enc2.X.production.obj
+__tdiv_to_l_@cntr 8D 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__tdiv_to_l_@exp1 8E 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__tdiv_to_l_@quot 89 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+sprintf@flag D5 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+sprintf@fval DF 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+sprintf@prec E2 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+i1___ftmul@f1 1F 0 COMRAM 1 cstackCOMRAM dist/default/production/enc2.X.production.obj
+i1___ftmul@f2 22 0 COMRAM 1 cstackCOMRAM dist/default/production/enc2.X.production.obj
+__ptext10 18BA 0 CODE 0 text10 dist/default/production/enc2.X.production.obj
+__ptext11 23D0 0 CODE 0 text11 dist/default/production/enc2.X.production.obj
+__ptext12 2368 0 CODE 0 text12 dist/default/production/enc2.X.production.obj
+__ptext13 2272 0 CODE 0 text13 dist/default/production/enc2.X.production.obj
+__ptext14 19E4 0 CODE 0 text14 dist/default/production/enc2.X.production.obj
+__ptext15 2522 0 CODE 0 text15 dist/default/production/enc2.X.production.obj
+__ptext16 15D8 0 CODE 0 text16 dist/default/production/enc2.X.production.obj
+__ptext17 1F50 0 CODE 0 text17 dist/default/production/enc2.X.production.obj
+__ptext18 2692 0 CODE 0 text18 dist/default/production/enc2.X.production.obj
+__ptext19 215A 0 CODE 0 text19 dist/default/production/enc2.X.production.obj
+__ptext20 242E 0 CODE 0 text20 dist/default/production/enc2.X.production.obj
+__ptext21 2564 0 CODE 0 text21 dist/default/production/enc2.X.production.obj
+__ptext22 24D4 0 CODE 0 text22 dist/default/production/enc2.X.production.obj
+__ptext23 1E90 0 CODE 0 text23 dist/default/production/enc2.X.production.obj
+__ptext24 26DA 0 CODE 0 text24 dist/default/production/enc2.X.production.obj
+__ptext25 25A4 0 CODE 0 text25 dist/default/production/enc2.X.production.obj
+__ptext26 2482 0 CODE 0 text26 dist/default/production/enc2.X.production.obj
+__ptext27 2614 0 CODE 0 text27 dist/default/production/enc2.X.production.obj
+__ptext28 26F8 0 CODE 0 text28 dist/default/production/enc2.X.production.obj
+__ptext29 2710 0 CODE 0 text29 dist/default/production/enc2.X.production.obj
+__ptext30 271A 0 CODE 0 text30 dist/default/production/enc2.X.production.obj
+__ptext31 2722 0 CODE 0 text31 dist/default/production/enc2.X.production.obj
+__ptext33 1BD2 0 CODE 0 text33 dist/default/production/enc2.X.production.obj
+__ptext34 1CC6 0 CODE 0 text34 dist/default/production/enc2.X.production.obj
+__ptext35 25DC 0 CODE 0 text35 dist/default/production/enc2.X.production.obj
+__ptext36 2000 0 CODE 0 text36 dist/default/production/enc2.X.production.obj
+___awdiv 21EC 0 CODE 0 text8 dist/default/production/enc2.X.production.obj
+___awmod 22F6 0 CODE 0 text7 dist/default/production/enc2.X.production.obj
+___ftadd 15D8 0 CODE 0 text16 dist/default/production/enc2.X.production.obj
+___ftdiv 1CC6 0 CODE 0 text34 dist/default/production/enc2.X.production.obj
+___ftmul 1ADC 0 CODE 0 text6 dist/default/production/enc2.X.production.obj
+___ftneg 2692 0 CODE 0 text18 dist/default/production/enc2.X.production.obj
+___ftsub 2522 0 CODE 0 text15 dist/default/production/enc2.X.production.obj
+___fttol 19E4 0 CODE 0 text14 dist/default/production/enc2.X.production.obj
+__tdiv_to_l_ 1786 0 CODE 0 text9 dist/default/production/enc2.X.production.obj
+__pintcode_body 1DAC 0 CODE 0 intcode_body dist/default/production/enc2.X.production.obj
+___lldiv 2272 0 CODE 0 text13 dist/default/production/enc2.X.production.obj
+___llmod 2368 0 CODE 0 text12 dist/default/production/enc2.X.production.obj
+__Lbigbss 0 0 BIGRAM 1 bigbss dist/default/production/enc2.X.production.obj
+__Lbigram 0 0 ABS 0 bigram dist/default/production/enc2.X.production.obj
+__CFG_BORV$3 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__Lcomram 0 0 ABS 0 comram dist/default/production/enc2.X.production.obj
+__Lconfig 300000 0 CONFIG 0 config dist/default/production/enc2.X.production.obj
+?___ftpack 80 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+___wmul@multiplier 8E 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__size_of_fround 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__Lfarbss 0 0 FARRAM 0 farbss dist/default/production/enc2.X.production.obj
+__Lfardata 0 0 FARRAM 0 fardata dist/default/production/enc2.X.production.obj
+_low_isr 18 0 CODE 0 intcodelo dist/default/production/enc2.X.production.obj
+stackhi 5FF 0 ABS 0 - /tmp/xcXvGfh7d.obj
+stacklo F2 0 ABS 0 - /tmp/xcXvGfh7d.obj
+__Lintcode 8 0 CODE 0 intcode dist/default/production/enc2.X.production.obj
+?___lltoft 88 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__Lintret 0 0 ABS 0 intret dist/default/production/enc2.X.production.obj
+__Lirdata 0 0 CODE 0 irdata dist/default/production/enc2.X.production.obj
+__CFG_LVP$OFF 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+_high_isr 8 0 CODE 0 intcode dist/default/production/enc2.X.production.obj
+__div_to_l_ 18BA 0 CODE 0 text10 dist/default/production/enc2.X.production.obj
+__Lspace_0 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__Lspace_1 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__Lspace_2 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+___ftmul@cntr A1 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__pbssCOMRAM 43 0 COMRAM 1 bssCOMRAM dist/default/production/enc2.X.production.obj
+___ftmul@sign A2 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production/enc2.X.production.obj
+_PIR1bits F9E 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production/enc2.X.production.obj
+__end_of_high_isr 1E90 0 CODE 0 intcode_body dist/default/production/enc2.X.production.obj
+__div_to_l_@f1 80 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__div_to_l_@f2 83 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+end_of_initialization 2684 0 CODE 0 cinit dist/default/production/enc2.X.production.obj
+__Lnvrram 0 0 COMRAM 1 nvrram dist/default/production/enc2.X.production.obj
+__Hintentry 0 0 ABS 0 intentry dist/default/production/enc2.X.production.obj
+__CFG_STVREN$ON 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__CFG_OSC$XT 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+___awdiv@quotient 8C 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+?___awdiv 86 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+?___awmod 80 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+?___ftadd AD 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+?___ftdiv 1B 0 COMRAM 1 cstackCOMRAM dist/default/production/enc2.X.production.obj
+?___ftmul 94 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+?___ftneg 80 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+?___ftsub B9 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+?___fttol AA 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+?___lldiv 80 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+?___llmod 80 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__Hreset_vec 4 0 CODE 0 reset_vec dist/default/production/enc2.X.production.obj
+__HbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production/enc2.X.production.obj
+___awmod@dividend 80 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__Lramtop 600 0 RAM 0 ramtop dist/default/production/enc2.X.production.obj
+__Lrparam 0 0 COMRAM 1 rparam dist/default/production/enc2.X.production.obj
+__pcinit 266C 0 CODE 0 cinit dist/default/production/enc2.X.production.obj
+___lltoft@exp 90 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__ptext0 20AE 0 CODE 0 text0 dist/default/production/enc2.X.production.obj
+__ptext1 68E 0 CODE 0 text1 dist/default/production/enc2.X.production.obj
+__ptext2 F30 0 CODE 0 text2 dist/default/production/enc2.X.production.obj
+__ptext3 26B8 0 CODE 0 text3 dist/default/production/enc2.X.production.obj
+__ptext4 1368 0 CODE 0 text4 dist/default/production/enc2.X.production.obj
+__ptext5 2644 0 CODE 0 text5 dist/default/production/enc2.X.production.obj
+__ptext6 1ADC 0 CODE 0 text6 dist/default/production/enc2.X.production.obj
+__ptext7 22F6 0 CODE 0 text7 dist/default/production/enc2.X.production.obj
+__ptext8 21EC 0 CODE 0 text8 dist/default/production/enc2.X.production.obj
+__ptext9 1786 0 CODE 0 text9 dist/default/production/enc2.X.production.obj
+__Lstruct 0 0 COMRAM 1 struct dist/default/production/enc2.X.production.obj
+__Ltext10 0 0 ABS 0 text10 dist/default/production/enc2.X.production.obj
+__Ltext11 0 0 ABS 0 text11 dist/default/production/enc2.X.production.obj
+__Ltext12 0 0 ABS 0 text12 dist/default/production/enc2.X.production.obj
+__Ltext13 0 0 ABS 0 text13 dist/default/production/enc2.X.production.obj
+__Ltext14 0 0 ABS 0 text14 dist/default/production/enc2.X.production.obj
+__Ltext15 0 0 ABS 0 text15 dist/default/production/enc2.X.production.obj
+__Ltext16 0 0 ABS 0 text16 dist/default/production/enc2.X.production.obj
+__Ltext17 0 0 ABS 0 text17 dist/default/production/enc2.X.production.obj
+__Ltext18 0 0 ABS 0 text18 dist/default/production/enc2.X.production.obj
+__Ltext19 0 0 ABS 0 text19 dist/default/production/enc2.X.production.obj
+__Ltext20 0 0 ABS 0 text20 dist/default/production/enc2.X.production.obj
+__Ltext21 0 0 ABS 0 text21 dist/default/production/enc2.X.production.obj
+__Ltext22 0 0 ABS 0 text22 dist/default/production/enc2.X.production.obj
+__Ltext23 0 0 ABS 0 text23 dist/default/production/enc2.X.production.obj
+__Ltext24 0 0 ABS 0 text24 dist/default/production/enc2.X.production.obj
+__Ltext25 0 0 ABS 0 text25 dist/default/production/enc2.X.production.obj
+__Ltext26 0 0 ABS 0 text26 dist/default/production/enc2.X.production.obj
+__Ltext27 0 0 ABS 0 text27 dist/default/production/enc2.X.production.obj
+__Ltext28 0 0 ABS 0 text28 dist/default/production/enc2.X.production.obj
+__Ltext29 0 0 ABS 0 text29 dist/default/production/enc2.X.production.obj
+__Ltext30 0 0 ABS 0 text30 dist/default/production/enc2.X.production.obj
+__Ltext31 0 0 ABS 0 text31 dist/default/production/enc2.X.production.obj
+__Ltext33 0 0 ABS 0 text33 dist/default/production/enc2.X.production.obj
+__Ltext34 0 0 ABS 0 text34 dist/default/production/enc2.X.production.obj
+__Ltext35 0 0 ABS 0 text35 dist/default/production/enc2.X.production.obj
+__Ltext36 0 0 ABS 0 text36 dist/default/production/enc2.X.production.obj
+__ramtop 600 0 RAM 0 ramtop /tmp/xcXvGfh7d.obj
+_sprintf 68E 0 CODE 0 text1 dist/default/production/enc2.X.production.obj
+__Lpowerup 15C 0 CODE 0 powerup dist/default/production/enc2.X.production.obj
+__Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/enc2.X.production.obj
+sprintf@ap CF 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+sprintf@sp BF 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+_isdigit 26B8 0 CODE 0 text3 dist/default/production/enc2.X.production.obj
+__psmallconst 600 0 SMALLCONST 0 smallconst dist/default/production/enc2.X.production.obj
+__Lreset_vec 0 0 CODE 0 reset_vec dist/default/production/enc2.X.production.obj
+scale@scl A9 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+i1___ftpack@sign 17 0 COMRAM 1 cstackCOMRAM dist/default/production/enc2.X.production.obj
+i1___ftpack 2000 0 CODE 0 text36 dist/default/production/enc2.X.production.obj
+?i1___ftmul 1F 0 COMRAM 1 cstackCOMRAM dist/default/production/enc2.X.production.obj
+__end_of__div_to_l_ 19E4 0 CODE 0 text10 dist/default/production/enc2.X.production.obj
+___param_bank 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__CFG_WDT$OFF 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production/enc2.X.production.obj
+___ftmul@exp 9D 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__end_of__initialization 2684 0 CODE 0 cinit dist/default/production/enc2.X.production.obj
+___awmod@divisor 82 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+_INTEDG0 7F8E 0 ABS 0 - dist/default/production/enc2.X.production.obj
+_INTEDG1 7F8D 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__CFG_WRT0$OFF 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__CFG_WRT1$OFF 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__CFG_WRT2$OFF 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__CFG_WRT3$OFF 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__CFG_WRTB$OFF 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__Libigdata 0 0 CODE 0 ibigdata dist/default/production/enc2.X.production.obj
+__CFG_WRTC$OFF 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__CFG_WRTD$OFF 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+?_scale A3 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__Lclrtext 0 0 ABS 0 clrtext dist/default/production/enc2.X.production.obj
+___ftpack@sign 84 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+lcd_putc@c 83 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+sprintf@tmpval D9 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+i1___ftpack@arg 13 0 COMRAM 1 cstackCOMRAM dist/default/production/enc2.X.production.obj
+i1___ftpack@exp 16 0 COMRAM 1 cstackCOMRAM dist/default/production/enc2.X.production.obj
+__pintcodelo 18 0 CODE 0 intcodelo dist/default/production/enc2.X.production.obj
+___lldiv@quotient 88 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+_T1CKPS0 7E6C 0 ABS 0 - dist/default/production/enc2.X.production.obj
+_T1CKPS1 7E6D 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production/enc2.X.production.obj
+___ftdiv@cntr 24 0 COMRAM 1 cstackCOMRAM dist/default/production/enc2.X.production.obj
+___ftdiv@sign 29 0 COMRAM 1 cstackCOMRAM dist/default/production/enc2.X.production.obj
+___llmod@dividend 80 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+lcd_gotoxy@x 85 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+lcd_gotoxy@y 83 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+___llmod@counter 88 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+sprintf@c E4 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+sprintf@f C1 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__CFG_PWRT$ON 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__end_of_cwM1 2722 0 CODE 0 text30 dist/default/production/enc2.X.production.obj
+__end_of_main 215A 0 CODE 0 text0 dist/default/production/enc2.X.production.obj
+__pintcode 8 0 CODE 0 intcode dist/default/production/enc2.X.production.obj
+isdigit@c 82 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__end_of_dpowers 629 0 SMALLCONST 0 smallconst dist/default/production/enc2.X.production.obj
+__end_of_ccwM2 272A 0 CODE 0 text31 dist/default/production/enc2.X.production.obj
+?_sprintf BF 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+_PORTB F81 0 ABS 0 - dist/default/production/enc2.X.production.obj
+_PORTD F83 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__end_of_manda 2644 0 CODE 0 text27 dist/default/production/enc2.X.production.obj
+_TRISB F93 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__end_of_scale 1368 0 CODE 0 text2 dist/default/production/enc2.X.production.obj
+__CFG_CP0$OFF 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__CFG_CP1$OFF 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__HRAM 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__Hbss 0 0 RAM 1 bss dist/default/production/enc2.X.production.obj
+__Hram 0 0 ABS 0 ram dist/default/production/enc2.X.production.obj
+__Hsfr 0 0 ABS 0 sfr dist/default/production/enc2.X.production.obj
+__LRAM 1 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__Lbss 0 0 RAM 1 bss dist/default/production/enc2.X.production.obj
+__Lram 0 0 ABS 0 ram dist/default/production/enc2.X.production.obj
+__Lsfr 0 0 ABS 0 sfr dist/default/production/enc2.X.production.obj
+__CFG_CP2$OFF 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__CFG_CP3$OFF 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+_ccwM2 2722 0 CODE 0 text31 dist/default/production/enc2.X.production.obj
+_manda 2614 0 CODE 0 text27 dist/default/production/enc2.X.production.obj
+__CFG_CPB$OFF 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+__CFG_CPD$OFF 0 0 ABS 0 - dist/default/production/enc2.X.production.obj
+_scale F30 0 CODE 0 text2 dist/default/production/enc2.X.production.obj
+_value EA 0 BANK0 1 bssBANK0 dist/default/production/enc2.X.production.obj
+_fround$1059 A9 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+_fround$1060 A6 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+___fttol@sign1 B3 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+sprintf@width D7 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+_lcd_cmd_hf 26DA 0 CODE 0 text24 dist/default/production/enc2.X.production.obj
+__end_ofi1___ftpack 20AE 0 CODE 0 text36 dist/default/production/enc2.X.production.obj
+__initialization 266C 0 CODE 0 cinit dist/default/production/enc2.X.production.obj
+__pbssBANK0 E7 0 BANK0 1 bssBANK0 dist/default/production/enc2.X.production.obj
+__Hfardata 0 0 FARRAM 0 fardata dist/default/production/enc2.X.production.obj
+___wmul@product 92 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__Hsmallconst 68E 0 SMALLCONST 0 smallconst dist/default/production/enc2.X.production.obj
+__Lifardata 0 0 CODE 0 ifardata dist/default/production/enc2.X.production.obj
+_lcd_gotoxy 25A4 0 CODE 0 text25 dist/default/production/enc2.X.production.obj
+__div_to_l_@cntr 8A 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__div_to_l_@exp1 8B 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__div_to_l_@quot 86 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+__Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production/enc2.X.production.obj
+__Hintcode E 0 CODE 0 intcode dist/default/production/enc2.X.production.obj
+___ftmul@f3_as_product 9E 0 BANK0 1 cstackBANK0 dist/default/production/enc2.X.production.obj
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+intcodelo 0 18 18 148 1
+idloc 0 200000 200000 8 1
+text1 0 68E 68E 209C 1
+cstackCOMRAM 1 1 1 4B 1
+cstackBANK0 1 80 80 72 1
+reset_vec 0 0 0 4 1
+intcode 0 8 8 6 1
+smallconst 0 600 600 8E 1
+config 0 300000 300000 E 1
