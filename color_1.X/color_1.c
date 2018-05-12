@@ -164,7 +164,7 @@ void calcula()
   unsigned long elapsedTime = finishTime - startTime;
   
   temp = (float) (elapsedTime);
-  temp *= 1e-6;
+  temp *= 200e-9;  //cada tick es de 200ns para Xt = 20MHz
   freq = 1.0/(temp);
   //freq = 1.0 / ((float (elapsedTime) * 1e-6));  // each tick is 62.5 nS
  

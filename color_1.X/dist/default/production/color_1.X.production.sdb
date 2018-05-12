@@ -8,23 +8,23 @@
 false 0
 true 1
 ]
-"27 /home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+"29 /home/miguel/MPLABXProjects/MyLibs/lcd4a.c
 [v _lcd_lat lcd_lat `(v  1 e 1 0 ]
-"38
+"40
 [v _lcd_cmd lcd_cmd `(v  1 e 1 0 ]
-"54
+"56
 [v _lcd_cmd_hf lcd_cmd_hf `(v  1 e 1 0 ]
-"64
+"66
 [v _lcd_putc lcd_putc `(v  1 e 1 0 ]
-"84
+"86
 [v _lcd_dwr lcd_dwr `(v  1 e 1 0 ]
-"99
+"101
 [v _lcd_msg lcd_msg `(v  1 e 1 0 ]
-"112
+"114
 [v _lcd_gotoxy lcd_gotoxy `(v  1 e 1 0 ]
-"133
+"135
 [v _lcd_init lcd_init `(v  1 e 1 0 ]
-"171
+"178
 [v _manda manda `(v  1 e 1 0 ]
 "8 /opt/microchip/xc8/v1.45/sources/common/awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -170,19 +170,19 @@ true 1
 [v main@acum acum `uc  1 a 1 88 ]
 "150
 } 0
-"133 /home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+"135 /home/miguel/MPLABXProjects/MyLibs/lcd4a.c
 [v _lcd_init lcd_init `(v  1 e 1 0 ]
 {
-"168
+"175
 } 0
-"54
+"56
 [v _lcd_cmd_hf lcd_cmd_hf `(v  1 e 1 0 ]
 {
 [v lcd_cmd_hf@x x `uc  1 a 1 wreg ]
 [v lcd_cmd_hf@x x `uc  1 a 1 wreg ]
-"56
+"58
 [v lcd_cmd_hf@x x `uc  1 a 1 46 ]
-"61
+"63
 } 0
 "153 /home/miguel/MPLABXProjects/color_1.X/color_1.c
 [v _calcula calcula `(v  1 e 1 0 ]
@@ -403,64 +403,64 @@ true 1
 {
 "192
 } 0
-"99 /home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+"101 /home/miguel/MPLABXProjects/MyLibs/lcd4a.c
 [v _lcd_msg lcd_msg `(v  1 e 1 0 ]
 {
 [v lcd_msg@c c `*.35uc  1 p 2 49 ]
-"105
+"107
 } 0
-"64
+"66
 [v _lcd_putc lcd_putc `(v  1 e 1 0 ]
 {
 [v lcd_putc@c c `uc  1 a 1 wreg ]
 [v lcd_putc@c c `uc  1 a 1 wreg ]
 [v lcd_putc@c c `uc  1 a 1 48 ]
-"81
+"83
 } 0
-"84
+"86
 [v _lcd_dwr lcd_dwr `(v  1 e 1 0 ]
 {
 [v lcd_dwr@x x `uc  1 a 1 wreg ]
 [v lcd_dwr@x x `uc  1 a 1 wreg ]
-"86
+"88
 [v lcd_dwr@x x `uc  1 a 1 47 ]
-"97
+"99
 } 0
-"112
+"114
 [v _lcd_gotoxy lcd_gotoxy `(v  1 e 1 0 ]
 {
 [v lcd_gotoxy@x x `uc  1 a 1 wreg ]
-"114
+"116
 [v lcd_gotoxy@ADDRESS ADDRESS `uc  1 a 1 51 ]
-"112
+"114
 [v lcd_gotoxy@x x `uc  1 a 1 wreg ]
 [v lcd_gotoxy@y y `uc  1 p 1 48 ]
-"114
+"116
 [v lcd_gotoxy@x x `uc  1 a 1 50 ]
-"131
+"133
 } 0
-"38
+"40
 [v _lcd_cmd lcd_cmd `(v  1 e 1 0 ]
 {
 [v lcd_cmd@x x `uc  1 a 1 wreg ]
 [v lcd_cmd@x x `uc  1 a 1 wreg ]
-"40
+"42
 [v lcd_cmd@x x `uc  1 a 1 47 ]
-"52
+"54
 } 0
-"171
+"178
 [v _manda manda `(v  1 e 1 0 ]
 {
 [v manda@dato dato `uc  1 a 1 wreg ]
 [v manda@dato dato `uc  1 a 1 wreg ]
-"173
+"180
 [v manda@dato dato `uc  1 a 1 45 ]
-"181
+"188
 } 0
-"27
+"29
 [v _lcd_lat lcd_lat `(v  1 e 1 0 ]
 {
-"36
+"38
 } 0
 "54 /opt/microchip/xc8/v1.45/sources/common/ftdiv.c
 [v ___ftdiv __ftdiv `(f  1 e 3 0 ]

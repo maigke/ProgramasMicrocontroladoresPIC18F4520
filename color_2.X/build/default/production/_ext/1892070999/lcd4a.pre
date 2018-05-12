@@ -3,7 +3,7 @@
 
 
 # 39 "../MyLibs/config5.h"
-#pragma config OSC = XT
+#pragma config OSC = HS
 #pragma config FCMEN = OFF
 #pragma config IESO = OFF
 
@@ -3994,7 +3994,7 @@ void lcd_lat()
 
 (*(&(*(&PORTD + 0x09))) |= (1<<(7)));
 
-_delay((unsigned long)((3)*(4000000/4000.0)));
+_delay((unsigned long)((3)*(16000000/4000.0)));
 (*(&(*(&PORTD + 0x09))) &=~ (1<<(7)));
 
 }
@@ -4007,7 +4007,7 @@ lcd &= 0x0F;
 lcd |= (x & 0xF0);
 manda(lcd);
 lcd_lat();
-_delay((unsigned long)((4)*(4000000/4000.0)));
+_delay((unsigned long)((4)*(16000000/4000.0)));
 
 lcd &= 0x0F;
 lcd |= ((x & 0x0F)<<4);
@@ -4052,7 +4052,7 @@ lcd &= 0x0F;
 lcd |= ((x & 0xF0));
 manda(lcd);
 lcd_lat();
-_delay((unsigned long)((4)*(4000000/4000.0)));
+_delay((unsigned long)((4)*(16000000/4000.0)));
 
 lcd &= 0x0F;
 lcd |= ((x & 0x0F)<<4);
@@ -4110,21 +4110,21 @@ void lcd_init()
 
 
 lcd_cmd_hf(0x30);
-_delay((unsigned long)((15)*(4000000/4000.0)));
+_delay((unsigned long)((15)*(16000000/4000.0)));
 lcd_cmd_hf(0x30);
-_delay((unsigned long)((3)*(4000000/4000.0)));
+_delay((unsigned long)((3)*(16000000/4000.0)));
 lcd_cmd_hf(0x30);
-_delay((unsigned long)((15)*(4000000/4000.0)));
+_delay((unsigned long)((15)*(16000000/4000.0)));
 lcd_cmd_hf(0x20);
-_delay((unsigned long)((6)*(4000000/4000.0)));
+_delay((unsigned long)((6)*(16000000/4000.0)));
 lcd_cmd(0x28);
-_delay((unsigned long)((6)*(4000000/4000.0)));
+_delay((unsigned long)((6)*(16000000/4000.0)));
 lcd_cmd(0x0E);
-_delay((unsigned long)((6)*(4000000/4000.0)));
+_delay((unsigned long)((6)*(16000000/4000.0)));
 lcd_cmd(0x01);
-_delay((unsigned long)((6)*(4000000/4000.0)));
+_delay((unsigned long)((6)*(16000000/4000.0)));
 lcd_cmd(0x06);
-_delay((unsigned long)((6)*(4000000/4000.0)));
+_delay((unsigned long)((6)*(16000000/4000.0)));
 lcd_cmd(0x80);
 }
 

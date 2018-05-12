@@ -1,71 +1,147 @@
 
-# 1 "../MyLibs/lcd4a.c"
+# 1 "color_2.c"
+
+# 4 "/opt/microchip/xc8/v1.45/include/__size_t.h"
+typedef unsigned size_t;
+
+# 7 "/opt/microchip/xc8/v1.45/include/stdarg.h"
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+
+# 43 "/opt/microchip/xc8/v1.45/include/stdio.h"
+struct __prbuf
+{
+char * ptr;
+void (* func)(char);
+};
+
+# 29 "/opt/microchip/xc8/v1.45/include/errno.h"
+extern int errno;
+
+# 12 "/opt/microchip/xc8/v1.45/include/conio.h"
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 23
+extern char * cgets(char *);
+extern void cputs(const char *);
+
+# 88 "/opt/microchip/xc8/v1.45/include/stdio.h"
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
 
 
-# 39 "../MyLibs/config5.h"
-#pragma config OSC = XT
-#pragma config FCMEN = OFF
-#pragma config IESO = OFF
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
 
 
-#pragma config PWRT = ON
-#pragma config BOREN = OFF
-#pragma config BORV = 3
+# 180
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+
+# 7 "/opt/microchip/xc8/v1.45/include/stdlib.h"
+typedef unsigned short wchar_t;
+
+# 15
+typedef struct {
+int rem;
+int quot;
+} div_t;
+typedef struct {
+unsigned rem;
+unsigned quot;
+} udiv_t;
+typedef struct {
+long quot;
+long rem;
+} ldiv_t;
+typedef struct {
+unsigned long quot;
+unsigned long rem;
+} uldiv_t;
+
+# 53
+extern double atof(const char *);
+extern double strtod(const char *, const char **);
+extern int atoi(const char *);
+extern unsigned xtoi(const char *);
+extern long atol(const char *);
+extern long strtol(const char *, char **, int);
+
+extern int rand(void);
+extern void srand(unsigned int);
+extern void * calloc(size_t, size_t);
+extern div_t div(int numer, int denom);
+extern udiv_t udiv(unsigned numer, unsigned denom);
+extern ldiv_t ldiv(long numer, long denom);
+extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+extern unsigned int _rotl(unsigned int value, unsigned int shift);
+extern unsigned int _rotr(unsigned int value, unsigned int shift);
 
 
-#pragma config WDT = OFF
-#pragma config WDTPS = 32768
 
 
-#pragma config CCP2MX = PORTBE
-#pragma config PBADEN = OFF
-#pragma config LPT1OSC = OFF
-#pragma config MCLRE = ON
-
-
-#pragma config STVREN = ON
-#pragma config LVP = OFF
-#pragma config XINST = OFF
-
-
-#pragma config CP0 = OFF
-#pragma config CP1 = OFF
-#pragma config CP2 = OFF
-#pragma config CP3 = OFF
-
-
-#pragma config CPB = OFF
-#pragma config CPD = OFF
-
-
-#pragma config WRT0 = OFF
-#pragma config WRT1 = OFF
-#pragma config WRT2 = OFF
-#pragma config WRT3 = OFF
-
-
-#pragma config WRTC = OFF
-#pragma config WRTB = OFF
-#pragma config WRTD = OFF
-
-
-#pragma config EBTR0 = OFF
-#pragma config EBTR1 = OFF
-#pragma config EBTR2 = OFF
-#pragma config EBTR3 = OFF
-
-
-#pragma config EBTRB = OFF
-
-# 26 "/opt/microchip/xc8/v1.45/include/htc.h"
-extern const char __xc8_OPTIM_SPEED;
-
-extern double __fpnormalize(double);
+extern void * malloc(size_t);
+extern void free(void *);
+extern void * realloc(void *, size_t);
 
 
 # 13 "/opt/microchip/xc8/v1.45/include/xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
+
+# 86 "/opt/microchip/xc8/v1.45/include/stdlib.h"
+extern int atexit(void (*)(void));
+extern char * getenv(const char *);
+extern char ** environ;
+extern int system(char *);
+extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+extern int abs(int);
+extern long labs(long);
+
+extern char * itoa(char * buf, int val, int base);
+extern char * utoa(char * buf, unsigned val, int base);
+
+
+
+
+extern char * ltoa(char * buf, long val, int base);
+extern char * ultoa(char * buf, unsigned long val, int base);
+
+extern char * ftoa(float f, int * status);
+
+# 26 "/opt/microchip/xc8/v1.45/include/htc.h"
+extern const char __xc8_OPTIM_SPEED;
+
+extern double __fpnormalize(double);
 
 # 50 "/opt/microchip/xc8/v1.45/include/pic18f4520.h"
 extern volatile unsigned char PORTA @ 0xF80;
@@ -3892,266 +3968,336 @@ void manda(unsigned char dato);
 void lcd_setcursor_vb(unsigned char visible, unsigned char blink);
 char lcd_hexa(unsigned char a);
 
-# 13 "/opt/microchip/xc8/v1.45/include/stdint.h"
-typedef signed char int8_t;
+# 33 "color_2.c"
+char value[8];
 
-# 20
-typedef signed int int16_t;
 
-# 28
-typedef signed short long int int24_t;
+# 39 "../MyLibs/config5.h"
+#pragma config OSC = HS
+#pragma config FCMEN = OFF
+#pragma config IESO = OFF
 
-# 36
-typedef signed long int int32_t;
 
-# 43
-typedef unsigned char uint8_t;
+#pragma config PWRT = ON
+#pragma config BOREN = OFF
+#pragma config BORV = 3
 
-# 49
-typedef unsigned int uint16_t;
 
-# 56
-typedef unsigned short long int uint24_t;
+#pragma config WDT = OFF
+#pragma config WDTPS = 32768
 
-# 63
-typedef unsigned long int uint32_t;
 
-# 71
-typedef signed char int_least8_t;
+#pragma config CCP2MX = PORTBE
+#pragma config PBADEN = OFF
+#pragma config LPT1OSC = OFF
+#pragma config MCLRE = ON
 
-# 78
-typedef signed int int_least16_t;
 
-# 90
-typedef signed short long int int_least24_t;
+#pragma config STVREN = ON
+#pragma config LVP = OFF
+#pragma config XINST = OFF
 
-# 98
-typedef signed long int int_least32_t;
 
-# 105
-typedef unsigned char uint_least8_t;
+#pragma config CP0 = OFF
+#pragma config CP1 = OFF
+#pragma config CP2 = OFF
+#pragma config CP3 = OFF
 
-# 111
-typedef unsigned int uint_least16_t;
 
-# 121
-typedef unsigned short long int uint_least24_t;
+#pragma config CPB = OFF
+#pragma config CPD = OFF
 
-# 128
-typedef unsigned long int uint_least32_t;
 
-# 137
-typedef signed char int_fast8_t;
+#pragma config WRT0 = OFF
+#pragma config WRT1 = OFF
+#pragma config WRT2 = OFF
+#pragma config WRT3 = OFF
 
-# 144
-typedef signed int int_fast16_t;
 
-# 156
-typedef signed short long int int_fast24_t;
+#pragma config WRTC = OFF
+#pragma config WRTB = OFF
+#pragma config WRTD = OFF
 
-# 164
-typedef signed long int int_fast32_t;
 
-# 171
-typedef unsigned char uint_fast8_t;
+#pragma config EBTR0 = OFF
+#pragma config EBTR1 = OFF
+#pragma config EBTR2 = OFF
+#pragma config EBTR3 = OFF
 
-# 177
-typedef unsigned int uint_fast16_t;
 
-# 187
-typedef unsigned short long int uint_fast24_t;
+#pragma config EBTRB = OFF
 
-# 194
-typedef unsigned long int uint_fast32_t;
+# 56 "color_2.c"
+typedef enum{
 
-# 200
-typedef int32_t intmax_t;
+false = 0,
+true = 1
+} boolean;
 
 
 
-
-typedef uint32_t uintmax_t;
-
-
+typedef enum{ rojo,azul,sf,verde} color;
+typedef enum{total, media, baja,apagado} escala;
 
 
-typedef int16_t intptr_t;
+volatile boolean first;
+volatile boolean triggered;
+volatile unsigned long overflowCount;
+volatile unsigned long startTime;
+volatile unsigned long finishTime;
 
-
-
-
-typedef uint16_t uintptr_t;
-
-# 24 "../MyLibs/lcd4a.c"
-unsigned char lcd;
-
-
-
-
-void lcd_lat()
+void low_priority interrupt low_isr()
 {
-
-
-(*(&(*(&PORTD + 0x09))) |= (1<<(7)));
-
-_delay((unsigned long)((3)*(4000000/4000.0)));
-(*(&(*(&PORTD + 0x09))) &=~ (1<<(7)));
-
+if(TMR1IF == 1)
+{
+overflowCount++;
+TMR1IF =0;
+return;
+}
 }
 
-void lcd_cmd(unsigned char x)
+void interrupt high_priority high_isr()
 {
-lcd = 0;
-(*(&(*(&PORTD + 0x09))) &=~ (1<<(5)));
-lcd &= 0x0F;
-lcd |= (x & 0xF0);
-manda(lcd);
-lcd_lat();
-_delay((unsigned long)((4)*(4000000/4000.0)));
 
-lcd &= 0x0F;
-lcd |= ((x & 0x0F)<<4);
-manda(lcd);
-lcd_lat();
+if(INT0IF == 1)
+{
+unsigned int counter = TMR1;
+
+
+if (triggered)
+{
+INT0IF = 0;
+return;
 }
 
-void lcd_cmd_hf(unsigned char x)
+if (first)
 {
-(*(&(*(&PORTD + 0x09))) &=~ (1<<(5)));
-lcd &= 0x0F;
-lcd |= (x & 0xF0);
-manda(lcd);
-lcd_lat();
+startTime = (overflowCount << 16) + counter;
+first = false;
+INT0IF = 0;
+return;
 }
 
-
-void lcd_putc(unsigned char c)
-{
-switch(c)
-{
-case '\f':
-lcd_cmd(0x01);
-break;
-case '\n':
-lcd_cmd(3);
-break;
-case '\b':
-lcd_cmd(0x10);
-break;
-default:
-lcd_dwr(c);
-break;
+finishTime = (overflowCount << 16) + counter;
+triggered = true;
+INT0IF = 0;
+return;
 }
 }
 
 
-void lcd_dwr(unsigned char x)
-{
-(*(&(*(&PORTD + 0x09))) |= (1<<(5)));
-lcd &= 0x0F;
-lcd |= ((x & 0xF0));
-manda(lcd);
-lcd_lat();
-_delay((unsigned long)((4)*(4000000/4000.0)));
 
-lcd &= 0x0F;
-lcd |= ((x & 0x0F)<<4);
-manda(lcd);
-lcd_lat();
+float calcula();
+void prepareForInterrupts ();
+void seleccionarEscala(escala a);
+void seleccionarColor(color a);
+
+# 130
+void main(void)
+{
+char i;
+float freq=0.0;
+float r,v,a,brillo;
+
+(*(&(*(&PORTD + 0x12))) &=~ (1<<(3)));
+(*(&(*(&PORTD + 0x12))) &=~ (1<<(2)));
+(*(&(*(&PORTD + 0x12))) &=~ (1<<(1)));
+(*(&(*(&PORTD + 0x12))) &=~ (1<<(0)));
+(*(&(*(&PORTD + 0x12))) &=~ (1<<(4)));
+
+lcd_init();
+lcd_msg("Detector de color");
+
+# 150
+T1CONbits.RD16 = 1;
+T1CKPS1 = 0;
+T1CKPS0 = 0;
+TMR1CS = 0;
+TMR1ON = 1;
+TMR1IP = 0;
+TMR1IE = 1;
+
+prepareForInterrupts ();
+
+
+
+IPEN = 1;
+GIEH = 1;
+GIEL = 1;
+
+# 172
+seleccionarEscala(baja);
+
+
+
+while(1)
+{
+
+(*(&(*(&PORTD + 0x09))) ^= (1<<(4)));
+seleccionarColor(sf);
+for (i = 0 ;i < 30; i++)
+{
+_delay((unsigned long)((10)*(16000000/4000.0)));
+freq+= calcula();
 }
+freq/=30;
+brillo = freq;
+sprintf(value,"%5.3f",freq);
+lcd_gotoxy(1,2);
+lcd_msg("B= ");
+lcd_msg(value);
+freq=0.0;
+_delay((unsigned long)((1000)*(16000000/4000.0)));
 
-void lcd_msg(unsigned char *c)
+
+
+(*(&(*(&PORTD + 0x09))) ^= (1<<(4)));
+seleccionarColor(rojo);
+for (i = 0 ;i < 30; i++)
 {
-while(*c != 0)
-{
-lcd_putc(*c++);
+_delay((unsigned long)((10)*(16000000/4000.0)));
+freq+= calcula();
 }
-}
+freq/=30;
+r=freq;
+sprintf(value,"%5.3f",freq);
+lcd_gotoxy(1,2);
+lcd_msg("R= ");
+lcd_msg(value);
 
-# 114
-void lcd_gotoxy(unsigned char x, unsigned char y)
+freq=0.0;
+_delay((unsigned long)((1000)*(16000000/4000.0)));
+
+
+(*(&(*(&PORTD + 0x09))) ^= (1<<(4)));
+seleccionarColor(verde);
+for (i = 0 ;i < 30; i++)
 {
-unsigned char ADDRESS= 0x00U;
-
-switch(y)
-{
-case 1:
-ADDRESS = 0x80;
-break;
-case 2:
-ADDRESS = 0xC0;
-break;
-default:
-ADDRESS = 0x80;
-break;
-
+_delay((unsigned long)((10)*(16000000/4000.0)));
+freq+= calcula();
 }
-ADDRESS = (unsigned char)((unsigned char)(ADDRESS + x) - (1U));
-lcd_cmd(ADDRESS);
-}
+freq/=30;
+v=freq;
+sprintf(value,"%5.3f",freq);
+lcd_gotoxy(1,2);
+lcd_msg("V= ");
+lcd_msg(value);
+freq=0.0;
+_delay((unsigned long)((1000)*(16000000/4000.0)));
 
-void lcd_init()
+
+(*(&(*(&PORTD + 0x09))) ^= (1<<(4)));
+for (i = 0 ;i < 30; i++)
 {
-
-# 143
-(*(&(*(&PORTB + 0x12))) &=~ (1<<(7)));
-(*(&(*(&PORTB + 0x12))) &=~ (1<<(6)));
-(*(&(*(&PORTB + 0x12))) &=~ (1<<(5)));
-(*(&(*(&PORTB + 0x12))) &=~ (1<<(4)));
-(*(&(*(&PORTD + 0x12))) &=~ (1<<(5)));
-
-(*(&(*(&PORTD + 0x12))) &=~ (1<<(6)));
-
-
-(*(&(*(&PORTD + 0x12))) &=~ (1<<(7)));
-
-
-(*(&(*(&PORTD + 0x09))) &=~ (1<<(6)));
-
-
-lcd_cmd_hf(0x30);
-_delay((unsigned long)((15)*(4000000/4000.0)));
-lcd_cmd_hf(0x30);
-_delay((unsigned long)((3)*(4000000/4000.0)));
-lcd_cmd_hf(0x30);
-_delay((unsigned long)((15)*(4000000/4000.0)));
-lcd_cmd_hf(0x20);
-_delay((unsigned long)((6)*(4000000/4000.0)));
-lcd_cmd(0x28);
-_delay((unsigned long)((6)*(4000000/4000.0)));
-lcd_cmd(0x0E);
-_delay((unsigned long)((6)*(4000000/4000.0)));
-lcd_cmd(0x01);
-_delay((unsigned long)((6)*(4000000/4000.0)));
-lcd_cmd(0x06);
-_delay((unsigned long)((6)*(4000000/4000.0)));
-lcd_cmd(0x80);
+_delay((unsigned long)((10)*(16000000/4000.0)));
+freq+= calcula();
 }
+freq/=30;
+a=freq;
+sprintf(value,"%5.3f",freq);
+lcd_gotoxy(1,2);
+lcd_msg("A= ");
+lcd_msg(value);
+freq=0.0;
+_delay((unsigned long)((1000)*(16000000/4000.0)));
 
-
-void manda(unsigned char dato)
-{
-if(dato & (1 << 4)) (*(&(*(&PORTB + 0x09))) |= (1<<(4)));
-else (*(&(*(&PORTB + 0x09))) &=~ (1<<(4)));
-if(dato & (1 << 5)) (*(&(*(&PORTB + 0x09))) |= (1<<(5)));
-else (*(&(*(&PORTB + 0x09))) &=~ (1<<(5)));
-if(dato & (1 << 6)) (*(&(*(&PORTB + 0x09))) |= (1<<(6)));
-else (*(&(*(&PORTB + 0x09))) &=~ (1<<(6)));
-if(dato & (1 << 7)) (*(&(*(&PORTB + 0x09))) |= (1<<(7)));
-else (*(&(*(&PORTB + 0x09))) &=~ (1<<(7)));
-}
-
-# 198
-void lcd_setcursor_vb(unsigned char visible, unsigned char blink)
-{
-lcd_cmd((unsigned char)(0x0C | (visible << (1U)) | blink));
-}
-
-char lcd_hexa(char a)
-{
-if(a > 9)
-a+= 55;
+lcd_gotoxy(1,2);
+if(brillo>r>v>a)
+lcd_msg("mucho brillo");
+else if(r>v>a)
+lcd_msg("Rojo");
+else if(v>r>a)
+lcd_msg("verde");
+else if(a>v>r)
+lcd_msg("azul");
 else
-a+= 48;
-return a;
+lcd_msg("no def          ");
+_delay((unsigned long)((3000)*(16000000/4000.0)));
+}
+
+return;
+}
+
+
+float calcula()
+{
+float freq = 0.0;
+float temp = 0.0;
+if (!triggered)
+{
+
+
+return;
+}
+
+unsigned long elapsedTime = finishTime - startTime;
+
+temp = (float) (elapsedTime);
+temp *= 250e-9;
+freq = 1.0/(temp);
+prepareForInterrupts ();
+return freq;
+}
+
+void prepareForInterrupts ()
+{
+
+INT0IF == 0;
+first = true;
+triggered = false;
+
+# 295
+INT0IE = 1;
+INTEDG0 = 1;
+}
+
+# 311
+void seleccionarEscala (escala a)
+{
+switch(a)
+{
+case apagado:
+(*(&(*(&PORTD + 0x09))) &=~ (1<<(0)));
+(*(&(*(&PORTD + 0x09))) &=~ (1<<(1)));
+break;
+case baja:
+(*(&(*(&PORTD + 0x09))) &=~ (1<<(0)));
+(*(&(*(&PORTD + 0x09))) |= (1<<(1)));
+break;
+case media:
+(*(&(*(&PORTD + 0x09))) |= (1<<(0)));
+(*(&(*(&PORTD + 0x09))) &=~ (1<<(1)));
+break;
+case total:
+(*(&(*(&PORTD + 0x09))) |= (1<<(0)));
+(*(&(*(&PORTD + 0x09))) |= (1<<(1)));
+break;
+}
+}
+
+# 346
+void seleccionarColor(color col)
+{
+switch(col)
+{
+case rojo:
+(*(&(*(&PORTD + 0x09))) &=~ (1<<(2)));
+(*(&(*(&PORTD + 0x09))) &=~ (1<<(3)));
+break;
+case azul:
+(*(&(*(&PORTD + 0x09))) &=~ (1<<(2)));
+(*(&(*(&PORTD + 0x09))) |= (1<<(3)));
+break;
+case sf:
+(*(&(*(&PORTD + 0x09))) |= (1<<(2)));
+(*(&(*(&PORTD + 0x09))) &=~ (1<<(3)));
+break;
+case verde:
+(*(&(*(&PORTD + 0x09))) |= (1<<(2)));
+(*(&(*(&PORTD + 0x09))) |= (1<<(3)));
+break;
+default:
+(*(&(*(&PORTD + 0x09))) |= (1<<(2)));
+(*(&(*(&PORTD + 0x09))) &=~ (1<<(3)));
+}
 }

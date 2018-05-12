@@ -36,7 +36,7 @@
 // 'C' source line config statements
 
 // CONFIG1H
-#pragma config OSC = XT         // Oscillator Selection bits (XT oscillator)
+#pragma config OSC = HS         // Oscillator Selection bits (XT oscillator)
 #pragma config FCMEN = OFF      // Fail-Safe Clock Monitor Enable bit (Fail-Safe Clock Monitor disabled)
 #pragma config IESO = OFF       // Internal/External Oscillator Switchover bit (Oscillator Switchover mode disabled)
 

@@ -19,9 +19,11 @@
 
 #include "lcd4a.h"
 #include <stdint.h>
-#define _XTAL_FREQ 4000000
+#define _XTAL_FREQ 16000000
 
 unsigned char lcd;
+
+
 
 
 void lcd_lat()
@@ -30,7 +32,7 @@ void lcd_lat()
     
     setbit(LAT(lcd_en),p_en);
     //en = 1;    //----Enable Pin is high
-    __delay_ms(2);  //----1ms delay
+    __delay_ms(3);  //----1ms delay
     clrbit(LAT(lcd_en),p_en);
     //en = 0;    //----Enable Pin is Low
 }
@@ -43,7 +45,7 @@ void lcd_cmd(unsigned char x)
     lcd |= (x & 0xF0); //----Masking Lower 4-bit of Command
     manda(lcd);
     lcd_lat();         //----Latching it to lcd
-    __delay_ms(3);
+    __delay_ms(4);
  
     lcd &= 0x0F;       //----Masking Higher 4-bit of PORTD
     lcd |= ((x & 0x0F)<<4); //----Masking Higher 4-bit of Command
@@ -69,7 +71,7 @@ void lcd_putc(unsigned char c)
             lcd_cmd(LCD_CLEAR);
             break;
         case '\n':
-            lcd_cmd(2);
+            lcd_cmd(3);
             break;
         case '\b':
             lcd_cmd(LCD_CURSOR_IZQ);
@@ -88,7 +90,7 @@ void lcd_dwr(unsigned char x)
     lcd |= ((x & 0xF0)); //----Masking Lower 4-bit of Data
     manda(lcd);
     lcd_lat();           //----Latching it to lcd
-    __delay_ms(3);
+    __delay_ms(4);
  
     lcd &= 0x0F;         //----Masking Higher 4-bit of PORTD
     lcd |= ((x & 0x0F)<<4); //----Masking Higher 4-bit of Data
@@ -146,24 +148,29 @@ void lcd_init()
 #ifdef USE_RW
     clrbit(TRIS(lcd_rw),p_rw);
 #endif
+
     clrbit(TRIS(lcd_en),p_en);
-    
+
+#ifdef USE_RW    
+    clrbit(LAT(lcd_rw),p_rw);
+#endif    
+
     lcd_cmd_hf(LCD_RESET);   //---Sending Sequence Command
     __delay_ms(15);
     lcd_cmd_hf(LCD_RESET);
-    __delay_ms(1);
+    __delay_ms(3);
     lcd_cmd_hf(LCD_RESET);
     __delay_ms(15);
     lcd_cmd_hf(LCD_D4_BIT_CONF);   //---Sending Sequence Command
-    __delay_ms(5);
+    __delay_ms(6);
     lcd_cmd(LCD_D4_BIT);      //---Command to Select 4-bit LCD
-    __delay_ms(5);
+    __delay_ms(6);
     lcd_cmd(LCD_CURSOR_ON);      //---Cusor Blinking
-    __delay_ms(5);
+    __delay_ms(6);
     lcd_cmd(LCD_CLEAR);      //---Clear LCD Display
-    __delay_ms(5);
+    __delay_ms(6);
     lcd_cmd(LCD_NORMAL);      //---Auto-Increment LCD
-    __delay_ms(5);
+    __delay_ms(6);
     lcd_cmd(LCD_LINE1);      //---Location address
 }
 

@@ -1,7 +1,7 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"64 color_1.c
-[c E3208 0 1 .. ]
-[n E3208 . false true  ]
+"68 color_2.c
+[c E3206 0 1 .. ]
+[n E3206 . false true  ]
 "8009 /opt/microchip/xc8/v1.45/include/pic18f4520.h
 [v _TMR1IF `Vb ~T0 @X0 0 e@31984 ]
 "7325
@@ -9,6 +9,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "5631
 [v _TMR1 `Vus ~T0 @X0 0 e@4046 ]
 [p mainexit ]
+"630
+[v _PORTD `Vuc ~T0 @X0 0 e@3971 ]
 "65 ../MyLibs/lcd4a.h
 [v _lcd_init `(v ~T0 @X0 0 ef ]
 "64
@@ -42,7 +44,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TMR1IP `Vb ~T0 @X0 0 e@31992 ]
 "8007
 [v _TMR1IE `Vb ~T0 @X0 0 e@31976 ]
-"55 color_1.c
+"116 color_2.c
 [v _prepareForInterrupts `(v ~T0 @X0 0 ef ]
 "7365 /opt/microchip/xc8/v1.45/include/pic18f4520.h
 [v _IPEN `Vb ~T0 @X0 0 e@32391 ]
@@ -50,16 +52,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _GIEH `Vb ~T0 @X0 0 e@32663 ]
 "7279
 [v _GIEL `Vb ~T0 @X0 0 e@32662 ]
+"172 color_2.c
+[c E3216 0 1 2 3 .. ]
+[n E3216 . total media baja apagado  ]
+"117
+[v _seleccionarEscala `(v ~T0 @X0 0 ef1`E3216 ]
+"180
+[c E3210 0 1 2 3 .. ]
+[n E3210 . rojo azul sf verde  ]
+"118
+[v _seleccionarColor `(v ~T0 @X0 0 ef1`E3210 ]
 [v F3176 `(v ~T0 @X0 1 tf1`ul ]
 "164 /opt/microchip/xc8/v1.45/include/pic18.h
 [v __delay `JF3176 ~T0 @X0 0 e ]
 [p i __delay ]
-"54 color_1.c
-[v _calcula `(v ~T0 @X0 0 ef ]
-"67 ../MyLibs/lcd4a.h
-[v _lcd_gotoxy `(v ~T0 @X0 0 ef2`uc`uc ]
+"115 color_2.c
+[v _calcula `(f ~T0 @X0 0 ef ]
 "194 /opt/microchip/xc8/v1.45/include/stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"67 ../MyLibs/lcd4a.h
+[v _lcd_gotoxy `(v ~T0 @X0 0 ef2`uc`uc ]
 "7323 /opt/microchip/xc8/v1.45/include/pic18f4520.h
 [v _INT0IE `Vb ~T0 @X0 0 e@32660 ]
 "7355
@@ -2935,11 +2947,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;lcd4a.h: 68: void manda(unsigned char dato);
 [; ;lcd4a.h: 69: void lcd_setcursor_vb(unsigned char visible, unsigned char blink);
 [; ;lcd4a.h: 70: char lcd_hexa(unsigned char a);
-"33 color_1.c
+"33 color_2.c
 [v _value `uc ~T0 @X0 -> 8 `i e ]
-[; ;color_1.c: 33: char value[8];
+[; ;color_2.c: 33: char value[8];
 "39 ../MyLibs/config5.h
-[p x OSC=XT ]
+[p x OSC=HS ]
 "40
 [p x FCMEN=OFF ]
 "41
@@ -3004,308 +3016,770 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x EBTR3=OFF ]
 "91
 [p x EBTRB=OFF ]
-[; ;color_1.c: 54: void calcula();
-[; ;color_1.c: 55: void prepareForInterrupts ();
-[; ;color_1.c: 58: typedef enum{
-[; ;color_1.c: 60: false = 0,
-[; ;color_1.c: 61: true = 1
-[; ;color_1.c: 62: } boolean;
-"64 color_1.c
-[v _first `VE3208 ~T0 @X0 1 e ]
-[; ;color_1.c: 64: volatile boolean first;
-"65
-[v _triggered `VE3208 ~T0 @X0 1 e ]
-[; ;color_1.c: 65: volatile boolean triggered;
-"66
-[v _overflowCount `Vul ~T0 @X0 1 e ]
-[; ;color_1.c: 66: volatile unsigned long overflowCount;
-"67
-[v _startTime `Vul ~T0 @X0 1 e ]
-[; ;color_1.c: 67: volatile unsigned long startTime;
-"68
-[v _finishTime `Vul ~T0 @X0 1 e ]
-[; ;color_1.c: 68: volatile unsigned long finishTime;
-[v $root$_low_isr `(v ~T0 @X0 0 e ]
-[v F3218 `(v ~T0 @X0 1 tf ]
+[; ;color_2.c: 56: typedef enum{
+[; ;color_2.c: 58: false = 0,
+[; ;color_2.c: 59: true = 1
+[; ;color_2.c: 60: } boolean;
+[; ;color_2.c: 64: typedef enum{ rojo,azul,sf,verde} color;
+[; ;color_2.c: 65: typedef enum{total, media, baja,apagado} escala;
+"68 color_2.c
+[v _first `VE3206 ~T0 @X0 1 e ]
+[; ;color_2.c: 68: volatile boolean first;
+"69
+[v _triggered `VE3206 ~T0 @X0 1 e ]
+[; ;color_2.c: 69: volatile boolean triggered;
 "70
-[v _low_isr `ILF3218 ~T0 @X0 1 e ]
+[v _overflowCount `Vul ~T0 @X0 1 e ]
+[; ;color_2.c: 70: volatile unsigned long overflowCount;
 "71
+[v _startTime `Vul ~T0 @X0 1 e ]
+[; ;color_2.c: 71: volatile unsigned long startTime;
+"72
+[v _finishTime `Vul ~T0 @X0 1 e ]
+[; ;color_2.c: 72: volatile unsigned long finishTime;
+[v $root$_low_isr `(v ~T0 @X0 0 e ]
+[v F3228 `(v ~T0 @X0 1 tf ]
+"74
+[v _low_isr `ILF3228 ~T0 @X0 1 e ]
+"75
 {
-[; ;color_1.c: 70: void low_priority interrupt low_isr()
-[; ;color_1.c: 71: {
+[; ;color_2.c: 74: void low_priority interrupt low_isr()
+[; ;color_2.c: 75: {
 [e :U _low_isr ]
 [f ]
-[; ;color_1.c: 72: if(TMR1IF == 1)
-"72
-[e $ ! == -> _TMR1IF `i -> 1 `i 282  ]
-[; ;color_1.c: 73: {
-"73
-{
-[; ;color_1.c: 74: overflowCount++;
-"74
-[e ++ _overflowCount -> -> -> 1 `i `l `ul ]
-[; ;color_1.c: 75: TMR1IF =0;
-"75
-[e = _TMR1IF -> -> 0 `i `b ]
-[; ;color_1.c: 76: return;
+[; ;color_2.c: 76: if(TMR1IF == 1)
 "76
-[e $UE 281  ]
+[e $ ! == -> _TMR1IF `i -> 1 `i 282  ]
+[; ;color_2.c: 77: {
 "77
+{
+[; ;color_2.c: 78: overflowCount++;
+"78
+[e ++ _overflowCount -> -> -> 1 `i `l `ul ]
+[; ;color_2.c: 79: TMR1IF =0;
+"79
+[e = _TMR1IF -> -> 0 `i `b ]
+[; ;color_2.c: 80: return;
+"80
+[e $UE 281  ]
+"81
 }
 [e :U 282 ]
-[; ;color_1.c: 77: }
-[; ;color_1.c: 78: }
-"78
+[; ;color_2.c: 81: }
+[; ;color_2.c: 82: }
+"82
 [e :UE 281 ]
 }
 [v $root$_high_isr `(v ~T0 @X0 0 e ]
-[v F3220 `(v ~T0 @X0 1 tf ]
-"80
-[v _high_isr `IHF3220 ~T0 @X0 1 e ]
-"81
+[v F3230 `(v ~T0 @X0 1 tf ]
+"84
+[v _high_isr `IHF3230 ~T0 @X0 1 e ]
+"85
 {
-[; ;color_1.c: 80: void interrupt high_priority high_isr()
-[; ;color_1.c: 81: {
+[; ;color_2.c: 84: void interrupt high_priority high_isr()
+[; ;color_2.c: 85: {
 [e :U _high_isr ]
 [f ]
-[; ;color_1.c: 83: if(INT0IF == 1)
-"83
+[; ;color_2.c: 87: if(INT0IF == 1)
+"87
 [e $ ! == -> _INT0IF `i -> 1 `i 284  ]
-[; ;color_1.c: 84: {
-"84
-{
-"85
-[v _counter `ui ~T0 @X0 1 a ]
-[; ;color_1.c: 85: unsigned int counter = TMR1;
-[e = _counter -> _TMR1 `ui ]
-[; ;color_1.c: 88: if (triggered)
+[; ;color_2.c: 88: {
 "88
-[e $ ! != -> _triggered `i -> -> -> 0 `i `VE3208 `i 285  ]
-[; ;color_1.c: 89: {
-"89
 {
-[; ;color_1.c: 90: INT0IF = 0;
-"90
-[e = _INT0IF -> -> 0 `i `b ]
-[; ;color_1.c: 91: return;
-"91
-[e $UE 283  ]
+"89
+[v _counter `ui ~T0 @X0 1 a ]
+[; ;color_2.c: 89: unsigned int counter = TMR1;
+[e = _counter -> _TMR1 `ui ]
+[; ;color_2.c: 92: if (triggered)
 "92
+[e $ ! != -> _triggered `i -> -> -> 0 `i `VE3206 `i 285  ]
+[; ;color_2.c: 93: {
+"93
+{
+[; ;color_2.c: 94: INT0IF = 0;
+"94
+[e = _INT0IF -> -> 0 `i `b ]
+[; ;color_2.c: 95: return;
+"95
+[e $UE 283  ]
+"96
 }
 [e :U 285 ]
-[; ;color_1.c: 92: }
-[; ;color_1.c: 94: if (first)
-"94
-[e $ ! != -> _first `i -> -> -> 0 `i `VE3208 `i 286  ]
-[; ;color_1.c: 95: {
-"95
-{
-[; ;color_1.c: 96: startTime = (overflowCount << 16) + counter;
-"96
-[e = _startTime + << _overflowCount -> 16 `i -> _counter `ul ]
-[; ;color_1.c: 97: first = false;
-"97
-[e = _first . `E3208 0 ]
-[; ;color_1.c: 98: INT0IF = 0;
+[; ;color_2.c: 96: }
+[; ;color_2.c: 98: if (first)
 "98
-[e = _INT0IF -> -> 0 `i `b ]
-[; ;color_1.c: 99: return;
+[e $ ! != -> _first `i -> -> -> 0 `i `VE3206 `i 286  ]
+[; ;color_2.c: 99: {
 "99
-[e $UE 283  ]
+{
+[; ;color_2.c: 100: startTime = (overflowCount << 16) + counter;
 "100
+[e = _startTime + << _overflowCount -> 16 `i -> _counter `ul ]
+[; ;color_2.c: 101: first = false;
+"101
+[e = _first . `E3206 0 ]
+[; ;color_2.c: 102: INT0IF = 0;
+"102
+[e = _INT0IF -> -> 0 `i `b ]
+[; ;color_2.c: 103: return;
+"103
+[e $UE 283  ]
+"104
 }
 [e :U 286 ]
-[; ;color_1.c: 100: }
-[; ;color_1.c: 102: finishTime = (overflowCount << 16) + counter;
-"102
-[e = _finishTime + << _overflowCount -> 16 `i -> _counter `ul ]
-[; ;color_1.c: 103: triggered = true;
-"103
-[e = _triggered . `E3208 1 ]
-[; ;color_1.c: 104: INT0IF = 0;
-"104
-[e = _INT0IF -> -> 0 `i `b ]
-[; ;color_1.c: 105: return;
-"105
-[e $UE 283  ]
+[; ;color_2.c: 104: }
+[; ;color_2.c: 106: finishTime = (overflowCount << 16) + counter;
 "106
+[e = _finishTime + << _overflowCount -> 16 `i -> _counter `ul ]
+[; ;color_2.c: 107: triggered = true;
+"107
+[e = _triggered . `E3206 1 ]
+[; ;color_2.c: 108: INT0IF = 0;
+"108
+[e = _INT0IF -> -> 0 `i `b ]
+[; ;color_2.c: 109: return;
+"109
+[e $UE 283  ]
+"110
 }
 [e :U 284 ]
-[; ;color_1.c: 106: }
-[; ;color_1.c: 107: }
-"107
+[; ;color_2.c: 110: }
+[; ;color_2.c: 111: }
+"111
 [e :UE 283 ]
 }
+[; ;color_2.c: 115: float calcula();
+[; ;color_2.c: 116: void prepareForInterrupts ();
+[; ;color_2.c: 117: void seleccionarEscala(escala a);
+[; ;color_2.c: 118: void seleccionarColor(color a);
 [v $root$_main `(v ~T0 @X0 0 e ]
-"111
+"130
 [v _main `(v ~T0 @X0 1 ef ]
-"112
+"131
 {
-[; ;color_1.c: 111: void main(void)
-[; ;color_1.c: 112: {
+[; ;color_2.c: 130: void main(void)
+[; ;color_2.c: 131: {
 [e :U _main ]
 [f ]
-"113
-[v _acum `uc ~T0 @X0 1 a ]
-[; ;color_1.c: 113: char acum= 0;
-[e = _acum -> -> 0 `i `uc ]
-[; ;color_1.c: 117: lcd_init();
-"117
-[e ( _lcd_init ..  ]
-[; ;color_1.c: 118: lcd_msg("Frecuencia");
-"118
-[e ( _lcd_msg (1 -> :s 1C `*uc ]
-[; ;color_1.c: 125: T1CONbits.RD16 = 1;
-"125
-[e = . . _T1CONbits 1 6 -> -> 1 `i `uc ]
-[; ;color_1.c: 126: T1CKPS1 = 0;
-"126
-[e = _T1CKPS1 -> -> 0 `i `b ]
-[; ;color_1.c: 127: T1CKPS0 = 0;
-"127
-[e = _T1CKPS0 -> -> 0 `i `b ]
-[; ;color_1.c: 128: TMR1CS = 0;
-"128
-[e = _TMR1CS -> -> 0 `i `b ]
-[; ;color_1.c: 129: TMR1ON = 1;
-"129
-[e = _TMR1ON -> -> 1 `i `b ]
-[; ;color_1.c: 130: TMR1IP = 0;
-"130
-[e = _TMR1IP -> -> 0 `i `b ]
-[; ;color_1.c: 131: TMR1IE = 1;
-"131
-[e = _TMR1IE -> -> 1 `i `b ]
-[; ;color_1.c: 133: prepareForInterrupts ();
+"132
+[v _i `uc ~T0 @X0 1 a ]
 "133
-[e ( _prepareForInterrupts ..  ]
-[; ;color_1.c: 137: IPEN = 1;
-"137
-[e = _IPEN -> -> 1 `i `b ]
-[; ;color_1.c: 138: GIEH = 1;
-"138
-[e = _GIEH -> -> 1 `i `b ]
-[; ;color_1.c: 139: GIEL = 1;
-"139
-[e = _GIEL -> -> 1 `i `b ]
-[; ;color_1.c: 143: while(1)
-"143
-[e :U 289 ]
-[; ;color_1.c: 144: {
-"144
-{
-[; ;color_1.c: 145: _delay((unsigned long)((1000)*(4000000/4000.0)));
-"145
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;color_1.c: 146: calcula();
-"146
-[e ( _calcula ..  ]
-"147
-}
-[e :U 288 ]
-"143
-[e $U 289  ]
-[e :U 290 ]
-[; ;color_1.c: 147: }
-[; ;color_1.c: 149: return;
-"149
-[e $UE 287  ]
-[; ;color_1.c: 150: }
-"150
-[e :UE 287 ]
-}
-"153
-[v _calcula `(v ~T0 @X0 1 ef ]
-"154
-{
-[; ;color_1.c: 153: void calcula()
-[; ;color_1.c: 154: {
-[e :U _calcula ]
-[f ]
-"155
 [v _freq `f ~T0 @X0 1 a ]
-[; ;color_1.c: 155: float freq = 0.0;
+[; ;color_2.c: 132: char i;
+[; ;color_2.c: 133: float freq=0.0;
 [e = _freq -> .0.0 `f ]
+"134
+[v _r `f ~T0 @X0 1 a ]
+[v _v `f ~T0 @X0 1 a ]
+[v _a `f ~T0 @X0 1 a ]
+[v _brillo `f ~T0 @X0 1 a ]
+[; ;color_2.c: 134: float r,v,a,brillo;
+[; ;color_2.c: 136: (*(&(*(&PORTD + 0x12))) &=~ (1<<(3)));
+"136
+[e =& *U &U *U + &U _PORTD * -> -> 18 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 3 `i `uc ]
+[; ;color_2.c: 137: (*(&(*(&PORTD + 0x12))) &=~ (1<<(2)));
+"137
+[e =& *U &U *U + &U _PORTD * -> -> 18 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 2 `i `uc ]
+[; ;color_2.c: 138: (*(&(*(&PORTD + 0x12))) &=~ (1<<(1)));
+"138
+[e =& *U &U *U + &U _PORTD * -> -> 18 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 1 `i `uc ]
+[; ;color_2.c: 139: (*(&(*(&PORTD + 0x12))) &=~ (1<<(0)));
+"139
+[e =& *U &U *U + &U _PORTD * -> -> 18 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 0 `i `uc ]
+[; ;color_2.c: 140: (*(&(*(&PORTD + 0x12))) &=~ (1<<(4)));
+"140
+[e =& *U &U *U + &U _PORTD * -> -> 18 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 4 `i `uc ]
+[; ;color_2.c: 142: lcd_init();
+"142
+[e ( _lcd_init ..  ]
+[; ;color_2.c: 143: lcd_msg("Detector de color");
+"143
+[e ( _lcd_msg (1 -> :s 1C `*uc ]
+[; ;color_2.c: 150: T1CONbits.RD16 = 1;
+"150
+[e = . . _T1CONbits 1 6 -> -> 1 `i `uc ]
+[; ;color_2.c: 151: T1CKPS1 = 0;
+"151
+[e = _T1CKPS1 -> -> 0 `i `b ]
+[; ;color_2.c: 152: T1CKPS0 = 0;
+"152
+[e = _T1CKPS0 -> -> 0 `i `b ]
+[; ;color_2.c: 153: TMR1CS = 0;
+"153
+[e = _TMR1CS -> -> 0 `i `b ]
+[; ;color_2.c: 154: TMR1ON = 1;
+"154
+[e = _TMR1ON -> -> 1 `i `b ]
+[; ;color_2.c: 155: TMR1IP = 0;
+"155
+[e = _TMR1IP -> -> 0 `i `b ]
+[; ;color_2.c: 156: TMR1IE = 1;
 "156
-[v _temp `f ~T0 @X0 1 a ]
-[; ;color_1.c: 156: float temp = 0.0;
-[e = _temp -> .0.0 `f ]
-[; ;color_1.c: 157: if (!triggered)
-"157
-[e $ ! ! != -> _triggered `i -> -> -> 0 `i `VE3208 `i 292  ]
-[; ;color_1.c: 158: {
+[e = _TMR1IE -> -> 1 `i `b ]
+[; ;color_2.c: 158: prepareForInterrupts ();
 "158
-{
-[; ;color_1.c: 159: lcd_gotoxy(5,2);
-"159
-[e ( _lcd_gotoxy (2 , -> -> 5 `i `uc -> -> 2 `i `uc ]
-[; ;color_1.c: 160: lcd_msg(":)");
-"160
-[e ( _lcd_msg (1 -> :s 2C `*uc ]
-[; ;color_1.c: 161: return;
-"161
-[e $UE 291  ]
-"162
-}
-[e :U 292 ]
-"164
-[v _elapsedTime `ul ~T0 @X0 1 a ]
-[; ;color_1.c: 162: }
-[; ;color_1.c: 164: unsigned long elapsedTime = finishTime - startTime;
-[e = _elapsedTime - _finishTime _startTime ]
-[; ;color_1.c: 166: temp = (float) (elapsedTime);
-"166
-[e = _temp -> _elapsedTime `f ]
-[; ;color_1.c: 167: temp *= 200e-9;
-"167
-[e =* _temp -> .200e-9 `f ]
-[; ;color_1.c: 168: freq = 1.0/(temp);
-"168
-[e = _freq -> / .1.0 -> _temp `d `f ]
-[; ;color_1.c: 172: sprintf(value,"%5.3f",freq);
-"172
-[e ( _sprintf (1 , (. , &U _value :s 3C -> _freq `d ]
-[; ;color_1.c: 173: lcd_gotoxy(5,2);
-"173
-[e ( _lcd_gotoxy (2 , -> -> 5 `i `uc -> -> 2 `i `uc ]
-[; ;color_1.c: 174: lcd_msg(value);
-"174
-[e ( _lcd_msg (1 &U _value ]
-[; ;color_1.c: 177: prepareForInterrupts ();
-"177
 [e ( _prepareForInterrupts ..  ]
-[; ;color_1.c: 178: }
-"178
-[e :UE 291 ]
-}
+[; ;color_2.c: 162: IPEN = 1;
+"162
+[e = _IPEN -> -> 1 `i `b ]
+[; ;color_2.c: 163: GIEH = 1;
+"163
+[e = _GIEH -> -> 1 `i `b ]
+[; ;color_2.c: 164: GIEL = 1;
+"164
+[e = _GIEL -> -> 1 `i `b ]
+[; ;color_2.c: 172: seleccionarEscala(baja);
+"172
+[e ( _seleccionarEscala (1 . `E3216 2 ]
+[; ;color_2.c: 176: while(1)
+"176
+[e :U 289 ]
+[; ;color_2.c: 177: {
+"177
+{
+[; ;color_2.c: 179: (*(&(*(&PORTD + 0x09))) ^= (1<<(4)));
+"179
+[e =^ *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 4 `i `uc ]
+[; ;color_2.c: 180: seleccionarColor(sf);
 "180
-[v _prepareForInterrupts `(v ~T0 @X0 1 ef ]
+[e ( _seleccionarColor (1 . `E3210 2 ]
+[; ;color_2.c: 181: for (i = 0 ;i < 30; i++)
 "181
 {
-[; ;color_1.c: 180: void prepareForInterrupts ()
-[; ;color_1.c: 181: {
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 30 `i 291  ]
+[e $U 292  ]
+"182
+[e :U 291 ]
+[; ;color_2.c: 182: {
+{
+[; ;color_2.c: 183: _delay((unsigned long)((10)*(16000000/4000.0)));
+"183
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;color_2.c: 184: freq+= calcula();
+"184
+[e =+ _freq ( _calcula ..  ]
+"185
+}
+"181
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 30 `i 291  ]
+[e :U 292 ]
+"185
+}
+[; ;color_2.c: 185: }
+[; ;color_2.c: 186: freq/=30;
+"186
+[e =/ _freq -> -> 30 `uc `f ]
+[; ;color_2.c: 187: brillo = freq;
+"187
+[e = _brillo _freq ]
+[; ;color_2.c: 188: sprintf(value,"%5.3f",freq);
+"188
+[e ( _sprintf (1 , (. , &U _value :s 2C -> _freq `d ]
+[; ;color_2.c: 189: lcd_gotoxy(1,2);
+"189
+[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+[; ;color_2.c: 190: lcd_msg("B= ");
+"190
+[e ( _lcd_msg (1 -> :s 3C `*uc ]
+[; ;color_2.c: 191: lcd_msg(value);
+"191
+[e ( _lcd_msg (1 &U _value ]
+[; ;color_2.c: 192: freq=0.0;
+"192
+[e = _freq -> .0.0 `f ]
+[; ;color_2.c: 193: _delay((unsigned long)((1000)*(16000000/4000.0)));
+"193
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;color_2.c: 197: (*(&(*(&PORTD + 0x09))) ^= (1<<(4)));
+"197
+[e =^ *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 4 `i `uc ]
+[; ;color_2.c: 198: seleccionarColor(rojo);
+"198
+[e ( _seleccionarColor (1 . `E3210 0 ]
+[; ;color_2.c: 199: for (i = 0 ;i < 30; i++)
+"199
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 30 `i 294  ]
+[e $U 295  ]
+"200
+[e :U 294 ]
+[; ;color_2.c: 200: {
+{
+[; ;color_2.c: 201: _delay((unsigned long)((10)*(16000000/4000.0)));
+"201
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;color_2.c: 202: freq+= calcula();
+"202
+[e =+ _freq ( _calcula ..  ]
+"203
+}
+"199
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 30 `i 294  ]
+[e :U 295 ]
+"203
+}
+[; ;color_2.c: 203: }
+[; ;color_2.c: 204: freq/=30;
+"204
+[e =/ _freq -> -> 30 `uc `f ]
+[; ;color_2.c: 205: r=freq;
+"205
+[e = _r _freq ]
+[; ;color_2.c: 206: sprintf(value,"%5.3f",freq);
+"206
+[e ( _sprintf (1 , (. , &U _value :s 4C -> _freq `d ]
+[; ;color_2.c: 207: lcd_gotoxy(1,2);
+"207
+[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+[; ;color_2.c: 208: lcd_msg("R= ");
+"208
+[e ( _lcd_msg (1 -> :s 5C `*uc ]
+[; ;color_2.c: 209: lcd_msg(value);
+"209
+[e ( _lcd_msg (1 &U _value ]
+[; ;color_2.c: 211: freq=0.0;
+"211
+[e = _freq -> .0.0 `f ]
+[; ;color_2.c: 212: _delay((unsigned long)((1000)*(16000000/4000.0)));
+"212
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;color_2.c: 215: (*(&(*(&PORTD + 0x09))) ^= (1<<(4)));
+"215
+[e =^ *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 4 `i `uc ]
+[; ;color_2.c: 216: seleccionarColor(verde);
+"216
+[e ( _seleccionarColor (1 . `E3210 3 ]
+[; ;color_2.c: 217: for (i = 0 ;i < 30; i++)
+"217
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 30 `i 297  ]
+[e $U 298  ]
+"218
+[e :U 297 ]
+[; ;color_2.c: 218: {
+{
+[; ;color_2.c: 219: _delay((unsigned long)((10)*(16000000/4000.0)));
+"219
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;color_2.c: 220: freq+= calcula();
+"220
+[e =+ _freq ( _calcula ..  ]
+"221
+}
+"217
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 30 `i 297  ]
+[e :U 298 ]
+"221
+}
+[; ;color_2.c: 221: }
+[; ;color_2.c: 222: freq/=30;
+"222
+[e =/ _freq -> -> 30 `uc `f ]
+[; ;color_2.c: 223: v=freq;
+"223
+[e = _v _freq ]
+[; ;color_2.c: 224: sprintf(value,"%5.3f",freq);
+"224
+[e ( _sprintf (1 , (. , &U _value :s 6C -> _freq `d ]
+[; ;color_2.c: 225: lcd_gotoxy(1,2);
+"225
+[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+[; ;color_2.c: 226: lcd_msg("V= ");
+"226
+[e ( _lcd_msg (1 -> :s 7C `*uc ]
+[; ;color_2.c: 227: lcd_msg(value);
+"227
+[e ( _lcd_msg (1 &U _value ]
+[; ;color_2.c: 228: freq=0.0;
+"228
+[e = _freq -> .0.0 `f ]
+[; ;color_2.c: 229: _delay((unsigned long)((1000)*(16000000/4000.0)));
+"229
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;color_2.c: 232: (*(&(*(&PORTD + 0x09))) ^= (1<<(4)));
+"232
+[e =^ *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 4 `i `uc ]
+[; ;color_2.c: 233: for (i = 0 ;i < 30; i++)
+"233
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 30 `i 300  ]
+[e $U 301  ]
+"234
+[e :U 300 ]
+[; ;color_2.c: 234: {
+{
+[; ;color_2.c: 235: _delay((unsigned long)((10)*(16000000/4000.0)));
+"235
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;color_2.c: 236: freq+= calcula();
+"236
+[e =+ _freq ( _calcula ..  ]
+"237
+}
+"233
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 30 `i 300  ]
+[e :U 301 ]
+"237
+}
+[; ;color_2.c: 237: }
+[; ;color_2.c: 238: freq/=30;
+"238
+[e =/ _freq -> -> 30 `uc `f ]
+[; ;color_2.c: 239: a=freq;
+"239
+[e = _a _freq ]
+[; ;color_2.c: 240: sprintf(value,"%5.3f",freq);
+"240
+[e ( _sprintf (1 , (. , &U _value :s 8C -> _freq `d ]
+[; ;color_2.c: 241: lcd_gotoxy(1,2);
+"241
+[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+[; ;color_2.c: 242: lcd_msg("A= ");
+"242
+[e ( _lcd_msg (1 -> :s 9C `*uc ]
+[; ;color_2.c: 243: lcd_msg(value);
+"243
+[e ( _lcd_msg (1 &U _value ]
+[; ;color_2.c: 244: freq=0.0;
+"244
+[e = _freq -> .0.0 `f ]
+[; ;color_2.c: 245: _delay((unsigned long)((1000)*(16000000/4000.0)));
+"245
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;color_2.c: 247: lcd_gotoxy(1,2);
+"247
+[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+[; ;color_2.c: 248: if(brillo>r>v>a)
+"248
+[e $ ! > -> -> > -> -> > _brillo _r `i `f _v `i `f _a 303  ]
+[; ;color_2.c: 249: lcd_msg("mucho brillo");
+"249
+[e ( _lcd_msg (1 -> :s 10C `*uc ]
+[e $U 304  ]
+"250
+[e :U 303 ]
+[; ;color_2.c: 250: else if(r>v>a)
+[e $ ! > -> -> > _r _v `i `f _a 305  ]
+[; ;color_2.c: 251: lcd_msg("Rojo");
+"251
+[e ( _lcd_msg (1 -> :s 11C `*uc ]
+[e $U 306  ]
+"252
+[e :U 305 ]
+[; ;color_2.c: 252: else if(v>r>a)
+[e $ ! > -> -> > _v _r `i `f _a 307  ]
+[; ;color_2.c: 253: lcd_msg("verde");
+"253
+[e ( _lcd_msg (1 -> :s 12C `*uc ]
+[e $U 308  ]
+"254
+[e :U 307 ]
+[; ;color_2.c: 254: else if(a>v>r)
+[e $ ! > -> -> > _a _v `i `f _r 309  ]
+[; ;color_2.c: 255: lcd_msg("azul");
+"255
+[e ( _lcd_msg (1 -> :s 13C `*uc ]
+[e $U 310  ]
+"256
+[e :U 309 ]
+[; ;color_2.c: 256: else
+[; ;color_2.c: 257: lcd_msg("no def          ");
+"257
+[e ( _lcd_msg (1 -> :s 14C `*uc ]
+[e :U 310 ]
+[e :U 308 ]
+[e :U 306 ]
+[e :U 304 ]
+[; ;color_2.c: 258: _delay((unsigned long)((3000)*(16000000/4000.0)));
+"258
+[e ( __delay (1 -> * -> -> 3000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"259
+}
+[e :U 288 ]
+"176
+[e $U 289  ]
+[e :U 290 ]
+[; ;color_2.c: 259: }
+[; ;color_2.c: 261: return;
+"261
+[e $UE 287  ]
+[; ;color_2.c: 262: }
+"262
+[e :UE 287 ]
+}
+"265
+[v _calcula `(f ~T0 @X0 1 ef ]
+"266
+{
+[; ;color_2.c: 265: float calcula()
+[; ;color_2.c: 266: {
+[e :U _calcula ]
+[f ]
+"267
+[v _freq `f ~T0 @X0 1 a ]
+[; ;color_2.c: 267: float freq = 0.0;
+[e = _freq -> .0.0 `f ]
+"268
+[v _temp `f ~T0 @X0 1 a ]
+[; ;color_2.c: 268: float temp = 0.0;
+[e = _temp -> .0.0 `f ]
+[; ;color_2.c: 269: if (!triggered)
+"269
+[e $ ! ! != -> _triggered `i -> -> -> 0 `i `VE3206 `i 312  ]
+[; ;color_2.c: 270: {
+"270
+{
+[; ;color_2.c: 273: return;
+"273
+[e $UE 311  ]
+"274
+}
+[e :U 312 ]
+"276
+[v _elapsedTime `ul ~T0 @X0 1 a ]
+[; ;color_2.c: 274: }
+[; ;color_2.c: 276: unsigned long elapsedTime = finishTime - startTime;
+[e = _elapsedTime - _finishTime _startTime ]
+[; ;color_2.c: 278: temp = (float) (elapsedTime);
+"278
+[e = _temp -> _elapsedTime `f ]
+[; ;color_2.c: 279: temp *= 250e-9;
+"279
+[e =* _temp -> .250e-9 `f ]
+[; ;color_2.c: 280: freq = 1.0/(temp);
+"280
+[e = _freq -> / .1.0 -> _temp `d `f ]
+[; ;color_2.c: 281: prepareForInterrupts ();
+"281
+[e ( _prepareForInterrupts ..  ]
+[; ;color_2.c: 282: return freq;
+"282
+[e ) _freq ]
+[e $UE 311  ]
+[; ;color_2.c: 283: }
+"283
+[e :UE 311 ]
+}
+"285
+[v _prepareForInterrupts `(v ~T0 @X0 1 ef ]
+"286
+{
+[; ;color_2.c: 285: void prepareForInterrupts ()
+[; ;color_2.c: 286: {
 [e :U _prepareForInterrupts ]
 [f ]
-[; ;color_1.c: 183: INT0IF == 0;
-"183
+[; ;color_2.c: 288: INT0IF == 0;
+"288
 [e == -> _INT0IF `i -> 0 `i ]
-[; ;color_1.c: 184: first = true;
-"184
-[e = _first . `E3208 1 ]
-[; ;color_1.c: 185: triggered = false;
-"185
-[e = _triggered . `E3208 0 ]
-[; ;color_1.c: 190: INT0IE = 1;
-"190
+[; ;color_2.c: 289: first = true;
+"289
+[e = _first . `E3206 1 ]
+[; ;color_2.c: 290: triggered = false;
+"290
+[e = _triggered . `E3206 0 ]
+[; ;color_2.c: 295: INT0IE = 1;
+"295
 [e = _INT0IE -> -> 1 `i `b ]
-[; ;color_1.c: 191: INTEDG0 = 1;
-"191
+[; ;color_2.c: 296: INTEDG0 = 1;
+"296
 [e = _INTEDG0 -> -> 1 `i `b ]
-[; ;color_1.c: 192: }
-"192
-[e :UE 293 ]
+[; ;color_2.c: 297: }
+"297
+[e :UE 313 ]
+}
+"311
+[v _seleccionarEscala `(v ~T0 @X0 1 ef1`E3216 ]
+"312
+{
+[; ;color_2.c: 311: void seleccionarEscala (escala a)
+[; ;color_2.c: 312: {
+[e :U _seleccionarEscala ]
+"311
+[v _a `E3216 ~T0 @X0 1 r1 ]
+"312
+[f ]
+[; ;color_2.c: 313: switch(a)
+"313
+[e $U 316  ]
+[; ;color_2.c: 314: {
+"314
+{
+[; ;color_2.c: 315: case apagado:
+"315
+[e :U 317 ]
+[; ;color_2.c: 316: (*(&(*(&PORTD + 0x09))) &=~ (1<<(0)));
+"316
+[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 0 `i `uc ]
+[; ;color_2.c: 317: (*(&(*(&PORTD + 0x09))) &=~ (1<<(1)));
+"317
+[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 1 `i `uc ]
+[; ;color_2.c: 318: break;
+"318
+[e $U 315  ]
+[; ;color_2.c: 319: case baja:
+"319
+[e :U 318 ]
+[; ;color_2.c: 320: (*(&(*(&PORTD + 0x09))) &=~ (1<<(0)));
+"320
+[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 0 `i `uc ]
+[; ;color_2.c: 321: (*(&(*(&PORTD + 0x09))) |= (1<<(1)));
+"321
+[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 1 `i `uc ]
+[; ;color_2.c: 322: break;
+"322
+[e $U 315  ]
+[; ;color_2.c: 323: case media:
+"323
+[e :U 319 ]
+[; ;color_2.c: 324: (*(&(*(&PORTD + 0x09))) |= (1<<(0)));
+"324
+[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 0 `i `uc ]
+[; ;color_2.c: 325: (*(&(*(&PORTD + 0x09))) &=~ (1<<(1)));
+"325
+[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 1 `i `uc ]
+[; ;color_2.c: 326: break;
+"326
+[e $U 315  ]
+[; ;color_2.c: 327: case total:
+"327
+[e :U 320 ]
+[; ;color_2.c: 328: (*(&(*(&PORTD + 0x09))) |= (1<<(0)));
+"328
+[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 0 `i `uc ]
+[; ;color_2.c: 329: (*(&(*(&PORTD + 0x09))) |= (1<<(1)));
+"329
+[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 1 `i `uc ]
+[; ;color_2.c: 330: break;
+"330
+[e $U 315  ]
+"331
+}
+[; ;color_2.c: 331: }
+[e $U 315  ]
+"313
+[e :U 316 ]
+[e [\ _a , $ . `E3216 3 317
+ , $ . `E3216 2 318
+ , $ . `E3216 1 319
+ , $ . `E3216 0 320
+ 315 ]
+"331
+[e :U 315 ]
+[; ;color_2.c: 332: }
+"332
+[e :UE 314 ]
+}
+"346
+[v _seleccionarColor `(v ~T0 @X0 1 ef1`E3210 ]
+"347
+{
+[; ;color_2.c: 346: void seleccionarColor(color col)
+[; ;color_2.c: 347: {
+[e :U _seleccionarColor ]
+"346
+[v _col `E3210 ~T0 @X0 1 r1 ]
+"347
+[f ]
+[; ;color_2.c: 348: switch(col)
+"348
+[e $U 323  ]
+[; ;color_2.c: 349: {
+"349
+{
+[; ;color_2.c: 350: case rojo:
+"350
+[e :U 324 ]
+[; ;color_2.c: 351: (*(&(*(&PORTD + 0x09))) &=~ (1<<(2)));
+"351
+[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 2 `i `uc ]
+[; ;color_2.c: 352: (*(&(*(&PORTD + 0x09))) &=~ (1<<(3)));
+"352
+[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 3 `i `uc ]
+[; ;color_2.c: 353: break;
+"353
+[e $U 322  ]
+[; ;color_2.c: 354: case azul:
+"354
+[e :U 325 ]
+[; ;color_2.c: 355: (*(&(*(&PORTD + 0x09))) &=~ (1<<(2)));
+"355
+[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 2 `i `uc ]
+[; ;color_2.c: 356: (*(&(*(&PORTD + 0x09))) |= (1<<(3)));
+"356
+[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 3 `i `uc ]
+[; ;color_2.c: 357: break;
+"357
+[e $U 322  ]
+[; ;color_2.c: 358: case sf:
+"358
+[e :U 326 ]
+[; ;color_2.c: 359: (*(&(*(&PORTD + 0x09))) |= (1<<(2)));
+"359
+[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 2 `i `uc ]
+[; ;color_2.c: 360: (*(&(*(&PORTD + 0x09))) &=~ (1<<(3)));
+"360
+[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 3 `i `uc ]
+[; ;color_2.c: 361: break;
+"361
+[e $U 322  ]
+[; ;color_2.c: 362: case verde:
+"362
+[e :U 327 ]
+[; ;color_2.c: 363: (*(&(*(&PORTD + 0x09))) |= (1<<(2)));
+"363
+[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 2 `i `uc ]
+[; ;color_2.c: 364: (*(&(*(&PORTD + 0x09))) |= (1<<(3)));
+"364
+[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 3 `i `uc ]
+[; ;color_2.c: 365: break;
+"365
+[e $U 322  ]
+[; ;color_2.c: 366: default:
+"366
+[e :U 328 ]
+[; ;color_2.c: 367: (*(&(*(&PORTD + 0x09))) |= (1<<(2)));
+"367
+[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 2 `i `uc ]
+[; ;color_2.c: 368: (*(&(*(&PORTD + 0x09))) &=~ (1<<(3)));
+"368
+[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 3 `i `uc ]
+"369
+}
+[; ;color_2.c: 369: }
+[e $U 322  ]
+"348
+[e :U 323 ]
+[e [\ _col , $ . `E3210 0 324
+ , $ . `E3210 1 325
+ , $ . `E3210 2 326
+ , $ . `E3210 3 327
+ 328 ]
+"369
+[e :U 322 ]
+[; ;color_2.c: 370: }
+"370
+[e :UE 321 ]
 }
 [p f _sprintf 8495104 ]
-[a 3C 37 53 46 51 102 0 ]
-[a 1C 70 114 101 99 117 101 110 99 105 97 0 ]
-[a 2C 58 41 0 ]
+[a 1C 68 101 116 101 99 116 111 114 32 100 101 32 99 111 108 111 114 0 ]
+[a 10C 109 117 99 104 111 32 98 114 105 108 108 111 0 ]
+[a 11C 82 111 106 111 0 ]
+[a 13C 97 122 117 108 0 ]
+[a 2C 37 53 46 51 102 0 ]
+[a 4C 37 53 46 51 102 0 ]
+[a 6C 37 53 46 51 102 0 ]
+[a 8C 37 53 46 51 102 0 ]
+[a 12C 118 101 114 100 101 0 ]
+[a 7C 86 61 32 0 ]
+[a 5C 82 61 32 0 ]
+[a 3C 66 61 32 0 ]
+[a 9C 65 61 32 0 ]
+[a 14C 110 111 32 100 101 102 32 32 32 32 32 32 32 32 32 32 0 ]
