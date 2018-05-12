@@ -8,25 +8,25 @@
  * de los pines a utilizar
  */
 //Comentar si se usa el rw
-//#define USE_RW
+#define USE_RW
 
-#define LCD_D7 PORTD
+#define LCD_D7 PORTB
 #define D7 7
-#define LCD_D6 PORTD
+#define LCD_D6 PORTB
 #define D6 6
-#define LCD_D5 PORTD
+#define LCD_D5 PORTB
 #define D5 5
-#define LCD_D4 PORTD
+#define LCD_D4 PORTB
 #define D4 4
 
 #define lcd_rs PORTD
-#define p_rs 2
+#define p_rs 5
 #ifdef USE_RW
 #define lcd_rw PORTD
 #define p_rw 6
 #endif
 #define lcd_en PORTD
-#define p_en 3
+#define p_en 7
 
 #define LCD_CLEAR                0x01 // Clear Display
 #define LCD_HOME                0x02 // Cursor a Home

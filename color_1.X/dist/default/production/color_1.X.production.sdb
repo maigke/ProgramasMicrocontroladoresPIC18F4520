@@ -1,0 +1,498 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4520 ]
+[d frameptr 4065 ]
+"64 /home/miguel/MPLABXProjects/color_1.X/color_1.c
+[e E3208 . `uc
+false 0
+true 1
+]
+"27 /home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+[v _lcd_lat lcd_lat `(v  1 e 1 0 ]
+"38
+[v _lcd_cmd lcd_cmd `(v  1 e 1 0 ]
+"54
+[v _lcd_cmd_hf lcd_cmd_hf `(v  1 e 1 0 ]
+"64
+[v _lcd_putc lcd_putc `(v  1 e 1 0 ]
+"84
+[v _lcd_dwr lcd_dwr `(v  1 e 1 0 ]
+"99
+[v _lcd_msg lcd_msg `(v  1 e 1 0 ]
+"112
+[v _lcd_gotoxy lcd_gotoxy `(v  1 e 1 0 ]
+"133
+[v _lcd_init lcd_init `(v  1 e 1 0 ]
+"171
+[v _manda manda `(v  1 e 1 0 ]
+"8 /opt/microchip/xc8/v1.45/sources/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"8 /opt/microchip/xc8/v1.45/sources/common/awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"409 /opt/microchip/xc8/v1.45/sources/common/doprnt.c
+[v _fround fround `(d  1 s 3 fround ]
+"425
+[v _scale scale `(d  1 s 3 scale ]
+"492
+[v _sprintf sprintf `(i  1 e 2 0 ]
+"60 /opt/microchip/xc8/v1.45/sources/common/fldivl.c
+[v __div_to_l_ _div_to_l_ `(ul  1 e 4 0 ]
+"62 /opt/microchip/xc8/v1.45/sources/common/float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 /opt/microchip/xc8/v1.45/sources/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 /opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"60 /opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+[v __tdiv_to_l_ _tdiv_to_l_ `(ul  1 e 4 0 ]
+"4 /opt/microchip/xc8/v1.45/sources/common/ftge.c
+[v ___ftge __ftge `(b  1 e 0 0 ]
+"62 /opt/microchip/xc8/v1.45/sources/common/ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"15 /opt/microchip/xc8/v1.45/sources/common/ftneg.c
+[v ___ftneg __ftneg `(f  1 e 3 0 ]
+"20 /opt/microchip/xc8/v1.45/sources/common/ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"44 /opt/microchip/xc8/v1.45/sources/common/fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+"8 /opt/microchip/xc8/v1.45/sources/common/isdigit.c
+[v _isdigit isdigit `(b  1 e 0 0 ]
+"8 /opt/microchip/xc8/v1.45/sources/common/lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"8 /opt/microchip/xc8/v1.45/sources/common/llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+"35 /opt/microchip/xc8/v1.45/sources/common/lltoft.c
+[v ___lltoft __lltoft `(f  1 e 3 0 ]
+"10 /opt/microchip/xc8/v1.45/sources/common/sprcadd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"11 /opt/microchip/xc8/v1.45/sources/common/sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"8 /opt/microchip/xc8/v1.45/sources/common/sprcmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"15 /opt/microchip/xc8/v1.45/sources/common/Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 /opt/microchip/xc8/v1.45/sources/common/Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"70 /home/miguel/MPLABXProjects/color_1.X/color_1.c
+[v _low_isr low_isr `IIL(v  1 e 1 0 ]
+"80
+[v _high_isr high_isr `IIH(v  1 e 1 0 ]
+"111
+[v _main main `(v  1 e 1 0 ]
+"153
+[v _calcula calcula `(v  1 e 1 0 ]
+"180
+[v _prepareForInterrupts prepareForInterrupts `(v  1 e 1 0 ]
+"24 /home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+[v _lcd lcd `uc  1 e 1 0 ]
+"269 /opt/microchip/xc8/v1.45/include/pic18f4520.h
+[v _PORTB PORTB `VEuc  1 e 1 @3969 ]
+"630
+[v _PORTD PORTD `VEuc  1 e 1 @3971 ]
+[s S36 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_T1SYNC 1 0 :1:2 
+]
+"5561
+[s S39 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 TMR1CS 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 T1OSCEN 1 0 :1:3 
+`uc 1 T1CKPS 1 0 :2:4 
+`uc 1 T1RUN 1 0 :1:6 
+`uc 1 RD16 1 0 :1:7 
+]
+[s S47 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T1SYNC 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+]
+[s S53 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SOSCEN 1 0 :1:3 
+`uc 1 . 1 0 :3:4 
+`uc 1 T1RD16 1 0 :1:7 
+]
+[u S58 . 1 `S36 1 . 1 0 `S39 1 . 1 0 `S47 1 . 1 0 `S53 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES58  1 e 1 @4045 ]
+"5631
+[v _TMR1 TMR1 `VEus  1 e 2 @4046 ]
+"7277
+[v _GIEH GIEH `VEb  1 e 0 @32663 ]
+"7279
+[v _GIEL GIEL `VEb  1 e 0 @32662 ]
+"7323
+[v _INT0IE INT0IE `VEb  1 e 0 @32660 ]
+"7325
+[v _INT0IF INT0IF `VEb  1 e 0 @32657 ]
+"7355
+[v _INTEDG0 INTEDG0 `VEb  1 e 0 @32654 ]
+"7365
+[v _IPEN IPEN `VEb  1 e 0 @32391 ]
+"7957
+[v _T1CKPS0 T1CKPS0 `VEb  1 e 0 @32364 ]
+"7959
+[v _T1CKPS1 T1CKPS1 `VEb  1 e 0 @32365 ]
+"8005
+[v _TMR1CS TMR1CS `VEb  1 e 0 @32361 ]
+"8007
+[v _TMR1IE TMR1IE `VEb  1 e 0 @31976 ]
+"8009
+[v _TMR1IF TMR1IF `VEb  1 e 0 @31984 ]
+"8011
+[v _TMR1IP TMR1IP `VEb  1 e 0 @31992 ]
+"8013
+[v _TMR1ON TMR1ON `VEb  1 e 0 @32360 ]
+"354 /opt/microchip/xc8/v1.45/sources/common/doprnt.c
+[v _dpowers dpowers `C[10]ul  1 s 40 dpowers ]
+"7 /opt/microchip/xc8/v1.45/sources/common/powers.c
+[v __powers_ _powers_ `C[13]d  1 e 39 0 ]
+"39
+[v __npowers_ _npowers_ `C[13]d  1 e 39 0 ]
+"33 /home/miguel/MPLABXProjects/color_1.X/color_1.c
+[v _value value `[8]uc  1 e 8 0 ]
+"64
+[v _first first `VEE3208  1 e 1 0 ]
+"65
+[v _triggered triggered `VEE3208  1 e 1 0 ]
+"66
+[v _overflowCount overflowCount `VEul  1 e 4 0 ]
+"67
+[v _startTime startTime `VEul  1 e 4 0 ]
+"68
+[v _finishTime finishTime `VEul  1 e 4 0 ]
+"111
+[v _main main `(v  1 e 1 0 ]
+{
+"113
+[v main@acum acum `uc  1 a 1 88 ]
+"150
+} 0
+"133 /home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+[v _lcd_init lcd_init `(v  1 e 1 0 ]
+{
+"168
+} 0
+"54
+[v _lcd_cmd_hf lcd_cmd_hf `(v  1 e 1 0 ]
+{
+[v lcd_cmd_hf@x x `uc  1 a 1 wreg ]
+[v lcd_cmd_hf@x x `uc  1 a 1 wreg ]
+"56
+[v lcd_cmd_hf@x x `uc  1 a 1 46 ]
+"61
+} 0
+"153 /home/miguel/MPLABXProjects/color_1.X/color_1.c
+[v _calcula calcula `(v  1 e 1 0 ]
+{
+"164
+[v calcula@elapsedTime elapsedTime `ul  1 a 4 76 ]
+"156
+[v calcula@temp temp `f  1 a 3 83 ]
+"155
+[v calcula@freq freq `f  1 a 3 80 ]
+"178
+} 0
+"492 /opt/microchip/xc8/v1.45/sources/common/doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+{
+[u S249 . 4 `ul 1 vd 4 0 `d 1 integ 3 0 ]
+"526
+[v sprintf@tmpval tmpval `S249  1 a 4 60 ]
+"528
+[v sprintf@val val `ul  1 a 4 52 ]
+"516
+[v sprintf@fval fval `d  1 a 3 66 ]
+"504
+[v sprintf@prec prec `i  1 a 2 69 ]
+"516
+[v sprintf@exp exp `i  1 a 2 64 ]
+"501
+[v sprintf@width width `i  1 a 2 58 ]
+"508
+[v sprintf@flag flag `us  1 a 2 56 ]
+"494
+[v sprintf@ap ap `[1]*.39v  1 a 2 50 ]
+"499
+[v sprintf@c c `c  1 a 1 71 ]
+"492
+[v sprintf@sp sp `*.39uc  1 p 2 34 ]
+[v sprintf@f f `*.25Cuc  1 p 2 36 ]
+"1541
+} 0
+"425
+[v _scale scale `(d  1 s 3 scale ]
+{
+[v scale@scl scl `c  1 a 1 wreg ]
+[v scale@scl scl `c  1 a 1 wreg ]
+"428
+[v scale@scl scl `c  1 a 1 12 ]
+"441
+} 0
+"8 /opt/microchip/xc8/v1.45/sources/common/isdigit.c
+[v _isdigit isdigit `(b  1 e 0 0 ]
+{
+[v isdigit@c c `uc  1 a 1 wreg ]
+[v isdigit@c c `uc  1 a 1 wreg ]
+"14
+[v isdigit@c c `uc  1 a 1 47 ]
+"15
+} 0
+"409 /opt/microchip/xc8/v1.45/sources/common/doprnt.c
+[v _fround fround `(d  1 s 3 fround ]
+{
+[v fround@prec prec `uc  1 a 1 wreg ]
+[v fround@prec prec `uc  1 a 1 wreg ]
+"413
+[v fround@prec prec `uc  1 a 1 15 ]
+"418
+} 0
+"15 /opt/microchip/xc8/v1.45/sources/common/Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 63 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 59 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 61 ]
+"53
+} 0
+"62 /opt/microchip/xc8/v1.45/sources/common/ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+{
+"65
+[v ___ftmul@f3_as_product f3_as_product `um  1 a 3 1 ]
+"64
+[v ___ftmul@sign sign `uc  1 a 1 5 ]
+[v ___ftmul@cntr cntr `uc  1 a 1 4 ]
+[v ___ftmul@exp exp `uc  1 a 1 0 ]
+"62
+[v ___ftmul@f1 f1 `f  1 p 3 65 ]
+[v ___ftmul@f2 f2 `f  1 p 3 68 ]
+"157
+} 0
+"8 /opt/microchip/xc8/v1.45/sources/common/awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"11
+[v ___awmod@sign sign `uc  1 a 1 50 ]
+[v ___awmod@counter counter `uc  1 a 1 49 ]
+"8
+[v ___awmod@dividend dividend `i  1 p 2 45 ]
+[v ___awmod@divisor divisor `i  1 p 2 47 ]
+"35
+} 0
+"8 /opt/microchip/xc8/v1.45/sources/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"11
+[v ___awdiv@quotient quotient `i  1 a 2 57 ]
+"12
+[v ___awdiv@sign sign `uc  1 a 1 56 ]
+[v ___awdiv@counter counter `uc  1 a 1 55 ]
+"8
+[v ___awdiv@dividend dividend `i  1 p 2 51 ]
+[v ___awdiv@divisor divisor `i  1 p 2 53 ]
+"42
+} 0
+"60 /opt/microchip/xc8/v1.45/sources/common/ftdivl.c
+[v __tdiv_to_l_ _tdiv_to_l_ `(ul  1 e 4 0 ]
+{
+"63
+[v __tdiv_to_l_@quot quot `ul  1 a 4 54 ]
+"62
+[v __tdiv_to_l_@exp1 exp1 `uc  1 a 1 59 ]
+[v __tdiv_to_l_@cntr cntr `uc  1 a 1 58 ]
+"60
+[v __tdiv_to_l_@f1 f1 `f  1 p 3 45 ]
+[v __tdiv_to_l_@f2 f2 `f  1 p 3 48 ]
+"101
+} 0
+"60 /opt/microchip/xc8/v1.45/sources/common/fldivl.c
+[v __div_to_l_ _div_to_l_ `(ul  1 e 4 0 ]
+{
+"63
+[v __div_to_l_@quot quot `ul  1 a 4 51 ]
+"62
+[v __div_to_l_@exp1 exp1 `uc  1 a 1 56 ]
+[v __div_to_l_@cntr cntr `uc  1 a 1 55 ]
+"60
+[v __div_to_l_@f1 f1 `d  1 p 3 45 ]
+[v __div_to_l_@f2 f2 `d  1 p 3 48 ]
+"101
+} 0
+"35 /opt/microchip/xc8/v1.45/sources/common/lltoft.c
+[v ___lltoft __lltoft `(f  1 e 3 0 ]
+{
+"37
+[v ___lltoft@exp exp `uc  1 a 1 61 ]
+"35
+[v ___lltoft@c c `ul  1 p 4 53 ]
+"46
+} 0
+"8 /opt/microchip/xc8/v1.45/sources/common/llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+{
+"11
+[v ___llmod@counter counter `uc  1 a 1 53 ]
+"8
+[v ___llmod@dividend dividend `ul  1 p 4 45 ]
+[v ___llmod@divisor divisor `ul  1 p 4 49 ]
+"26
+} 0
+"8 /opt/microchip/xc8/v1.45/sources/common/lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+{
+"11
+[v ___lldiv@quotient quotient `ul  1 a 4 53 ]
+"12
+[v ___lldiv@counter counter `uc  1 a 1 57 ]
+"8
+[v ___lldiv@dividend dividend `ul  1 p 4 45 ]
+[v ___lldiv@divisor divisor `ul  1 p 4 49 ]
+"31
+} 0
+"44 /opt/microchip/xc8/v1.45/sources/common/fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+{
+"47
+[v ___fttol@lval lval `ul  1 a 4 23 ]
+"46
+[v ___fttol@exp1 exp1 `uc  1 a 1 27 ]
+[v ___fttol@sign1 sign1 `uc  1 a 1 22 ]
+"44
+[v ___fttol@f1 f1 `f  1 p 3 13 ]
+"73
+} 0
+"20 /opt/microchip/xc8/v1.45/sources/common/ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+{
+[v ___ftsub@f1 f1 `f  1 p 3 28 ]
+[v ___ftsub@f2 f2 `f  1 p 3 31 ]
+"27
+} 0
+"86 /opt/microchip/xc8/v1.45/sources/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+{
+"88
+[v ___ftadd@exp1 exp1 `uc  1 a 1 27 ]
+[v ___ftadd@exp2 exp2 `uc  1 a 1 26 ]
+[v ___ftadd@sign sign `uc  1 a 1 25 ]
+"86
+[v ___ftadd@f1 f1 `f  1 p 3 16 ]
+[v ___ftadd@f2 f2 `f  1 p 3 19 ]
+"148
+} 0
+"15 /opt/microchip/xc8/v1.45/sources/common/ftneg.c
+[v ___ftneg __ftneg `(f  1 e 3 0 ]
+{
+[v ___ftneg@f1 f1 `f  1 p 3 45 ]
+"20
+} 0
+"4 /opt/microchip/xc8/v1.45/sources/common/ftge.c
+[v ___ftge __ftge `(b  1 e 0 0 ]
+{
+[v ___ftge@ff1 ff1 `f  1 p 3 45 ]
+[v ___ftge@ff2 ff2 `f  1 p 3 48 ]
+"13
+} 0
+"180 /home/miguel/MPLABXProjects/color_1.X/color_1.c
+[v _prepareForInterrupts prepareForInterrupts `(v  1 e 1 0 ]
+{
+"192
+} 0
+"99 /home/miguel/MPLABXProjects/MyLibs/lcd4a.c
+[v _lcd_msg lcd_msg `(v  1 e 1 0 ]
+{
+[v lcd_msg@c c `*.35uc  1 p 2 49 ]
+"105
+} 0
+"64
+[v _lcd_putc lcd_putc `(v  1 e 1 0 ]
+{
+[v lcd_putc@c c `uc  1 a 1 wreg ]
+[v lcd_putc@c c `uc  1 a 1 wreg ]
+[v lcd_putc@c c `uc  1 a 1 48 ]
+"81
+} 0
+"84
+[v _lcd_dwr lcd_dwr `(v  1 e 1 0 ]
+{
+[v lcd_dwr@x x `uc  1 a 1 wreg ]
+[v lcd_dwr@x x `uc  1 a 1 wreg ]
+"86
+[v lcd_dwr@x x `uc  1 a 1 47 ]
+"97
+} 0
+"112
+[v _lcd_gotoxy lcd_gotoxy `(v  1 e 1 0 ]
+{
+[v lcd_gotoxy@x x `uc  1 a 1 wreg ]
+"114
+[v lcd_gotoxy@ADDRESS ADDRESS `uc  1 a 1 51 ]
+"112
+[v lcd_gotoxy@x x `uc  1 a 1 wreg ]
+[v lcd_gotoxy@y y `uc  1 p 1 48 ]
+"114
+[v lcd_gotoxy@x x `uc  1 a 1 50 ]
+"131
+} 0
+"38
+[v _lcd_cmd lcd_cmd `(v  1 e 1 0 ]
+{
+[v lcd_cmd@x x `uc  1 a 1 wreg ]
+[v lcd_cmd@x x `uc  1 a 1 wreg ]
+"40
+[v lcd_cmd@x x `uc  1 a 1 47 ]
+"52
+} 0
+"171
+[v _manda manda `(v  1 e 1 0 ]
+{
+[v manda@dato dato `uc  1 a 1 wreg ]
+[v manda@dato dato `uc  1 a 1 wreg ]
+"173
+[v manda@dato dato `uc  1 a 1 45 ]
+"181
+} 0
+"27
+[v _lcd_lat lcd_lat `(v  1 e 1 0 ]
+{
+"36
+} 0
+"54 /opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+{
+"60
+[v ___ftdiv@f3 f3 `f  1 a 3 63 ]
+"59
+[v ___ftdiv@sign sign `uc  1 a 1 67 ]
+[v ___ftdiv@exp exp `uc  1 a 1 66 ]
+[v ___ftdiv@cntr cntr `uc  1 a 1 62 ]
+"54
+[v ___ftdiv@f1 f1 `f  1 p 3 53 ]
+[v ___ftdiv@f2 f2 `f  1 p 3 56 ]
+"86
+} 0
+"62 /opt/microchip/xc8/v1.45/sources/common/float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+{
+[v ___ftpack@arg arg `um  1 p 3 45 ]
+[v ___ftpack@exp exp `uc  1 p 1 48 ]
+[v ___ftpack@sign sign `uc  1 p 1 49 ]
+"86
+} 0
+"70 /home/miguel/MPLABXProjects/color_1.X/color_1.c
+[v _low_isr low_isr `IIL(v  1 e 1 0 ]
+{
+"78
+} 0
+"80
+[v _high_isr high_isr `IIH(v  1 e 1 0 ]
+{
+"85
+[v high_isr@counter counter `ui  1 a 2 22 ]
+"107
+} 0

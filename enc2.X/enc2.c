@@ -84,6 +84,7 @@ void ccwM2();
 void stopM2();
 void Adelante();
 void Atras();
+void Detiene();
 
 void low_priority interrupt low_isr()
 {
@@ -106,6 +107,7 @@ void low_priority interrupt low_isr()
 
 void interrupt high_priority high_isr()
 {
+    int Ui;
     if(INT0IF == 1)
     {
         /*
@@ -151,6 +153,7 @@ void interrupt high_priority high_isr()
                 LED1a = 1;
                 LED1b = 0;
             }
+            
         }
         else
         {
@@ -165,6 +168,7 @@ void interrupt high_priority high_isr()
             INT1IF = 0;
         return;
     }    
+    
 }
 
 #include <xc.h>
@@ -288,4 +292,10 @@ void Atras()
 {
     ccwM1();
     cwM2();
+}
+
+void Detiene()
+{
+    stopM1();
+    stopM2();
 }
