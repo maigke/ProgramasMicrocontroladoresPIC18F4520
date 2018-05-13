@@ -402,5 +402,10 @@ void seleccionarColor(color col)
 
 float calibra(float valor, float fd, float fw)
 {
-    return (255*(valor-fd))/(fw-fd);
+    float temp;
+    temp = (255*(valor-fd))/(fw-fd);
+    if(temp >255)
+        return 255;
+    else
+        return temp;
 }

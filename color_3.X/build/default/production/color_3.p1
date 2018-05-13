@@ -3755,12 +3755,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _fw `f ~T0 @X0 1 r3 ]
 "404
 [f ]
-[; ;color_3.c: 405: return (255*(valor-fd))/(fw-fd);
 "405
-[e ) / * -> -> 255 `i `f - _valor _fd - _fw _fd ]
-[e $UE 321  ]
-[; ;color_3.c: 406: }
+[v _temp `f ~T0 @X0 1 a ]
+[; ;color_3.c: 405: float temp;
+[; ;color_3.c: 406: temp = (255*(valor-fd))/(fw-fd);
 "406
+[e = _temp / * -> -> 255 `i `f - _valor _fd - _fw _fd ]
+[; ;color_3.c: 407: if(temp >255)
+"407
+[e $ ! > _temp -> -> 255 `i `f 322  ]
+[; ;color_3.c: 408: return 255;
+"408
+[e ) -> -> 255 `i `f ]
+[e $UE 321  ]
+[e $U 323  ]
+"409
+[e :U 322 ]
+[; ;color_3.c: 409: else
+[; ;color_3.c: 410: return temp;
+"410
+[e ) _temp ]
+[e $UE 321  ]
+[e :U 323 ]
+[; ;color_3.c: 411: }
+"411
 [e :UE 321 ]
 }
 [p f _sprintf 8495104 ]
