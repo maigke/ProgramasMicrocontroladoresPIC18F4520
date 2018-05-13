@@ -4143,13 +4143,13 @@ freq+= calcula();
 }
 freq/=30;
 brillo = freq;
-freq = calibra(brillo,588.5,1821);
+freq = calibra(brillo,1883,8205);
 sprintf(value,"%5.3f",freq);
 lcd_gotoxy(1,2);
 lcd_msg("B= ");
 lcd_msg(value);
 freq=0.0;
-_delay((unsigned long)((1000)*(16000000/4000.0)));
+_delay((unsigned long)((1500)*(16000000/4000.0)));
 
 
 
@@ -4162,14 +4162,14 @@ freq+= calcula();
 }
 freq/=30;
 r=freq;
-freq = calibra(r,743.4,1928);
+freq = calibra(r,743.4,2951.7);
 sprintf(value,"%5.3f",freq);
 lcd_gotoxy(1,2);
 lcd_msg("R= ");
 lcd_msg(value);
 
 freq=0.0;
-_delay((unsigned long)((1000)*(16000000/4000.0)));
+_delay((unsigned long)((1500)*(16000000/4000.0)));
 
 
 (*(&(*(&PORTD + 0x09))) ^= (1<<(4)));
@@ -4181,33 +4181,32 @@ freq+= calcula();
 }
 freq/=30;
 v=freq;
-freq = calibra(v,505.7,1498);
+freq = calibra(v,505.7,2442);
 sprintf(value,"%5.3f",freq);
 lcd_gotoxy(1,2);
 lcd_msg("V= ");
 lcd_msg(value);
 freq=0.0;
-_delay((unsigned long)((1000)*(16000000/4000.0)));
+_delay((unsigned long)((1500)*(16000000/4000.0)));
 
 
 (*(&(*(&PORTD + 0x09))) ^= (1<<(4)));
 seleccionarColor(azul);
 for (i = 0 ;i < 30; i++)
 {
-_delay((unsigned long)((10)*(16000000/4000.0)));
 freq+= calcula();
 }
 freq/=30;
 a=freq;
-freq = calibra(a,1883,4824);
+freq = calibra(a,588.5,3186);
 sprintf(value,"%5.3f",freq);
 lcd_gotoxy(1,2);
 lcd_msg("A= ");
 lcd_msg(value);
 freq=0.0;
-_delay((unsigned long)((1000)*(16000000/4000.0)));
+_delay((unsigned long)((1500)*(16000000/4000.0)));
 
-freq=(((a) < (r)) ? (a) : (r));
+_delay((unsigned long)((1500)*(16000000/4000.0)));
 }
 
 return;
@@ -4220,8 +4219,6 @@ float freq = 0.0;
 float temp = 0.0;
 if (!triggered)
 {
-
-
 return;
 }
 
@@ -4231,6 +4228,7 @@ temp = (float) (elapsedTime);
 temp *= 250e-9;
 freq = 1.0/(temp);
 prepareForInterrupts ();
+_delay((unsigned long)((10)*(16000000/4000.0)));
 return freq;
 }
 
@@ -4241,12 +4239,12 @@ INT0IF == 0;
 first = true;
 triggered = false;
 
-# 328
+# 326
 INT0IE = 1;
 INTEDG0 = 1;
 }
 
-# 344
+# 342
 void seleccionarEscala (escala a)
 {
 switch(a)
@@ -4270,7 +4268,7 @@ break;
 }
 }
 
-# 379
+# 377
 void seleccionarColor(color col)
 {
 switch(col)

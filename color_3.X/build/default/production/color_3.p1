@@ -3277,9 +3277,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;color_3.c: 226: brillo = freq;
 "226
 [e = _brillo _freq ]
-[; ;color_3.c: 227: freq = calibra(brillo,588.5,1821);
+[; ;color_3.c: 227: freq = calibra(brillo,1883,8205);
 "227
-[e = _freq ( _calibra (3 , , _brillo -> .588.5 `f -> -> 1821 `i `f ]
+[e = _freq ( _calibra (3 , , _brillo -> -> 1883 `i `f -> -> 8205 `i `f ]
 [; ;color_3.c: 228: sprintf(value,"%5.3f",freq);
 "228
 [e ( _sprintf (1 , (. , &U _value :s 2C -> _freq `d ]
@@ -3295,9 +3295,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;color_3.c: 232: freq=0.0;
 "232
 [e = _freq -> .0.0 `f ]
-[; ;color_3.c: 233: _delay((unsigned long)((1000)*(16000000/4000.0)));
+[; ;color_3.c: 233: _delay((unsigned long)((1500)*(16000000/4000.0)));
 "233
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 [; ;color_3.c: 237: (*(&(*(&PORTD + 0x09))) ^= (1<<(4)));
 "237
 [e =^ *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 4 `i `uc ]
@@ -3335,9 +3335,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;color_3.c: 245: r=freq;
 "245
 [e = _r _freq ]
-[; ;color_3.c: 246: freq = calibra(r,743.4,1928);
+[; ;color_3.c: 246: freq = calibra(r,743.4,2951.7);
 "246
-[e = _freq ( _calibra (3 , , _r -> .743.4 `f -> -> 1928 `i `f ]
+[e = _freq ( _calibra (3 , , _r -> .743.4 `f -> .2951.7 `f ]
 [; ;color_3.c: 247: sprintf(value,"%5.3f",freq);
 "247
 [e ( _sprintf (1 , (. , &U _value :s 4C -> _freq `d ]
@@ -3353,9 +3353,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;color_3.c: 252: freq=0.0;
 "252
 [e = _freq -> .0.0 `f ]
-[; ;color_3.c: 253: _delay((unsigned long)((1000)*(16000000/4000.0)));
+[; ;color_3.c: 253: _delay((unsigned long)((1500)*(16000000/4000.0)));
 "253
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 [; ;color_3.c: 256: (*(&(*(&PORTD + 0x09))) ^= (1<<(4)));
 "256
 [e =^ *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 4 `i `uc ]
@@ -3393,9 +3393,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;color_3.c: 264: v=freq;
 "264
 [e = _v _freq ]
-[; ;color_3.c: 265: freq = calibra(v,505.7,1498);
+[; ;color_3.c: 265: freq = calibra(v,505.7,2442);
 "265
-[e = _freq ( _calibra (3 , , _v -> .505.7 `f -> -> 1498 `i `f ]
+[e = _freq ( _calibra (3 , , _v -> .505.7 `f -> -> 2442 `i `f ]
 [; ;color_3.c: 266: sprintf(value,"%5.3f",freq);
 "266
 [e ( _sprintf (1 , (. , &U _value :s 6C -> _freq `d ]
@@ -3411,9 +3411,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;color_3.c: 270: freq=0.0;
 "270
 [e = _freq -> .0.0 `f ]
-[; ;color_3.c: 271: _delay((unsigned long)((1000)*(16000000/4000.0)));
+[; ;color_3.c: 271: _delay((unsigned long)((1500)*(16000000/4000.0)));
 "271
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 [; ;color_3.c: 274: (*(&(*(&PORTD + 0x09))) ^= (1<<(4)));
 "274
 [e =^ *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 4 `i `uc ]
@@ -3430,337 +3430,337 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 300 ]
 [; ;color_3.c: 277: {
 {
-[; ;color_3.c: 278: _delay((unsigned long)((10)*(16000000/4000.0)));
+[; ;color_3.c: 278: freq+= calcula();
 "278
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;color_3.c: 279: freq+= calcula();
-"279
 [e =+ _freq ( _calcula ..  ]
-"280
+"279
 }
 "276
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 30 `i 300  ]
 [e :U 301 ]
-"280
+"279
 }
-[; ;color_3.c: 280: }
-[; ;color_3.c: 281: freq/=30;
-"281
+[; ;color_3.c: 279: }
+[; ;color_3.c: 280: freq/=30;
+"280
 [e =/ _freq -> -> 30 `uc `f ]
-[; ;color_3.c: 282: a=freq;
-"282
+[; ;color_3.c: 281: a=freq;
+"281
 [e = _a _freq ]
-[; ;color_3.c: 283: freq = calibra(a,1883,4824);
+[; ;color_3.c: 282: freq = calibra(a,588.5,3186);
+"282
+[e = _freq ( _calibra (3 , , _a -> .588.5 `f -> -> 3186 `i `f ]
+[; ;color_3.c: 283: sprintf(value,"%5.3f",freq);
 "283
-[e = _freq ( _calibra (3 , , _a -> -> 1883 `i `f -> -> 4824 `i `f ]
-[; ;color_3.c: 284: sprintf(value,"%5.3f",freq);
-"284
 [e ( _sprintf (1 , (. , &U _value :s 8C -> _freq `d ]
-[; ;color_3.c: 285: lcd_gotoxy(1,2);
-"285
+[; ;color_3.c: 284: lcd_gotoxy(1,2);
+"284
 [e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-[; ;color_3.c: 286: lcd_msg("A= ");
-"286
+[; ;color_3.c: 285: lcd_msg("A= ");
+"285
 [e ( _lcd_msg (1 -> :s 9C `*uc ]
-[; ;color_3.c: 287: lcd_msg(value);
-"287
+[; ;color_3.c: 286: lcd_msg(value);
+"286
 [e ( _lcd_msg (1 &U _value ]
-[; ;color_3.c: 288: freq=0.0;
-"288
+[; ;color_3.c: 287: freq=0.0;
+"287
 [e = _freq -> .0.0 `f ]
-[; ;color_3.c: 289: _delay((unsigned long)((1000)*(16000000/4000.0)));
-"289
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;color_3.c: 291: freq=(((a) < (r)) ? (a) : (r));
+[; ;color_3.c: 288: _delay((unsigned long)((1500)*(16000000/4000.0)));
+"288
+[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;color_3.c: 290: _delay((unsigned long)((1500)*(16000000/4000.0)));
+"290
+[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "291
-[e = _freq ? < _a _r : _a _r ]
-"292
 }
 [e :U 288 ]
 "215
 [e $U 289  ]
 [e :U 290 ]
-[; ;color_3.c: 292: }
-[; ;color_3.c: 294: return;
-"294
+[; ;color_3.c: 291: }
+[; ;color_3.c: 293: return;
+"293
 [e $UE 287  ]
-[; ;color_3.c: 295: }
-"295
+[; ;color_3.c: 294: }
+"294
 [e :UE 287 ]
 }
-"298
+"297
 [v _calcula `(f ~T0 @X0 1 ef ]
-"299
+"298
 {
-[; ;color_3.c: 298: float calcula()
-[; ;color_3.c: 299: {
+[; ;color_3.c: 297: float calcula()
+[; ;color_3.c: 298: {
 [e :U _calcula ]
 [f ]
-"300
+"299
 [v _freq `f ~T0 @X0 1 a ]
-[; ;color_3.c: 300: float freq = 0.0;
+[; ;color_3.c: 299: float freq = 0.0;
 [e = _freq -> .0.0 `f ]
-"301
+"300
 [v _temp `f ~T0 @X0 1 a ]
-[; ;color_3.c: 301: float temp = 0.0;
+[; ;color_3.c: 300: float temp = 0.0;
 [e = _temp -> .0.0 `f ]
-[; ;color_3.c: 302: if (!triggered)
-"302
+[; ;color_3.c: 301: if (!triggered)
+"301
 [e $ ! ! != -> _triggered `i -> -> -> 0 `i `VE3206 `i 304  ]
-[; ;color_3.c: 303: {
-"303
+[; ;color_3.c: 302: {
+"302
 {
-[; ;color_3.c: 306: return;
-"306
+[; ;color_3.c: 303: return;
+"303
 [e $UE 303  ]
-"307
+"304
 }
 [e :U 304 ]
-"309
+"306
 [v _elapsedTime `ul ~T0 @X0 1 a ]
-[; ;color_3.c: 307: }
-[; ;color_3.c: 309: unsigned long elapsedTime = finishTime - startTime;
+[; ;color_3.c: 304: }
+[; ;color_3.c: 306: unsigned long elapsedTime = finishTime - startTime;
 [e = _elapsedTime - _finishTime _startTime ]
-[; ;color_3.c: 311: temp = (float) (elapsedTime);
-"311
+[; ;color_3.c: 308: temp = (float) (elapsedTime);
+"308
 [e = _temp -> _elapsedTime `f ]
-[; ;color_3.c: 312: temp *= 250e-9;
-"312
+[; ;color_3.c: 309: temp *= 250e-9;
+"309
 [e =* _temp -> .250e-9 `f ]
-[; ;color_3.c: 313: freq = 1.0/(temp);
-"313
+[; ;color_3.c: 310: freq = 1.0/(temp);
+"310
 [e = _freq -> / .1.0 -> _temp `d `f ]
-[; ;color_3.c: 314: prepareForInterrupts ();
-"314
+[; ;color_3.c: 311: prepareForInterrupts ();
+"311
 [e ( _prepareForInterrupts ..  ]
-[; ;color_3.c: 315: return freq;
-"315
+[; ;color_3.c: 312: _delay((unsigned long)((10)*(16000000/4000.0)));
+"312
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;color_3.c: 313: return freq;
+"313
 [e ) _freq ]
 [e $UE 303  ]
-[; ;color_3.c: 316: }
-"316
+[; ;color_3.c: 314: }
+"314
 [e :UE 303 ]
 }
-"318
+"316
 [v _prepareForInterrupts `(v ~T0 @X0 1 ef ]
-"319
+"317
 {
-[; ;color_3.c: 318: void prepareForInterrupts ()
-[; ;color_3.c: 319: {
+[; ;color_3.c: 316: void prepareForInterrupts ()
+[; ;color_3.c: 317: {
 [e :U _prepareForInterrupts ]
 [f ]
-[; ;color_3.c: 321: INT0IF == 0;
-"321
+[; ;color_3.c: 319: INT0IF == 0;
+"319
 [e == -> _INT0IF `i -> 0 `i ]
-[; ;color_3.c: 322: first = true;
-"322
+[; ;color_3.c: 320: first = true;
+"320
 [e = _first . `E3206 1 ]
-[; ;color_3.c: 323: triggered = false;
-"323
+[; ;color_3.c: 321: triggered = false;
+"321
 [e = _triggered . `E3206 0 ]
-[; ;color_3.c: 328: INT0IE = 1;
-"328
+[; ;color_3.c: 326: INT0IE = 1;
+"326
 [e = _INT0IE -> -> 1 `i `b ]
-[; ;color_3.c: 329: INTEDG0 = 1;
-"329
+[; ;color_3.c: 327: INTEDG0 = 1;
+"327
 [e = _INTEDG0 -> -> 1 `i `b ]
-[; ;color_3.c: 330: }
-"330
+[; ;color_3.c: 328: }
+"328
 [e :UE 305 ]
 }
-"344
+"342
 [v _seleccionarEscala `(v ~T0 @X0 1 ef1`E3216 ]
-"345
+"343
 {
-[; ;color_3.c: 344: void seleccionarEscala (escala a)
-[; ;color_3.c: 345: {
+[; ;color_3.c: 342: void seleccionarEscala (escala a)
+[; ;color_3.c: 343: {
 [e :U _seleccionarEscala ]
-"344
+"342
 [v _a `E3216 ~T0 @X0 1 r1 ]
-"345
+"343
 [f ]
-[; ;color_3.c: 346: switch(a)
-"346
+[; ;color_3.c: 344: switch(a)
+"344
 [e $U 308  ]
-[; ;color_3.c: 347: {
-"347
+[; ;color_3.c: 345: {
+"345
 {
-[; ;color_3.c: 348: case apagado:
-"348
-[e :U 309 ]
-[; ;color_3.c: 349: (*(&(*(&PORTD + 0x09))) &=~ (1<<(0)));
-"349
-[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 0 `i `uc ]
-[; ;color_3.c: 350: (*(&(*(&PORTD + 0x09))) &=~ (1<<(1)));
-"350
-[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 1 `i `uc ]
-[; ;color_3.c: 351: break;
-"351
-[e $U 307  ]
-[; ;color_3.c: 352: case baja:
-"352
-[e :U 310 ]
-[; ;color_3.c: 353: (*(&(*(&PORTD + 0x09))) &=~ (1<<(0)));
-"353
-[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 0 `i `uc ]
-[; ;color_3.c: 354: (*(&(*(&PORTD + 0x09))) |= (1<<(1)));
-"354
-[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 1 `i `uc ]
-[; ;color_3.c: 355: break;
-"355
-[e $U 307  ]
-[; ;color_3.c: 356: case media:
-"356
-[e :U 311 ]
-[; ;color_3.c: 357: (*(&(*(&PORTD + 0x09))) |= (1<<(0)));
-"357
-[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 0 `i `uc ]
-[; ;color_3.c: 358: (*(&(*(&PORTD + 0x09))) &=~ (1<<(1)));
-"358
-[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 1 `i `uc ]
-[; ;color_3.c: 359: break;
-"359
-[e $U 307  ]
-[; ;color_3.c: 360: case total:
-"360
-[e :U 312 ]
-[; ;color_3.c: 361: (*(&(*(&PORTD + 0x09))) |= (1<<(0)));
-"361
-[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 0 `i `uc ]
-[; ;color_3.c: 362: (*(&(*(&PORTD + 0x09))) |= (1<<(1)));
-"362
-[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 1 `i `uc ]
-[; ;color_3.c: 363: break;
-"363
-[e $U 307  ]
-"364
-}
-[; ;color_3.c: 364: }
-[e $U 307  ]
+[; ;color_3.c: 346: case apagado:
 "346
+[e :U 309 ]
+[; ;color_3.c: 347: (*(&(*(&PORTD + 0x09))) &=~ (1<<(0)));
+"347
+[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 0 `i `uc ]
+[; ;color_3.c: 348: (*(&(*(&PORTD + 0x09))) &=~ (1<<(1)));
+"348
+[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 1 `i `uc ]
+[; ;color_3.c: 349: break;
+"349
+[e $U 307  ]
+[; ;color_3.c: 350: case baja:
+"350
+[e :U 310 ]
+[; ;color_3.c: 351: (*(&(*(&PORTD + 0x09))) &=~ (1<<(0)));
+"351
+[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 0 `i `uc ]
+[; ;color_3.c: 352: (*(&(*(&PORTD + 0x09))) |= (1<<(1)));
+"352
+[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 1 `i `uc ]
+[; ;color_3.c: 353: break;
+"353
+[e $U 307  ]
+[; ;color_3.c: 354: case media:
+"354
+[e :U 311 ]
+[; ;color_3.c: 355: (*(&(*(&PORTD + 0x09))) |= (1<<(0)));
+"355
+[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 0 `i `uc ]
+[; ;color_3.c: 356: (*(&(*(&PORTD + 0x09))) &=~ (1<<(1)));
+"356
+[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 1 `i `uc ]
+[; ;color_3.c: 357: break;
+"357
+[e $U 307  ]
+[; ;color_3.c: 358: case total:
+"358
+[e :U 312 ]
+[; ;color_3.c: 359: (*(&(*(&PORTD + 0x09))) |= (1<<(0)));
+"359
+[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 0 `i `uc ]
+[; ;color_3.c: 360: (*(&(*(&PORTD + 0x09))) |= (1<<(1)));
+"360
+[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 1 `i `uc ]
+[; ;color_3.c: 361: break;
+"361
+[e $U 307  ]
+"362
+}
+[; ;color_3.c: 362: }
+[e $U 307  ]
+"344
 [e :U 308 ]
 [e [\ _a , $ . `E3216 3 309
  , $ . `E3216 2 310
  , $ . `E3216 1 311
  , $ . `E3216 0 312
  307 ]
-"364
+"362
 [e :U 307 ]
-[; ;color_3.c: 365: }
-"365
+[; ;color_3.c: 363: }
+"363
 [e :UE 306 ]
 }
-"379
+"377
 [v _seleccionarColor `(v ~T0 @X0 1 ef1`E3210 ]
-"380
+"378
 {
-[; ;color_3.c: 379: void seleccionarColor(color col)
-[; ;color_3.c: 380: {
+[; ;color_3.c: 377: void seleccionarColor(color col)
+[; ;color_3.c: 378: {
 [e :U _seleccionarColor ]
-"379
+"377
 [v _col `E3210 ~T0 @X0 1 r1 ]
-"380
+"378
 [f ]
-[; ;color_3.c: 381: switch(col)
-"381
+[; ;color_3.c: 379: switch(col)
+"379
 [e $U 315  ]
-[; ;color_3.c: 382: {
-"382
+[; ;color_3.c: 380: {
+"380
 {
-[; ;color_3.c: 383: case rojo:
-"383
-[e :U 316 ]
-[; ;color_3.c: 384: (*(&(*(&PORTD + 0x09))) &=~ (1<<(2)));
-"384
-[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 2 `i `uc ]
-[; ;color_3.c: 385: (*(&(*(&PORTD + 0x09))) &=~ (1<<(3)));
-"385
-[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 3 `i `uc ]
-[; ;color_3.c: 386: break;
-"386
-[e $U 314  ]
-[; ;color_3.c: 387: case azul:
-"387
-[e :U 317 ]
-[; ;color_3.c: 388: (*(&(*(&PORTD + 0x09))) &=~ (1<<(2)));
-"388
-[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 2 `i `uc ]
-[; ;color_3.c: 389: (*(&(*(&PORTD + 0x09))) |= (1<<(3)));
-"389
-[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 3 `i `uc ]
-[; ;color_3.c: 390: break;
-"390
-[e $U 314  ]
-[; ;color_3.c: 391: case sf:
-"391
-[e :U 318 ]
-[; ;color_3.c: 392: (*(&(*(&PORTD + 0x09))) |= (1<<(2)));
-"392
-[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 2 `i `uc ]
-[; ;color_3.c: 393: (*(&(*(&PORTD + 0x09))) &=~ (1<<(3)));
-"393
-[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 3 `i `uc ]
-[; ;color_3.c: 394: break;
-"394
-[e $U 314  ]
-[; ;color_3.c: 395: case verde:
-"395
-[e :U 319 ]
-[; ;color_3.c: 396: (*(&(*(&PORTD + 0x09))) |= (1<<(2)));
-"396
-[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 2 `i `uc ]
-[; ;color_3.c: 397: (*(&(*(&PORTD + 0x09))) |= (1<<(3)));
-"397
-[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 3 `i `uc ]
-[; ;color_3.c: 398: break;
-"398
-[e $U 314  ]
-[; ;color_3.c: 399: default:
-"399
-[e :U 320 ]
-[; ;color_3.c: 400: (*(&(*(&PORTD + 0x09))) |= (1<<(2)));
-"400
-[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 2 `i `uc ]
-[; ;color_3.c: 401: (*(&(*(&PORTD + 0x09))) &=~ (1<<(3)));
-"401
-[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 3 `i `uc ]
-"402
-}
-[; ;color_3.c: 402: }
-[e $U 314  ]
+[; ;color_3.c: 381: case rojo:
 "381
+[e :U 316 ]
+[; ;color_3.c: 382: (*(&(*(&PORTD + 0x09))) &=~ (1<<(2)));
+"382
+[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 2 `i `uc ]
+[; ;color_3.c: 383: (*(&(*(&PORTD + 0x09))) &=~ (1<<(3)));
+"383
+[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 3 `i `uc ]
+[; ;color_3.c: 384: break;
+"384
+[e $U 314  ]
+[; ;color_3.c: 385: case azul:
+"385
+[e :U 317 ]
+[; ;color_3.c: 386: (*(&(*(&PORTD + 0x09))) &=~ (1<<(2)));
+"386
+[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 2 `i `uc ]
+[; ;color_3.c: 387: (*(&(*(&PORTD + 0x09))) |= (1<<(3)));
+"387
+[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 3 `i `uc ]
+[; ;color_3.c: 388: break;
+"388
+[e $U 314  ]
+[; ;color_3.c: 389: case sf:
+"389
+[e :U 318 ]
+[; ;color_3.c: 390: (*(&(*(&PORTD + 0x09))) |= (1<<(2)));
+"390
+[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 2 `i `uc ]
+[; ;color_3.c: 391: (*(&(*(&PORTD + 0x09))) &=~ (1<<(3)));
+"391
+[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 3 `i `uc ]
+[; ;color_3.c: 392: break;
+"392
+[e $U 314  ]
+[; ;color_3.c: 393: case verde:
+"393
+[e :U 319 ]
+[; ;color_3.c: 394: (*(&(*(&PORTD + 0x09))) |= (1<<(2)));
+"394
+[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 2 `i `uc ]
+[; ;color_3.c: 395: (*(&(*(&PORTD + 0x09))) |= (1<<(3)));
+"395
+[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 3 `i `uc ]
+[; ;color_3.c: 396: break;
+"396
+[e $U 314  ]
+[; ;color_3.c: 397: default:
+"397
+[e :U 320 ]
+[; ;color_3.c: 398: (*(&(*(&PORTD + 0x09))) |= (1<<(2)));
+"398
+[e =| *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> << -> 1 `i -> 2 `i `uc ]
+[; ;color_3.c: 399: (*(&(*(&PORTD + 0x09))) &=~ (1<<(3)));
+"399
+[e =& *U &U *U + &U _PORTD * -> -> 9 `i `x -> -> # *U &U _PORTD `i `x -> ~ << -> 1 `i -> 3 `i `uc ]
+"400
+}
+[; ;color_3.c: 400: }
+[e $U 314  ]
+"379
 [e :U 315 ]
 [e [\ _col , $ . `E3210 0 316
  , $ . `E3210 1 317
  , $ . `E3210 2 318
  , $ . `E3210 3 319
  320 ]
-"402
+"400
 [e :U 314 ]
-[; ;color_3.c: 403: }
-"403
+[; ;color_3.c: 401: }
+"401
 [e :UE 313 ]
 }
-"405
+"403
 [v _calibra `(f ~T0 @X0 1 ef3`f`f`f ]
-"406
+"404
 {
-[; ;color_3.c: 405: float calibra(float valor, float fd, float fw)
-[; ;color_3.c: 406: {
+[; ;color_3.c: 403: float calibra(float valor, float fd, float fw)
+[; ;color_3.c: 404: {
 [e :U _calibra ]
-"405
+"403
 [v _valor `f ~T0 @X0 1 r1 ]
 [v _fd `f ~T0 @X0 1 r2 ]
 [v _fw `f ~T0 @X0 1 r3 ]
-"406
+"404
 [f ]
-[; ;color_3.c: 407: return (255*(valor-fd))/(fw-fd);
-"407
+[; ;color_3.c: 405: return (255*(valor-fd))/(fw-fd);
+"405
 [e ) / * -> -> 255 `i `f - _valor _fd - _fw _fd ]
 [e $UE 321  ]
-[; ;color_3.c: 408: }
-"408
+[; ;color_3.c: 406: }
+"406
 [e :UE 321 ]
 }
 [p f _sprintf 8495104 ]

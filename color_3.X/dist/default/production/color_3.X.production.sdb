@@ -96,15 +96,15 @@ verde 3
 [v _high_isr high_isr `IIH(v  1 e 1 0 ]
 "169
 [v _main main `(v  1 e 1 0 ]
-"298
+"297
 [v _calcula calcula `(f  1 e 4 0 ]
-"318
+"316
 [v _prepareForInterrupts prepareForInterrupts `(v  1 e 1 0 ]
-"344
+"342
 [v _seleccionarEscala seleccionarEscala `(v  1 e 1 0 ]
-"379
+"377
 [v _seleccionarColor seleccionarColor `(v  1 e 1 0 ]
-"405
+"403
 [v _calibra calibra `(f  1 e 4 0 ]
 "24 /home/miguel/MPLABXProjects/MyLibs/lcd4a.c
 [v _lcd lcd `uc  1 e 1 0 ]
@@ -189,13 +189,13 @@ verde 3
 "172
 [v main@freq freq `f  1 a 4 44 ]
 "173
-[v main@a a `f  1 a 4 39 ]
-[v main@r r `f  1 a 4 35 ]
-[v main@brillo brillo `f  1 a 4 31 ]
-[v main@v v `f  1 a 4 27 ]
+[v main@brillo brillo `f  1 a 4 39 ]
+[v main@a a `f  1 a 4 35 ]
+[v main@v v `f  1 a 4 31 ]
+[v main@r r `f  1 a 4 27 ]
 "171
 [v main@i i `uc  1 a 1 43 ]
-"295
+"294
 } 0
 "492 /opt/microchip/xc8/v1.45/sources/common/doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
@@ -357,21 +357,21 @@ verde 3
 [v ___flge@ff2 ff2 `d  1 p 4 49 ]
 "19
 } 0
-"344 /home/miguel/MPLABXProjects/color_3.X/color_3.c
+"342 /home/miguel/MPLABXProjects/color_3.X/color_3.c
 [v _seleccionarEscala seleccionarEscala `(v  1 e 1 0 ]
 {
 [v seleccionarEscala@a a `E3216  1 a 1 wreg ]
 [v seleccionarEscala@a a `E3216  1 a 1 wreg ]
 [v seleccionarEscala@a a `E3216  1 a 1 45 ]
-"365
+"363
 } 0
-"379
+"377
 [v _seleccionarColor seleccionarColor `(v  1 e 1 0 ]
 {
 [v seleccionarColor@col col `E3210  1 a 1 wreg ]
 [v seleccionarColor@col col `E3210  1 a 1 wreg ]
 [v seleccionarColor@col col `E3210  1 a 1 45 ]
-"403
+"401
 } 0
 "101 /home/miguel/MPLABXProjects/MyLibs/lcd4a.c
 [v _lcd_msg lcd_msg `(v  1 e 1 0 ]
@@ -446,13 +446,13 @@ verde 3
 {
 "38
 } 0
-"405 /home/miguel/MPLABXProjects/color_3.X/color_3.c
+"403 /home/miguel/MPLABXProjects/color_3.X/color_3.c
 [v _calibra calibra `(f  1 e 4 0 ]
 {
 [v calibra@valor valor `f  1 p 4 78 ]
 [v calibra@fd fd `f  1 p 4 82 ]
 [v calibra@fw fw `f  1 p 4 86 ]
-"408
+"406
 } 0
 "15 /opt/microchip/xc8/v1.45/sources/common/flneg.c
 [v ___flneg __flneg `(d  1 e 4 0 ]
@@ -476,21 +476,21 @@ verde 3
 [v ___fladd@a a `d  1 p 4 62 ]
 "237
 } 0
-"298 /home/miguel/MPLABXProjects/color_3.X/color_3.c
+"297 /home/miguel/MPLABXProjects/color_3.X/color_3.c
 [v _calcula calcula `(f  1 e 4 0 ]
 {
-"301
-[v calcula@temp temp `f  1 a 4 54 ]
 "300
+[v calcula@temp temp `f  1 a 4 54 ]
+"299
 [v calcula@freq freq `f  1 a 4 50 ]
-"309
+"306
 [v calcula@elapsedTime elapsedTime `ul  1 a 4 46 ]
-"316
+"314
 } 0
-"318
+"316
 [v _prepareForInterrupts prepareForInterrupts `(v  1 e 1 0 ]
 {
-"330
+"328
 } 0
 "10 /opt/microchip/xc8/v1.45/sources/common/xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]

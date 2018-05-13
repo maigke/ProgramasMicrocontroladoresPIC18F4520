@@ -26,10 +26,10 @@
  * 
  * Para color negro mate
  * 
- * fd(blanco) = 588.5
+ * fd(blanco) = 1883
  * fd(rojo) = 743.4
  * fd(verde) = 505.7
- * fd(azul) = 1883
+ * fd(azul) = 588.5
  * 
  * y para color blanco
  * fw(blanco)= 1821
@@ -79,15 +79,15 @@ char value[8];  //guarda espacio para imprimir un numero
 
 
 //definiciones para de la calibración
-#define fwb 1821
-#define fwr 1928
-#define fwv 1498
-#define fwa 4824
+#define fwb 8205
+#define fwr 2951.7
+#define fwv 2442
+#define fwa 3186
 
-#define fdb 588.5
+#define fdb 1883
 #define fdr 743.4
 #define fdv 505.7
-#define fda 1883
+#define fda 588.5
 
 
 
@@ -230,7 +230,7 @@ void main(void)
         lcd_msg("B= ");
         lcd_msg(value);
         freq=0.0;
-        __delay_ms(1000);
+        __delay_ms(1500);
         
         
         /** Se lee el color Rojo*/
@@ -250,7 +250,7 @@ void main(void)
         lcd_msg(value);
         
         freq=0.0;
-        __delay_ms(1000);
+        __delay_ms(1500);
        
        /** Se lee el color Verde*/
         tglbit(LAT(Pled),led);
@@ -268,14 +268,13 @@ void main(void)
         lcd_msg("V= ");
         lcd_msg(value);
         freq=0.0;
-        __delay_ms(1000);
+        __delay_ms(1500);
         
         /** Se lee el color Azul*/
         tglbit(LAT(Pled),led);
         seleccionarColor(azul);
         for (i = 0 ;i < MAX; i++)
         {   
-            __delay_ms(10);
             freq+= calcula();
         }
         freq/=MAX;
@@ -286,9 +285,9 @@ void main(void)
         lcd_msg("A= ");
         lcd_msg(value);
         freq=0.0;
-        __delay_ms(1000);
+        __delay_ms(1500);
         
-        freq=min(a,r);
+        __delay_ms(1500);
     }
     
     return;
@@ -301,8 +300,6 @@ float  calcula()
     float temp = 0.0;
     if (!triggered)
     {
-    //lcd_gotoxy(5,2);
-    //lcd_msg(":)");
     return;
     }
 
@@ -312,6 +309,7 @@ float  calcula()
   temp *= 250e-9;  //cada tick es de 250ns para Xt = 16MHz
   freq = 1.0/(temp);
   prepareForInterrupts ();
+  __delay_ms(10);
   return freq;
   }
 
