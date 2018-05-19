@@ -155,6 +155,7 @@ void prepareForInterrupts ();
 void seleccionarEscala(escala a);
 void seleccionarColor(color a);
 float calibra(float valor, float fd, float fw);
+float identificarColor(float colB,float colR,float colV,float colA);
 
 /**   Pines para conexion del sensor    ************/
 #define Ps3 PORTD
@@ -244,7 +245,7 @@ void main(void)
         freq/=MAX;
         r=freq;
         freq = calibra(r,fdr,fwr);
-        sprintf(value,"%5.3f",freq);
+        sprintf(value,"%5.6f",freq);
         lcd_gotoxy(1,2);
         lcd_msg("R= ");
         lcd_msg(value);
@@ -263,7 +264,7 @@ void main(void)
         freq/=MAX;
         v=freq;
         freq = calibra(v,fdv,fwv);
-        sprintf(value,"%5.3f",freq);
+        sprintf(value,"%5.6f",freq);
         lcd_gotoxy(1,2);
         lcd_msg("V= ");
         lcd_msg(value);
@@ -280,9 +281,18 @@ void main(void)
         freq/=MAX;
         a=freq;
         freq = calibra(a,fda,fwa);
-        sprintf(value,"%5.3f",freq);
+        sprintf(value,"%5.6f ",freq);
         lcd_gotoxy(1,2);
         lcd_msg("A= ");
+        lcd_msg(value);
+        freq=0.0;
+        __delay_ms(1500);
+        
+        __delay_ms(1500);
+        float grados = identificarColor(brillo, r, v, a);
+        sprintf(value,"%5.3f",grados);
+        lcd_gotoxy(1,2);
+        lcd_msg("Grados= ");
         lcd_msg(value);
         freq=0.0;
         __delay_ms(1500);
@@ -408,4 +418,62 @@ float calibra(float valor, float fd, float fw)
         return 255;
     else
         return temp;
+}
+
+float identificarColor(float colB,float colR, float colV, float colA)
+{
+    float r,v,a;
+    float offset = 3.0/colB;
+    float t,s,l;
+    
+    r = min(1.0, offset + (colB/colR));
+    v = min(1.0, offset + (colB/colV));
+    a = min(1.0, offset + (colB/colA));
+    
+    float maxRVB = max(max(r,v),a);
+    float minRVB = min(min(r,v),a);
+    
+    float delta = maxRVB - minRVB;
+    float somme = maxRVB + minRVB;
+    
+    l = (somme/2.0);
+    if(delta == 0.0) //gris
+    {
+        t = s = 0.0;
+    }
+    else
+    {
+        if(l < 0.5) 
+        {
+            s = delta / somme;
+        }
+        else
+        {
+            s = delta /(2.0 - delta);
+        }
+        float del_R = ( ( ( maxRVB - r ) / 6.0 ) + ( delta / 2.0 ) ) / delta;
+        float del_V = ( ( ( maxRVB - v ) / 6.0 ) + ( delta / 2.0 ) ) / delta;
+        float del_A = ( ( ( maxRVB - a ) / 6.0 ) + ( delta / 2.0 ) ) / delta;
+        if (r == maxRVB)
+        {
+            t = del_A - del_V;
+        }
+        
+        else if( v == maxRVB)
+        {
+            t = ( 1.0 / 3.0 ) + del_R - del_A;
+        }
+        else if( a == maxRVB)
+        {
+            t = ( 2.0 / 3.0 ) + del_V - del_R;
+        }
+        if (t < 0 ) t += 1.0;
+        if (t > 1 ) t -= 1.0;
+    }
+    
+    t*=360.0;
+    s*=100.0;
+    l*=100.0;
+    
+    return t;
 }

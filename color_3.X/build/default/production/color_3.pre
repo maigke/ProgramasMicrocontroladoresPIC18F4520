@@ -4092,8 +4092,9 @@ void prepareForInterrupts ();
 void seleccionarEscala(escala a);
 void seleccionarColor(color a);
 float calibra(float valor, float fd, float fw);
+float identificarColor(float colB,float colR,float colV,float colA);
 
-# 169
+# 170
 void main(void)
 {
 char i;
@@ -4109,7 +4110,7 @@ float r,v,a,brillo;
 lcd_init();
 lcd_msg("Detector de color");
 
-# 189
+# 190
 T1CONbits.RD16 = 1;
 T1CKPS1 = 0;
 T1CKPS0 = 0;
@@ -4126,7 +4127,7 @@ IPEN = 1;
 GIEH = 1;
 GIEL = 1;
 
-# 211
+# 212
 seleccionarEscala(baja);
 
 
@@ -4207,6 +4208,15 @@ freq=0.0;
 _delay((unsigned long)((1500)*(16000000/4000.0)));
 
 _delay((unsigned long)((1500)*(16000000/4000.0)));
+float grados = identificarColor(brillo, r, v, a);
+sprintf(value,"%5.3f",grados);
+lcd_gotoxy(1,2);
+lcd_msg("Grados= ");
+lcd_msg(value);
+freq=0.0;
+_delay((unsigned long)((1500)*(16000000/4000.0)));
+
+_delay((unsigned long)((1500)*(16000000/4000.0)));
 }
 
 return;
@@ -4239,12 +4249,12 @@ INT0IF == 0;
 first = true;
 triggered = false;
 
-# 326
+# 336
 INT0IE = 1;
 INTEDG0 = 1;
 }
 
-# 342
+# 352
 void seleccionarEscala (escala a)
 {
 switch(a)
@@ -4268,7 +4278,7 @@ break;
 }
 }
 
-# 377
+# 387
 void seleccionarColor(color col)
 {
 switch(col)
@@ -4303,4 +4313,62 @@ if(temp >255)
 return 255;
 else
 return temp;
+}
+
+float identificarColor(float colB,float colR, float colV, float colA)
+{
+float r,v,a;
+float offset = 3.0/colB;
+float t,s,l;
+
+r = (((1.0) < (offset + (colB/colR))) ? (1.0) : (offset + (colB/colR)));
+v = (((1.0) < (offset + (colB/colV))) ? (1.0) : (offset + (colB/colV)));
+a = (((1.0) < (offset + (colB/colA))) ? (1.0) : (offset + (colB/colA)));
+
+float maxRVB = ((((((r) > (v)) ? (r) : (v))) > (a)) ? ((((r) > (v)) ? (r) : (v))) : (a));
+float minRVB = ((((((r) < (v)) ? (r) : (v))) < (a)) ? ((((r) < (v)) ? (r) : (v))) : (a));
+
+float delta = maxRVB - minRVB;
+float somme = maxRVB + minRVB;
+
+l = (somme/2.0);
+if(delta == 0.0)
+{
+t = s = 0.0;
+}
+else
+{
+if(l < 0.5)
+{
+s = delta / somme;
+}
+else
+{
+s = delta /(2.0 - delta);
+}
+float del_R = ( ( ( maxRVB - r ) / 6.0 ) + ( delta / 2.0 ) ) / delta;
+float del_V = ( ( ( maxRVB - v ) / 6.0 ) + ( delta / 2.0 ) ) / delta;
+float del_A = ( ( ( maxRVB - a ) / 6.0 ) + ( delta / 2.0 ) ) / delta;
+if (r == maxRVB)
+{
+t = del_A - del_V;
+}
+
+else if( v == maxRVB)
+{
+t = ( 1.0 / 3.0 ) + del_R - del_A;
+}
+else if( a == maxRVB)
+{
+t = ( 2.0 / 3.0 ) + del_V - del_R;
+}
+if (t < 0 ) t += 1.0;
+if (t > 1 ) t -= 1.0;
+}
+
+t*=360.0;
+s*=100.0;
+l*=100.0;
+
+return t;
 }

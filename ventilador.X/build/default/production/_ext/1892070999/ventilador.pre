@@ -1,0 +1,227 @@
+
+# 1 "../MyLibs/ventilador.c"
+
+# 4 "/opt/microchip/xc8/v1.45/include/__size_t.h"
+typedef unsigned size_t;
+
+# 7 "/opt/microchip/xc8/v1.45/include/stdarg.h"
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+
+# 43 "/opt/microchip/xc8/v1.45/include/stdio.h"
+struct __prbuf
+{
+char * ptr;
+void (* func)(char);
+};
+
+# 29 "/opt/microchip/xc8/v1.45/include/errno.h"
+extern int errno;
+
+# 12 "/opt/microchip/xc8/v1.45/include/conio.h"
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 23
+extern char * cgets(char *);
+extern void cputs(const char *);
+
+# 88 "/opt/microchip/xc8/v1.45/include/stdio.h"
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+
+
+# 180
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+
+# 30 "/opt/microchip/xc8/v1.45/include/math.h"
+extern double fabs(double);
+extern double floor(double);
+extern double ceil(double);
+extern double modf(double, double *);
+extern double sqrt(double);
+extern double atof(const char *);
+extern double sin(double) ;
+extern double cos(double) ;
+extern double tan(double) ;
+extern double asin(double) ;
+extern double acos(double) ;
+extern double atan(double);
+extern double atan2(double, double) ;
+extern double log(double);
+extern double log10(double);
+extern double pow(double, double) ;
+extern double exp(double) ;
+extern double sinh(double) ;
+extern double cosh(double) ;
+extern double tanh(double);
+extern double eval_poly(double, const double *, int);
+extern double frexp(double, int *);
+extern double ldexp(double, int);
+extern double fmod(double, double);
+extern double trunc(double);
+extern double round(double);
+
+# 15 "../MyLibs/ventilador.h"
+typedef struct {
+double (* equal)(double x);
+double (* center)();
+double (* basis)();
+double (* param)(int i);
+} Consequent;
+
+typedef struct {
+double min;
+double max;
+double step;
+double (* imp)(double a, double b);
+double (* also)(double a, double b);
+int length;
+double* degree;
+int inputlength;
+double* input;
+Consequent* conc;
+} FuzzyNumber;
+
+# 44
+void ventiladorInferenceEngine(double Temp, double* Vel);
+
+# 17 "../MyLibs/ventilador.c"
+static double compute(FuzzyNumber fn,double x) {
+int length = fn.length;
+int i;
+double imp = fn.imp(fn.degree[0],fn.conc[0].equal(x));
+double mu = imp
+
+for(i=1; i<length; i++) {
+imp = fn.imp(fn.degree[i],fn.conc[i].equal(x));
+mu = fn.also(mu,imp);
+}
+return mu;
+}
+
+# 38
+static double MF_xfl_trapezoid_equal(double x, double min, double max, double step, double a, double b, double c, double d) {
+return (x<a || x>d? 0: (x<b? (x-a)/(b-a) : (x<c?1 : (d-x)/(d-c))));
+
+}
+
+# 51
+static double OP_Default_Also(double a, double b) {
+return (a>b? a : b);
+
+}
+
+# 60
+static double OP_Default_Imp(double a, double b) {
+return (a<b? a : b);
+
+}
+
+# 69
+static double OP_Default_Defuz(FuzzyNumber mf) {
+double min = mf.min;
+double max = mf.max;
+double step = mf.step;
+double x, m, num=0, denom=0;
+for(x=min; x<=max; x+=step) {
+m = compute(mf,x);
+num += x*m;
+denom += m;
+}
+if(denom==0) return (min+max)/2;
+return num/denom;
+
+}
+
+# 93
+static double TP_tTemp_frio_equal(double x){
+return MF_xfl_trapezoid_equal(x,0.0,55.0,0.21568627450980393,-11.0,0.0,15.0,28.0);
+}
+
+# 101
+static double TP_tTemp_caliente_equal(double x){
+return MF_xfl_trapezoid_equal(x,0.0,55.0,0.21568627450980393,22.0,35.0,55.0,66.0);
+}
+
+# 113
+static double TP_tVelocidad_lenta_equal(double x){
+return MF_xfl_trapezoid_equal(x,0.0,100.0,0.39215686274509803,-20.0,0.0,40.0,60.0);
+}
+
+# 121
+static double TP_tVelocidad_rapida_equal(double x){
+return MF_xfl_trapezoid_equal(x,0.0,100.0,0.39215686274509803,40.0,60.0,100.0,120.0);
+}
+
+# 129
+static void RL_ventilador(double temp, double *vel) {
+double _rl;
+
+double _vel_degree[2];
+Consequent _vel_conc[2];
+FuzzyNumber _vel;
+_vel.min = 0.0;
+_vel.max = 100.0;
+_vel.step = 0.39215686274509803;
+_vel.imp = OP__default__Imp;
+_vel.also = OP__default__Also;
+_vel.length = 2;
+_vel.degree = _vel_degree;
+_vel.conc = _vel_conc;
+int _vel_i = 0;
+
+double _temp_eq[2];
+_temp_eq[0] = TP_tTemp_frio_equal(temp);
+_temp_eq[1] = TP_tTemp_caliente_equal(temp);
+
+_rl = _temp_eq[0];
+_vel_degree[_vel_i] = _rl;
+_vel_conc[_vel_i].equal = TP_tVelocidad_lenta_equal;
+_vel_i++;
+
+_rl = _temp_eq[1];
+_vel_degree[_vel_i] = _rl;
+_vel_conc[_vel_i].equal = TP_tVelocidad_rapida_equal;
+_vel_i++;
+
+*vel = OP__default__Defuz(_vel);
+}
+
+# 167
+void ventiladorInferenceEngine(double Temp, double *_d_Vel) {
+double Vel;
+RL_ventilador(Temp, &Vel);
+*_d_Vel = Vel;
+}
+
