@@ -2996,9 +2996,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "57
 [e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
 [e ( _lcd_putc (1 _x ]
-[; ;usart_6,c.c: 58: _delay((unsigned long)((500)*(16000000/4000.0)));
+[; ;usart_6,c.c: 58: _delay((unsigned long)((2000)*(16000000/4000.0)));
 "58
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "59
 }
 "52

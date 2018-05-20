@@ -3990,7 +3990,7 @@ printf("letra: %c\n\r",x);
 LATCbits.LATC4^= 1;
 lcd_gotoxy(1,2); lcd_msg("     ");
 lcd_gotoxy(1,2); lcd_putc(x);
-_delay((unsigned long)((500)*(16000000/4000.0)));
+_delay((unsigned long)((2000)*(16000000/4000.0)));
 }
 }
 return;

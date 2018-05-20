@@ -1,0 +1,255 @@
+[p LITE_MODE AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4550 ]
+[d frameptr 4065 ]
+"17 /home/miguel/MPLABXProjects/MyLibs/ventilador.c
+[v _compute compute `(d  1 s 4 compute ]
+"38
+[v _MF_xfl_trapezoid_equal MF_xfl_trapezoid_equal `(d  1 s 4 MF_xfl_trapezoid_equal ]
+"51
+[v _OP_Default_Also OP_Default_Also `(d  1 s 4 OP_Default_Also ]
+"60
+[v _OP_Default_Imp OP_Default_Imp `(d  1 s 4 OP_Default_Imp ]
+"69
+[v _OP_default_Defuz OP_default_Defuz `(d  1 s 4 OP_default_Defuz ]
+"93
+[v _TP_tTemp_frio_equal TP_tTemp_frio_equal `(d  1 s 4 TP_tTemp_frio_equal ]
+"101
+[v _TP_tTemp_caliente_equal TP_tTemp_caliente_equal `(d  1 s 4 TP_tTemp_caliente_equal ]
+"113
+[v _TP_tVelocidad_lenta_equal TP_tVelocidad_lenta_equal `(d  1 s 4 TP_tVelocidad_lenta_equal ]
+"121
+[v _TP_tVelocidad_rapida_equal TP_tVelocidad_rapida_equal `(d  1 s 4 TP_tVelocidad_rapida_equal ]
+"129
+[v _RL_ventilador RL_ventilador `(v  1 s 1 RL_ventilador ]
+"167
+[v _ventiladorInferenceEngine ventiladorInferenceEngine `(v  1 e 1 0 ]
+"4 /opt/microchip/xc8/v1.45/sources/common/flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+"15 /opt/microchip/xc8/v1.45/sources/common/flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
+"62 /opt/microchip/xc8/v1.45/sources/common/float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 /opt/microchip/xc8/v1.45/sources/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 /opt/microchip/xc8/v1.45/sources/common/ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 /opt/microchip/xc8/v1.45/sources/common/ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"20 /opt/microchip/xc8/v1.45/sources/common/ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 /opt/microchip/xc8/v1.45/sources/common/sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 /opt/microchip/xc8/v1.45/sources/common/sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 /opt/microchip/xc8/v1.45/sources/common/sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 /opt/microchip/xc8/v1.45/sources/common/Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"15 /home/miguel/MPLABXProjects/ventilador.X/venti.c
+[v _main main `(v  1 e 1 0 ]
+[v _main main `(v  1 e 1 0 ]
+{
+"17
+[v main@out out `f  1 a 4 148 ]
+[v main@in in `f  1 a 4 144 ]
+"20
+} 0
+"167 /home/miguel/MPLABXProjects/MyLibs/ventilador.c
+[v _ventiladorInferenceEngine ventiladorInferenceEngine `(v  1 e 1 0 ]
+{
+"168
+[v ventiladorInferenceEngine@Vel Vel `d  1 a 4 140 ]
+"167
+[v ventiladorInferenceEngine@Temp Temp `d  1 p 4 134 ]
+[v ventiladorInferenceEngine@_d_Vel _d_Vel `*.39d  1 p 2 138 ]
+"171
+} 0
+"129
+[v _RL_ventilador RL_ventilador `(v  1 s 1 RL_ventilador ]
+{
+[s S27 . 8 `*.37(d 1 equal 2 0 `*.37(d 1 center 2 2 `*.37(d 1 basis 2 4 `*.37(d 1 param 2 6 ]
+"134
+[s S40 . 26 `d 1 min 4 0 `d 1 max 4 4 `d 1 step 4 8 `*.37(d 1 imp 2 12 `*.37(d 1 also 2 14 `i 1 length 2 16 `*.39d 1 degree 2 18 `i 1 inputlength 2 20 `*.2d 1 input 2 22 `*.39S27 1 conc 2 24 ]
+[v RL_ventilador@_vel _vel `S40  1 a 26 38 ]
+"133
+[v RL_ventilador@_vel_conc _vel_conc `[2]S27  1 a 16 8 ]
+"132
+[v RL_ventilador@_vel_degree _vel_degree `[2]d  1 a 8 24 ]
+"145
+[v RL_ventilador@_temp_eq _temp_eq `[2]d  1 a 8 0 ]
+"130
+[v RL_ventilador@_rl _rl `d  1 a 4 32 ]
+"143
+[v RL_ventilador@_vel_i _vel_i `i  1 a 2 36 ]
+"129
+[v RL_ventilador@temp temp `d  1 p 4 128 ]
+[v RL_ventilador@vel vel `*.39d  1 p 2 132 ]
+"160
+} 0
+"93
+[v _TP_tTemp_frio_equal TP_tTemp_frio_equal `(d  1 s 4 TP_tTemp_frio_equal ]
+{
+[v TP_tTemp_frio_equal@x x `d  1 p 4 32 ]
+"95
+} 0
+"101
+[v _TP_tTemp_caliente_equal TP_tTemp_caliente_equal `(d  1 s 4 TP_tTemp_caliente_equal ]
+{
+[v TP_tTemp_caliente_equal@x x `d  1 p 4 32 ]
+"103
+} 0
+"69
+[v _OP_default_Defuz OP_default_Defuz `(d  1 s 4 OP_default_Defuz ]
+{
+"73
+[v OP_default_Defuz@x x `d  1 a 4 124 ]
+[v OP_default_Defuz@denom denom `d  1 a 4 120 ]
+[v OP_default_Defuz@num num `d  1 a 4 116 ]
+[v OP_default_Defuz@m m `d  1 a 4 112 ]
+"71
+[v OP_default_Defuz@max max `d  1 a 4 108 ]
+"70
+[v OP_default_Defuz@min min `d  1 a 4 104 ]
+"72
+[v OP_default_Defuz@step step `d  1 a 4 100 ]
+[s S27 . 8 `*.37(d 1 equal 2 0 `*.37(d 1 center 2 2 `*.37(d 1 basis 2 4 `*.37(d 1 param 2 6 ]
+"69
+[s S40 . 26 `d 1 min 4 0 `d 1 max 4 4 `d 1 step 4 8 `*.37(d 1 imp 2 12 `*.37(d 1 also 2 14 `i 1 length 2 16 `*.39d 1 degree 2 18 `i 1 inputlength 2 20 `*.2d 1 input 2 22 `*.39S27 1 conc 2 24 ]
+[v OP_default_Defuz@mf mf `S40  1 p 26 74 ]
+"82
+} 0
+"17
+[v _compute compute `(d  1 s 4 compute ]
+{
+"21
+[v compute@mu mu `d  1 a 4 86 ]
+"20
+[v compute@imp imp `d  1 a 4 82 ]
+"19
+[v compute@i i `i  1 a 2 90 ]
+"18
+[v compute@length length `i  1 a 2 80 ]
+[s S27 . 8 `*.37(d 1 equal 2 0 `*.37(d 1 center 2 2 `*.37(d 1 basis 2 4 `*.37(d 1 param 2 6 ]
+"17
+[s S40 . 26 `d 1 min 4 0 `d 1 max 4 4 `d 1 step 4 8 `*.37(d 1 imp 2 12 `*.37(d 1 also 2 14 `i 1 length 2 16 `*.39d 1 degree 2 18 `i 1 inputlength 2 20 `*.2d 1 input 2 22 `*.39S27 1 conc 2 24 ]
+[v compute@fn fn `S40  1 p 26 44 ]
+[v compute@x x `d  1 p 4 70 ]
+"28
+} 0
+"113
+[v _TP_tVelocidad_lenta_equal TP_tVelocidad_lenta_equal `(d  1 s 4 TP_tVelocidad_lenta_equal ]
+{
+[v TP_tVelocidad_lenta_equal@x x `d  1 p 4 32 ]
+"115
+} 0
+"121
+[v _TP_tVelocidad_rapida_equal TP_tVelocidad_rapida_equal `(d  1 s 4 TP_tVelocidad_rapida_equal ]
+{
+[v TP_tVelocidad_rapida_equal@x x `d  1 p 4 32 ]
+"123
+} 0
+"38
+[v _MF_xfl_trapezoid_equal MF_xfl_trapezoid_equal `(d  1 s 4 MF_xfl_trapezoid_equal ]
+{
+[v MF_xfl_trapezoid_equal@x x `d  1 p 4 0 ]
+[v MF_xfl_trapezoid_equal@min min `d  1 p 4 4 ]
+[v MF_xfl_trapezoid_equal@max max `d  1 p 4 8 ]
+[v MF_xfl_trapezoid_equal@step step `d  1 p 4 12 ]
+[v MF_xfl_trapezoid_equal@a a `d  1 p 4 16 ]
+[v MF_xfl_trapezoid_equal@b b `d  1 p 4 20 ]
+[v MF_xfl_trapezoid_equal@c c `d  1 p 4 24 ]
+[v MF_xfl_trapezoid_equal@d d `d  1 p 4 28 ]
+"41
+} 0
+"15 /opt/microchip/xc8/v1.45/sources/common/flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
+{
+[v ___flneg@f1 f1 `d  1 p 4 0 ]
+"20
+} 0
+"11 /opt/microchip/xc8/v1.45/sources/common/sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 64 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 58 ]
+"20
+[v ___fldiv@new_exp new_exp `i  1 a 2 62 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 69 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 68 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 57 ]
+"11
+[v ___fldiv@b b `d  1 p 4 45 ]
+[v ___fldiv@a a `d  1 p 4 49 ]
+"184
+} 0
+"10 /opt/microchip/xc8/v1.45/sources/common/sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+{
+"17
+[v ___fladd@grs grs `uc  1 a 1 44 ]
+"15
+[v ___fladd@bexp bexp `uc  1 a 1 43 ]
+"16
+[v ___fladd@aexp aexp `uc  1 a 1 42 ]
+"13
+[v ___fladd@signs signs `uc  1 a 1 41 ]
+"10
+[v ___fladd@b b `d  1 p 4 25 ]
+[v ___fladd@a a `d  1 p 4 29 ]
+"237
+} 0
+"60 /home/miguel/MPLABXProjects/MyLibs/ventilador.c
+[v _OP_Default_Imp OP_Default_Imp `(d  1 s 4 OP_Default_Imp ]
+{
+[v OP_Default_Imp@a a `d  1 p 4 36 ]
+[v OP_Default_Imp@b b `d  1 p 4 40 ]
+"63
+} 0
+"51
+[v _OP_Default_Also OP_Default_Also `(d  1 s 4 OP_Default_Also ]
+{
+[v OP_Default_Also@a a `d  1 p 4 12 ]
+[v OP_Default_Also@b b `d  1 p 4 16 ]
+"54
+} 0
+"4 /opt/microchip/xc8/v1.45/sources/common/flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+{
+[v ___flge@ff1 ff1 `d  1 p 4 0 ]
+[v ___flge@ff2 ff2 `d  1 p 4 4 ]
+"19
+} 0
+"8 /opt/microchip/xc8/v1.45/sources/common/sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S429 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S434 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S437 . 4 `l 1 i 4 0 `d 1 f 4 0 `S429 1 fAsBytes 4 0 `S434 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S437  1 a 4 19 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 13 ]
+[s S505 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S508 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S505 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S508  1 a 2 23 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 18 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 17 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 12 ]
+"8
+[v ___flmul@b b `d  1 p 4 0 ]
+[v ___flmul@a a `d  1 p 4 4 ]
+"205
+} 0

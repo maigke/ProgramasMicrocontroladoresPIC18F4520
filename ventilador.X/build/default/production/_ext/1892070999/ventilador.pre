@@ -92,7 +92,7 @@ extern double fmod(double, double);
 extern double trunc(double);
 extern double round(double);
 
-# 15 "../MyLibs/ventilador.h"
+# 16 "../MyLibs/ventilador.h"
 typedef struct {
 double (* equal)(double x);
 double (* center)();
@@ -113,7 +113,7 @@ double* input;
 Consequent* conc;
 } FuzzyNumber;
 
-# 44
+# 45
 void ventiladorInferenceEngine(double Temp, double* Vel);
 
 # 17 "../MyLibs/ventilador.c"
@@ -121,7 +121,7 @@ static double compute(FuzzyNumber fn,double x) {
 int length = fn.length;
 int i;
 double imp = fn.imp(fn.degree[0],fn.conc[0].equal(x));
-double mu = imp
+double mu = imp;
 
 for(i=1; i<length; i++) {
 imp = fn.imp(fn.degree[i],fn.conc[i].equal(x));
@@ -149,7 +149,7 @@ return (a<b? a : b);
 }
 
 # 69
-static double OP_Default_Defuz(FuzzyNumber mf) {
+static double OP_default_Defuz(FuzzyNumber mf) {
 double min = mf.min;
 double max = mf.max;
 double step = mf.step;
@@ -194,8 +194,8 @@ FuzzyNumber _vel;
 _vel.min = 0.0;
 _vel.max = 100.0;
 _vel.step = 0.39215686274509803;
-_vel.imp = OP__default__Imp;
-_vel.also = OP__default__Also;
+_vel.imp = OP_Default_Imp;
+_vel.also = OP_Default_Also;
 _vel.length = 2;
 _vel.degree = _vel_degree;
 _vel.conc = _vel_conc;
@@ -215,7 +215,7 @@ _vel_degree[_vel_i] = _rl;
 _vel_conc[_vel_i].equal = TP_tVelocidad_rapida_equal;
 _vel_i++;
 
-*vel = OP__default__Defuz(_vel);
+*vel = OP_default_Defuz(_vel);
 }
 
 # 167

@@ -12,6 +12,7 @@
 /* Fuzzy Number                                         */
 /*------------------------------------------------------*/
 
+
  typedef struct {
    double (* equal)(double x);
    double (* center)();

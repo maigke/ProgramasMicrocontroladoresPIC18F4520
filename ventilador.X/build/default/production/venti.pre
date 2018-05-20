@@ -4804,3 +4804,35 @@ extern __nonreentrant void _delay(unsigned long);
 extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
+
+# 16 "../MyLibs/ventilador.h"
+typedef struct {
+double (* equal)(double x);
+double (* center)();
+double (* basis)();
+double (* param)(int i);
+} Consequent;
+
+typedef struct {
+double min;
+double max;
+double step;
+double (* imp)(double a, double b);
+double (* also)(double a, double b);
+int length;
+double* degree;
+int inputlength;
+double* input;
+Consequent* conc;
+} FuzzyNumber;
+
+# 45
+void ventiladorInferenceEngine(double Temp, double* Vel);
+
+# 15 "venti.c"
+void main(void)
+{
+float in, out;
+ventiladorInferenceEngine(in, &out);
+return;
+}

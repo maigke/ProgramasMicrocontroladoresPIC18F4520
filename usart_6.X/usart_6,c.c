@@ -55,7 +55,7 @@ void main(void)
                 led^= 1;
                 lcd_gotoxy(1,2); lcd_msg("     ");
                 lcd_gotoxy(1,2); lcd_putc(x);
-                __delay_ms(500);
+                __delay_ms(2000);
             }
     }
     return;

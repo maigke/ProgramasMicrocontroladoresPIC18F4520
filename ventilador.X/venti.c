@@ -3,6 +3,9 @@
  * Author: miguel
  *
  * Created on 14 de mayo de 2018, 07:46 PM
+ * Este programa usa la libreria de lógica
+ * difusa propuesta por el software XFuzzy 3.3
+ * 
  */
 
 
@@ -12,6 +15,6 @@
 void main(void)
 {
     float in, out;
-    ventiladorInferenceEngine(in, out);
+    ventiladorInferenceEngine(in, &out);
     return;
 }

@@ -1,0 +1,432 @@
+Version 3.2 HI-TECH Software Intermediate Code
+[v F140 `(d ~T0 @X0 0 tf2`d`d ]
+[v F144 `(d ~T0 @X0 0 tf2`d`d ]
+[v F125 `(d ~T0 @X0 0 tf1`d ]
+[v F128 `(d ~T0 @X0 0 tf ]
+[v F130 `(d ~T0 @X0 0 tf ]
+[v F132 `(d ~T0 @X0 0 tf1`i ]
+"16 ../MyLibs/ventilador.h
+[s S2 `*F125 1 `*F128 1 `*F130 1 `*F132 1 ]
+[n S2 . equal center basis param ]
+"23
+[s S3 `d 1 `d 1 `d 1 `*F140 1 `*F144 1 `i 1 `*d 1 `i 1 `*d 1 `*S2 1 ]
+[n S3 . min max step imp also length degree inputlength input conc ]
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;stdarg.h: 7: typedef void * va_list[1];
+[; ;stdarg.h: 10: extern void * __va_start(void);
+[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
+[; ;stdio.h: 43: struct __prbuf
+[; ;stdio.h: 44: {
+[; ;stdio.h: 45: char * ptr;
+[; ;stdio.h: 46: void (* func)(char);
+[; ;stdio.h: 47: };
+[; ;errno.h: 29: extern int errno;
+[; ;conio.h: 12: extern void init_uart(void);
+[; ;conio.h: 14: extern char getch(void);
+[; ;conio.h: 15: extern char getche(void);
+[; ;conio.h: 16: extern void putch(char);
+[; ;conio.h: 17: extern void ungetch(char);
+[; ;conio.h: 19: extern __bit kbhit(void);
+[; ;conio.h: 23: extern char * cgets(char *);
+[; ;conio.h: 24: extern void cputs(const char *);
+[; ;stdio.h: 88: extern int cprintf(char *, ...);
+[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+[; ;stdio.h: 183: extern char * gets(char *);
+[; ;stdio.h: 184: extern int puts(const char *);
+[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
+[; ;stdio.h: 195: extern int printf(const char *, ...);
+[; ;math.h: 30: extern double fabs(double);
+[; ;math.h: 31: extern double floor(double);
+[; ;math.h: 32: extern double ceil(double);
+[; ;math.h: 33: extern double modf(double, double *);
+[; ;math.h: 34: extern double sqrt(double);
+[; ;math.h: 35: extern double atof(const char *);
+[; ;math.h: 36: extern double sin(double) ;
+[; ;math.h: 37: extern double cos(double) ;
+[; ;math.h: 38: extern double tan(double) ;
+[; ;math.h: 39: extern double asin(double) ;
+[; ;math.h: 40: extern double acos(double) ;
+[; ;math.h: 41: extern double atan(double);
+[; ;math.h: 42: extern double atan2(double, double) ;
+[; ;math.h: 43: extern double log(double);
+[; ;math.h: 44: extern double log10(double);
+[; ;math.h: 45: extern double pow(double, double) ;
+[; ;math.h: 46: extern double exp(double) ;
+[; ;math.h: 47: extern double sinh(double) ;
+[; ;math.h: 48: extern double cosh(double) ;
+[; ;math.h: 49: extern double tanh(double);
+[; ;math.h: 50: extern double eval_poly(double, const double *, int);
+[; ;math.h: 51: extern double frexp(double, int *);
+[; ;math.h: 52: extern double ldexp(double, int);
+[; ;math.h: 53: extern double fmod(double, double);
+[; ;math.h: 54: extern double trunc(double);
+[; ;math.h: 55: extern double round(double);
+[; ;ventilador.h: 16: typedef struct {
+[; ;ventilador.h: 17: double (* equal)(double x);
+[; ;ventilador.h: 18: double (* center)();
+[; ;ventilador.h: 19: double (* basis)();
+[; ;ventilador.h: 20: double (* param)(int i);
+[; ;ventilador.h: 21: } Consequent;
+[; ;ventilador.h: 23: typedef struct {
+[; ;ventilador.h: 24: double min;
+[; ;ventilador.h: 25: double max;
+[; ;ventilador.h: 26: double step;
+[; ;ventilador.h: 27: double (* imp)(double a, double b);
+[; ;ventilador.h: 28: double (* also)(double a, double b);
+[; ;ventilador.h: 29: int length;
+[; ;ventilador.h: 30: double* degree;
+[; ;ventilador.h: 31: int inputlength;
+[; ;ventilador.h: 32: double* input;
+[; ;ventilador.h: 33: Consequent* conc;
+[; ;ventilador.h: 34: } FuzzyNumber;
+[; ;ventilador.h: 45: void ventiladorInferenceEngine(double Temp, double* Vel);
+"17 ../MyLibs/ventilador.c
+[v _compute `(d ~T0 @X0 1 sf2`S3`d ]
+{
+[; ;ventilador.c: 17: static double compute(FuzzyNumber fn,double x) {
+[e :U _compute ]
+[v _fn `S3 ~T0 @X0 1 r1 ]
+[v _x `d ~T0 @X0 1 r2 ]
+[f ]
+"18
+[v _length `i ~T0 @X0 1 a ]
+[; ;ventilador.c: 18: int length = fn.length;
+[e = _length . _fn 5 ]
+"19
+[v _i `i ~T0 @X0 1 a ]
+"20
+[v _imp `d ~T0 @X0 1 a ]
+[; ;ventilador.c: 19: int i;
+[; ;ventilador.c: 20: double imp = fn.imp(fn.degree[0],fn.conc[0].equal(x));
+[e = _imp ( *U . _fn 3 (2 , *U + . _fn 6 * -> -> 0 `i `x -> -> # *U . _fn 6 `i `x ( *U . *U + . _fn 9 * -> -> 0 `i `x -> -> # *U . _fn 9 `i `x 0 (1 _x ]
+"21
+[v _mu `d ~T0 @X0 1 a ]
+[; ;ventilador.c: 21: double mu = imp;
+[e = _mu _imp ]
+[; ;ventilador.c: 23: for(i=1; i<length; i++) {
+"23
+{
+[e = _i -> 1 `i ]
+[e $U 8  ]
+[e :U 5 ]
+{
+[; ;ventilador.c: 24: imp = fn.imp(fn.degree[i],fn.conc[i].equal(x));
+"24
+[e = _imp ( *U . _fn 3 (2 , *U + . _fn 6 * -> _i `x -> -> # *U . _fn 6 `i `x ( *U . *U + . _fn 9 * -> _i `x -> -> # *U . _fn 9 `i `x 0 (1 _x ]
+[; ;ventilador.c: 25: mu = fn.also(mu,imp);
+"25
+[e = _mu ( *U . _fn 4 (2 , _mu _imp ]
+"26
+}
+"23
+[e ++ _i -> 1 `i ]
+[e :U 8 ]
+[e $ < _i _length 5  ]
+[e :U 6 ]
+"26
+}
+[; ;ventilador.c: 26: }
+[; ;ventilador.c: 27: return mu;
+"27
+[e ) _mu ]
+[e $UE 4  ]
+[; ;ventilador.c: 28: }
+"28
+[e :UE 4 ]
+}
+"38
+[v _MF_xfl_trapezoid_equal `(d ~T0 @X0 1 sf8`d`d`d`d`d`d`d`d ]
+{
+[; ;ventilador.c: 38: static double MF_xfl_trapezoid_equal(double x, double min, double max, double step, double a, double b, double c, double d) {
+[e :U _MF_xfl_trapezoid_equal ]
+[v _x `d ~T0 @X0 1 r1 ]
+[v _min `d ~T0 @X0 1 r2 ]
+[v _max `d ~T0 @X0 1 r3 ]
+[v _step `d ~T0 @X0 1 r4 ]
+[v _a `d ~T0 @X0 1 r5 ]
+[v _b `d ~T0 @X0 1 r6 ]
+[v _c `d ~T0 @X0 1 r7 ]
+[v _d `d ~T0 @X0 1 r8 ]
+[f ]
+[; ;ventilador.c: 39: return (x<a || x>d? 0: (x<b? (x-a)/(b-a) : (x<c?1 : (d-x)/(d-c))));
+"39
+[e ) ? || < _x _a > _x _d : -> -> 0 `i `d ? < _x _b : / - _x _a - _b _a ? < _x _c : -> -> 1 `i `d / - _d _x - _d _c ]
+[e $UE 9  ]
+[; ;ventilador.c: 41: }
+"41
+[e :UE 9 ]
+}
+"51
+[v _OP_Default_Also `(d ~T0 @X0 1 sf2`d`d ]
+{
+[; ;ventilador.c: 51: static double OP_Default_Also(double a, double b) {
+[e :U _OP_Default_Also ]
+[v _a `d ~T0 @X0 1 r1 ]
+[v _b `d ~T0 @X0 1 r2 ]
+[f ]
+[; ;ventilador.c: 52: return (a>b? a : b);
+"52
+[e ) ? > _a _b : _a _b ]
+[e $UE 10  ]
+[; ;ventilador.c: 54: }
+"54
+[e :UE 10 ]
+}
+"60
+[v _OP_Default_Imp `(d ~T0 @X0 1 sf2`d`d ]
+{
+[; ;ventilador.c: 60: static double OP_Default_Imp(double a, double b) {
+[e :U _OP_Default_Imp ]
+[v _a `d ~T0 @X0 1 r1 ]
+[v _b `d ~T0 @X0 1 r2 ]
+[f ]
+[; ;ventilador.c: 61: return (a<b? a : b);
+"61
+[e ) ? < _a _b : _a _b ]
+[e $UE 11  ]
+[; ;ventilador.c: 63: }
+"63
+[e :UE 11 ]
+}
+"69
+[v _OP_default_Defuz `(d ~T0 @X0 1 sf1`S3 ]
+{
+[; ;ventilador.c: 69: static double OP_default_Defuz(FuzzyNumber mf) {
+[e :U _OP_default_Defuz ]
+[v _mf `S3 ~T0 @X0 1 r1 ]
+[f ]
+"70
+[v _min `d ~T0 @X0 1 a ]
+[; ;ventilador.c: 70: double min = mf.min;
+[e = _min . _mf 0 ]
+"71
+[v _max `d ~T0 @X0 1 a ]
+[; ;ventilador.c: 71: double max = mf.max;
+[e = _max . _mf 1 ]
+"72
+[v _step `d ~T0 @X0 1 a ]
+[; ;ventilador.c: 72: double step = mf.step;
+[e = _step . _mf 2 ]
+"73
+[v _x `d ~T0 @X0 1 a ]
+[v _m `d ~T0 @X0 1 a ]
+[v _num `d ~T0 @X0 1 a ]
+[; ;ventilador.c: 73: double x, m, num=0, denom=0;
+[e = _num -> -> 0 `i `d ]
+[v _denom `d ~T0 @X0 1 a ]
+[e = _denom -> -> 0 `i `d ]
+[; ;ventilador.c: 74: for(x=min; x<=max; x+=step) {
+"74
+{
+[e = _x _min ]
+[e $U 16  ]
+[e :U 13 ]
+{
+[; ;ventilador.c: 75: m = compute(mf,x);
+"75
+[e = _m ( _compute (2 , _mf _x ]
+[; ;ventilador.c: 76: num += x*m;
+"76
+[e =+ _num * _x _m ]
+[; ;ventilador.c: 77: denom += m;
+"77
+[e =+ _denom _m ]
+"78
+}
+"74
+[e =+ _x _step ]
+[e :U 16 ]
+[e $ <= _x _max 13  ]
+[e :U 14 ]
+"78
+}
+[; ;ventilador.c: 78: }
+[; ;ventilador.c: 79: if(denom==0) return (min+max)/2;
+"79
+[e $ ! == _denom -> -> 0 `i `d 17  ]
+[e ) / + _min _max -> -> 2 `i `d ]
+[e $UE 12  ]
+[e :U 17 ]
+[; ;ventilador.c: 80: return num/denom;
+"80
+[e ) / _num _denom ]
+[e $UE 12  ]
+[; ;ventilador.c: 82: }
+"82
+[e :UE 12 ]
+}
+"93
+[v _TP_tTemp_frio_equal `(d ~T0 @X0 1 sf1`d ]
+{
+[; ;ventilador.c: 93: static double TP_tTemp_frio_equal(double x){
+[e :U _TP_tTemp_frio_equal ]
+[v _x `d ~T0 @X0 1 r1 ]
+[f ]
+[; ;ventilador.c: 94: return MF_xfl_trapezoid_equal(x,0.0,55.0,0.21568627450980393,-11.0,0.0,15.0,28.0);
+"94
+[e ) ( _MF_xfl_trapezoid_equal (4 , , , , , , , _x .0.0 .55.0 .0.21568627450980393 -U .11.0 .0.0 .15.0 .28.0 ]
+[e $UE 18  ]
+[; ;ventilador.c: 95: }
+"95
+[e :UE 18 ]
+}
+"101
+[v _TP_tTemp_caliente_equal `(d ~T0 @X0 1 sf1`d ]
+{
+[; ;ventilador.c: 101: static double TP_tTemp_caliente_equal(double x){
+[e :U _TP_tTemp_caliente_equal ]
+[v _x `d ~T0 @X0 1 r1 ]
+[f ]
+[; ;ventilador.c: 102: return MF_xfl_trapezoid_equal(x,0.0,55.0,0.21568627450980393,22.0,35.0,55.0,66.0);
+"102
+[e ) ( _MF_xfl_trapezoid_equal (4 , , , , , , , _x .0.0 .55.0 .0.21568627450980393 .22.0 .35.0 .55.0 .66.0 ]
+[e $UE 19  ]
+[; ;ventilador.c: 103: }
+"103
+[e :UE 19 ]
+}
+"113
+[v _TP_tVelocidad_lenta_equal `(d ~T0 @X0 1 sf1`d ]
+{
+[; ;ventilador.c: 113: static double TP_tVelocidad_lenta_equal(double x){
+[e :U _TP_tVelocidad_lenta_equal ]
+[v _x `d ~T0 @X0 1 r1 ]
+[f ]
+[; ;ventilador.c: 114: return MF_xfl_trapezoid_equal(x,0.0,100.0,0.39215686274509803,-20.0,0.0,40.0,60.0);
+"114
+[e ) ( _MF_xfl_trapezoid_equal (4 , , , , , , , _x .0.0 .100.0 .0.39215686274509803 -U .20.0 .0.0 .40.0 .60.0 ]
+[e $UE 20  ]
+[; ;ventilador.c: 115: }
+"115
+[e :UE 20 ]
+}
+"121
+[v _TP_tVelocidad_rapida_equal `(d ~T0 @X0 1 sf1`d ]
+{
+[; ;ventilador.c: 121: static double TP_tVelocidad_rapida_equal(double x){
+[e :U _TP_tVelocidad_rapida_equal ]
+[v _x `d ~T0 @X0 1 r1 ]
+[f ]
+[; ;ventilador.c: 122: return MF_xfl_trapezoid_equal(x,0.0,100.0,0.39215686274509803,40.0,60.0,100.0,120.0);
+"122
+[e ) ( _MF_xfl_trapezoid_equal (4 , , , , , , , _x .0.0 .100.0 .0.39215686274509803 .40.0 .60.0 .100.0 .120.0 ]
+[e $UE 21  ]
+[; ;ventilador.c: 123: }
+"123
+[e :UE 21 ]
+}
+"129
+[v _RL_ventilador `(v ~T0 @X0 1 sf2`d`*d ]
+{
+[; ;ventilador.c: 129: static void RL_ventilador(double temp, double *vel) {
+[e :U _RL_ventilador ]
+[v _temp `d ~T0 @X0 1 r1 ]
+[v _vel `*d ~T0 @X0 1 r2 ]
+[f ]
+"130
+[v __rl `d ~T0 @X0 1 a ]
+"132
+[v __vel_degree `d ~T0 @X0 -> 2 `i a ]
+"133
+[v __vel_conc `S2 ~T0 @X0 -> 2 `i a ]
+"134
+[v __vel `S3 ~T0 @X0 1 a ]
+[; ;ventilador.c: 130: double _rl;
+[; ;ventilador.c: 132: double _vel_degree[2];
+[; ;ventilador.c: 133: Consequent _vel_conc[2];
+[; ;ventilador.c: 134: FuzzyNumber _vel;
+[; ;ventilador.c: 135: _vel.min = 0.0;
+"135
+[e = . __vel 0 .0.0 ]
+[; ;ventilador.c: 136: _vel.max = 100.0;
+"136
+[e = . __vel 1 .100.0 ]
+[; ;ventilador.c: 137: _vel.step = 0.39215686274509803;
+"137
+[e = . __vel 2 .0.39215686274509803 ]
+[; ;ventilador.c: 138: _vel.imp = OP_Default_Imp;
+"138
+[e = . __vel 3 &U _OP_Default_Imp ]
+[; ;ventilador.c: 139: _vel.also = OP_Default_Also;
+"139
+[e = . __vel 4 &U _OP_Default_Also ]
+[; ;ventilador.c: 140: _vel.length = 2;
+"140
+[e = . __vel 5 -> 2 `i ]
+[; ;ventilador.c: 141: _vel.degree = _vel_degree;
+"141
+[e = . __vel 6 &U __vel_degree ]
+[; ;ventilador.c: 142: _vel.conc = _vel_conc;
+"142
+[e = . __vel 9 &U __vel_conc ]
+"143
+[v __vel_i `i ~T0 @X0 1 a ]
+[; ;ventilador.c: 143: int _vel_i = 0;
+[e = __vel_i -> 0 `i ]
+"145
+[v __temp_eq `d ~T0 @X0 -> 2 `i a ]
+[; ;ventilador.c: 145: double _temp_eq[2];
+[; ;ventilador.c: 146: _temp_eq[0] = TP_tTemp_frio_equal(temp);
+"146
+[e = *U + &U __temp_eq * -> -> -> 0 `i `ui `ux -> -> # *U &U __temp_eq `ui `ux ( _TP_tTemp_frio_equal (1 _temp ]
+[; ;ventilador.c: 147: _temp_eq[1] = TP_tTemp_caliente_equal(temp);
+"147
+[e = *U + &U __temp_eq * -> -> -> 1 `i `ui `ux -> -> # *U &U __temp_eq `ui `ux ( _TP_tTemp_caliente_equal (1 _temp ]
+[; ;ventilador.c: 149: _rl = _temp_eq[0];
+"149
+[e = __rl *U + &U __temp_eq * -> -> -> 0 `i `ui `ux -> -> # *U &U __temp_eq `ui `ux ]
+[; ;ventilador.c: 150: _vel_degree[_vel_i] = _rl;
+"150
+[e = *U + &U __vel_degree * -> -> __vel_i `ui `ux -> -> # *U &U __vel_degree `ui `ux __rl ]
+[; ;ventilador.c: 151: _vel_conc[_vel_i].equal = TP_tVelocidad_lenta_equal;
+"151
+[e = . *U + &U __vel_conc * -> -> __vel_i `ui `ux -> -> # *U &U __vel_conc `ui `ux 0 &U _TP_tVelocidad_lenta_equal ]
+[; ;ventilador.c: 152: _vel_i++;
+"152
+[e ++ __vel_i -> 1 `i ]
+[; ;ventilador.c: 154: _rl = _temp_eq[1];
+"154
+[e = __rl *U + &U __temp_eq * -> -> -> 1 `i `ui `ux -> -> # *U &U __temp_eq `ui `ux ]
+[; ;ventilador.c: 155: _vel_degree[_vel_i] = _rl;
+"155
+[e = *U + &U __vel_degree * -> -> __vel_i `ui `ux -> -> # *U &U __vel_degree `ui `ux __rl ]
+[; ;ventilador.c: 156: _vel_conc[_vel_i].equal = TP_tVelocidad_rapida_equal;
+"156
+[e = . *U + &U __vel_conc * -> -> __vel_i `ui `ux -> -> # *U &U __vel_conc `ui `ux 0 &U _TP_tVelocidad_rapida_equal ]
+[; ;ventilador.c: 157: _vel_i++;
+"157
+[e ++ __vel_i -> 1 `i ]
+[; ;ventilador.c: 159: *vel = OP_default_Defuz(_vel);
+"159
+[e = *U _vel ( _OP_default_Defuz (1 __vel ]
+[; ;ventilador.c: 160: }
+"160
+[e :UE 22 ]
+}
+"167
+[v _ventiladorInferenceEngine `(v ~T0 @X0 1 ef2`d`*d ]
+{
+[; ;ventilador.c: 167: void ventiladorInferenceEngine(double Temp, double *_d_Vel) {
+[e :U _ventiladorInferenceEngine ]
+[v _Temp `d ~T0 @X0 1 r1 ]
+[v __d_Vel `*d ~T0 @X0 1 r2 ]
+[f ]
+"168
+[v _Vel `d ~T0 @X0 1 a ]
+[; ;ventilador.c: 168: double Vel;
+[; ;ventilador.c: 169: RL_ventilador(Temp, &Vel);
+"169
+[e ( _RL_ventilador (2 , _Temp &U _Vel ]
+[; ;ventilador.c: 170: *_d_Vel = Vel;
+"170
+[e = *U __d_Vel _Vel ]
+[; ;ventilador.c: 171: }
+"171
+[e :UE 23 ]
+}

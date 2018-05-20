@@ -18,7 +18,7 @@ static double compute(FuzzyNumber fn,double x) {
  int length = fn.length;
  int i;
  double imp = fn.imp(fn.degree[0],fn.conc[0].equal(x));
- double mu = imp
+ double mu = imp;
 
  for(i=1; i<length; i++) {
   imp = fn.imp(fn.degree[i],fn.conc[i].equal(x));
@@ -66,7 +66,7 @@ static double OP_Default_Imp(double a, double b) {
 /* Description of the defuzzification method            */
 /*------------------------------------------------------*/
 
-static double OP_Default_Defuz(FuzzyNumber mf) {
+static double OP_default_Defuz(FuzzyNumber mf) {
  double min = mf.min;
  double max = mf.max;
  double step = mf.step;
@@ -135,8 +135,8 @@ static void RL_ventilador(double temp, double *vel) {
  _vel.min = 0.0;
  _vel.max = 100.0;
  _vel.step = 0.39215686274509803;
- _vel.imp = OP__default__Imp;
- _vel.also = OP__default__Also;
+ _vel.imp = OP_Default_Imp;
+ _vel.also = OP_Default_Also;
  _vel.length = 2;
  _vel.degree = _vel_degree;
  _vel.conc = _vel_conc;
@@ -156,7 +156,7 @@ static void RL_ventilador(double temp, double *vel) {
  _vel_conc[_vel_i].equal = TP_tVelocidad_rapida_equal;
  _vel_i++;
 
- *vel = OP__default__Defuz(_vel);
+ *vel = OP_default_Defuz(_vel);
 }
 
 
